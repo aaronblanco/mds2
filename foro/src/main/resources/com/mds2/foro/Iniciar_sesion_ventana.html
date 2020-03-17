@@ -6,6 +6,28 @@
   <meta name="vaadin-version" content="8.1.5">
  </head>
  <body>
-  <vaadin-vertical-layout size-full></vaadin-vertical-layout>
+  <vaadin-vertical-layout size-full>
+   <vaadin-vertical-layout size-full>
+    <vaadin-label plain-text>
+      Nombre de usuario 
+    </vaadin-label>
+    <vaadin-text-field _id="userName"></vaadin-text-field>
+    <vaadin-label plain-text>
+      Contraseña 
+    </vaadin-label>
+    <vaadin-password-field></vaadin-password-field>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout size-full>
+    <vaadin-horizontal-layout width="90%">
+     <vaadin-button plain-text _id="enviar">
+       Enviar 
+     </vaadin-button>
+     <vaadin-button plain-text _id="password1">
+       He olvidado la contraseña 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-link caption="Pulse aquí si quiere recordar la contraseña" _id="enlacePassword"></vaadin-link>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
  </body>
 </html>
