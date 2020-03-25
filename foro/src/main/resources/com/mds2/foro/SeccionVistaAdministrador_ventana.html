@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout responsive size-full>
+   <vaadin-vertical-layout size-full :expand="0.5">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-text-field width-full></vaadin-text-field>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-button plain-text>
+        Buscar 
+      </vaadin-button>
+      <vaadin-button plain-text>
+        Crear sección 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout size-full :expand>
+    <vaadin-horizontal-layout size-full>
+     <vaadin-vertical-layout size-full :expand>
+      <vaadin-horizontal-layout width-full height="60%" _id="seccion">
+       <vaadin-horizontal-layout>
+        <vaadin-link caption="EnlaceSección"></vaadin-link>
+       </vaadin-horizontal-layout>
+       <vaadin-horizontal-layout>
+        <vaadin-horizontal-layout>
+         <vaadin-combo-box data-item-type="java.lang.String" _id="statusTema">
+          <option item="Option1">Option 1</option>
+          <option item="Option2">Option 2</option>
+          <option item="Option3">Option 3</option>
+         </vaadin-combo-box>
+         <vaadin-button plain-text>
+           Eliminar 
+         </vaadin-button>
+        </vaadin-horizontal-layout>
+       </vaadin-horizontal-layout>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout width-full height="40%" _id="seccion2">
+       <vaadin-horizontal-layout>
+        <vaadin-label plain-text>
+          Subtitulo Seccion 
+        </vaadin-label>
+        <vaadin-label plain-text>
+          Usuario Creador 
+        </vaadin-label>
+        <vaadin-label plain-text>
+          Fecha Creación 
+        </vaadin-label>
+        <vaadin-label plain-text>
+          Numero mensajes 
+        </vaadin-label>
+       </vaadin-horizontal-layout>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-image size-full :middle :right :expand="0.1"></vaadin-image>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>
