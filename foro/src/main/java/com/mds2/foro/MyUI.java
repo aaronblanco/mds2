@@ -25,9 +25,8 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         
-      
-        Iniciar_sesion_ventana iniciar_sesion = new Iniciar_sesion_ventana();
-        setContent(iniciar_sesion);
+    	SeccionVistaAdministrador_ventana seccion = new SeccionVistaAdministrador_ventana();
+        setContent(seccion);
        
        
     }
