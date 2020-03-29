@@ -4,6 +4,9 @@ import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.data.*;
+import com.vaadin.data.provider.TreeDataProvider;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
@@ -28,6 +31,23 @@ public class MyUI extends UI {
     	PaginaPrincipal_ventana main = new PaginaPrincipal_ventana();
     	SeccionVistaAdministrador_ventana sec = new SeccionVistaAdministrador_ventana();
     	Menu_UR menu = new Menu_UR();
+    	
+    	TreeData<String> data = new TreeData<>();
+        data.addItems(null, "Desktops", "Laptops")
+            .addItems("Desktops", "Dell GX240", "Dell GX260", "Dell GX280")
+            .addItems("Laptops", "IBM T40", "IBM T43", "IBM T60");
+ 
+        menu.menuMod.setDataProvider(new TreeDataProvider<>(data));
+        menu.menuMod.expand("Desktops", "Laptops");
+        menu.menuMod.setItemIconGenerator(item -> {
+            if (item.equals("Desktops")) {
+                return VaadinIcons.DESKTOP;
+            } else if (item.equals("Laptops")) {
+                return VaadinIcons.LAPTOP;
+            }
+            return null;
+        });
+        
     	main.panelMenu.setContent(menu);
     	main.panelMain.setContent(sec);
     	setContent(main);
