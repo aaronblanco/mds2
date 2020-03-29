@@ -25,9 +25,12 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         
-    	SeccionVistaAdministrador_ventana seccion = new SeccionVistaAdministrador_ventana();
-        setContent(seccion);
-       
+    	PaginaPrincipal_ventana main = new PaginaPrincipal_ventana();
+    	SeccionVistaAdministrador_ventana sec = new SeccionVistaAdministrador_ventana();
+    	Menu_UR menu = new Menu_UR();
+    	main.panelMenu.setContent(menu);
+    	main.panelMain.setContent(sec);
+    	setContent(main);
        
     }
 
