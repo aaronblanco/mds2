@@ -1,18 +1,18 @@
 package com.mds2.foro;
 
-import DCLv3.Lista_Ticket;
-import DCLv3.PanelAdministracionGenerico;
+//import DCLv3.Lista_Ticket;
+//import DCLv3.PanelAdministracionGenerico;
 
 public class Panel_de_administración_vista_administrador extends PanelAdministracionGenerico {
-	private Button _modificarNumUltimoMensaje;
-	private Button _configurarPublicidad;
-	private Label _ticketsL;
-	private Label _candidatosAmonestadosL;
+//	private Button _modificarNumUltimoMensaje;
+//	private Button _configurarPublicidad;
+//	private Label _ticketsL;
+//	private Label _candidatosAmonestadosL;
 	public Administrador _unnamed_Administrador_;
 	public Sistema_de_tickets_vista_administrador _sistema_de_tickets_vista_administrador;
 	public Sistema_de_publicidad _sistema_de_publicidad;
 	public Lista_Usuario_Amonestado_V_Administrador _usuario_amonestado_vista_administrador;
-	public Buscar_usuario _buscar_usuario;
+	//public Buscar_usuario _buscar_usuario;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
 
 	public void modificarNumUltimoMensaje() {

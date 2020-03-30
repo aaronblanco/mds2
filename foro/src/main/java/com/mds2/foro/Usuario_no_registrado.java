@@ -1,8 +1,8 @@
-package Package;
+package com.mds2.foro;
 
-import Package2.iUsuario_no_registrado;
+//import Package2.iUsuario_no_registrado;
 
 public class Usuario_no_registrado extends Banner_general {
-	public iUsuario_no_registrado _iUsuario_no_registrado;
+	//public iUsuario_no_registrado _iUsuario_no_registrado;
 	public Lista_Seccion _secciones;
 }
