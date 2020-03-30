@@ -12,7 +12,7 @@ public class Lista_Mensaje {
 //	private Label _fechaCreacion;
 //	private Label _pagina;
 	public Tema _unnamed_Tema_;
-	public Vector<Buscador_mensaje> _list_Buscador_mensaje = new Vector<Buscador_mensaje>();
+	//public Vector<Buscador_mensaje> _list_Buscador_mensaje = new Vector<Buscador_mensaje>();
 	public Vector<Mensaje> _list_Mensaje = new Vector<Mensaje>();
 
 	public void buscarMensaje() {

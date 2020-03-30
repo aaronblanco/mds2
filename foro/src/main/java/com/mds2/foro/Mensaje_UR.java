@@ -9,8 +9,8 @@ public class Mensaje_UR extends Mensaje {
 //	private Button _notificarAdministrador;
 	public Lista_Mensaje_V_Usuario_Reg _unnamed_Lista_Mensaje_V_Usuario_Reg_;
 	public Lista_Ultimo_mensaje _unnamed_Lista_Ultimo_mensaje_;
-	public Escribir_mensaje _escribir_mensaje;
-	public Interactuar_mensaje _interactuar_mensaje;
+	//public Escribir_mensaje _escribir_mensaje;
+	//public Interactuar_mensaje _interactuar_mensaje;
 
 	public void darMeGusta() {
 		throw new UnsupportedOperationException();

@@ -1,20 +1,20 @@
 package com.mds2.foro;
 
-import DCLv3.Lista_UsuarioReg;
+//import DCLv3.Lista_UsuarioReg;
 
 public class Mi_perfil {
-	private Button _darseDeBaja;
-	private Button _ocultarPerfil;
-	private Button _cambiarDatos;
-	private Label _nombre;
-	private Label _contrasena;
-	private Label _descripcion;
-	private Label _fotoPerfil;
-	private Label _listaNoti;
-	private Label _listaSoli;
-	private Label _listaAmi;
-	private Image _foto;
-	private Label _anadirAmigo;
+//	private Button _darseDeBaja;
+//	private Button _ocultarPerfil;
+//	private Button _cambiarDatos;
+//	private Label _nombre;
+//	private Label _contrasena;
+//	private Label _descripcion;
+//	private Label _fotoPerfil;
+//	private Label _listaNoti;
+//	private Label _listaSoli;
+//	private Label _listaAmi;
+//	private Image _foto;
+//	private Label _anadirAmigo;
 	public Menu_UR _unnamed_Menu_UR_;
 	public Lista_Notificación _notificación;
 	public Lista_Amigo _amigos;
