@@ -29,7 +29,7 @@ public class MyUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
         
     	PaginaPrincipal_ventana main = new PaginaPrincipal_ventana();
-    	SeccionVistaAdministrador_ventana sec = new SeccionVistaAdministrador_ventana();
+    	Sección sec = new Sección();
     	Menu_UR menu = new Menu_UR();
     	
     	TreeData<String> data = new TreeData<>();
