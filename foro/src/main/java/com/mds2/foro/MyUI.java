@@ -7,6 +7,8 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.*;
 import com.vaadin.data.provider.TreeDataProvider;
 import com.vaadin.icons.VaadinIcons;
+import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
@@ -27,31 +29,18 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        
-    	PaginaPrincipal_ventana main = new PaginaPrincipal_ventana();
-    	Sección sec = new Sección();
-    	Menu_UR menu = new Menu_UR();
-    	
-    	TreeData<String> data = new TreeData<>();
-        data.addItems(null, "Desktops", "Laptops")
-            .addItems("Desktops", "Dell GX240", "Dell GX260", "Dell GX280")
-            .addItems("Laptops", "IBM T40", "IBM T43", "IBM T60");
- 
-        menu.menuMod.setDataProvider(new TreeDataProvider<>(data));
-        menu.menuMod.expand("Desktops", "Laptops");
-        menu.menuMod.setItemIconGenerator(item -> {
-            if (item.equals("Desktops")) {
-                return VaadinIcons.DESKTOP;
-            } else if (item.equals("Laptops")) {
-                return VaadinIcons.LAPTOP;
-            }
-            return null;
-        });
-        
-    	main.panelMenu.setContent(menu);
-    	main.panelMain.setContent(sec);
-    	setContent(main);
-       
+
+		
+    	   PaginaPrincipal pag = 	new PaginaPrincipal();
+	
+
+    	   setContent(pag);
+
+	
+	
+    	 Navigator navigator = new Navigator(this , this);
+         navigator.addView("", pag.getClass());
+     	 navigator.addView("crearSeccion", new CreacionSeccion());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

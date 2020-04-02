@@ -1,8 +1,10 @@
 package com.mds2.foro;
 
+import com.vaadin.navigator.View;
+
 //import Package.Lista_Seccion_V_Moderador;
 
-public class CreacionSeccion {
+public class CreacionSeccion extends Creacion_Seccion_vista implements View {
 	//private TextField _tituloSeccion;
 //	private TextField _descipcionSeccion;
 //	private Button _adjuntarImagen;
@@ -11,6 +13,8 @@ public class CreacionSeccion {
 //	private Image _imagenSeccion;
 	public Lista_Seccion_V_Moderador _unnamed_Lista_Seccion_V_Moderador_;
 
+	
+	
 	public void enviar() {
 		throw new UnsupportedOperationException();
 	}

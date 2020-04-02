@@ -1,6 +1,7 @@
 package com.mds2.foro;
 
 import com.vaadin.data.TreeData;
+import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.*;
 
 //import Package2.iMenu_UR;
@@ -13,9 +14,15 @@ public class Menu_UR extends Menu_moderador_ventana{
 	public Mi_perfil _unnamed_Mi_perfil_;
 	
 	
+	
+	
+	
+	
+	 
+	
 	public void desconectarse() {
 		throw new UnsupportedOperationException();
 	}
 
-	
+
 }
