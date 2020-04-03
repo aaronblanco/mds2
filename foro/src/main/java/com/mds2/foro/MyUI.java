@@ -41,6 +41,8 @@ public class MyUI extends UI {
     	 Navigator navigator = new Navigator(this , this);
          navigator.addView("", pag.getClass());
      	 navigator.addView("crearSeccion", new CreacionSeccion());
+     	 navigator.addView("faq", new FAQ());
+     	 navigator.addView("avisoLegal", new Aviso_legal());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
