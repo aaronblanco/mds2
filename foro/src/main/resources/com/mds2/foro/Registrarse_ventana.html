@@ -6,7 +6,7 @@
   <meta name="vaadin-version" content="8.1.5">
  </head>
  <body>
-  <vaadin-form-layout margin>
+  <vaadin-form-layout size-full margin>
    <vaadin-vertical-layout>
     <vaadin-horizontal-layout>
      <vaadin-text-field _id="userNameRegistro"></vaadin-text-field>
@@ -24,6 +24,24 @@
      <vaadin-text-field _id="emailRegistro"></vaadin-text-field>
      <vaadin-label plain-text _id="email">
        Correo electronico 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout>
+     <vaadin-text-field _id="nombreCompleto"></vaadin-text-field>
+     <vaadin-label plain-text>
+       Nombre completo 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout>
+     <vaadin-text-field _id="descripcion"></vaadin-text-field>
+     <vaadin-label plain-text>
+       Descripción 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout>
+     <vaadin-upload button-caption="Subir imagen" _id="uploadImage"></vaadin-upload>
+     <vaadin-label plain-text>
+       Foto de perfil 
      </vaadin-label>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>

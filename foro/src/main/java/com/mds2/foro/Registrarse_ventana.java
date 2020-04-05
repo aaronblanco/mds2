@@ -8,6 +8,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.Upload;
 import com.vaadin.ui.declarative.Design;
 
 /** 
@@ -26,6 +27,9 @@ public class Registrarse_ventana extends FormLayout {
 	protected PasswordField password;
 	protected TextField emailRegistro;
 	protected Label email;
+	protected TextField nombreCompleto;
+	protected TextField descripcion;
+	protected Upload uploadImage;
 	protected Button registro;
 	protected Link enlaceIniciarSesion;
 

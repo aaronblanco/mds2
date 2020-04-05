@@ -21,9 +21,9 @@ import com.vaadin.ui.declarative.Design;
 @SuppressWarnings("serial")
 public class Iniciar_sesion_ventana extends VerticalLayout {
 	protected TextField userName;
-	protected Button enviar;
-	protected Button password1;
 	protected Link enlacePassword;
+	protected Button registrars;
+	protected Button iniSesion;
 
 	public Iniciar_sesion_ventana() {
 		Design.read(this);
