@@ -9,22 +9,22 @@
   <vaadin-vertical-layout size-full>
    <vaadin-vertical-layout size-full :expand="0.6">
     <vaadin-vertical-layout size-auto>
-     <vaadin-text-field caption="Titulo"></vaadin-text-field>
+     <vaadin-text-field caption="Titulo" _id="titulo"></vaadin-text-field>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout size-auto>
-     <vaadin-text-field caption="Subtitulo"></vaadin-text-field>
+     <vaadin-text-field caption="Subtitulo" _id="subtitulo"></vaadin-text-field>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout size-full :expand="1.5">
     <vaadin-vertical-layout responsive size-full :expand="1.2">
-     <vaadin-rich-text-area value-change-mode="timeout" size-full></vaadin-rich-text-area>
+     <vaadin-rich-text-area value-change-mode="timeout" size-full _id="textoTema"></vaadin-rich-text-area>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout size-full :expand="0.3">
      <vaadin-horizontal-layout width-full>
-      <vaadin-button plain-text>
+      <vaadin-button plain-text _id="crearTema">
         Enviar 
       </vaadin-button>
-      <vaadin-button plain-text>
+      <vaadin-button plain-text _id="cancelarCreacionTema">
         Cancelar 
       </vaadin-button>
      </vaadin-horizontal-layout>
