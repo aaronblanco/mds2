@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-vertical-layout size-full :expand="0.6">
+    <vaadin-vertical-layout size-auto>
+     <vaadin-horizontal-layout>
+      <vaadin-label plain-text _id="tituloTema">
+        Titulo del tema 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout size-auto>
+     <vaadin-horizontal-layout>
+      <vaadin-label plain-text _id="subtitulo">
+        Subtitulo 
+      </vaadin-label>
+      <vaadin-label plain-text _id="numTotalMensajes">
+        Numero total de mensajes 
+      </vaadin-label>
+      <vaadin-label plain-text _id="usuarioCreador">
+        Usuario creador del mensaje 
+      </vaadin-label>
+      <vaadin-label plain-text _id="fechaCreacion">
+        Fecha de creación 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout size-full :expand="1.5">
+    <vaadin-vertical-layout responsive size-full :expand="1.2">
+     <vaadin-rich-text-area value-change-mode="timeout" size-full _id="textoTema"></vaadin-rich-text-area>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout size-full :expand="0.3">
+     <vaadin-horizontal-layout width-full>
+      <vaadin-button plain-text _id="crearMensaje">
+        Enviar 
+      </vaadin-button>
+      <vaadin-button plain-text _id="cancelarCreacionTema">
+        Cancelar 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

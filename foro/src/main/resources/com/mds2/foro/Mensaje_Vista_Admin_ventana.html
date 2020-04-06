@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-vertical-layout responsive size-full>
+    <vaadin-vertical-layout size-full :expand="0.15">
+     <vaadin-horizontal-layout width-full>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-label plain-text _id="tituloTema">
+         Titulo Tema 
+       </vaadin-label>
+       <vaadin-button plain-text _id="crearMensaje">
+         Crear Mensaje 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-button plain-text>
+         Buscar 
+       </vaadin-button>
+       <vaadin-text-field width-full :expand></vaadin-text-field>
+      </vaadin-horizontal-layout>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-label plain-text _id="subtitulo">
+        Subtitulo 
+      </vaadin-label>
+      <vaadin-label plain-text _id="numMensajes">
+        Número Total Mensajes 
+      </vaadin-label>
+      <vaadin-label plain-text _id="userOwner">
+        Usuario Creador 
+      </vaadin-label>
+      <vaadin-label plain-text _id="date">
+        Fecha de Creación 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout size-full :expand="0.85">
+     <vaadin-horizontal-layout size-full>
+      <vaadin-vertical-layout size-full :expand>
+       <vaadin-horizontal-layout size-full _id="seccion" :expand="0.9">
+        <vaadin-vertical-layout size-auto>
+         <vaadin-image width="150px" height="150px"></vaadin-image>
+         <vaadin-label plain-text _id="nick1">
+           nick 
+         </vaadin-label>
+        </vaadin-vertical-layout>
+        <vaadin-panel caption="texto" size-auto _id="texto"></vaadin-panel>
+       </vaadin-horizontal-layout>
+       <vaadin-horizontal-layout width-full height="40%" _id="seccion2" :expand="0.1">
+        <vaadin-horizontal-layout>
+         <vaadin-image caption="Me gusta" :center></vaadin-image>
+         <vaadin-button plain-text _id="eliminarMensaje">
+           Eliminar 
+         </vaadin-button>
+         <vaadin-button plain-text _id="responderMensaje">
+           Responder 
+         </vaadin-button>
+         <vaadin-panel caption="fechaMensaje" size-auto _id="fechaMensaje"></vaadin-panel>
+        </vaadin-horizontal-layout>
+       </vaadin-horizontal-layout>
+      </vaadin-vertical-layout>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout size-full>
+      <vaadin-vertical-layout size-full :expand>
+       <vaadin-horizontal-layout size-full _id="seccion1" :expand="0.9">
+        <vaadin-vertical-layout size-auto>
+         <vaadin-image width="150px" height="150px"></vaadin-image>
+         <vaadin-label plain-text _id="nick11">
+           nick 
+         </vaadin-label>
+        </vaadin-vertical-layout>
+        <vaadin-panel caption="texto" size-auto _id="texto1"></vaadin-panel>
+       </vaadin-horizontal-layout>
+       <vaadin-horizontal-layout width-full height="40%" _id="seccion21" :expand="0.1">
+        <vaadin-horizontal-layout>
+         <vaadin-image caption="Me gusta" :center></vaadin-image>
+         <vaadin-button plain-text _id="eliminarMensaje1">
+           Eliminar 
+         </vaadin-button>
+         <vaadin-button plain-text _id="responderMensaje1">
+           Responder 
+         </vaadin-button>
+         <vaadin-panel caption="fechaMensaje" size-auto _id="fechaMensaje1"></vaadin-panel>
+        </vaadin-horizontal-layout>
+       </vaadin-horizontal-layout>
+      </vaadin-vertical-layout>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>
