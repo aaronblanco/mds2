@@ -9,6 +9,22 @@ public class Tema_vista_Admin extends TemaVistaModerador {
 	public Lista_Tema_V_Administrador _unnamed_Lista_Tema_V_Administrador_;
 	public Lista_Mensaje_V_Administrador _unnamed_Lista_Mensaje_V_Administrador_;
 
+	
+	
+	
+	
+	
+	
+	
+	public Tema_vista_Admin() {
+		
+		cerrarTema1.setVisible(true);
+		cerrarTema2.setVisible(true);
+		eliminarTemaBoton.setVisible(true);
+		eliminarTemaBoton2.setVisible(true);
+		
+	}
+	
 	public void eliminarTema() {
 		throw new UnsupportedOperationException();
 	}

@@ -23,9 +23,11 @@ public class SeccionVistaAdministrador_ventana extends VerticalLayout {
 	protected Button crearNuevaSeccion;
 	protected HorizontalLayout seccion;
 	protected ComboBox<java.lang.String> statusTema;
+	protected Button botonEliminar;
 	protected HorizontalLayout seccion2;
 	protected HorizontalLayout seccion1;
 	protected ComboBox<java.lang.String> statusTema1;
+	protected Button botonEliminar2;
 	protected HorizontalLayout seccion21;
 
 	public SeccionVistaAdministrador_ventana() {

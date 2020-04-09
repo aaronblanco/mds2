@@ -13,7 +13,7 @@ public class PaginaPrincipal extends PaginaPrincipal_ventana implements View{
 	public PaginaPrincipal() {
 		
 		
-			Sección sec = new Sección();
+			SeccionVistaAdministrador sec = new SeccionVistaAdministrador();
 			Menu_UR menu = new Menu_UR();
 			
 	

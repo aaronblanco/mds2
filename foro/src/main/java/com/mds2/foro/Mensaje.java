@@ -1,6 +1,8 @@
 package com.mds2.foro;
 
-public class Mensaje {
+import com.vaadin.navigator.View;
+
+public class Mensaje extends Mensaje_Vista_Admin_ventana implements View{
 //	private Image _foto;
 //	private TextField _cuerpoMsg;
 //	private Label _fechaPost;
@@ -8,6 +10,18 @@ public class Mensaje {
 //	private Listener _listaMsg;
 	public Lista_Mensaje _unnamed_Lista_Mensaje_;
 
+	
+	public Mensaje() {
+		
+		
+		
+		
+		
+		
+		
+		crearMensaje.setVisible(false);
+		
+	}
 	public void verPerfil() {
 		throw new UnsupportedOperationException();
 	}
