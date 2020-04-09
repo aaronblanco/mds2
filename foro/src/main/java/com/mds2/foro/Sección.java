@@ -19,6 +19,7 @@ public class Sección extends SeccionVistaAdministrador_ventana implements View 
 	public Sección() {
 		super();
 		  
+		
 
 		statusTema.setVisible(false);
 		statusTema1.setVisible(false);
@@ -31,5 +32,13 @@ public class Sección extends SeccionVistaAdministrador_ventana implements View 
 	
 			
 	}
+	/*
+    @Override
+    public void buttonClick(ClickEvent event) {
+        // Navigate to a specific state
+        navigator.navigateTo(MAINVIEW + "/" + menuitem);
+    }
+    */
+
 
 }
