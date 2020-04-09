@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-vertical-layout size-full>
+    <vaadin-vertical-layout size-full>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-image caption="Foto de perfil" _id="fotoPerfilUsuario"></vaadin-image>
+      <vaadin-vertical-layout size-auto margin="false">
+       <vaadin-text-field caption="Nombre de usuario" _id="nombreUsuario"></vaadin-text-field>
+       <vaadin-text-field caption="Descripcion" _id="descripcionUsuario"></vaadin-text-field>
+      </vaadin-vertical-layout>
+      <vaadin-button plain-text _id="interaccionarAmigoUsuario" :right>
+        Añadir amigo 
+      </vaadin-button>
+      <vaadin-vertical-layout size-auto margin="false" :right>
+       <vaadin-button plain-text _id="interaccionarSancionAdmin">
+         Sancionar 
+       </vaadin-button>
+       <vaadin-button plain-text _id="interaccionarModeracionAdmin">
+         Ascender 
+       </vaadin-button>
+      </vaadin-vertical-layout>
+     </vaadin-horizontal-layout>
+     <vaadin-panel caption="Ultimos mensajes" _id="listaUMUsuario" :center></vaadin-panel>
+     <vaadin-text-field caption="Estado" _id="estadoUsuarioMod" :bottom></vaadin-text-field>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>
