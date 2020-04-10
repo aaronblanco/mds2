@@ -14,7 +14,7 @@ public class PaginaPrincipal extends PaginaPrincipal_ventana implements View{
 		
 		
 			SeccionVistaAdministrador sec = new SeccionVistaAdministrador();
-			Menu_UR menu = new Menu_UR();
+			Menu_UNR menu = new Menu_UNR();
 			
 	
 		
