@@ -9,17 +9,6 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 	public Lista_Seccion_V_administrador _unnamed_Lista_Seccion_V_administrador_;
 	public Lista_Tema_V_Administrador _unnamed_Lista_Tema_V_Administrador_;
 
-	public SeccionVistaAdministrador() {
-		
-		
-		
-	
-		botonEliminar.setVisible(true);
-		botonEliminar2.setVisible(true);
-	
-	}
-	
-	
 	public void eliminarSeccion() {
 		throw new UnsupportedOperationException();
 	}

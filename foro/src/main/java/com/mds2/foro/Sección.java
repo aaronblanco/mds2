@@ -19,26 +19,32 @@ public class Sección extends SeccionVistaAdministrador_ventana implements View 
 	public Sección() {
 		super();
 		  
-		
-
-		statusTema.setVisible(false);
-		statusTema1.setVisible(false);
-		botonEliminar.setVisible(false);
-		crearNuevaSeccion.setVisible(false);
-		botonEliminar2.setVisible(false);
+	
+  	  	
 	
 	
 		
-	
+			crearNuevaSeccion.addClickListener(new Button.ClickListener() {
+				
+				@Override
+				public void buttonClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+				//	navigator.navigateTo("crearSeccion");
+					UI.getCurrent().getNavigator().navigateTo("crearSeccion");
+				}
+				
+			/*	@Override
+				public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
+					// TODO Auto-generated method stub
+				//	navigator.navigateTo("crearSeccion");
+					UI.getCurrent().getNavigator().navigateTo("crearSeccion");
+				}
+				*/
+				
+				
+				
+			});
 			
 	}
-	/*
-    @Override
-    public void buttonClick(ClickEvent event) {
-        // Navigate to a specific state
-        navigator.navigateTo(MAINVIEW + "/" + menuitem);
-    }
-    */
-
 
 }

@@ -7,51 +7,45 @@
  </head>
  <body>
   <vaadin-vertical-layout size-full>
-   <vaadin-vertical-layout>
-    <vaadin-horizontal-layout width-full>
-     <vaadin-vertical-layout size-auto>
-      <vaadin-horizontal-layout>
-       <vaadin-button plain-text _id="volverTema">
-         Volver a -Tema- 
-       </vaadin-button>
-      </vaadin-horizontal-layout>
-     </vaadin-vertical-layout>
-     <vaadin-vertical-layout size-auto>
-      <vaadin-horizontal-layout>
-       <vaadin-text-field _id="buscadorMensaje"></vaadin-text-field>
-       <vaadin-button plain-text _id="buscadorBoton">
-         Buscar 
-       </vaadin-button>
-      </vaadin-horizontal-layout>
-     </vaadin-vertical-layout>
-    </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout width-full>
-     <vaadin-label caption="SubtituloDescripcion" plain-text _id="subtitle"></vaadin-label>
-     <vaadin-label caption="Numero de mensajes: 84" plain-text _id="numMensajes"></vaadin-label>
-     <vaadin-label caption="Usuario creador: Manolo56" plain-text _id="usuarioCreador"></vaadin-label>
-     <vaadin-label caption="Fecha de creacion: 17/02/2006" plain-text _id="fechaCreacion"></vaadin-label>
-    </vaadin-horizontal-layout>
+   <vaadin-vertical-layout size-full :expand="0.6">
+    <vaadin-vertical-layout size-auto>
+     <vaadin-horizontal-layout>
+      <vaadin-label plain-text _id="tituloTema">
+        Titulo del tema 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout size-auto>
+     <vaadin-horizontal-layout>
+      <vaadin-label plain-text _id="subtitulo">
+        Subtitulo 
+      </vaadin-label>
+      <vaadin-label plain-text _id="numTotalMensajes">
+        Numero total de mensajes 
+      </vaadin-label>
+      <vaadin-label plain-text _id="usuarioCreador">
+        Usuario creador del mensaje 
+      </vaadin-label>
+      <vaadin-label plain-text _id="fechaCreacion">
+        Fecha de creación 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout>
-    <vaadin-horizontal-layout height-full>
-     <vaadin-combo-box caption="Color" data-item-type="java.lang.String" _id="colorFuenteMensaje">
-      <option item="Option1">Option 1</option>
-      <option item="Option2">Option 2</option>
-      <option item="Option3">Option 3</option>
-     </vaadin-combo-box>
-     <vaadin-combo-box caption="Fuente" data-item-type="java.lang.String" _id="fuenteMensaje">
-      <option item="Option1">Option 1</option>
-      <option item="Option2">Option 2</option>
-      <option item="Option3">Option 3</option>
-     </vaadin-combo-box>
-     <vaadin-button height="60px" plain-text _id="adjuntarMedia">
-       Adjuntar 
-     </vaadin-button>
-    </vaadin-horizontal-layout>
-    <vaadin-text-field width-full height="37px" value="Texto" _id="textoCreacionMensaje"></vaadin-text-field>
-    <vaadin-button plain-text _id="enviarMensajeCreado" :right>
-      Enviar 
-    </vaadin-button>
+   <vaadin-vertical-layout size-full :expand="1.5">
+    <vaadin-vertical-layout responsive size-full :expand="1.2">
+     <vaadin-rich-text-area value-change-mode="timeout" size-full _id="textoTema"></vaadin-rich-text-area>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout size-full :expand="0.3">
+     <vaadin-horizontal-layout width-full>
+      <vaadin-button plain-text _id="crearMensaje">
+        Enviar 
+      </vaadin-button>
+      <vaadin-button plain-text _id="cancelarCreacionTema">
+        Cancelar 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </body>

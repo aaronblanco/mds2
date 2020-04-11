@@ -1,10 +1,8 @@
 package com.mds2.foro;
 
-import com.vaadin.navigator.View;
-
 //import DCLv3.Lista_UsuarioReg;
 
-public class Mi_perfil extends Mi_Perfil_ventana implements View{
+public class Mi_perfil {
 //	private Button _darseDeBaja;
 //	private Button _ocultarPerfil;
 //	private Button _cambiarDatos;
@@ -23,12 +21,6 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View{
 	public Lista_Solicitud _solicitud;
 	public Lista_UsuarioReg _unnamed_Lista_UsuarioReg_;
 
-	public Mi_perfil() {
-		
-	}
-	
-	
-	
 	public void darseDeBaja() {
 		throw new UnsupportedOperationException();
 	}
