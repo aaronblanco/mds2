@@ -9,23 +9,6 @@ public class TemaVistaModerador extends Tema_UR {
 	public Lista_Tema_V_Moderador _unnamed_Lista_Tema_V_Moderador_;
 	public Lista_Mensaje_V_Moderador _unnamed_Lista_Mensaje_V_Moderador_;
 
-	
-	
-	public TemaVistaModerador() {
-		
-		
-		
-		
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
 	public void cambiarAccesibilidad(Tipo aTipoNuevo) {
 		throw new UnsupportedOperationException();
 	}

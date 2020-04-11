@@ -8,15 +8,13 @@
  <body>
   <vaadin-vertical-layout size-full>
    <vaadin-vertical-layout size-full :expand="0.6">
-    <vaadin-vertical-layout size-auto>
+    <vaadin-vertical-layout size-auto margin="false">
      <vaadin-text-field caption="Titulo" _id="titulo"></vaadin-text-field>
-    </vaadin-vertical-layout>
-    <vaadin-vertical-layout size-auto>
      <vaadin-text-field caption="Subtitulo" _id="subtitulo"></vaadin-text-field>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout size-full :expand="1.5">
-    <vaadin-vertical-layout responsive size-full :expand="1.2">
+    <vaadin-vertical-layout responsive size-full margin="false" :expand="1.2">
      <vaadin-rich-text-area value-change-mode="timeout" size-full _id="textoTema"></vaadin-rich-text-area>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout size-full :expand="0.3">

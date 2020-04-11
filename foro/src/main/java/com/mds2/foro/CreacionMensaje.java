@@ -4,7 +4,7 @@ import com.vaadin.navigator.View;
 
 //import Package.Lista_Mensaje_V_Usuario_Reg;
 
-public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
+public class CreacionMensaje extends Creacion_mensaje_ventana implements View{
 //	private Button _color;
 //	private Button _fuente;
 //	private Button _adjuntarImagen;
