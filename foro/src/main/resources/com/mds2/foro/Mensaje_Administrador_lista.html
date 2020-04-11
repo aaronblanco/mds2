@@ -7,12 +7,15 @@
  </head>
  <body>
   <vaadin-vertical-layout size-full>
-   <vaadin-vertical-layout>
+   <vaadin-vertical-layout margin="false" _id="textoMensajeCreacion">
     <vaadin-horizontal-layout width-full>
      <vaadin-vertical-layout size-auto>
       <vaadin-horizontal-layout>
        <vaadin-button plain-text _id="volverTema">
          Volver a -Tema- 
+       </vaadin-button>
+       <vaadin-button plain-text _id="crearMensaje">
+         Crear mensaje 
        </vaadin-button>
       </vaadin-horizontal-layout>
      </vaadin-vertical-layout>
@@ -31,28 +34,9 @@
      <vaadin-label caption="Usuario creador: Manolo56" plain-text _id="usuarioCreador"></vaadin-label>
      <vaadin-label caption="Fecha de creacion: 17/02/2006" plain-text _id="fechaCreacion"></vaadin-label>
     </vaadin-horizontal-layout>
+    <vaadin-vertical-layout _id="listaMensajeAdmin"></vaadin-vertical-layout>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout>
-    <vaadin-horizontal-layout height-full>
-     <vaadin-combo-box caption="Color" data-item-type="java.lang.String" _id="colorFuenteMensaje">
-      <option item="Option1">Option 1</option>
-      <option item="Option2">Option 2</option>
-      <option item="Option3">Option 3</option>
-     </vaadin-combo-box>
-     <vaadin-combo-box caption="Fuente" data-item-type="java.lang.String" _id="fuenteMensaje">
-      <option item="Option1">Option 1</option>
-      <option item="Option2">Option 2</option>
-      <option item="Option3">Option 3</option>
-     </vaadin-combo-box>
-     <vaadin-button height="60px" plain-text _id="adjuntarMedia">
-       Adjuntar 
-     </vaadin-button>
-    </vaadin-horizontal-layout>
-    <vaadin-text-field width-full height="37px" value="Texto" _id="textoCreacionMensaje"></vaadin-text-field>
-    <vaadin-button plain-text _id="enviarMensajeCreado" :right>
-      Enviar 
-    </vaadin-button>
-   </vaadin-vertical-layout>
+   <vaadin-vertical-layout _id="msgAdminLista"></vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </body>
 </html>

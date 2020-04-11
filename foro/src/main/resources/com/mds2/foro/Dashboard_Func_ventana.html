@@ -7,12 +7,18 @@
  </head>
  <body>
   <vaadin-vertical-layout size-full>
-   <vaadin-vertical-layout size-full _id="banner" :expand="0.1"></vaadin-vertical-layout>
-   <vaadin-vertical-layout size-full :expand="0.8">
-    <vaadin-horizontal-layout size-full>
-     <vaadin-panel size-full _id="panelMenu" :expand="0.2"></vaadin-panel>
-     <vaadin-panel size-full _id="panelMain" :expand="0.7"></vaadin-panel>
-     <vaadin-panel size-full _id="panelPublicidad" :expand="0.1"></vaadin-panel>
+   <vaadin-vertical-layout size-auto _id="dashFunc">
+    <vaadin-button plain-text _id="modNumUM">
+      Modificar numero ultimos mensajes 
+    </vaadin-button>
+    <vaadin-button plain-text _id="configPubliAdmin">
+      Configurar publicidad 
+    </vaadin-button>
+    <vaadin-horizontal-layout>
+     <vaadin-text-field _id="txtBuscador"></vaadin-text-field>
+     <vaadin-button plain-text _id="buscador">
+       Buscar 
+     </vaadin-button>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>

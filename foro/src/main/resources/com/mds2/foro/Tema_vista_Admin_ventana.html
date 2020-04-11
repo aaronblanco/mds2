@@ -7,113 +7,33 @@
  </head>
  <body>
   <vaadin-vertical-layout size-full>
-   <vaadin-vertical-layout responsive size-full>
-    <vaadin-vertical-layout size-full :expand="0.5">
-     <vaadin-horizontal-layout width-full>
-      <vaadin-horizontal-layout width-full>
-       <vaadin-combo-box width="184px" data-item-type="java.lang.String" _id="statusTema2">
-        <option item="Option1">Relevancia</option>
-        <option item="Option2">Fecha</option>
-       </vaadin-combo-box>
-       <vaadin-button plain-text>
-         Crear Tema 
-       </vaadin-button>
-      </vaadin-horizontal-layout>
-      <vaadin-horizontal-layout width-full>
-       <vaadin-button plain-text>
-         Buscar 
-       </vaadin-button>
-       <vaadin-text-field width-full :expand></vaadin-text-field>
-      </vaadin-horizontal-layout>
-     </vaadin-horizontal-layout>
-    </vaadin-vertical-layout>
-    <vaadin-vertical-layout size-full :expand>
-     <vaadin-horizontal-layout size-full>
-      <vaadin-vertical-layout size-full :expand>
-       <vaadin-horizontal-layout width-full height="60%" _id="seccion">
-        <vaadin-horizontal-layout>
-         <vaadin-link caption="EnlaceTema"></vaadin-link>
-        </vaadin-horizontal-layout>
-        <vaadin-horizontal-layout>
-         <vaadin-horizontal-layout>
-          <vaadin-combo-box width="184px" data-item-type="java.lang.String" _id="statusTema">
-           <option item="Option1">Publico</option>
-           <option item="Option2">Privado</option>
-           <option item="Option3">Cerrado?</option>
-          </vaadin-combo-box>
-          <vaadin-button plain-text>
-            Eliminar 
-          </vaadin-button>
-          <vaadin-button plain-text>
-            Cerrar 
-          </vaadin-button>
-          <vaadin-button visible="false" plain-text>
-            Notificar 
-          </vaadin-button>
-         </vaadin-horizontal-layout>
-        </vaadin-horizontal-layout>
-       </vaadin-horizontal-layout>
-       <vaadin-horizontal-layout width-full height="40%" _id="seccion2">
-        <vaadin-horizontal-layout>
-         <vaadin-label plain-text>
-           Subtitulo Seccion 
-         </vaadin-label>
-         <vaadin-label plain-text>
-           Usuario Creador 
-         </vaadin-label>
-         <vaadin-label plain-text>
-           Fecha Creación 
-         </vaadin-label>
-         <vaadin-label plain-text>
-           Numero mensajes 
-         </vaadin-label>
-         <vaadin-image caption="Me gusta"></vaadin-image>
-        </vaadin-horizontal-layout>
-       </vaadin-horizontal-layout>
-      </vaadin-vertical-layout>
-     </vaadin-horizontal-layout>
-     <vaadin-horizontal-layout size-full>
-      <vaadin-vertical-layout size-full :expand>
-       <vaadin-horizontal-layout width-full height="60%" _id="seccion1">
-        <vaadin-horizontal-layout>
-         <vaadin-link caption="EnlaceTema"></vaadin-link>
-        </vaadin-horizontal-layout>
-        <vaadin-horizontal-layout>
-         <vaadin-horizontal-layout>
-          <vaadin-combo-box width="184px" data-item-type="java.lang.String" _id="statusTema1">
-           <option item="Option1">Publico</option>
-           <option item="Option2">Privado</option>
-           <option item="Option3">Cerrado?</option>
-          </vaadin-combo-box>
-          <vaadin-button plain-text>
-            Eliminar 
-          </vaadin-button>
-          <vaadin-button plain-text>
-            Cerrar 
-          </vaadin-button>
-         </vaadin-horizontal-layout>
-        </vaadin-horizontal-layout>
-       </vaadin-horizontal-layout>
-       <vaadin-horizontal-layout width-full height="40%" _id="seccion21">
-        <vaadin-horizontal-layout>
-         <vaadin-label plain-text>
-           Subtitulo Seccion 
-         </vaadin-label>
-         <vaadin-label plain-text>
-           Usuario Creador 
-         </vaadin-label>
-         <vaadin-label plain-text>
-           Fecha Creación 
-         </vaadin-label>
-         <vaadin-label plain-text>
-           Numero mensajes 
-         </vaadin-label>
-         <vaadin-image caption="Me gusta"></vaadin-image>
-        </vaadin-horizontal-layout>
-       </vaadin-horizontal-layout>
-      </vaadin-vertical-layout>
-     </vaadin-horizontal-layout>
-    </vaadin-vertical-layout>
+   <vaadin-vertical-layout spacing="false" responsive margin="false">
+    <vaadin-horizontal-layout spacing="false" width-full>
+     <vaadin-button plain-text _id="irTema" :middle :center>
+       Tema1 
+     </vaadin-button>
+     <vaadin-vertical-layout size-auto>
+      <vaadin-label caption="Creador:" plain-text _id="creadorTema">
+        Robotking 
+      </vaadin-label>
+      <vaadin-label caption="Fecha de Creación:" plain-text _id="fechaCreacTema">
+        25/01/1997 
+      </vaadin-label>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout size-auto>
+      <vaadin-label caption="Número de mensajes:" plain-text _id="numMsgTema">
+        95 
+      </vaadin-label>
+      <vaadin-label caption="Me gustas:" plain-text _id="numMGTema">
+        75 
+      </vaadin-label>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout size-auto>
+      <vaadin-label caption="Último mensaje por:" plain-text _id="ultMsgTema">
+        Patata53 
+      </vaadin-label>
+     </vaadin-vertical-layout>
+    </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </body>
