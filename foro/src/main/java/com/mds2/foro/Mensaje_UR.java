@@ -12,6 +12,16 @@ public class Mensaje_UR extends Mensaje {
 	//public Escribir_mensaje _escribir_mensaje;
 	//public Interactuar_mensaje _interactuar_mensaje;
 
+	public Mensaje_UR() {
+		super();
+		
+		meGustaB.setVisible(true);
+		
+		responderMensaje.setVisible(true);
+		
+		notificarAdminB.setVisible(true);
+	}
+	
 	public void darMeGusta() {
 		throw new UnsupportedOperationException();
 	}
