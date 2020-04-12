@@ -18,9 +18,32 @@ public class Sección extends Seccion_Admin_ventana implements View {
 
 	public Sección() {
 		super();
-		  
 	
+		
+			eliminarSeccion.addClickListener(new Button.ClickListener() {
+				
+				@Override
+				public void buttonClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+				//	navigator.navigateTo("crearSeccion");
+					UI.getCurrent().getNavigator().navigateTo("eliminarSeccion");
+				}
+				
+			});
 			
+			irSeccion.addClickListener(new Button.ClickListener() {
+				
+				@Override
+				public void buttonClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+					UI.getCurrent().getNavigator().navigateTo("irSeccion");
+				}
+			});
+			
+			
+		statusTema.setVisible(false);
+		eliminarSeccion.setVisible(false);
+		
 	}
 
 }

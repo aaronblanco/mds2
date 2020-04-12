@@ -16,6 +16,10 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 	public SeccionVistaModerador _unnamed_SeccionVistaModerador_;
 	public CreacionSeccion _unnamed_CreacionSeccion_;
 
+	public Lista_Seccion_V_Moderador() {
+		crearNuevaSeccion.setVisible(true);
+	}
+	
 	public void crearSeccion() {
 		throw new UnsupportedOperationException();
 	}

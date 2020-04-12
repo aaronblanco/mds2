@@ -9,9 +9,24 @@
   <vaadin-vertical-layout size-full>
    <vaadin-vertical-layout spacing="false" responsive margin="false">
     <vaadin-horizontal-layout spacing="false" width-full>
-     <vaadin-button plain-text _id="irTema" :middle :center>
-       Tema1 
-     </vaadin-button>
+     <vaadin-vertical-layout size-auto>
+      <vaadin-button plain-text _id="irTema">
+        Tema1 
+      </vaadin-button>
+      <vaadin-combo-box data-item-type="java.lang.String" _id="cambiarAcc">
+       <option item="Option1">Option 1</option>
+       <option item="Option2">Option 2</option>
+       <option item="Option3">Option 3</option>
+      </vaadin-combo-box>
+      <vaadin-horizontal-layout>
+       <vaadin-button plain-text _id="cerrarTema">
+         Cerrar 
+       </vaadin-button>
+       <vaadin-button plain-text _id="eliminarTema">
+         Eliminar 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
      <vaadin-vertical-layout size-auto>
       <vaadin-label caption="Creador:" plain-text _id="creadorTema">
         Robotking 
@@ -32,6 +47,14 @@
       <vaadin-label caption="Último mensaje por:" plain-text _id="ultMsgTema">
         Patata53 
       </vaadin-label>
+      <vaadin-horizontal-layout>
+       <vaadin-button width-full plain-text _id="darMG">
+         Me gusta 
+       </vaadin-button>
+       <vaadin-button plain-text _id="notificarAdmin">
+         Notificar 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
      </vaadin-vertical-layout>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
