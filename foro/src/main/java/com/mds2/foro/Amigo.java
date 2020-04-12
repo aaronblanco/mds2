@@ -8,6 +8,12 @@ public class Amigo extends VerPerfilGenerico {
 	//private Listener _listaAmigo;
 	public Lista_Amigo _unnamed_Lista_Amigo_;
 
+	
+	public Amigo() {
+		
+	}
+	
+	
 	public void anadirAmigo() {
 		throw new UnsupportedOperationException();
 	}

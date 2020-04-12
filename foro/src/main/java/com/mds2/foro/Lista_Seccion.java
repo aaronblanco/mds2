@@ -14,19 +14,7 @@ public class Lista_Seccion extends Seccion_Admin_lista{
 	//public Vector<Buscador_sección> _list_Buscador_sección = new Vector<Buscador_sección>();
 
 	public Lista_Seccion() {
-	
-		crearNuevaSeccion.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-			//	navigator.navigateTo("crearSeccion");
-				UI.getCurrent().getNavigator().navigateTo("crearSeccion");
-			}
-			
-		});
-		
-		
+
 		
 		buscarSeccionB.addClickListener(new Button.ClickListener() {
 			

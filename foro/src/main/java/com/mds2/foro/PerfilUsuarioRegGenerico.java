@@ -11,7 +11,8 @@ public class PerfilUsuarioRegGenerico {
 //	private Button _eliminarAmigo;
 //	private TextField _estado;
 	public Lista_Ultimo_mensaje _unnamed_Lista_Ultimo_mensaje_;
-
+	
+	
 	public void anadirAmigo() {
 		throw new UnsupportedOperationException();
 	}

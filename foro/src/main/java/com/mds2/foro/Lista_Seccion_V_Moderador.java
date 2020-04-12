@@ -7,6 +7,10 @@ import java.util.Vector;
 //import DCLv3.SeccionVistaModerador;
 //import DCLv3.CreacionSeccion;
 
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
+
 public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 	//private Button _crearSeccion;
 	public Moderador _unnamed_Moderador_;
@@ -18,6 +22,24 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 
 	public Lista_Seccion_V_Moderador() {
 		crearNuevaSeccion.setVisible(true);
+		
+		
+		
+		
+	crearNuevaSeccion.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+			//	navigator.navigateTo("crearSeccion");
+				UI.getCurrent().getNavigator().navigateTo("crearSeccion");
+			}
+			
+		});
+		
+		
+	
+	
 	}
 	
 	public void crearSeccion() {
