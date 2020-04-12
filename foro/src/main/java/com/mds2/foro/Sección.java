@@ -1,4 +1,4 @@
-package com.mds2.foro;
+ package com.mds2.foro;
 
 
 import com.vaadin.navigator.View;
