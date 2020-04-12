@@ -2,7 +2,10 @@ package com.mds2.foro;
 
 //import DCLv3.Lista_UsuarioReg;
 
-public class Mi_perfil {
+import com.vaadin.ui.*;
+import com.vaadin.ui.Button.ClickEvent;
+
+public class Mi_perfil extends Mi_Perfil_ventana{
 //	private Button _darseDeBaja;
 //	private Button _ocultarPerfil;
 //	private Button _cambiarDatos;
@@ -21,6 +24,47 @@ public class Mi_perfil {
 	public Lista_Solicitud _solicitud;
 	public Lista_UsuarioReg _unnamed_Lista_UsuarioReg_;
 
+	public Mi_perfil() {
+		
+		darseDeBaja.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("darseDeBaja");
+			}
+		});
+		
+		modificarPerfil.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("modificarPerfil");
+			}
+		});
+		
+		buscar.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("buscar");
+			}
+		});
+		
+		ocultarMiPerfil.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("ocultarMiPerfil");
+			}
+		});
+		
+	}
+	
+	
 	public void darseDeBaja() {
 		throw new UnsupportedOperationException();
 	}
