@@ -8,7 +8,7 @@ import com.vaadin.ui.UI;
 
 //import DCLv3.Tipo;
 
-public class Sección extends SeccionVistaAdministrador_ventana implements View {
+public class Sección extends Seccion_Admin_ventana implements View {
 //	private Tipo _tipo = DCLv3.Tipo.Publico;
 //	private Label _nombreSeccion;
 //	private Image _imagenSeccion;
@@ -20,30 +20,6 @@ public class Sección extends SeccionVistaAdministrador_ventana implements View 
 		super();
 		  
 	
-  	  	
-	
-	
-		
-			crearNuevaSeccion.addClickListener(new Button.ClickListener() {
-				
-				@Override
-				public void buttonClick(ClickEvent event) {
-					// TODO Auto-generated method stub
-				//	navigator.navigateTo("crearSeccion");
-					UI.getCurrent().getNavigator().navigateTo("crearSeccion");
-				}
-				
-			/*	@Override
-				public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
-					// TODO Auto-generated method stub
-				//	navigator.navigateTo("crearSeccion");
-					UI.getCurrent().getNavigator().navigateTo("crearSeccion");
-				}
-				*/
-				
-				
-				
-			});
 			
 	}
 
