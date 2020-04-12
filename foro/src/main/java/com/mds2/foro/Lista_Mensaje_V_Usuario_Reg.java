@@ -13,6 +13,12 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 	public Vector<Mensaje_UR> _list_Mensaje_UR = new Vector<Mensaje_UR>();
 	public CreacionMensaje _unnamed_CreacionMensaje_;
 
+	public Lista_Mensaje_V_Usuario_Reg() {
+		super();
+		
+		crearMensaje.setVisible(true);
+	}
+	
 	public void crearMensaje() {
 		throw new UnsupportedOperationException();
 	}

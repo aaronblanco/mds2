@@ -16,6 +16,14 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 	public Vector<Tema_UR> _list_Tema_UR = new Vector<Tema_UR>();
 	public CreacionTema _unnamed_CreacionTema_;
 
+	public Lista_Tema_V_Usuario_Reg() {
+		
+		super();
+		
+		crearTemaB.setVisible(true);
+		
+	}
+	
 	public void crearTema() {
 		throw new UnsupportedOperationException();
 	}
