@@ -30,7 +30,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 			}
 		});	
 		
-		cancelarCreacionTema.addClickListener(new Button.ClickListener() {
+		cancelarCreacionMsg.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
 			
@@ -42,7 +42,17 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 			
 		});	
 		
-		
+		adjuntarMediaMsg.addClickListener(new Button.ClickListener() {
+			
+			//cancelar();
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+			}
+			
+		});	
 		
 	}
 	

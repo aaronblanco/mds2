@@ -1,5 +1,9 @@
 package com.mds2.foro;
 
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
+
 public class Mensaje_UR extends Mensaje {
 //	private Button _darMeGusta;
 //	private Button _responder;
@@ -14,6 +18,17 @@ public class Mensaje_UR extends Mensaje {
 
 	public Mensaje_UR() {
 		super();
+		
+		meGustaB.addClickListener(new Button.ClickListener() {
+			
+						
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+			}
+			
+		});	
 		
 		meGustaB.setVisible(true);
 		

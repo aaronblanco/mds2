@@ -1,6 +1,9 @@
 package com.mds2.foro;
 
 import com.vaadin.navigator.View;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
 
 //import Package.Lista_Tema_V_Usuario_Reg;
 
@@ -15,6 +18,29 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 	
 	public CreacionTema() {
 		
+		crearTema.addClickListener(new Button.ClickListener() {
+			
+			//cancelar();
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+			}
+			
+		});	
+		
+		cancelarCreacionTema.addClickListener(new Button.ClickListener() {
+			
+			//cancelar();
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+			}
+			
+		});	
 		
 		
 	}

@@ -1,5 +1,9 @@
 package com.mds2.foro;
 
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
+
 //import DCLv3.Lista_Ticket;
 //import DCLv3.PanelAdministracionGenerico;
 
@@ -15,6 +19,43 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 	//public Buscar_usuario _buscar_usuario;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
 
+	public Panel_de_administración_vista_administrador() {
+		
+		modNumUM.setVisible(true);
+		
+		buscador.setVisible(true);
+		
+		configPubliAdmin.setVisible(true);
+		
+		modNumUM.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("irTema");
+			}
+		});	
+		
+		buscador.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("irTema");
+			}
+		});	
+		
+		configPubliAdmin.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("irTema");
+			}
+		});	
+		
+	}
+	
 	public void modificarNumUltimoMensaje() {
 		throw new UnsupportedOperationException();
 	}

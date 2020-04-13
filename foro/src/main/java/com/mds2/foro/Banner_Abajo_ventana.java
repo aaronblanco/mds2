@@ -21,6 +21,7 @@ public class Banner_Abajo_ventana extends VerticalLayout {
 	protected VerticalLayout bannerAbajo;
 	protected Button avisoLegal;
 	protected Button faq;
+	protected Button soporte;
 
 	public Banner_Abajo_ventana() {
 		Design.read(this);

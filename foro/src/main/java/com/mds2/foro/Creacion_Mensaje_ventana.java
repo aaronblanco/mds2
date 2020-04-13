@@ -27,7 +27,8 @@ public class Creacion_Mensaje_ventana extends VerticalLayout {
 	protected Label fechaCreacion;
 	protected RichTextArea textoTema;
 	protected Button crearMensaje;
-	protected Button cancelarCreacionTema;
+	protected Button cancelarCreacionMsg;
+	protected Button adjuntarMediaMsg;
 
 	public Creacion_Mensaje_ventana() {
 		Design.read(this);
