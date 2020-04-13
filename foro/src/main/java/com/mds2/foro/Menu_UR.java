@@ -1,6 +1,7 @@
 package com.mds2.foro;
 
 import com.vaadin.data.TreeData;
+import com.vaadin.data.provider.DataProvider;
 import com.vaadin.data.provider.TreeDataProvider;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.Navigator;
@@ -8,7 +9,7 @@ import com.vaadin.ui.*;
 
 //import Package2.iMenu_UR;
 
-public class Menu_UR extends Menu_moderador_ventana{
+public class Menu_UR extends Menu_UNR{
 
 	private Button _desconectarse;
 	private TextField _foroDesplegable;
@@ -19,37 +20,19 @@ public class Menu_UR extends Menu_moderador_ventana{
 	
 	
 	public Menu_UR(){
-		
-		
-		
-		menuMod = new Tree<String>();
-		
-		TreeData<String> data = new TreeData<String>();
-	    data.addItems(null, "Desktops", "Laptops")
-	        .addItems("Desktops", "Dell GX240", "Dell GX260", "Dell GX280")
-	        .addItems("Laptops", "IBM T40", "IBM T43", "IBM T60");
 
-	    
-	    
-	    
-	    
-	    
-	    TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(data);
-	  
-	  
-	    menuMod.setDataProvider(inMemoryDataProvider);
-	    menuMod.expand("Desktops", "Laptops");
-	    menuMod.setItemIconGenerator(item -> {
-	        if (item.equals("Desktops")) {
-	            return VaadinIcons.DESKTOP;
-	        } else if (item.equals("Laptops")) {
-	            return VaadinIcons.LAPTOP;
-	        }
-	        return null;
-	    });
+		this.removeComponent(this.components.get(0));
+		this.removeComponent(this.components.get(1));
+		Foro_desplegable foro = new Foro_desplegable();
+	    Tree<String> var = foro.listaDesplegable();
+	    TreeData<String> datos = var.getTreeData();
+		datos.removeItem("Iniciar sesión");
+		datos.removeItem("Registrarse");
+		datos.addItem(null, "Cerrar sesión");
+		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 		
-	  
-		
+		var.setDataProvider( inMemoryDataProvider);
+		this.addComponent(var);
 		
 	}
 	
