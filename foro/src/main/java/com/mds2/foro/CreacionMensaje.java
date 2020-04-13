@@ -1,6 +1,9 @@
 package com.mds2.foro;
 
 import com.vaadin.navigator.View;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
 
 //import Package.Lista_Mensaje_V_Usuario_Reg;
 
@@ -14,6 +17,30 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 
 	public CreacionMensaje(){
 		
+		
+		
+		crearMensaje.addClickListener(new Button.ClickListener() {
+			
+			//enviar();
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("crearMensaje");
+			}
+		});	
+		
+		cancelarCreacionTema.addClickListener(new Button.ClickListener() {
+			
+			//cancelar();
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+			}
+			
+		});	
 		
 		
 		
@@ -32,6 +59,10 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	}
 
 	public void enviar() {
+		throw new UnsupportedOperationException();
+	}
+	
+	public void cancelar() {
 		throw new UnsupportedOperationException();
 	}
 }
