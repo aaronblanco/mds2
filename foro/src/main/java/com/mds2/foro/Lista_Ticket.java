@@ -2,11 +2,18 @@ package com.mds2.foro;
 
 //import Package.Panel_de_administración_vista_administrador;
 
-public class Lista_Ticket {
+public class Lista_Ticket extends Sistema_Ticket_lista{
 //	private Button _verTicket;
 	public Panel_de_administración_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
 	public Ticket _unnamed_Ticket_;
 
+	public Lista_Ticket() {
+		
+		
+		
+	}
+	
+	
 	public void cerrarTicket() {
 		throw new UnsupportedOperationException();
 	}

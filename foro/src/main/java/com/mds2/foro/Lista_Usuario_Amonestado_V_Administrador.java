@@ -5,5 +5,12 @@ import java.util.Vector;
 
 public class Lista_Usuario_Amonestado_V_Administrador extends Lista_Usuario_Amonestado {
 	public Panel_de_administración_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
-	public Vector<PefilUsuarioRegAdmin> _list_Usuario_registrado = new Vector<PefilUsuarioRegAdmin>();
+	public Vector<PerfilUsuarioRegAdmin> _list_Usuario_registrado = new Vector<PerfilUsuarioRegAdmin>();
+	
+	public Lista_Usuario_Amonestado_V_Administrador() {
+		
+		
+		
+	}
+	
 }

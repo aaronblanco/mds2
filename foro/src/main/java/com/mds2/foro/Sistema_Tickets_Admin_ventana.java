@@ -21,7 +21,7 @@ import com.vaadin.ui.declarative.Design;
 public class Sistema_Tickets_Admin_ventana extends VerticalLayout {
 	protected Button cerrarTicket;
 	protected TextField txtTicket;
-	protected Button enviarTicket;
+	protected Button responderTicket;
 
 	public Sistema_Tickets_Admin_ventana() {
 		Design.read(this);

@@ -7,7 +7,17 @@
  </head>
  <body>
   <vaadin-vertical-layout size-full>
-   <vaadin-vertical-layout _id="dashTicketLista"></vaadin-vertical-layout>
+   <vaadin-vertical-layout>
+    <vaadin-text-field caption="Cuéntanos tu problema" width-full _id="cuerpoTicket"></vaadin-text-field>
+    <vaadin-horizontal-layout>
+     <vaadin-button plain-text _id="enviarTicket">
+       Enviar 
+     </vaadin-button>
+     <vaadin-button plain-text _id="cancelarTicket">
+       Cancelar 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </body>
 </html>
