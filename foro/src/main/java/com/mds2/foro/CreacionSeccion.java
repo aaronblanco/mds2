@@ -43,7 +43,7 @@ public class CreacionSeccion extends Creacion_Seccion_vista implements View {
 		});	
 		
 		
-		//Esto es un upload, no un boton
+		//Esto es un upload, no un boton hay que ver como funciona
 //		cargarImagenSeccionB.addClickListener(new Button.ClickListener() {
 //			
 //			//cancelar();

@@ -26,7 +26,7 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 		
 		
 		
-	crearNuevaSeccion.addClickListener(new Button.ClickListener() {
+		crearNuevaSeccion.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {

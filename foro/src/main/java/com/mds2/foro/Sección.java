@@ -17,7 +17,7 @@ public class Sección extends Seccion_Admin_ventana implements View {
 	public Lista_Tema _temas;
 
 	public Sección() {
-		super();
+		
 	
 		
 			eliminarSeccion.addClickListener(new Button.ClickListener() {

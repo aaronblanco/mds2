@@ -9,11 +9,7 @@ public class Mensaje_moderador extends Mensaje_UR {
 	public Mensaje_moderador() {
 		super();
 		
-		meGustaB.setVisible(true);
 		
-		responderMensaje.setVisible(true);
-		
-		notificarAdminB.setVisible(true);
 		
 		
 	}
