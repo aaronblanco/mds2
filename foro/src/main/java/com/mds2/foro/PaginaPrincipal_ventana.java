@@ -22,6 +22,7 @@ public class PaginaPrincipal_ventana extends VerticalLayout {
 	protected Panel panelMenu;
 	protected Panel panelMain;
 	protected Panel panelPublicidad;
+	protected VerticalLayout bannerAbajo;
 
 	public PaginaPrincipal_ventana() {
 		Design.read(this);

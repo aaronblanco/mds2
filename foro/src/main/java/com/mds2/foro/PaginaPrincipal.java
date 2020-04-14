@@ -15,13 +15,13 @@ public class PaginaPrincipal extends PaginaPrincipal_ventana implements View{
 		
 			Lista_Seccion_V_administrador sec = new Lista_Seccion_V_administrador ();
 			Menu_UNR menu = new Menu_UNR();
-			
+			Banner ban = new Banner();
 	
 		
 		    
 			this.panelMenu.setContent(menu);
 			this.panelMain.setContent(sec);
-
+			this.bannerAbajo.addComponent(ban);
 	
 			
 	}
