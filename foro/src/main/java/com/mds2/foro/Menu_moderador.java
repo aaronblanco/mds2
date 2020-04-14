@@ -13,17 +13,18 @@ public class Menu_moderador extends Menu_UR implements View {
 	public Menu_moderador(){
 		
 	
-	/*	Foro_desplegable foro = new Foro_desplegable();
+	
+		this.removeComponent(this.components.get(1));
+		
+		Foro_desplegable foro = new Foro_desplegable();
 	    Tree<String> var = foro.listaDesplegable();
 	    TreeData<String> datos = var.getTreeData();
-		datos.removeItem("Iniciar sesión");
-		datos.removeItem("Registrarse");
-		datos.addItem(null, "Cerrar sesión");
+		datos.addItem(null, "Panel de administración");
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 		
 		var.setDataProvider( inMemoryDataProvider);
 		this.addComponent(var);
-		*/
+		
 		
 	}
 	

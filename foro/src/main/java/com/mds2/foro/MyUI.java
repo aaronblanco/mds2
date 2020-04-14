@@ -43,7 +43,8 @@ public class MyUI extends UI {
      	 navigator.addView("crearSeccion", new CreacionSeccion());
      	 navigator.addView("faq", new FAQ());
      	 navigator.addView("avisoLegal", new Aviso_legal());
-     	 
+     	 navigator.addView("Iniciar sesión", new Iniciar_sesión());
+     	 navigator.addView("Registrarse", new Registrarse());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

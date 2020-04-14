@@ -4,7 +4,11 @@ import com.vaadin.data.TreeData;
 import com.vaadin.data.provider.TreeDataProvider;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
+import com.vaadin.shared.Registration;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Tree;
+import com.vaadin.ui.UI;
 
 //import Package2.iMenu_UNR;
 
@@ -20,11 +24,20 @@ public class Menu_UNR extends Menu_moderador_ventana implements View {
 		
 		
 		Foro_desplegable foro = new Foro_desplegable();
-	    this.addComponent(foro.listaDesplegable());
+	
+		Tree<String> var = foro.listaDesplegable();
 	    
 	    
 	    
+	 
+		
+		
+		 
+	   
 	    
+	    
+	    
+	    this.addComponent(var);
 	    
 	    
 	    

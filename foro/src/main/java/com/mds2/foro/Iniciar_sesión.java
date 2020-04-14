@@ -1,10 +1,11 @@
 package com.mds2.foro;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Iniciar_sesión extends Iniciar_sesion_ventana{
+public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 //	private TextField _nombreUsuario;
 //	private TextField _contrasena;
 //	private Button _recordar;
