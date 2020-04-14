@@ -21,6 +21,9 @@ public class PerfilUsuarioRegMod extends PerfilUsuarioRegGenerico {
 			
 		});
 		
+		interaccionarSancionAdmin.setVisible(true);
+
+		
 	}
 	
 	public void amonestar() {

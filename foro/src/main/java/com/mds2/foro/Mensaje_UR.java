@@ -19,16 +19,7 @@ public class Mensaje_UR extends Mensaje {
 	public Mensaje_UR() {
 		super();
 		
-		meGustaB.addClickListener(new Button.ClickListener() {
-			
-						
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
-			}
-			
-		});	
+		
 		
 		meGustaB.setVisible(true);
 		

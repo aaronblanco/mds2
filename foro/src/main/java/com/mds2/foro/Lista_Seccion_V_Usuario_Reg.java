@@ -10,7 +10,7 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 	public SeccionVistaUR _unnamed_SeccionVistaUR_;
 	
 	public Lista_Seccion_V_Usuario_Reg() {
-		
+		super();
 		
 	}
 	
