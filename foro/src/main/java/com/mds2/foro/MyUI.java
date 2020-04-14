@@ -45,6 +45,8 @@ public class MyUI extends UI {
      	 navigator.addView("avisoLegal", new Aviso_legal());
      	 navigator.addView("Iniciar sesión", new Iniciar_sesión());
      	 navigator.addView("Registrarse", new Registrarse());
+         navigator.addView("Panel de administración", new Panel_de_administración_vista_moderador());
+         
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
