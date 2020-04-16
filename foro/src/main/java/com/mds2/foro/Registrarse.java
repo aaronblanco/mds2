@@ -1,6 +1,9 @@
 package com.mds2.foro;
 
 import com.vaadin.navigator.View;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class Registrarse extends Registrarse_ventana implements View {
 //	private TextField _nombreUser;
@@ -17,8 +20,21 @@ public class Registrarse extends Registrarse_ventana implements View {
 	public Registrarse() {
 		
 		
-		
-		
+	
+	//	enlaceIniciarSesion.setStyleName(Button.DESIGN_ATTR_PLAIN_TEXT);
+		enlaceIniciarSesion.addStyleName("link");
+		enlaceIniciarSesion.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+
+				UI.getCurrent().getNavigator().navigateTo("Iniciar sesión");
+
+
+			}
+			
+		});
 		
 		
 		

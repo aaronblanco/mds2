@@ -4,6 +4,7 @@ import com.vaadin.data.TreeData;
 import com.vaadin.data.provider.TreeDataProvider;
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Tree;
+import com.vaadin.ui.UI;
 
 //import Package2.iMenu_moderador;
 
@@ -23,6 +24,7 @@ public class Menu_moderador extends Menu_UR implements View {
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 		
 		var.setDataProvider( inMemoryDataProvider);
+		var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()));
 		this.addComponent(var);
 		
 		

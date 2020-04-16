@@ -31,9 +31,10 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-			//	navigator.navigateTo("crearSeccion");
+
 				UI.getCurrent().getNavigator().navigateTo("crearSeccion");
-				
+
+
 			}
 			
 		});

@@ -35,8 +35,7 @@ public class MyUI extends UI {
 	
 
     	   setContent(pag);
-
-	
+    
 	
     	 Navigator navigator = new Navigator(this , this);
          navigator.addView("", pag.getClass());

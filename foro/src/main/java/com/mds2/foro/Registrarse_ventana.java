@@ -5,7 +5,6 @@ import com.vaadin.annotations.DesignRoot;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Link;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Upload;
@@ -31,7 +30,7 @@ public class Registrarse_ventana extends FormLayout {
 	protected TextField descripcion;
 	protected Upload uploadImage;
 	protected Button registro;
-	protected Link enlaceIniciarSesion;
+	protected Button enlaceIniciarSesion;
 
 	public Registrarse_ventana() {
 		Design.read(this);

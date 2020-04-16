@@ -32,6 +32,7 @@ public class Menu_UR extends Menu_UNR{
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 		
 		var.setDataProvider( inMemoryDataProvider);
+		var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()));
 		this.addComponent(var);
 		
 	}
