@@ -6,6 +6,7 @@ import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class PaginaPrincipal extends PaginaPrincipal_ventana implements View{
@@ -19,12 +20,34 @@ public class PaginaPrincipal extends PaginaPrincipal_ventana implements View{
 	
 		
 		    
-			this.panelMenu.addComponent(menu);
-			this.panelMain.addComponent(sec);
+			this.panelMenu.setContent(menu);
+			
+			this.panelMain.setContent(sec);
+			
 			this.bannerAbajo.addComponent(ban);
 	
 			
 	}
+	
+	public PaginaPrincipal(VerticalLayout ventana ) {
+		
+		
+	
+		Menu_UNR menu = new Menu_UNR();
+		Banner_general ban = new Banner_general();
+
+	
+	    
+		this.panelMenu.setContent(menu);
+		
+		this.panelMain.setContent(ventana);
+		
+		this.bannerAbajo.addComponent(ban);
+
+		
+}
+	
+	
 	
 
 }
