@@ -39,14 +39,30 @@ public class MyUI extends UI {
 	
     	 Navigator navigator = new Navigator(this , this);
          navigator.addView("", pag.getClass());
-     	 navigator.addView("crearSeccion", new Usuario_no_registrado(new CreacionSeccion()));
+     	
      	 
      	 navigator.addView("faq", new Usuario_no_registrado( new FAQ()));
      	 navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
      	 navigator.addView("Iniciar sesión",  new Usuario_no_registrado(new Iniciar_sesión()));
      	 navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
      	 
-         navigator.addView("Panel de administración", new Panel_de_administración_vista_moderador());
+     	 
+     	 
+     	 
+     	 
+     	  navigator.addView("crearSeccion", new Usuario_registrado(new CreacionSeccion()));
+    	  navigator.addView("Mi perfil", new Usuario_registrado(new PerfilUsuarioRegAdmin()));
+      	 
+      	 
+     	 
+     	 
+         navigator.addView("Panel de administración mod", new Moderador(new Panel_de_administración_vista_moderador()) );
+         navigator.addView("Panel de administración", new Administrador(new Panel_de_administración_vista_administrador()) );
+         
+         
+         
+         
+         
          
     }
 
