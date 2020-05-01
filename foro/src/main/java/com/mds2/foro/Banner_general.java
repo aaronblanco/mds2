@@ -19,6 +19,7 @@ public class Banner_general extends Banner_Abajo_ventana{
 
 	public Banner_general() {
 		
+		soporte.addStyleName("link");
 		soporte.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
@@ -31,6 +32,7 @@ public class Banner_general extends Banner_Abajo_ventana{
 			
 		});	
 		
+		faq.addStyleName("link");
 		faq.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
@@ -43,6 +45,7 @@ public class Banner_general extends Banner_Abajo_ventana{
 			
 		});	
 		
+		avisoLegal.addStyleName("link");
 		avisoLegal.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();

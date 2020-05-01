@@ -28,10 +28,12 @@ public class Menu_UR extends Menu_UNR{
 	    TreeData<String> datos = var.getTreeData();
 		datos.removeItem("Iniciar sesión");
 		datos.removeItem("Registrarse");
+		datos.addItem(null, "Mi perfil");
 		datos.addItem(null, "Cerrar sesión");
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 		
 		var.setDataProvider( inMemoryDataProvider);
+		var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()));
 		this.addComponent(var);
 		
 	}
