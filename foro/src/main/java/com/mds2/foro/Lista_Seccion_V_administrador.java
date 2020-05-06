@@ -13,4 +13,7 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 		super();
 	}
 	
+	
+	
+	
 }
