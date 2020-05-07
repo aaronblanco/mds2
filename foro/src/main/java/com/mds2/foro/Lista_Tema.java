@@ -9,7 +9,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Lista_Tema extends Tema_Admin_lista {
+public class Lista_Tema extends Lista_Tema_ventana {
 	//private Orden _orden = DCLv3.Orden.Relevancia;
 	public Sección _sección;
 	public Vector<Tema> _list_Tema = new Vector<Tema>();

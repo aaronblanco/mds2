@@ -7,7 +7,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 //import Package.Lista_Seccion_V_Moderador;
 
-public class CreacionSeccion extends Creacion_Seccion_vista implements View {
+public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 	//private TextField _tituloSeccion;
 //	private TextField _descipcionSeccion;
 //	private Button _adjuntarImagen;

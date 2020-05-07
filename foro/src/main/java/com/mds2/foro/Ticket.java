@@ -6,7 +6,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 //import Package.Sistema_de_tickets;
 
-public class Ticket extends Sistema_Tickets_Admin_ventana{
+public class Ticket extends Ticket_ventana{
 //	private Button _enviar;
 //	private TextField _cuerpoTicket;
 //	private Button _cerrarTicket;

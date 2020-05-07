@@ -7,7 +7,7 @@ import java.util.Vector;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Lista_Mensaje extends Mensaje_Administrador_lista{
+public class Lista_Mensaje extends Lista_Mensaje_ventana{
 //	private Label _tituloTema;
 //	private Label _subtituloDescripcion;
 //	private Label _numTotalMensajes;
