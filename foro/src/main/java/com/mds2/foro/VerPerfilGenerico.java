@@ -1,6 +1,6 @@
 package com.mds2.foro;
 
-public class VerPerfilGenerico  {
+public class VerPerfilGenerico  extends VerPerfilGenerico_ventana{
 	//private Button _verPerfilUsuairo;
 	public ME_UsuarioReg _unnamed_ME_UsuarioReg_;
 
