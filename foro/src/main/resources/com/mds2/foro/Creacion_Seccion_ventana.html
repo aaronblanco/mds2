@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-vertical-layout size-full :expand="0.4">
+    <vaadin-vertical-layout size-auto>
+     <vaadin-text-field caption="Titulo"></vaadin-text-field>
+     <vaadin-text-field caption="Subtitulo"></vaadin-text-field>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout size-full :expand="0.6">
+    <vaadin-vertical-layout responsive size-full :expand="0.8">
+     <vaadin-upload button-caption="Cargar imagen" _id="cargarImagenSeccionB" :middle></vaadin-upload>
+     <vaadin-image icon="fonticon://Vaadin-Icons/e7fc" width="100px" height="100px" :middle></vaadin-image>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout size-full :expand="0.2">
+     <vaadin-horizontal-layout width-full>
+      <vaadin-button plain-text _id="crearSeccionB">
+        Enviar 
+      </vaadin-button>
+      <vaadin-button plain-text _id="cancelarSeccionB">
+        Cancelar 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

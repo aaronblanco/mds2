@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-horizontal-layout width-full>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-combo-box caption="Estado:" width="184px" data-item-type="java.lang.String" _id="statusTema">
+      <option item="Option1">Relevancia</option>
+      <option item="Option2">Fecha</option>
+     </vaadin-combo-box>
+     <vaadin-button plain-text _id="crearTemaB" :bottom>
+       Crear Tema 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout width-full :bottom>
+     <vaadin-button plain-text _id="buscarTemaB">
+       Buscar 
+     </vaadin-button>
+     <vaadin-text-field width-full value="Buscar..." _id="buscarTemaTF" :expand></vaadin-text-field>
+    </vaadin-horizontal-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-vertical-layout _id="listaTemas"></vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>
