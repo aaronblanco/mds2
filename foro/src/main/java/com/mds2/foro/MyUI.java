@@ -31,7 +31,7 @@ public class MyUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
 
 		
-    	 Usuario_no_registrado pag = 	new Usuario_no_registrado();
+    	 Usuario_no_registrado pag = new Usuario_no_registrado();
 	
 
     	 setContent(pag);
