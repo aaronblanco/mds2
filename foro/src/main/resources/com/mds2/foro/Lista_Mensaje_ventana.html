@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-vertical-layout margin="false" _id="textoMensajeCreacion">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-vertical-layout size-auto>
+      <vaadin-horizontal-layout>
+       <vaadin-button plain-text _id="volverTema">
+         Volver a -Tema- 
+       </vaadin-button>
+       <vaadin-button plain-text _id="crearMensaje">
+         Crear mensaje 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout size-auto>
+      <vaadin-horizontal-layout>
+       <vaadin-text-field _id="buscadorMensaje"></vaadin-text-field>
+       <vaadin-button plain-text _id="buscadorBoton">
+         Buscar 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-label caption="SubtituloDescripcion" plain-text _id="subtitle"></vaadin-label>
+     <vaadin-label caption="Numero de mensajes: 84" plain-text _id="numMensajes"></vaadin-label>
+     <vaadin-label caption="Usuario creador: Manolo56" plain-text _id="usuarioCreador"></vaadin-label>
+     <vaadin-label caption="Fecha de creacion: 17/02/2006" plain-text _id="fechaCreacion"></vaadin-label>
+    </vaadin-horizontal-layout>
+    <vaadin-vertical-layout _id="listaMensajeAdmin"></vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout _id="msgAdminLista"></vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

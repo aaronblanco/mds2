@@ -8,15 +8,15 @@
  <body>
   <vaadin-vertical-layout size-full>
    <vaadin-vertical-layout>
-    <vaadin-text-field caption="Cuéntanos tu problema" width-full _id="cuerpoTicket"></vaadin-text-field>
-    <vaadin-horizontal-layout>
-     <vaadin-button plain-text _id="enviarTicket">
-       Enviar 
+    <vaadin-vertical-layout>
+     <vaadin-button plain-text _id="cerrarTicket" :right>
+       Cerrar 
      </vaadin-button>
-     <vaadin-button plain-text _id="cancelarTicket">
-       Cancelar 
+     <vaadin-text-field caption="Chat ticket" width-full _id="txtTicket"></vaadin-text-field>
+     <vaadin-button plain-text _id="responderTicket" :center>
+       Responder 
      </vaadin-button>
-    </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </body>
