@@ -12,7 +12,7 @@ import com.vaadin.ui.UI;
 
 //import Package2.iMenu_UNR;
 
-public class Menu_UNR extends Menu_moderador_ventana implements View {
+public class Menu_UNR extends Menu_UNR_ventana implements View {
 //	private Button _iniciarSesion;
 //	private Button _registrarse;
 //	private TextField _foroDesplegable;

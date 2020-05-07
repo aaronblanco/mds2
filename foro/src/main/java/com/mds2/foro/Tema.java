@@ -6,7 +6,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 //import DCLv3.Tipo;
 
-public class Tema extends Tema_vista_Admin_ventana{
+public class Tema extends Tema_ventana{
 //	private Tipo _tipo = DCLv3.Tipo.Publico;
 //	private Label _titulo;
 //	private Label _fechaCreacion;

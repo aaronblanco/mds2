@@ -3,7 +3,7 @@ package com.mds2.foro;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Mensaje extends Mensaje_Administrador_ventana{
+public class Mensaje extends Mensaje_ventana{
 //	private Image _foto;
 //	private TextField _cuerpoMsg;
 //	private Label _fechaPost;

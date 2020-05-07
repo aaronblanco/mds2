@@ -4,7 +4,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class CreacionTicket extends Ticket_ventana{
+public class CreacionTicket extends CreacionTicket_ventana{
 
 	public CreacionTicket() {
 enviarTicket.addClickListener(new Button.ClickListener() {

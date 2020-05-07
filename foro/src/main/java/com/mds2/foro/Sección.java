@@ -8,7 +8,7 @@ import com.vaadin.ui.UI;
 
 //import DCLv3.Tipo;
 
-public class Sección extends Seccion_Admin_ventana implements View {
+public class Sección extends Seccion_ventana implements View {
 //	private Tipo _tipo = DCLv3.Tipo.Publico;
 //	private Label _nombreSeccion;
 //	private Image _imagenSeccion;

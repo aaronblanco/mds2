@@ -6,7 +6,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 //import Package.Lista_Ultimo_mensaje;
 
-public class PerfilUsuarioRegGenerico extends Visita_Perfil_Admin_ventana{
+public class PerfilUsuarioRegGenerico extends PerfilUsuarioRegGenerico_ventana{
 //	private TextField _nombre;
 //	private TextField _descripcion;
 //	private Image _foto;

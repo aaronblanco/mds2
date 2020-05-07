@@ -1,6 +1,6 @@
 package com.mds2.foro;
 
-public class PanelAdministracionGenerico extends Dashboard_Administrador_ventana{
+public class PanelAdministracionGenerico extends PanelAdministracionGenerico_ventana{
 	//private TextField _panelAdministracion;
 	
 	public PanelAdministracionGenerico() {
