@@ -1,12 +1,13 @@
 package com.mds2.foro;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 //import Package2.iBanner_general;
 
-public class Banner_general extends Banner_Abajo_ventana{
+public class Banner_general extends Banner_Abajo_ventana implements View{
 //	private Button _faq;
 //	private Button _avisoLegal;
 //	private TextField _foroDesplegable;

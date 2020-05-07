@@ -7,7 +7,13 @@
  </head>
  <body>
   <vaadin-vertical-layout size-full>
-   <vaadin-vertical-layout _id="bannerAbajo" :bottom :center>
+   <vaadin-vertical-layout size-full _id="banner" :expand="0.1"></vaadin-vertical-layout>
+   <vaadin-horizontal-layout size-full :expand="0.8">
+    <vaadin-panel size-full _id="panelMenu" :expand="0.2"></vaadin-panel>
+    <vaadin-panel size-full _id="panelMain" :expand="0.8"></vaadin-panel>
+    <vaadin-panel size-full _id="panelPublicidad" :expand="0.1"></vaadin-panel>
+   </vaadin-horizontal-layout>
+   <vaadin-vertical-layout size-full _id="bannerAbajo" :expand="0.1">
     <vaadin-horizontal-layout width-full>
      <vaadin-button plain-text _id="avisoLegal" :bottom :center>
        Aviso Legal 

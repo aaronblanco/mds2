@@ -5,7 +5,7 @@ import com.vaadin.ui.Layout;
 
 //import Package2.iUsuario_registrado;
 
-public class Usuario_registrado extends Usuario_no_registrado implements View{
+public class Usuario_registrado extends Banner_Usuario_registrado implements View{
 	//public iUsuario_registrado _iUsuario_registrado;
 	public Lista_Tema_V_Usuario_Reg _tema_vista_usuario_registrado;
 	public Lista_Mensaje_V_Usuario_Reg _mensaje_vista_usuario_registrado;
