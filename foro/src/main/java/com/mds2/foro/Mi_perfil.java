@@ -1,11 +1,13 @@
 package com.mds2.foro;
 
+import com.vaadin.navigator.View;
+
 //import DCLv3.Lista_UsuarioReg;
 
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Mi_perfil extends Mi_Perfil_ventana{
+public class Mi_perfil extends Mi_Perfil_ventana implements View {
 //	private Button _darseDeBaja;
 //	private Button _ocultarPerfil;
 //	private Button _cambiarDatos;

@@ -7,7 +7,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 //import Package2.iBanner_general;
 
-public class Banner_general extends Banner_Abajo_ventana implements View{
+public class Banner_general extends Banner_general_ventana implements View{
 //	private Button _faq;
 //	private Button _avisoLegal;
 //	private TextField _foroDesplegable;

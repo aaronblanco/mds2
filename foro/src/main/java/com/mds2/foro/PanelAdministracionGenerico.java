@@ -1,6 +1,8 @@
 package com.mds2.foro;
 
-public class PanelAdministracionGenerico extends PanelAdministracionGenerico_ventana{
+import com.vaadin.navigator.View;
+
+public class PanelAdministracionGenerico extends PanelAdministracionGenerico_ventana implements View{
 	//private TextField _panelAdministracion;
 	
 	public PanelAdministracionGenerico() {

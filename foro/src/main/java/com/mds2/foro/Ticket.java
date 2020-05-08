@@ -1,12 +1,13 @@
 package com.mds2.foro;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 //import Package.Sistema_de_tickets;
 
-public class Ticket extends Ticket_ventana{
+public class Ticket extends Ticket_ventana implements View{
 //	private Button _enviar;
 //	private TextField _cuerpoTicket;
 //	private Button _cerrarTicket;

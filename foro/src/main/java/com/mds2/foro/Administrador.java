@@ -24,15 +24,13 @@ public class Administrador extends Moderador implements View{
 		
 
 		Menu_moderador menu = new Menu_moderador();
-		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
+	
 		Lista_Seccion_V_administrador sec = new Lista_Seccion_V_administrador();
 	
 	    
 		this.panelMenu.setContent(menu);
 		
 		this.panelMain.setContent(sec);
-		
-		this.bannerAbajo.addComponent(ban);
 		
 		
 	}
@@ -51,8 +49,6 @@ public class Administrador extends Moderador implements View{
 		
 		this.panelMain.setContent(ventana);
 		
-		this.bannerAbajo.addComponent(ban);
-	
 		
 	}
 	

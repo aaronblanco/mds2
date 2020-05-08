@@ -1,6 +1,8 @@
 package com.mds2.foro;
 
-public class Recuperar_contrasena extends Recuperar_contrasena_ventana{
+import com.vaadin.navigator.View;
+
+public class Recuperar_contrasena extends Recuperar_contrasena_ventana implements View{
 //	private Label _correoElec;
 //	private Button _correoValidacion;
 	public Iniciar_sesión _unnamed_Iniciar_sesión_;

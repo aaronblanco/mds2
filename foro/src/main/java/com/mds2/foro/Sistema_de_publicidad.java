@@ -1,10 +1,11 @@
 package com.mds2.foro;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana{
+public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana implements View{
 	//private Button _subirAnuncio;
 	public Panel_de_administración_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
 	public Anuncio _unnamed_Anuncio_;

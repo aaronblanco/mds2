@@ -1,12 +1,13 @@
 package com.mds2.foro;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 //import DCLv3.Tipo;
 
-public class Tema extends Tema_ventana{
+public class Tema extends Tema_ventana implements View{
 //	private Tipo _tipo = DCLv3.Tipo.Publico;
 //	private Label _titulo;
 //	private Label _fechaCreacion;

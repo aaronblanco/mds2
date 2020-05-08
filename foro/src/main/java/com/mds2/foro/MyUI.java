@@ -59,7 +59,7 @@ public class MyUI extends UI {
      	 
          navigator.addView("Panel de administración mod", new Moderador(new Panel_de_administración_vista_moderador()) );
          navigator.addView("Panel de administración", new Administrador(new Panel_de_administración_vista_administrador()) );
-         
+         navigator.addView("Panel de publicidad", new Administrador(new Sistema_de_publicidad()) );
          
          
          
