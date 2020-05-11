@@ -30,6 +30,8 @@ public class Mi_Perfil_ventana extends VerticalLayout {
 	protected Image fotoMiPerfil;
 	protected Button darseDeBaja;
 	protected Button ocultarMiPerfil;
+	protected VerticalLayout listaAmigosVL;
+	protected VerticalLayout listaSolicitudesVL;
 
 	public Mi_Perfil_ventana() {
 		Design.read(this);
