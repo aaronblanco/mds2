@@ -7,44 +7,44 @@ package ormsamples;
 import org.orm.*;
 public class RetrieveAndUpdateMDS11920PFBlancoRoblesData {
 	public void retrieveAndUpdateTestData() throws PersistentException {
-		PersistentTransaction t = db_dcl.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			db_dcl.Notificacion dB_DCLNotificacion = db_dcl.NotificacionDAO.loadNotificacionByQuery(null, null);
+			com.mds2.foro.NotificacionBD dB_DCLNotificacion = com.mds2.foro.NotificacionDAO.loadNotificacionByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.NotificacionDAO.save(dB_DCLNotificacion);
-			db_dcl.Mensaje dB_DCLMensaje = db_dcl.MensajeDAO.loadMensajeByQuery(null, null);
+			com.mds2.foro.NotificacionDAO.save(dB_DCLNotificacion);
+			com.mds2.foro.MensajeBD dB_DCLMensaje = com.mds2.foro.MensajeDAO.loadMensajeByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.MensajeDAO.save(dB_DCLMensaje);
-			db_dcl.Usuarios dB_DCLUsuarios = db_dcl.UsuariosDAO.loadUsuariosByQuery(null, null);
+			com.mds2.foro.MensajeDAO.save(dB_DCLMensaje);
+			com.mds2.foro.UsuariosBD dB_DCLUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.UsuariosDAO.save(dB_DCLUsuarios);
-			db_dcl.Moderador dB_DCLModerador = db_dcl.ModeradorDAO.loadModeradorByQuery(null, null);
+			com.mds2.foro.UsuariosDAO.save(dB_DCLUsuarios);
+			com.mds2.foro.ModeradorBD dB_DCLModerador = com.mds2.foro.ModeradorDAO.loadModeradorByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.ModeradorDAO.save(dB_DCLModerador);
-			db_dcl.Seccion dB_DCLSeccion = db_dcl.SeccionDAO.loadSeccionByQuery(null, null);
+			com.mds2.foro.ModeradorDAO.save(dB_DCLModerador);
+			com.mds2.foro.SeccionBD dB_DCLSeccion = com.mds2.foro.SeccionDAO.loadSeccionByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.SeccionDAO.save(dB_DCLSeccion);
-			db_dcl.Tema dB_DCLTema = db_dcl.TemaDAO.loadTemaByQuery(null, null);
+			com.mds2.foro.SeccionDAO.save(dB_DCLSeccion);
+			com.mds2.foro.TemaBD dB_DCLTema = com.mds2.foro.TemaDAO.loadTemaByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.TemaDAO.save(dB_DCLTema);
-			db_dcl.Anuncio dB_DCLAnuncio = db_dcl.AnuncioDAO.loadAnuncioByQuery(null, null);
+			com.mds2.foro.TemaDAO.save(dB_DCLTema);
+			com.mds2.foro.AnuncioBD dB_DCLAnuncio = com.mds2.foro.AnuncioDAO.loadAnuncioByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.AnuncioDAO.save(dB_DCLAnuncio);
-			db_dcl.Ticket dB_DCLTicket = db_dcl.TicketDAO.loadTicketByQuery(null, null);
+			com.mds2.foro.AnuncioDAO.save(dB_DCLAnuncio);
+			com.mds2.foro.TicketBD dB_DCLTicket = com.mds2.foro.TicketDAO.loadTicketByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.TicketDAO.save(dB_DCLTicket);
-			db_dcl.media dB_DCLmedia = db_dcl.mediaDAO.loadMediaByQuery(null, null);
+			com.mds2.foro.TicketDAO.save(dB_DCLTicket);
+			com.mds2.foro.media dB_DCLmedia = com.mds2.foro.mediaDAO.loadMediaByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.mediaDAO.save(dB_DCLmedia);
-			db_dcl.imagenes dB_DCLimagenes = db_dcl.imagenesDAO.loadImagenesByQuery(null, null);
+			com.mds2.foro.mediaDAO.save(dB_DCLmedia);
+			com.mds2.foro.imagenes dB_DCLimagenes = com.mds2.foro.imagenesDAO.loadImagenesByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.imagenesDAO.save(dB_DCLimagenes);
-			db_dcl.Administrador dB_DCLAdministrador = db_dcl.AdministradorDAO.loadAdministradorByQuery(null, null);
+			com.mds2.foro.imagenesDAO.save(dB_DCLimagenes);
+			com.mds2.foro.AdministradorBD dB_DCLAdministrador = com.mds2.foro.AdministradorDAO.loadAdministradorByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.AdministradorDAO.save(dB_DCLAdministrador);
-			db_dcl.videos dB_DCLvideos = db_dcl.videosDAO.loadVideosByQuery(null, null);
+			com.mds2.foro.AdministradorDAO.save(dB_DCLAdministrador);
+			com.mds2.foro.videos dB_DCLvideos = com.mds2.foro.videosDAO.loadVideosByQuery(null, null);
 			// Update the properties of the persistent object
-			db_dcl.videosDAO.save(dB_DCLvideos);
+			com.mds2.foro.videosDAO.save(dB_DCLvideos);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -55,73 +55,73 @@ public class RetrieveAndUpdateMDS11920PFBlancoRoblesData {
 	
 	public void retrieveByCriteria() throws PersistentException {
 		System.out.println("Retrieving Notificacion by NotificacionCriteria");
-		db_dcl.NotificacionCriteria dB_DCLNotificacionCriteria = new db_dcl.NotificacionCriteria();
+		com.mds2.foro.NotificacionCriteria dB_DCLNotificacionCriteria = new com.mds2.foro.NotificacionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLNotificacionCriteria.idNotificacion.eq();
 		System.out.println(dB_DCLNotificacionCriteria.uniqueNotificacion());
 		
 		System.out.println("Retrieving Mensaje by MensajeCriteria");
-		db_dcl.MensajeCriteria dB_DCLMensajeCriteria = new db_dcl.MensajeCriteria();
+		com.mds2.foro.MensajeCriteria dB_DCLMensajeCriteria = new com.mds2.foro.MensajeCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLMensajeCriteria.idMensaje.eq();
 		System.out.println(dB_DCLMensajeCriteria.uniqueMensaje());
 		
 		System.out.println("Retrieving Usuarios by UsuariosCriteria");
-		db_dcl.UsuariosCriteria dB_DCLUsuariosCriteria = new db_dcl.UsuariosCriteria();
+		com.mds2.foro.UsuariosCriteria dB_DCLUsuariosCriteria = new com.mds2.foro.UsuariosCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLUsuariosCriteria.idUsuario.eq();
 		System.out.println(dB_DCLUsuariosCriteria.uniqueUsuarios());
 		
 		System.out.println("Retrieving Moderador by ModeradorCriteria");
-		db_dcl.ModeradorCriteria dB_DCLModeradorCriteria = new db_dcl.ModeradorCriteria();
+		com.mds2.foro.ModeradorCriteria dB_DCLModeradorCriteria = new com.mds2.foro.ModeradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLModeradorCriteria.idUsuario.eq();
 		System.out.println(dB_DCLModeradorCriteria.uniqueModerador());
 		
 		System.out.println("Retrieving Seccion by SeccionCriteria");
-		db_dcl.SeccionCriteria dB_DCLSeccionCriteria = new db_dcl.SeccionCriteria();
+		com.mds2.foro.SeccionCriteria dB_DCLSeccionCriteria = new com.mds2.foro.SeccionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLSeccionCriteria.idSeccion.eq();
 		System.out.println(dB_DCLSeccionCriteria.uniqueSeccion());
 		
 		System.out.println("Retrieving Tema by TemaCriteria");
-		db_dcl.TemaCriteria dB_DCLTemaCriteria = new db_dcl.TemaCriteria();
+		com.mds2.foro.TemaCriteria dB_DCLTemaCriteria = new com.mds2.foro.TemaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLTemaCriteria.idTema.eq();
 		System.out.println(dB_DCLTemaCriteria.uniqueTema());
 		
 		System.out.println("Retrieving Anuncio by AnuncioCriteria");
-		db_dcl.AnuncioCriteria dB_DCLAnuncioCriteria = new db_dcl.AnuncioCriteria();
+		com.mds2.foro.AnuncioCriteria dB_DCLAnuncioCriteria = new com.mds2.foro.AnuncioCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLAnuncioCriteria.idAnuncio.eq();
 		System.out.println(dB_DCLAnuncioCriteria.uniqueAnuncio());
 		
 		System.out.println("Retrieving Ticket by TicketCriteria");
-		db_dcl.TicketCriteria dB_DCLTicketCriteria = new db_dcl.TicketCriteria();
+		com.mds2.foro.TicketCriteria dB_DCLTicketCriteria = new com.mds2.foro.TicketCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLTicketCriteria.idTicket.eq();
 		System.out.println(dB_DCLTicketCriteria.uniqueTicket());
 		
 		System.out.println("Retrieving media by mediaCriteria");
-		db_dcl.mediaCriteria dB_DCLmediaCriteria = new db_dcl.mediaCriteria();
+		com.mds2.foro.mediaCriteria dB_DCLmediaCriteria = new com.mds2.foro.mediaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLmediaCriteria.idMedia.eq();
 		System.out.println(dB_DCLmediaCriteria.uniqueMedia());
 		
 		System.out.println("Retrieving imagenes by imagenesCriteria");
-		db_dcl.imagenesCriteria dB_DCLimagenesCriteria = new db_dcl.imagenesCriteria();
+		com.mds2.foro.imagenesCriteria dB_DCLimagenesCriteria = new com.mds2.foro.imagenesCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLimagenesCriteria.idMedia.eq();
 		System.out.println(dB_DCLimagenesCriteria.uniqueImagenes());
 		
 		System.out.println("Retrieving Administrador by AdministradorCriteria");
-		db_dcl.AdministradorCriteria dB_DCLAdministradorCriteria = new db_dcl.AdministradorCriteria();
+		com.mds2.foro.AdministradorCriteria dB_DCLAdministradorCriteria = new com.mds2.foro.AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLAdministradorCriteria.idUsuario.eq();
 		System.out.println(dB_DCLAdministradorCriteria.uniqueAdministrador());
 		
 		System.out.println("Retrieving videos by videosCriteria");
-		db_dcl.videosCriteria dB_DCLvideosCriteria = new db_dcl.videosCriteria();
+		com.mds2.foro.videosCriteria dB_DCLvideosCriteria = new com.mds2.foro.videosCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
 		//dB_DCLvideosCriteria.idMedia.eq();
 		System.out.println(dB_DCLvideosCriteria.uniqueVideos());
@@ -137,7 +137,7 @@ public class RetrieveAndUpdateMDS11920PFBlancoRoblesData {
 				//retrieveAndUpdateMDS11920PFBlancoRoblesData.retrieveByCriteria();
 			}
 			finally {
-				db_dcl.MDS11920PFBlancoRoblesPersistentManager.instance().disposePersistentManager();
+				com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

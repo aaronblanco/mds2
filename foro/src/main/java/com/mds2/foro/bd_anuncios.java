@@ -2,11 +2,10 @@ package com.mds2.foro;
 
 import java.util.List;
 import java.util.Vector;
-import db_dcl.Anuncio;
 
 public class bd_anuncios {
 	public Bd_principal _bd_principal_anuncios;
-	public Vector<Anuncio> _contiene_anuncios = new Vector<Anuncio>();
+	public Vector<AnuncioBD> _contiene_anuncios = new Vector<AnuncioBD>();
 
 	public List cargarAnuncioDisponible(boolean aEstado) {
 		throw new UnsupportedOperationException();

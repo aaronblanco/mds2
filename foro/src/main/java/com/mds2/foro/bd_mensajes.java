@@ -2,11 +2,10 @@ package com.mds2.foro;
 
 import java.util.List;
 import java.util.Vector;
-import db_dcl.Mensaje;
 
 public class bd_mensajes {
 	public Bd_principal _bd_principal_mensajes;
-	public Vector<Mensaje> _contiene_mensajes = new Vector<Mensaje>();
+	public Vector<MensajeBD> _contiene_mensajes = new Vector<MensajeBD>();
 
 	public List cargarMensajeUNR(int aIdTema, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {
 		throw new UnsupportedOperationException();

@@ -2,8 +2,6 @@ package com.mds2.foro;
 
 import java.util.List;
 
-import db_dcl.Moderador;
-
 public interface iModerador extends iBanner_Usuario_registrado, iMenu_moderador {
 
 	public List cargarUsuarioAmonestado();
@@ -18,7 +16,7 @@ public interface iModerador extends iBanner_Usuario_registrado, iMenu_moderador 
 
 	public List cargarMensajePropio(int aIdTema, int aIdUsuario);
 
-	public Moderador obtenerPerfilModerador(int aIdUser);
+	public ModeradorBD obtenerPerfilModerador(int aIdUser);
 
 	public boolean ocultarMensaje(int aIdMensaje);
 }

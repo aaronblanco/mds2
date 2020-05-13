@@ -2,11 +2,10 @@ package com.mds2.foro;
 
 import java.util.List;
 import java.util.Vector;
-import db_dcl.Tema;
 
 public class bd_temas {
 	public Bd_principal _bd_principal_temas;
-	public Vector<Tema> _contiene_temas = new Vector<Tema>();
+	public Vector<TemaBD> _contiene_temas = new Vector<TemaBD>();
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {
 		throw new UnsupportedOperationException();

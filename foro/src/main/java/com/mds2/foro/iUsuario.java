@@ -2,9 +2,6 @@ package com.mds2.foro;
 
 import java.util.List;
 
-import db_dcl.Administrador;
-import db_dcl.Moderador;
-
 public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public List cargarSolicitudes(int aIdUsuario);
@@ -67,9 +64,9 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public Usuario_registrado obtenerPerfilUsuario(int aIdUser);
 
-	public Administrador obtenerPerfilAdmin(int aIdUser);
+	public AdministradorBD obtenerPerfilAdmin(int aIdUser);
 
-	public Moderador obtenerPerfilMod(int aIdUser);
+	public ModeradorBD obtenerPerfilMod(int aIdUser);
 
 	public boolean eliminarNotificacion(int aIdNotificacion);
 

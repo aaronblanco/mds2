@@ -7,44 +7,44 @@ package ormsamples;
 import org.orm.*;
 public class DeleteMDS11920PFBlancoRoblesData {
 	public void deleteTestData() throws PersistentException {
-		PersistentTransaction t = db_dcl.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			db_dcl.Notificacion dB_DCLNotificacion = db_dcl.NotificacionDAO.loadNotificacionByQuery(null, null);
+			com.mds2.foro.NotificacionBD dB_DCLNotificacion = com.mds2.foro.NotificacionDAO.loadNotificacionByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.NotificacionDAO.delete(dB_DCLNotificacion);
-			db_dcl.Mensaje dB_DCLMensaje = db_dcl.MensajeDAO.loadMensajeByQuery(null, null);
+			com.mds2.foro.NotificacionDAO.delete(dB_DCLNotificacion);
+			com.mds2.foro.MensajeBD dB_DCLMensaje = com.mds2.foro.MensajeDAO.loadMensajeByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.MensajeDAO.delete(dB_DCLMensaje);
-			db_dcl.Usuarios dB_DCLUsuarios = db_dcl.UsuariosDAO.loadUsuariosByQuery(null, null);
+			com.mds2.foro.MensajeDAO.delete(dB_DCLMensaje);
+			com.mds2.foro.UsuariosBD dB_DCLUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.UsuariosDAO.delete(dB_DCLUsuarios);
-			db_dcl.Moderador dB_DCLModerador = db_dcl.ModeradorDAO.loadModeradorByQuery(null, null);
+			com.mds2.foro.UsuariosDAO.delete(dB_DCLUsuarios);
+			com.mds2.foro.ModeradorBD dB_DCLModerador = com.mds2.foro.ModeradorDAO.loadModeradorByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.ModeradorDAO.delete(dB_DCLModerador);
-			db_dcl.Seccion dB_DCLSeccion = db_dcl.SeccionDAO.loadSeccionByQuery(null, null);
+			com.mds2.foro.ModeradorDAO.delete(dB_DCLModerador);
+			com.mds2.foro.SeccionBD dB_DCLSeccion = com.mds2.foro.SeccionDAO.loadSeccionByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.SeccionDAO.delete(dB_DCLSeccion);
-			db_dcl.Tema dB_DCLTema = db_dcl.TemaDAO.loadTemaByQuery(null, null);
+			com.mds2.foro.SeccionDAO.delete(dB_DCLSeccion);
+			com.mds2.foro.TemaBD dB_DCLTema = com.mds2.foro.TemaDAO.loadTemaByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.TemaDAO.delete(dB_DCLTema);
-			db_dcl.Anuncio dB_DCLAnuncio = db_dcl.AnuncioDAO.loadAnuncioByQuery(null, null);
+			com.mds2.foro.TemaDAO.delete(dB_DCLTema);
+			com.mds2.foro.AnuncioBD dB_DCLAnuncio = com.mds2.foro.AnuncioDAO.loadAnuncioByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.AnuncioDAO.delete(dB_DCLAnuncio);
-			db_dcl.Ticket dB_DCLTicket = db_dcl.TicketDAO.loadTicketByQuery(null, null);
+			com.mds2.foro.AnuncioDAO.delete(dB_DCLAnuncio);
+			com.mds2.foro.TicketBD dB_DCLTicket = com.mds2.foro.TicketDAO.loadTicketByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.TicketDAO.delete(dB_DCLTicket);
-			db_dcl.media dB_DCLmedia = db_dcl.mediaDAO.loadMediaByQuery(null, null);
+			com.mds2.foro.TicketDAO.delete(dB_DCLTicket);
+			com.mds2.foro.media dB_DCLmedia = com.mds2.foro.mediaDAO.loadMediaByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.mediaDAO.delete(dB_DCLmedia);
-			db_dcl.imagenes dB_DCLimagenes = db_dcl.imagenesDAO.loadImagenesByQuery(null, null);
+			com.mds2.foro.mediaDAO.delete(dB_DCLmedia);
+			com.mds2.foro.imagenes dB_DCLimagenes = com.mds2.foro.imagenesDAO.loadImagenesByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.imagenesDAO.delete(dB_DCLimagenes);
-			db_dcl.Administrador dB_DCLAdministrador = db_dcl.AdministradorDAO.loadAdministradorByQuery(null, null);
+			com.mds2.foro.imagenesDAO.delete(dB_DCLimagenes);
+			com.mds2.foro.AdministradorBD dB_DCLAdministrador = com.mds2.foro.AdministradorDAO.loadAdministradorByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.AdministradorDAO.delete(dB_DCLAdministrador);
-			db_dcl.videos dB_DCLvideos = db_dcl.videosDAO.loadVideosByQuery(null, null);
+			com.mds2.foro.AdministradorDAO.delete(dB_DCLAdministrador);
+			com.mds2.foro.videos dB_DCLvideos = com.mds2.foro.videosDAO.loadVideosByQuery(null, null);
 			// Delete the persistent object
-			db_dcl.videosDAO.delete(dB_DCLvideos);
+			com.mds2.foro.videosDAO.delete(dB_DCLvideos);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -60,7 +60,7 @@ public class DeleteMDS11920PFBlancoRoblesData {
 				deleteMDS11920PFBlancoRoblesData.deleteTestData();
 			}
 			finally {
-				db_dcl.MDS11920PFBlancoRoblesPersistentManager.instance().disposePersistentManager();
+				com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

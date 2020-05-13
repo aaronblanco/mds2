@@ -2,9 +2,6 @@ package com.mds2.foro;
 
 import java.util.List;
 
-import db_dcl.Administrador;
-import db_dcl.Moderador;
-
 public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario_registrado, iCorreo_electronico, iMenu_moderador, iMenu_UNR, iModerador, iMenu_UR, iUsuario_creador_de_mensaje, iUsuario, iUsuario_no_registrado {
 
 	public List cargarAnuncioDisponible(boolean aEstado) {
@@ -67,7 +64,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public Administrador obtenerPerfilAdmin(int aIdUser) {
+	public AdministradorBD obtenerPerfilAdmin(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -115,7 +112,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public Moderador obtenerPerfilModerador(int aIdUser) {
+	public ModeradorBD obtenerPerfilModerador(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -243,7 +240,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public Moderador obtenerPerfilMod(int aIdUser) {
+	public ModeradorBD obtenerPerfilMod(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 

@@ -2,8 +2,6 @@ package com.mds2.foro;
 
 import java.util.List;
 
-import db_dcl.Administrador;
-
 public interface iAdministrador extends iBanner_general, iMenu_UR {
 
 
@@ -37,7 +35,7 @@ public interface iAdministrador extends iBanner_general, iMenu_UR {
 
 	public List cargarRespuestas(int aIdMensaje);
 
-	public Administrador obtenerPerfilAdmin(int aIdUser);
+	public AdministradorBD obtenerPerfilAdmin(int aIdUser);
 
 	public boolean subirAnuncio(String aAnuncioURL);
 

@@ -2,11 +2,10 @@ package com.mds2.foro;
 
 import java.util.List;
 import java.util.Vector;
-import db_dcl.Ticket;
 
 public class bd_tickets {
 	public Bd_principal _bd_principal_tickets;
-	public Vector<Ticket> _contiene_tickets = new Vector<Ticket>();
+	public Vector<TicketBD> _contiene_tickets = new Vector<TicketBD>();
 
 	public List cargarTicket(int aIdUsuario) {
 		throw new UnsupportedOperationException();
