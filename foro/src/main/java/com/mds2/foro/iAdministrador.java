@@ -1,24 +1,11 @@
 package com.mds2.foro;
 
-import DB_DCL.Administrador;
+import java.util.List;
+
+import db_dcl.Administrador;
 
 public interface iAdministrador extends iBanner_general, iMenu_UR {
 
-	public ListaSeccionesUNR[] cargarSeccionesUNR();
-
-	public ListaSeccionesUR[] cargarSeccionesUR();
-
-	public ListaSeccionesMod[] cargarSeccionesMod();
-
-	public List cargarSeccionesAdmin();
-
-	public ListaTemasUNR[] cargarTemasUNR();
-
-	public ListaTemasUR[] cargarTemasUR();
-
-	public List cargarTemasAdmin(int aIdSeccion);
-
-	public List cargarMensajeAdmin(int aIdTema, String aAccesibilidadPub, String aAccesibilidadElim);
 
 	public List cargarAnuncioDisponible(boolean aEstado);
 

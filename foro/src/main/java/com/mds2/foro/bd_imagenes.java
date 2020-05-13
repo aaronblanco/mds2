@@ -1,7 +1,7 @@
 package com.mds2.foro;
 
 import java.util.Vector;
-import DB_DCL.imagenes;
+import db_dcl.imagenes;
 
 public class bd_imagenes {
 	public Bd_principal _bd_principal_imagenes;

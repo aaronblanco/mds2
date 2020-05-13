@@ -1,7 +1,8 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
-import DB_DCL.Tema;
+import db_dcl.Tema;
 
 public class bd_temas {
 	public Bd_principal _bd_principal_temas;

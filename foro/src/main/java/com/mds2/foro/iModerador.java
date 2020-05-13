@@ -1,14 +1,10 @@
 package com.mds2.foro;
 
-import DB_DCL.Moderador;
+import java.util.List;
+
+import db_dcl.Moderador;
 
 public interface iModerador extends iBanner_Usuario_registrado, iMenu_moderador {
-
-	public List cargarSeccionesMod(String aAccesibilidadPub, Object aAccesibilidadPriv, String aAccesibilidadOc);
-
-	public List cargarTemasMod(int aIdSeccion, String aAccesibilidadPub, String aAccesibilidadPriv, String aAccesibilidadOc);
-
-	public List cargarMensajeMod(int aIdTema, String aAccesibilidadPub);
 
 	public List cargarUsuarioAmonestado();
 

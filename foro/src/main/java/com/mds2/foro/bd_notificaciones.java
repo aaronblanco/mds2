@@ -1,7 +1,8 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
-import DB_DCL.Notificacion;
+import db_dcl.Notificacion;
 
 public class bd_notificaciones {
 	public Bd_principal _bd_principal_notificaciones;

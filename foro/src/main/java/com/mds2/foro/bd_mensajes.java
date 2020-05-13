@@ -1,7 +1,8 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
-import DB_DCL.Mensaje;
+import db_dcl.Mensaje;
 
 public class bd_mensajes {
 	public Bd_principal _bd_principal_mensajes;

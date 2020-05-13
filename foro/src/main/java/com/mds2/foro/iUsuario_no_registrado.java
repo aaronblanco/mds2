@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import java.util.List;
+
 public interface iUsuario_no_registrado extends iBanner_general, iMenu_UNR {
 
 	public boolean registrarse(String aUsername, String aFullname, String aPassword, String aDescription, String aEmail, String aFotoURL);
