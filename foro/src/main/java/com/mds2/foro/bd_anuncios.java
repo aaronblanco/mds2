@@ -1,7 +1,8 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
-import DB_DCL.Anuncio;
+import db_dcl.Anuncio;
 
 public class bd_anuncios {
 	public Bd_principal _bd_principal_anuncios;

@@ -1,8 +1,8 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
-import DB_DCL.Usuarios;
-import Package.Usuario_registrado;
+import db_dcl.Usuarios;
 
 public class bd_usuarios {
 	public Bd_principal _bd_principal_usuario;

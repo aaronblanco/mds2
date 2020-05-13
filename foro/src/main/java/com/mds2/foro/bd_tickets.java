@@ -1,7 +1,8 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
-import DB_DCL.Ticket;
+import db_dcl.Ticket;
 
 public class bd_tickets {
 	public Bd_principal _bd_principal_tickets;

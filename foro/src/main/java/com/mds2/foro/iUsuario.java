@@ -1,12 +1,11 @@
 package com.mds2.foro;
 
-import Package.Usuario_registrado;
-import DB_DCL.Administrador;
-import DB_DCL.Moderador;
+import java.util.List;
+
+import db_dcl.Administrador;
+import db_dcl.Moderador;
 
 public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
-
-	public ListaAmigos[] cargarListaAmigos();
 
 	public List cargarSolicitudes(int aIdUsuario);
 

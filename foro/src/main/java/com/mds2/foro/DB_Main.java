@@ -1,42 +1,11 @@
 package com.mds2.foro;
 
-import DB_DCL.Administrador;
-import DB_DCL.Moderador;
-import Package.Usuario_registrado;
+import java.util.List;
 
-public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario_registrado, iCorreo_electr�nico, iMenu_moderador, iMenu_UNR, iModerador, iMenu_UR, iUsuario_creador_de_mensaje, iUsuario, iUsuario_no_registrado {
+import db_dcl.Administrador;
+import db_dcl.Moderador;
 
-	public ListaSeccionesUNR[] cargarSeccionesUNR() {
-		throw new UnsupportedOperationException();
-	}
-
-	public ListaSeccionesUR[] cargarSeccionesUR() {
-		throw new UnsupportedOperationException();
-	}
-
-	public ListaSeccionesMod[] cargarSeccionesMod() {
-		throw new UnsupportedOperationException();
-	}
-
-	public List cargarSeccionesAdmin() {
-		throw new UnsupportedOperationException();
-	}
-
-	public ListaTemasUNR[] cargarTemasUNR() {
-		throw new UnsupportedOperationException();
-	}
-
-	public ListaTemasUR[] cargarTemasUR() {
-		throw new UnsupportedOperationException();
-	}
-
-	public List cargarTemasAdmin(int aIdSeccion) {
-		throw new UnsupportedOperationException();
-	}
-
-	public List cargarMensajeAdmin(int aIdTema, String aAccesibilidadPub, String aAccesibilidadElim) {
-		throw new UnsupportedOperationException();
-	}
+public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario_registrado, iCorreo_electronico, iMenu_moderador, iMenu_UNR, iModerador, iMenu_UR, iUsuario_creador_de_mensaje, iUsuario, iUsuario_no_registrado {
 
 	public List cargarAnuncioDisponible(boolean aEstado) {
 		throw new UnsupportedOperationException();

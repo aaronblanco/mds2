@@ -1,8 +1,8 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
-import DB_DCL.Seccion;
-import DCLv3.Tipo;
+import db_dcl.Seccion;
 
 public class bd_secciones {
 	public Bd_principal _bd_principal_secciones;
