@@ -31,7 +31,12 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="diagramas/BASEDATOSDAO/lib/orm.jar">
+	<classpathentry kind="lib" path="diagramas/BASEDATOSDAO/orm.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Descargas/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
