@@ -72,7 +72,6 @@
 			<artifactId>vaadin-themes</artifactId>
 		</dependency>
 		
-		
 		<dependency>
 		  <groupId>javax.xml.bind</groupId>
 		  <artifactId>jaxb-api</artifactId>
@@ -94,6 +93,7 @@
 		   <version>2.2.11</version>
 		 </dependency>
 		 
+		
 	</dependencies>
 
 	<build>
