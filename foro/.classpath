@@ -37,9 +37,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Descargas/orm.jar"/>
-	<classpathentry kind="lib" path="D:/Descargas/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49.jar"/>
-	<classpathentry kind="lib" path="D:/Descargas/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49-bin.jar"/>
-	<classpathentry kind="lib" path="diagramas/BASEDATOSDAO/orm.jar"/>
+	<classpathentry kind="lib" path="diagramas/BASEDATOSDAO/lib/orm.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
