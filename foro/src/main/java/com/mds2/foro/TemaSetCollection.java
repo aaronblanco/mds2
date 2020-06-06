@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -36,7 +36,7 @@ public class TemaSetCollection extends org.orm.util.ORMSet {
 	 * Add the specified persistent object to ORMSet
 	 * @param value the persistent object
 	 */
-	public void add(TemaBD value) {
+	public void add(Tema value) {
 		if (value != null) {
 			super.add(value, value._ormAdapter);
 		}
@@ -46,7 +46,7 @@ public class TemaSetCollection extends org.orm.util.ORMSet {
 	 * Remove the specified persistent object from ORMSet
 	 * @param value the persistent object
 	 */
-	public void remove(TemaBD value) {
+	public void remove(Tema value) {
 		super.remove(value, value._ormAdapter);
 	}
 	
@@ -55,7 +55,7 @@ public class TemaSetCollection extends org.orm.util.ORMSet {
 	 * @param value the persistent object
 	 * @return True if this contains the specified persistent object
 	 */
-	public boolean contains(TemaBD value) {
+	public boolean contains(Tema value) {
 		return super.contains(value);
 	}
 	
@@ -63,8 +63,8 @@ public class TemaSetCollection extends org.orm.util.ORMSet {
 	 * Return an array containing all of the persistent objects in ORMSet
 	 * @return The persistent objects array
 	 */
-	public TemaBD[] toArray() {
-		return (TemaBD[]) super.toArray(new TemaBD[size()]);
+	public Tema[] toArray() {
+		return (Tema[]) super.toArray(new Tema[size()]);
 	}
 	
 	/**
@@ -82,7 +82,7 @@ public class TemaSetCollection extends org.orm.util.ORMSet {
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
-	public TemaBD[] toArray(String propertyName) {
+	public Tema[] toArray(String propertyName) {
 		return toArray(propertyName, true);
 	}
 	
@@ -102,12 +102,12 @@ public class TemaSetCollection extends org.orm.util.ORMSet {
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
 	 */
-	public TemaBD[] toArray(String propertyName, boolean ascending) {
-		return (TemaBD[]) super.toArray(new TemaBD[size()], propertyName, ascending);
+	public Tema[] toArray(String propertyName, boolean ascending) {
+		return (Tema[]) super.toArray(new Tema[size()], propertyName, ascending);
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance();
+		return MDS11920PFBlancoRoblesPersistentManager.instance();
 	}
 	
 }

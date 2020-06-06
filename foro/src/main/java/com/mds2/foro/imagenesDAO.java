@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -21,7 +21,7 @@ import java.util.List;
 public class imagenesDAO {
 	public static imagenes loadImagenesByORMID(int idMedia) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadImagenesByORMID(session, idMedia);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class imagenesDAO {
 	
 	public static imagenes getImagenesByORMID(int idMedia) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getImagenesByORMID(session, idMedia);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class imagenesDAO {
 	
 	public static imagenes loadImagenesByORMID(int idMedia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadImagenesByORMID(session, idMedia, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class imagenesDAO {
 	
 	public static imagenes getImagenesByORMID(int idMedia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getImagenesByORMID(session, idMedia, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class imagenesDAO {
 	
 	public static List queryImagenes(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryImagenes(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class imagenesDAO {
 	
 	public static List queryImagenes(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryImagenes(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class imagenesDAO {
 	
 	public static imagenes[] listImagenesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listImagenesByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class imagenesDAO {
 	
 	public static imagenes[] listImagenesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listImagenesByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class imagenesDAO {
 	}
 	
 	public static List queryImagenes(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.imagenes as imagenes");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.imagenes as imagenes");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class imagenesDAO {
 	}
 	
 	public static List queryImagenes(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.imagenes as imagenes");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.imagenes as imagenes");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class imagenesDAO {
 	
 	public static imagenes loadImagenesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadImagenesByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class imagenesDAO {
 	
 	public static imagenes loadImagenesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadImagenesByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class imagenesDAO {
 	
 	public static java.util.Iterator iterateImagenesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateImagenesByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class imagenesDAO {
 	
 	public static java.util.Iterator iterateImagenesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateImagenesByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class imagenesDAO {
 	}
 	
 	public static java.util.Iterator iterateImagenesByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.imagenes as imagenes");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.imagenes as imagenes");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class imagenesDAO {
 	}
 	
 	public static java.util.Iterator iterateImagenesByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.imagenes as imagenes");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.imagenes as imagenes");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -301,7 +301,7 @@ public class imagenesDAO {
 	
 	public static boolean save(com.mds2.foro.imagenes limagenes) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(limagenes);
+			MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(limagenes);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class imagenesDAO {
 	
 	public static boolean delete(com.mds2.foro.imagenes limagenes) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(limagenes);
+			MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(limagenes);
 			return true;
 		}
 		catch (Exception e) {
@@ -323,7 +323,7 @@ public class imagenesDAO {
 	
 	public static boolean refresh(com.mds2.foro.imagenes limagenes) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(limagenes);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(limagenes);
 			return true;
 		}
 		catch (Exception e) {
@@ -334,7 +334,7 @@ public class imagenesDAO {
 	
 	public static boolean evict(com.mds2.foro.imagenes limagenes) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(limagenes);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(limagenes);
 			return true;
 		}
 		catch (Exception e) {

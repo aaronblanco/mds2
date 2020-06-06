@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -33,7 +33,7 @@ public class mediaCriteria extends AbstractORMCriteria {
 	}
 	
 	public mediaCriteria() throws PersistentException {
-		this(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
 	public media uniqueMedia() {

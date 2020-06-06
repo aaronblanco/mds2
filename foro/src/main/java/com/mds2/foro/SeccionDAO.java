@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -19,9 +19,9 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class SeccionDAO {
-	public static SeccionBD loadSeccionByORMID(int idSeccion) throws PersistentException {
+	public static Seccion loadSeccionByORMID(int idSeccion) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadSeccionByORMID(session, idSeccion);
 		}
 		catch (Exception e) {
@@ -30,9 +30,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD getSeccionByORMID(int idSeccion) throws PersistentException {
+	public static Seccion getSeccionByORMID(int idSeccion) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getSeccionByORMID(session, idSeccion);
 		}
 		catch (Exception e) {
@@ -41,9 +41,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD loadSeccionByORMID(int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion loadSeccionByORMID(int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadSeccionByORMID(session, idSeccion, lockMode);
 		}
 		catch (Exception e) {
@@ -52,9 +52,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD getSeccionByORMID(int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion getSeccionByORMID(int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getSeccionByORMID(session, idSeccion, lockMode);
 		}
 		catch (Exception e) {
@@ -63,9 +63,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD loadSeccionByORMID(PersistentSession session, int idSeccion) throws PersistentException {
+	public static Seccion loadSeccionByORMID(PersistentSession session, int idSeccion) throws PersistentException {
 		try {
-			return (SeccionBD) session.load(com.mds2.foro.SeccionBD.class, new Integer(idSeccion));
+			return (Seccion) session.load(com.mds2.foro.Seccion.class, new Integer(idSeccion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD getSeccionByORMID(PersistentSession session, int idSeccion) throws PersistentException {
+	public static Seccion getSeccionByORMID(PersistentSession session, int idSeccion) throws PersistentException {
 		try {
-			return (SeccionBD) session.get(com.mds2.foro.SeccionBD.class, new Integer(idSeccion));
+			return (Seccion) session.get(com.mds2.foro.Seccion.class, new Integer(idSeccion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD loadSeccionByORMID(PersistentSession session, int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion loadSeccionByORMID(PersistentSession session, int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (SeccionBD) session.load(com.mds2.foro.SeccionBD.class, new Integer(idSeccion), lockMode);
+			return (Seccion) session.load(com.mds2.foro.Seccion.class, new Integer(idSeccion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD getSeccionByORMID(PersistentSession session, int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion getSeccionByORMID(PersistentSession session, int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (SeccionBD) session.get(com.mds2.foro.SeccionBD.class, new Integer(idSeccion), lockMode);
+			return (Seccion) session.get(com.mds2.foro.Seccion.class, new Integer(idSeccion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class SeccionDAO {
 	
 	public static List querySeccion(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return querySeccion(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class SeccionDAO {
 	
 	public static List querySeccion(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return querySeccion(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -125,9 +125,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD[] listSeccionByQuery(String condition, String orderBy) throws PersistentException {
+	public static Seccion[] listSeccionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listSeccionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -136,9 +136,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD[] listSeccionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion[] listSeccionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listSeccionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class SeccionDAO {
 	}
 	
 	public static List querySeccion(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Seccion as Seccion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Seccion as Seccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class SeccionDAO {
 	}
 	
 	public static List querySeccion(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Seccion as Seccion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Seccion as Seccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -180,10 +180,10 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD[] listSeccionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+	public static Seccion[] listSeccionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = querySeccion(session, condition, orderBy);
-			return (SeccionBD[]) list.toArray(new SeccionBD[list.size()]);
+			return (Seccion[]) list.toArray(new Seccion[list.size()]);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -191,10 +191,10 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD[] listSeccionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion[] listSeccionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = querySeccion(session, condition, orderBy, lockMode);
-			return (SeccionBD[]) list.toArray(new SeccionBD[list.size()]);
+			return (Seccion[]) list.toArray(new Seccion[list.size()]);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -202,9 +202,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD loadSeccionByQuery(String condition, String orderBy) throws PersistentException {
+	public static Seccion loadSeccionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadSeccionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -213,9 +213,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD loadSeccionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion loadSeccionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadSeccionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -224,16 +224,16 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD loadSeccionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		SeccionBD[] seccions = listSeccionByQuery(session, condition, orderBy);
+	public static Seccion loadSeccionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+		Seccion[] seccions = listSeccionByQuery(session, condition, orderBy);
 		if (seccions != null && seccions.length > 0)
 			return seccions[0];
 		else
 			return null;
 	}
 	
-	public static SeccionBD loadSeccionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		SeccionBD[] seccions = listSeccionByQuery(session, condition, orderBy, lockMode);
+	public static Seccion loadSeccionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+		Seccion[] seccions = listSeccionByQuery(session, condition, orderBy, lockMode);
 		if (seccions != null && seccions.length > 0)
 			return seccions[0];
 		else
@@ -242,7 +242,7 @@ public class SeccionDAO {
 	
 	public static java.util.Iterator iterateSeccionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateSeccionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class SeccionDAO {
 	
 	public static java.util.Iterator iterateSeccionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateSeccionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class SeccionDAO {
 	}
 	
 	public static java.util.Iterator iterateSeccionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Seccion as Seccion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Seccion as Seccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class SeccionDAO {
 	}
 	
 	public static java.util.Iterator iterateSeccionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Seccion as Seccion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Seccion as Seccion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -295,13 +295,13 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD createSeccion() {
-		return new com.mds2.foro.SeccionBD();
+	public static Seccion createSeccion() {
+		return new com.mds2.foro.Seccion();
 	}
 	
-	public static boolean save(com.mds2.foro.SeccionBD seccion) throws PersistentException {
+	public static boolean save(com.mds2.foro.Seccion seccion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(seccion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(seccion);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static boolean delete(com.mds2.foro.SeccionBD seccion) throws PersistentException {
+	public static boolean delete(com.mds2.foro.Seccion seccion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(seccion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(seccion);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(com.mds2.foro.SeccionBD seccion)throws PersistentException {
+	public static boolean deleteAndDissociate(com.mds2.foro.Seccion seccion)throws PersistentException {
 		try {
 			if (seccion.getUsuarios() != null) {
 				seccion.getUsuarios().pro_secciones.remove(seccion);
@@ -335,7 +335,7 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(com.mds2.foro.SeccionBD seccion, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(com.mds2.foro.Seccion seccion, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (seccion.getUsuarios() != null) {
 				seccion.getUsuarios().pro_secciones.remove(seccion);
@@ -354,9 +354,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static boolean refresh(com.mds2.foro.SeccionBD seccion) throws PersistentException {
+	public static boolean refresh(com.mds2.foro.Seccion seccion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(seccion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(seccion);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static boolean evict(com.mds2.foro.SeccionBD seccion) throws PersistentException {
+	public static boolean evict(com.mds2.foro.Seccion seccion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(seccion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(seccion);
 			return true;
 		}
 		catch (Exception e) {
@@ -376,15 +376,15 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static SeccionBD loadSeccionByCriteria(SeccionCriteria seccionCriteria) {
-		SeccionBD[] seccions = listSeccionByCriteria(seccionCriteria);
+	public static Seccion loadSeccionByCriteria(SeccionCriteria seccionCriteria) {
+		Seccion[] seccions = listSeccionByCriteria(seccionCriteria);
 		if(seccions == null || seccions.length == 0) {
 			return null;
 		}
 		return seccions[0];
 	}
 	
-	public static SeccionBD[] listSeccionByCriteria(SeccionCriteria seccionCriteria) {
+	public static Seccion[] listSeccionByCriteria(SeccionCriteria seccionCriteria) {
 		return seccionCriteria.listSeccion();
 	}
 }

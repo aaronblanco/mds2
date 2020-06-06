@@ -1,53 +1,43 @@
+/**
+ * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
+ * 
+ * This is an automatic generated file. It will be regenerated every time 
+ * you generate persistence class.
+ * 
+ * Modifying its content may cause the program not work, or your work may lost.
+ */
+
+/**
+ * Licensee: trm187(University of Almeria)
+ * License Type: Academic
+ */
 package com.mds2.foro;
 
-import com.vaadin.navigator.View;
-import com.vaadin.ui.Layout;
-
-//import Package2.iModerador;
-
-public class Moderador extends Usuario_registrado implements View{
-	//public iModerador _iModerador;
-	public Lista_Mensaje_V_Moderador _mensaje_vista_moderador;
-	public Lista_Tema_V_Moderador _tema_vista_moderador;
-	public Lista_Seccion_V_Moderador _unnamed_Lista_Seccion_V_Moderador_;
-	
-	
-	
-	
+import java.io.Serializable;
+import javax.persistence.*;
+@Entity
+@org.hibernate.annotations.Proxy(lazy=false)
+@Table(name="Moderador")
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorValue("Moderador")
+@PrimaryKeyJoinColumn(name="UsuariosIdUsuario", referencedColumnName="IdUsuario")
+public class Moderador extends com.mds2.foro.Usuarios implements Serializable {
 	public Moderador() {
-		
-
-		Menu_moderador menu = new Menu_moderador();
-		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
-		Lista_Seccion_V_Moderador sec = new Lista_Seccion_V_Moderador();
-	
-	    
-		this.panelMenu.setContent(menu);
-		
-		this.panelMain.setContent(sec);
-		
-		this.bannerAbajo.addComponent(ban);
-		
-		
 	}
 	
-
-	public Moderador(Layout ventana ) {
-		
-		
+	@Column(name="IdMod", nullable=false, length=10)	
+	private int idMod;
 	
-		Menu_moderador menu = new Menu_moderador();
-		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
-		
+	public void setIdMod(int value) {
+		this.idMod = value;
+	}
 	
-	    
-		this.panelMenu.setContent(menu);
-		
-		this.panelMain.setContent(ventana);
-		
-		this.bannerAbajo.addComponent(ban);
+	public int getIdMod() {
+		return idMod;
+	}
 	
-		
+	public String toString() {
+		return super.toString();
 	}
 	
 }

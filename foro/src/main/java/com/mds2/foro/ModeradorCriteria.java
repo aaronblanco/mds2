@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -63,48 +63,48 @@ public class ModeradorCriteria extends AbstractORMCriteria {
 	}
 	
 	public ModeradorCriteria(PersistentSession session) {
-		this(session.createCriteria(ModeradorBD.class));
+		this(session.createCriteria(Moderador.class));
 	}
 	
 	public ModeradorCriteria() throws PersistentException {
-		this(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
-	public com.mds2.foro.TicketCriteria createPro_ticketsCriteria() {
-		return new com.mds2.foro.TicketCriteria(createCriteria("ORM_pro_tickets"));
+	public TicketCriteria createPro_ticketsCriteria() {
+		return new TicketCriteria(createCriteria("ORM_pro_tickets"));
 	}
 	
-	public com.mds2.foro.MensajeCriteria createPro_mensajesCriteria() {
-		return new com.mds2.foro.MensajeCriteria(createCriteria("ORM_pro_mensajes"));
+	public MensajeCriteria createPro_mensajesCriteria() {
+		return new MensajeCriteria(createCriteria("ORM_pro_mensajes"));
 	}
 	
-	public com.mds2.foro.UsuariosCriteria createUsuariosCriteria() {
-		return new com.mds2.foro.UsuariosCriteria(createCriteria("ORM_usuarios"));
+	public UsuariosCriteria createUsuariosCriteria() {
+		return new UsuariosCriteria(createCriteria("ORM_usuarios"));
 	}
 	
-	public com.mds2.foro.TemaCriteria createPro_temasCriteria() {
-		return new com.mds2.foro.TemaCriteria(createCriteria("ORM_pro_temas"));
+	public TemaCriteria createPro_temasCriteria() {
+		return new TemaCriteria(createCriteria("ORM_pro_temas"));
 	}
 	
-	public com.mds2.foro.SeccionCriteria createPro_seccionesCriteria() {
-		return new com.mds2.foro.SeccionCriteria(createCriteria("ORM_pro_secciones"));
+	public SeccionCriteria createPro_seccionesCriteria() {
+		return new SeccionCriteria(createCriteria("ORM_pro_secciones"));
 	}
 	
-	public com.mds2.foro.NotificacionCriteria createNotificacionesCriteria() {
-		return new com.mds2.foro.NotificacionCriteria(createCriteria("ORM_notificaciones"));
+	public NotificacionCriteria createNotificacionesCriteria() {
+		return new NotificacionCriteria(createCriteria("ORM_notificaciones"));
 	}
 	
-	public com.mds2.foro.UsuariosCriteria createUsuariosAmigosCriteria() {
-		return new com.mds2.foro.UsuariosCriteria(createCriteria("ORM_usuariosAmigos"));
+	public UsuariosCriteria createUsuariosAmigosCriteria() {
+		return new UsuariosCriteria(createCriteria("ORM_usuariosAmigos"));
 	}
 	
-	public ModeradorBD uniqueModerador() {
-		return (ModeradorBD) super.uniqueResult();
+	public Moderador uniqueModerador() {
+		return (Moderador) super.uniqueResult();
 	}
 	
-	public ModeradorBD[] listModerador() {
+	public Moderador[] listModerador() {
 		java.util.List list = super.list();
-		return (ModeradorBD[]) list.toArray(new ModeradorBD[list.size()]);
+		return (Moderador[]) list.toArray(new Moderador[list.size()]);
 	}
 }
 

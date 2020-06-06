@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -89,7 +89,7 @@ public class imagenesSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance();
+		return MDS11920PFBlancoRoblesPersistentManager.instance();
 	}
 	
 }

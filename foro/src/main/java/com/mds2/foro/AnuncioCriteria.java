@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -31,20 +31,20 @@ public class AnuncioCriteria extends AbstractORMCriteria {
 	}
 	
 	public AnuncioCriteria(PersistentSession session) {
-		this(session.createCriteria(AnuncioBD.class));
+		this(session.createCriteria(Anuncio.class));
 	}
 	
 	public AnuncioCriteria() throws PersistentException {
-		this(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
-	public AnuncioBD uniqueAnuncio() {
-		return (AnuncioBD) super.uniqueResult();
+	public Anuncio uniqueAnuncio() {
+		return (Anuncio) super.uniqueResult();
 	}
 	
-	public AnuncioBD[] listAnuncio() {
+	public Anuncio[] listAnuncio() {
 		java.util.List list = super.list();
-		return (AnuncioBD[]) list.toArray(new AnuncioBD[list.size()]);
+		return (Anuncio[]) list.toArray(new Anuncio[list.size()]);
 	}
 }
 

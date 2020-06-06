@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class Lista_Notificación extends Lista_Notificacion_ventana{
 	public Mi_perfil _unnamed_Mi_perfil_;
-	public Vector<Notificacion> _list_Notificacion = new Vector<Notificacion>();
+	public Vector<NotificacionClase> _list_Notificacion = new Vector<NotificacionClase>();
 	
 	public Lista_Notificación() {
 		

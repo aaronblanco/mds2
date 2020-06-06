@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -36,7 +36,7 @@ public class TicketSetCollection extends org.orm.util.ORMSet {
 	 * Add the specified persistent object to ORMSet
 	 * @param value the persistent object
 	 */
-	public void add(TicketBD value) {
+	public void add(Ticket value) {
 		if (value != null) {
 			super.add(value, value._ormAdapter);
 		}
@@ -46,7 +46,7 @@ public class TicketSetCollection extends org.orm.util.ORMSet {
 	 * Remove the specified persistent object from ORMSet
 	 * @param value the persistent object
 	 */
-	public void remove(TicketBD value) {
+	public void remove(Ticket value) {
 		super.remove(value, value._ormAdapter);
 	}
 	
@@ -55,7 +55,7 @@ public class TicketSetCollection extends org.orm.util.ORMSet {
 	 * @param value the persistent object
 	 * @return True if this contains the specified persistent object
 	 */
-	public boolean contains(TicketBD value) {
+	public boolean contains(Ticket value) {
 		return super.contains(value);
 	}
 	
@@ -63,8 +63,8 @@ public class TicketSetCollection extends org.orm.util.ORMSet {
 	 * Return an array containing all of the persistent objects in ORMSet
 	 * @return The persistent objects array
 	 */
-	public TicketBD[] toArray() {
-		return (TicketBD[]) super.toArray(new TicketBD[size()]);
+	public Ticket[] toArray() {
+		return (Ticket[]) super.toArray(new Ticket[size()]);
 	}
 	
 	/**
@@ -78,7 +78,7 @@ public class TicketSetCollection extends org.orm.util.ORMSet {
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
-	public TicketBD[] toArray(String propertyName) {
+	public Ticket[] toArray(String propertyName) {
 		return toArray(propertyName, true);
 	}
 	
@@ -94,12 +94,12 @@ public class TicketSetCollection extends org.orm.util.ORMSet {
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
 	 */
-	public TicketBD[] toArray(String propertyName, boolean ascending) {
-		return (TicketBD[]) super.toArray(new TicketBD[size()], propertyName, ascending);
+	public Ticket[] toArray(String propertyName, boolean ascending) {
+		return (Ticket[]) super.toArray(new Ticket[size()], propertyName, ascending);
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance();
+		return MDS11920PFBlancoRoblesPersistentManager.instance();
 	}
 	
 }

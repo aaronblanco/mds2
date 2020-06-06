@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -19,9 +19,9 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class NotificacionDAO {
-	public static NotificacionBD loadNotificacionByORMID(int idNotificacion) throws PersistentException {
+	public static Notificacion loadNotificacionByORMID(int idNotificacion) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadNotificacionByORMID(session, idNotificacion);
 		}
 		catch (Exception e) {
@@ -30,9 +30,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD getNotificacionByORMID(int idNotificacion) throws PersistentException {
+	public static Notificacion getNotificacionByORMID(int idNotificacion) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getNotificacionByORMID(session, idNotificacion);
 		}
 		catch (Exception e) {
@@ -41,9 +41,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD loadNotificacionByORMID(int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Notificacion loadNotificacionByORMID(int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadNotificacionByORMID(session, idNotificacion, lockMode);
 		}
 		catch (Exception e) {
@@ -52,9 +52,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD getNotificacionByORMID(int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Notificacion getNotificacionByORMID(int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getNotificacionByORMID(session, idNotificacion, lockMode);
 		}
 		catch (Exception e) {
@@ -63,9 +63,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD loadNotificacionByORMID(PersistentSession session, int idNotificacion) throws PersistentException {
+	public static Notificacion loadNotificacionByORMID(PersistentSession session, int idNotificacion) throws PersistentException {
 		try {
-			return (NotificacionBD) session.load(com.mds2.foro.NotificacionBD.class, new Integer(idNotificacion));
+			return (Notificacion) session.load(com.mds2.foro.Notificacion.class, new Integer(idNotificacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD getNotificacionByORMID(PersistentSession session, int idNotificacion) throws PersistentException {
+	public static Notificacion getNotificacionByORMID(PersistentSession session, int idNotificacion) throws PersistentException {
 		try {
-			return (NotificacionBD) session.get(com.mds2.foro.NotificacionBD.class, new Integer(idNotificacion));
+			return (Notificacion) session.get(com.mds2.foro.Notificacion.class, new Integer(idNotificacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD loadNotificacionByORMID(PersistentSession session, int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Notificacion loadNotificacionByORMID(PersistentSession session, int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (NotificacionBD) session.load(com.mds2.foro.NotificacionBD.class, new Integer(idNotificacion), lockMode);
+			return (Notificacion) session.load(com.mds2.foro.Notificacion.class, new Integer(idNotificacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD getNotificacionByORMID(PersistentSession session, int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Notificacion getNotificacionByORMID(PersistentSession session, int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (NotificacionBD) session.get(com.mds2.foro.NotificacionBD.class, new Integer(idNotificacion), lockMode);
+			return (Notificacion) session.get(com.mds2.foro.Notificacion.class, new Integer(idNotificacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class NotificacionDAO {
 	
 	public static List queryNotificacion(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryNotificacion(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class NotificacionDAO {
 	
 	public static List queryNotificacion(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryNotificacion(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -125,9 +125,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD[] listNotificacionByQuery(String condition, String orderBy) throws PersistentException {
+	public static Notificacion[] listNotificacionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listNotificacionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -136,9 +136,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD[] listNotificacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Notificacion[] listNotificacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listNotificacionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class NotificacionDAO {
 	}
 	
 	public static List queryNotificacion(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Notificacion as Notificacion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Notificacion as Notificacion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class NotificacionDAO {
 	}
 	
 	public static List queryNotificacion(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Notificacion as Notificacion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Notificacion as Notificacion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -180,10 +180,10 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD[] listNotificacionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+	public static Notificacion[] listNotificacionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryNotificacion(session, condition, orderBy);
-			return (NotificacionBD[]) list.toArray(new NotificacionBD[list.size()]);
+			return (Notificacion[]) list.toArray(new Notificacion[list.size()]);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -191,10 +191,10 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD[] listNotificacionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Notificacion[] listNotificacionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryNotificacion(session, condition, orderBy, lockMode);
-			return (NotificacionBD[]) list.toArray(new NotificacionBD[list.size()]);
+			return (Notificacion[]) list.toArray(new Notificacion[list.size()]);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -202,9 +202,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD loadNotificacionByQuery(String condition, String orderBy) throws PersistentException {
+	public static Notificacion loadNotificacionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadNotificacionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -213,9 +213,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD loadNotificacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Notificacion loadNotificacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadNotificacionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -224,16 +224,16 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD loadNotificacionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		NotificacionBD[] notificacions = listNotificacionByQuery(session, condition, orderBy);
+	public static Notificacion loadNotificacionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+		Notificacion[] notificacions = listNotificacionByQuery(session, condition, orderBy);
 		if (notificacions != null && notificacions.length > 0)
 			return notificacions[0];
 		else
 			return null;
 	}
 	
-	public static NotificacionBD loadNotificacionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		NotificacionBD[] notificacions = listNotificacionByQuery(session, condition, orderBy, lockMode);
+	public static Notificacion loadNotificacionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+		Notificacion[] notificacions = listNotificacionByQuery(session, condition, orderBy, lockMode);
 		if (notificacions != null && notificacions.length > 0)
 			return notificacions[0];
 		else
@@ -242,7 +242,7 @@ public class NotificacionDAO {
 	
 	public static java.util.Iterator iterateNotificacionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateNotificacionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class NotificacionDAO {
 	
 	public static java.util.Iterator iterateNotificacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateNotificacionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class NotificacionDAO {
 	}
 	
 	public static java.util.Iterator iterateNotificacionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Notificacion as Notificacion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Notificacion as Notificacion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class NotificacionDAO {
 	}
 	
 	public static java.util.Iterator iterateNotificacionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Notificacion as Notificacion");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Notificacion as Notificacion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -295,13 +295,13 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD createNotificacion() {
-		return new com.mds2.foro.NotificacionBD();
+	public static Notificacion createNotificacion() {
+		return new com.mds2.foro.Notificacion();
 	}
 	
-	public static boolean save(com.mds2.foro.NotificacionBD notificacion) throws PersistentException {
+	public static boolean save(com.mds2.foro.Notificacion notificacion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(notificacion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(notificacion);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static boolean delete(com.mds2.foro.NotificacionBD notificacion) throws PersistentException {
+	public static boolean delete(com.mds2.foro.Notificacion notificacion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(notificacion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(notificacion);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(com.mds2.foro.NotificacionBD notificacion)throws PersistentException {
+	public static boolean deleteAndDissociate(com.mds2.foro.Notificacion notificacion)throws PersistentException {
 		try {
 			if (notificacion.getUsuarios() != null) {
 				notificacion.getUsuarios().notificaciones.remove(notificacion);
@@ -335,7 +335,7 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(com.mds2.foro.NotificacionBD notificacion, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(com.mds2.foro.Notificacion notificacion, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (notificacion.getUsuarios() != null) {
 				notificacion.getUsuarios().notificaciones.remove(notificacion);
@@ -354,9 +354,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static boolean refresh(com.mds2.foro.NotificacionBD notificacion) throws PersistentException {
+	public static boolean refresh(com.mds2.foro.Notificacion notificacion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(notificacion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(notificacion);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static boolean evict(com.mds2.foro.NotificacionBD notificacion) throws PersistentException {
+	public static boolean evict(com.mds2.foro.Notificacion notificacion) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(notificacion);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(notificacion);
 			return true;
 		}
 		catch (Exception e) {
@@ -376,15 +376,15 @@ public class NotificacionDAO {
 		}
 	}
 	
-	public static NotificacionBD loadNotificacionByCriteria(NotificacionCriteria notificacionCriteria) {
-		NotificacionBD[] notificacions = listNotificacionByCriteria(notificacionCriteria);
+	public static Notificacion loadNotificacionByCriteria(NotificacionCriteria notificacionCriteria) {
+		Notificacion[] notificacions = listNotificacionByCriteria(notificacionCriteria);
 		if(notificacions == null || notificacions.length == 0) {
 			return null;
 		}
 		return notificacions[0];
 	}
 	
-	public static NotificacionBD[] listNotificacionByCriteria(NotificacionCriteria notificacionCriteria) {
+	public static Notificacion[] listNotificacionByCriteria(NotificacionCriteria notificacionCriteria) {
 		return notificacionCriteria.listNotificacion();
 	}
 }

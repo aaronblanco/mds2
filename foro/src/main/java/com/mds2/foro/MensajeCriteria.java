@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -59,11 +59,11 @@ public class MensajeCriteria extends AbstractORMCriteria {
 	}
 	
 	public MensajeCriteria(PersistentSession session) {
-		this(session.createCriteria(MensajeBD.class));
+		this(session.createCriteria(Mensaje.class));
 	}
 	
 	public MensajeCriteria() throws PersistentException {
-		this(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
 	public videosCriteria createContiene_videosCriteria() {
@@ -74,17 +74,17 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		return new UsuariosCriteria(createCriteria("usuarios"));
 	}
 	
-	public com.mds2.foro.imagenesCriteria createContiene_imagenesCriteria() {
-		return new com.mds2.foro.imagenesCriteria(createCriteria("ORM_contiene_imagenes"));
+	public imagenesCriteria createContiene_imagenesCriteria() {
+		return new imagenesCriteria(createCriteria("ORM_contiene_imagenes"));
 	}
 	
-	public MensajeBD uniqueMensaje() {
-		return (MensajeBD) super.uniqueResult();
+	public Mensaje uniqueMensaje() {
+		return (Mensaje) super.uniqueResult();
 	}
 	
-	public MensajeBD[] listMensaje() {
+	public Mensaje[] listMensaje() {
 		java.util.List list = super.list();
-		return (MensajeBD[]) list.toArray(new MensajeBD[list.size()]);
+		return (Mensaje[]) list.toArray(new Mensaje[list.size()]);
 	}
 }
 

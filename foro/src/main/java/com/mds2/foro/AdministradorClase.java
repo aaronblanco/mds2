@@ -5,7 +5,7 @@ import com.vaadin.ui.Layout;
 
 //import Package2.iAdministrador;
 
-public class AdministradorClase extends Moderador implements View{
+public class AdministradorClase extends ModeradorClase implements View{
 	//public iAdministrador _iAdministrador;
 	public Lista_Tema_V_Administrador _tema_vista_administrador;
 	public Lista_Mensaje_V_Administrador _mensaje_vista_administrador;

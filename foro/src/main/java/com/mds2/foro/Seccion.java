@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -18,12 +18,12 @@ import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Seccion")
-public class SeccionBD implements Serializable {
-	public SeccionBD() {
+public class Seccion implements Serializable {
+	public Seccion() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == com.mds2.foro.ORMConstants.KEY_SECCION_CONTIENE_TEMAS) {
+		if (key == ORMConstants.KEY_SECCION_CONTIENE_TEMAS) {
 			return ORM_contiene_temas;
 		}
 		
@@ -31,8 +31,8 @@ public class SeccionBD implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == com.mds2.foro.ORMConstants.KEY_SECCION_USUARIOS) {
-			this.usuarios = (com.mds2.foro.UsuariosBD) owner;
+		if (key == ORMConstants.KEY_SECCION_USUARIOS) {
+			this.usuarios = (com.mds2.foro.Usuarios) owner;
 		}
 	}
 	
@@ -50,14 +50,14 @@ public class SeccionBD implements Serializable {
 	
 	@Column(name="IdSeccion", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="DB_DCL_SECCION_IDSECCION_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="DB_DCL_SECCION_IDSECCION_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="COM_MDS2_FORO_SECCION_IDSECCION_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="COM_MDS2_FORO_SECCION_IDSECCION_GENERATOR", strategy="native")	
 	private int idSeccion;
 	
-	@ManyToOne(targetEntity=com.mds2.foro.UsuariosBD.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=com.mds2.foro.Usuarios.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="UsuariosIdUsuario", referencedColumnName="IdUsuario", nullable=false) }, foreignKey=@ForeignKey(name="FKSeccion237009"))	
-	private com.mds2.foro.UsuariosBD usuarios;
+	private com.mds2.foro.Usuarios usuarios;
 	
 	@Column(name="ImagenSeccion", nullable=true, length=255)	
 	private String imagenSeccion;
@@ -89,7 +89,7 @@ public class SeccionBD implements Serializable {
 	@Column(name="Eliminado", nullable=false, length=1)	
 	private boolean eliminado = false;
 	
-	@OneToMany(targetEntity=com.mds2.foro.TemaBD.class)	
+	@OneToMany(targetEntity=com.mds2.foro.TemaClase.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns({ @JoinColumn(name="SeccionIdSeccion", nullable=false) })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -196,9 +196,9 @@ public class SeccionBD implements Serializable {
 	}
 	
 	@Transient	
-	public final com.mds2.foro.TemaSetCollection contiene_temas = new com.mds2.foro.TemaSetCollection(this, _ormAdapter, com.mds2.foro.ORMConstants.KEY_SECCION_CONTIENE_TEMAS, com.mds2.foro.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final com.mds2.foro.TemaSetCollection contiene_temas = new com.mds2.foro.TemaSetCollection(this, _ormAdapter, ORMConstants.KEY_SECCION_CONTIENE_TEMAS, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	public void setUsuarios(com.mds2.foro.UsuariosBD value) {
+	public void setUsuarios(com.mds2.foro.Usuarios value) {
 		if (usuarios != null) {
 			usuarios.pro_secciones.remove(this);
 		}
@@ -207,18 +207,18 @@ public class SeccionBD implements Serializable {
 		}
 	}
 	
-	public com.mds2.foro.UsuariosBD getUsuarios() {
+	public com.mds2.foro.Usuarios getUsuarios() {
 		return usuarios;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_Usuarios(com.mds2.foro.UsuariosBD value) {
+	public void setORM_Usuarios(com.mds2.foro.Usuarios value) {
 		this.usuarios = value;
 	}
 	
-	private com.mds2.foro.UsuariosBD getORM_Usuarios() {
+	private com.mds2.foro.Usuarios getORM_Usuarios() {
 		return usuarios;
 	}
 	

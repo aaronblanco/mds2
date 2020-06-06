@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -39,7 +39,7 @@ public class UsuariosDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression usuariosAmigos;
 	
 	public UsuariosDetachedCriteria() {
-		super(com.mds2.foro.UsuariosBD.class, com.mds2.foro.UsuariosCriteria.class);
+		super(com.mds2.foro.Usuarios.class, com.mds2.foro.UsuariosCriteria.class);
 		idUsuario = new IntegerExpression("idUsuario", this.getDetachedCriteria());
 		email = new StringExpression("email", this.getDetachedCriteria());
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
@@ -82,41 +82,41 @@ public class UsuariosDetachedCriteria extends AbstractORMDetachedCriteria {
 		usuariosAmigos = new CollectionExpression("ORM_usuariosAmigos", this.getDetachedCriteria());
 	}
 	
-	public com.mds2.foro.TicketDetachedCriteria createPro_ticketsCriteria() {
-		return new com.mds2.foro.TicketDetachedCriteria(createCriteria("ORM_pro_tickets"));
+	public TicketDetachedCriteria createPro_ticketsCriteria() {
+		return new TicketDetachedCriteria(createCriteria("ORM_pro_tickets"));
 	}
 	
-	public com.mds2.foro.MensajeDetachedCriteria createPro_mensajesCriteria() {
-		return new com.mds2.foro.MensajeDetachedCriteria(createCriteria("ORM_pro_mensajes"));
+	public MensajeDetachedCriteria createPro_mensajesCriteria() {
+		return new MensajeDetachedCriteria(createCriteria("ORM_pro_mensajes"));
 	}
 	
-	public com.mds2.foro.UsuariosDetachedCriteria createUsuariosCriteria() {
-		return new com.mds2.foro.UsuariosDetachedCriteria(createCriteria("ORM_usuarios"));
+	public UsuariosDetachedCriteria createUsuariosCriteria() {
+		return new UsuariosDetachedCriteria(createCriteria("ORM_usuarios"));
 	}
 	
-	public com.mds2.foro.TemaDetachedCriteria createPro_temasCriteria() {
-		return new com.mds2.foro.TemaDetachedCriteria(createCriteria("ORM_pro_temas"));
+	public TemaDetachedCriteria createPro_temasCriteria() {
+		return new TemaDetachedCriteria(createCriteria("ORM_pro_temas"));
 	}
 	
-	public com.mds2.foro.SeccionDetachedCriteria createPro_seccionesCriteria() {
-		return new com.mds2.foro.SeccionDetachedCriteria(createCriteria("ORM_pro_secciones"));
+	public SeccionDetachedCriteria createPro_seccionesCriteria() {
+		return new SeccionDetachedCriteria(createCriteria("ORM_pro_secciones"));
 	}
 	
-	public com.mds2.foro.NotificacionDetachedCriteria createNotificacionesCriteria() {
-		return new com.mds2.foro.NotificacionDetachedCriteria(createCriteria("ORM_notificaciones"));
+	public NotificacionDetachedCriteria createNotificacionesCriteria() {
+		return new NotificacionDetachedCriteria(createCriteria("ORM_notificaciones"));
 	}
 	
-	public com.mds2.foro.UsuariosDetachedCriteria createUsuariosAmigosCriteria() {
-		return new com.mds2.foro.UsuariosDetachedCriteria(createCriteria("ORM_usuariosAmigos"));
+	public UsuariosDetachedCriteria createUsuariosAmigosCriteria() {
+		return new UsuariosDetachedCriteria(createCriteria("ORM_usuariosAmigos"));
 	}
 	
-	public UsuariosBD uniqueUsuarios(PersistentSession session) {
-		return (UsuariosBD) super.createExecutableCriteria(session).uniqueResult();
+	public Usuarios uniqueUsuarios(PersistentSession session) {
+		return (Usuarios) super.createExecutableCriteria(session).uniqueResult();
 	}
 	
-	public UsuariosBD[] listUsuarios(PersistentSession session) {
+	public Usuarios[] listUsuarios(PersistentSession session) {
 		List list = super.createExecutableCriteria(session).list();
-		return (UsuariosBD[]) list.toArray(new UsuariosBD[list.size()]);
+		return (Usuarios[]) list.toArray(new Usuarios[list.size()]);
 	}
 }
 

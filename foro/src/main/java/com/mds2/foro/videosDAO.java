@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -21,7 +21,7 @@ import java.util.List;
 public class videosDAO {
 	public static videos loadVideosByORMID(int idMedia) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadVideosByORMID(session, idMedia);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class videosDAO {
 	
 	public static videos getVideosByORMID(int idMedia) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getVideosByORMID(session, idMedia);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class videosDAO {
 	
 	public static videos loadVideosByORMID(int idMedia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadVideosByORMID(session, idMedia, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class videosDAO {
 	
 	public static videos getVideosByORMID(int idMedia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getVideosByORMID(session, idMedia, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class videosDAO {
 	
 	public static List queryVideos(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryVideos(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class videosDAO {
 	
 	public static List queryVideos(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryVideos(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class videosDAO {
 	
 	public static videos[] listVideosByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listVideosByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class videosDAO {
 	
 	public static videos[] listVideosByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listVideosByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class videosDAO {
 	}
 	
 	public static List queryVideos(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.videos as videos");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.videos as videos");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class videosDAO {
 	}
 	
 	public static List queryVideos(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.videos as videos");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.videos as videos");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class videosDAO {
 	
 	public static videos loadVideosByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadVideosByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class videosDAO {
 	
 	public static videos loadVideosByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadVideosByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class videosDAO {
 	
 	public static java.util.Iterator iterateVideosByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateVideosByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class videosDAO {
 	
 	public static java.util.Iterator iterateVideosByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateVideosByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class videosDAO {
 	}
 	
 	public static java.util.Iterator iterateVideosByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.videos as videos");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.videos as videos");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class videosDAO {
 	}
 	
 	public static java.util.Iterator iterateVideosByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.videos as videos");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.videos as videos");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -301,7 +301,7 @@ public class videosDAO {
 	
 	public static boolean save(com.mds2.foro.videos lvideos) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(lvideos);
+			MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(lvideos);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class videosDAO {
 	
 	public static boolean delete(com.mds2.foro.videos lvideos) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(lvideos);
+			MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(lvideos);
 			return true;
 		}
 		catch (Exception e) {
@@ -323,7 +323,7 @@ public class videosDAO {
 	
 	public static boolean refresh(com.mds2.foro.videos lvideos) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(lvideos);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(lvideos);
 			return true;
 		}
 		catch (Exception e) {
@@ -334,7 +334,7 @@ public class videosDAO {
 	
 	public static boolean evict(com.mds2.foro.videos lvideos) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(lvideos);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(lvideos);
 			return true;
 		}
 		catch (Exception e) {

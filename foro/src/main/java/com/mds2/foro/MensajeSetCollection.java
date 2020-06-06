@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -36,7 +36,7 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * Add the specified persistent object to ORMSet
 	 * @param value the persistent object
 	 */
-	public void add(MensajeBD value) {
+	public void add(Mensaje value) {
 		if (value != null) {
 			super.add(value, value._ormAdapter);
 		}
@@ -46,7 +46,7 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * Remove the specified persistent object from ORMSet
 	 * @param value the persistent object
 	 */
-	public void remove(MensajeBD value) {
+	public void remove(Mensaje value) {
 		super.remove(value, value._ormAdapter);
 	}
 	
@@ -55,7 +55,7 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * @param value the persistent object
 	 * @return True if this contains the specified persistent object
 	 */
-	public boolean contains(MensajeBD value) {
+	public boolean contains(Mensaje value) {
 		return super.contains(value);
 	}
 	
@@ -63,8 +63,8 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * Return an array containing all of the persistent objects in ORMSet
 	 * @return The persistent objects array
 	 */
-	public MensajeBD[] toArray() {
-		return (MensajeBD[]) super.toArray(new MensajeBD[size()]);
+	public Mensaje[] toArray() {
+		return (Mensaje[]) super.toArray(new Mensaje[size()]);
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
-	public MensajeBD[] toArray(String propertyName) {
+	public Mensaje[] toArray(String propertyName) {
 		return toArray(propertyName, true);
 	}
 	
@@ -108,12 +108,12 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
 	 */
-	public MensajeBD[] toArray(String propertyName, boolean ascending) {
-		return (MensajeBD[]) super.toArray(new MensajeBD[size()], propertyName, ascending);
+	public Mensaje[] toArray(String propertyName, boolean ascending) {
+		return (Mensaje[]) super.toArray(new Mensaje[size()], propertyName, ascending);
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance();
+		return MDS11920PFBlancoRoblesPersistentManager.instance();
 	}
 	
 }

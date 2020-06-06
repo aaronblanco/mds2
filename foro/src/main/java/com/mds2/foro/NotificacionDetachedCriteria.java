@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -27,7 +27,7 @@ public class NotificacionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression descripcionCampo;
 	
 	public NotificacionDetachedCriteria() {
-		super(com.mds2.foro.NotificacionBD.class, com.mds2.foro.NotificacionCriteria.class);
+		super(com.mds2.foro.Notificacion.class, com.mds2.foro.NotificacionCriteria.class);
 		idNotificacion = new IntegerExpression("idNotificacion", this.getDetachedCriteria());
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this.getDetachedCriteria());
 		usuarios = new AssociationExpression("usuarios", this.getDetachedCriteria());
@@ -50,13 +50,13 @@ public class NotificacionDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new UsuariosDetachedCriteria(createCriteria("usuarios"));
 	}
 	
-	public NotificacionBD uniqueNotificacion(PersistentSession session) {
-		return (NotificacionBD) super.createExecutableCriteria(session).uniqueResult();
+	public Notificacion uniqueNotificacion(PersistentSession session) {
+		return (Notificacion) super.createExecutableCriteria(session).uniqueResult();
 	}
 	
-	public NotificacionBD[] listNotificacion(PersistentSession session) {
+	public Notificacion[] listNotificacion(PersistentSession session) {
 		List list = super.createExecutableCriteria(session).list();
-		return (NotificacionBD[]) list.toArray(new NotificacionBD[list.size()]);
+		return (Notificacion[]) list.toArray(new Notificacion[list.size()]);
 	}
 }
 

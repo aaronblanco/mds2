@@ -16,7 +16,7 @@ public interface iModerador extends iBanner_Usuario_registrado, iMenu_moderador 
 
 	public List cargarMensajePropio(int aIdTema, int aIdUsuario);
 
-	public ModeradorBD obtenerPerfilModerador(int aIdUser);
+	public Moderador obtenerPerfilModerador(int aIdUser);
 
 	public boolean ocultarMensaje(int aIdMensaje);
 }

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -28,7 +28,7 @@ public class TicketDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final BooleanExpression cerrado;
 	
 	public TicketDetachedCriteria() {
-		super(com.mds2.foro.TicketBD.class, com.mds2.foro.TicketCriteria.class);
+		super(com.mds2.foro.Ticket.class, com.mds2.foro.TicketCriteria.class);
 		idTicket = new IntegerExpression("idTicket", this.getDetachedCriteria());
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this.getDetachedCriteria());
 		usuarios = new AssociationExpression("usuarios", this.getDetachedCriteria());
@@ -53,13 +53,13 @@ public class TicketDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new UsuariosDetachedCriteria(createCriteria("usuarios"));
 	}
 	
-	public TicketBD uniqueTicket(PersistentSession session) {
-		return (TicketBD) super.createExecutableCriteria(session).uniqueResult();
+	public Ticket uniqueTicket(PersistentSession session) {
+		return (Ticket) super.createExecutableCriteria(session).uniqueResult();
 	}
 	
-	public TicketBD[] listTicket(PersistentSession session) {
+	public Ticket[] listTicket(PersistentSession session) {
 		List list = super.createExecutableCriteria(session).list();
-		return (TicketBD[]) list.toArray(new TicketBD[list.size()]);
+		return (Ticket[]) list.toArray(new Ticket[list.size()]);
 	}
 }
 

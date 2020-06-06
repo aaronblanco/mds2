@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -21,7 +21,7 @@ import java.util.List;
 public class mediaDAO {
 	public static media loadMediaByORMID(int idMedia) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMediaByORMID(session, idMedia);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class mediaDAO {
 	
 	public static media getMediaByORMID(int idMedia) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getMediaByORMID(session, idMedia);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class mediaDAO {
 	
 	public static media loadMediaByORMID(int idMedia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMediaByORMID(session, idMedia, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class mediaDAO {
 	
 	public static media getMediaByORMID(int idMedia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getMediaByORMID(session, idMedia, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class mediaDAO {
 	
 	public static List queryMedia(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryMedia(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class mediaDAO {
 	
 	public static List queryMedia(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryMedia(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class mediaDAO {
 	
 	public static media[] listMediaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listMediaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class mediaDAO {
 	
 	public static media[] listMediaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listMediaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class mediaDAO {
 	}
 	
 	public static List queryMedia(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.media as media");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.media as media");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class mediaDAO {
 	}
 	
 	public static List queryMedia(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.media as media");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.media as media");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class mediaDAO {
 	
 	public static media loadMediaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMediaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class mediaDAO {
 	
 	public static media loadMediaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMediaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class mediaDAO {
 	
 	public static java.util.Iterator iterateMediaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateMediaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class mediaDAO {
 	
 	public static java.util.Iterator iterateMediaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateMediaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class mediaDAO {
 	}
 	
 	public static java.util.Iterator iterateMediaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.media as media");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.media as media");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class mediaDAO {
 	}
 	
 	public static java.util.Iterator iterateMediaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.media as media");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.media as media");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -301,7 +301,7 @@ public class mediaDAO {
 	
 	public static boolean save(com.mds2.foro.media lmedia) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(lmedia);
+			MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(lmedia);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class mediaDAO {
 	
 	public static boolean delete(com.mds2.foro.media lmedia) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(lmedia);
+			MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(lmedia);
 			return true;
 		}
 		catch (Exception e) {
@@ -323,7 +323,7 @@ public class mediaDAO {
 	
 	public static boolean refresh(com.mds2.foro.media lmedia) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(lmedia);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(lmedia);
 			return true;
 		}
 		catch (Exception e) {
@@ -334,7 +334,7 @@ public class mediaDAO {
 	
 	public static boolean evict(com.mds2.foro.media lmedia) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(lmedia);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(lmedia);
 			return true;
 		}
 		catch (Exception e) {

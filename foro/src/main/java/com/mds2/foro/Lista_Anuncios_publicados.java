@@ -10,7 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Lista_Anuncios_publicados extends Lista_Anuncios_publicados_ventana{
 //	private Button _eliminarAnuncio;
 	public Sistema_de_publicidad _unnamed_Sistema_de_publicidad_;
-	public Vector<Anuncio> _list_Anuncio = new Vector<Anuncio>();
+	public Vector<AnuncioClase> _list_Anuncio = new Vector<AnuncioClase>();
 
 	
 	public Lista_Anuncios_publicados() {

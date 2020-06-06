@@ -1,6 +1,6 @@
 package com.mds2.foro;
 
-public class Tema_UR extends Tema {
+public class Tema_UR extends TemaClase {
 	//private Button _darMeGusta;
 	private boolean _meGusta;
 	//private Label _estado;

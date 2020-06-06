@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class bd_usuarios {
 	public Bd_principal _bd_principal_usuario;
-	public Vector<UsuariosBD> _contiene_usuarios = new Vector<UsuariosBD>();
+	public Vector<Usuarios> _contiene_usuarios = new Vector<Usuarios>();
 
 	public List cargarListaAmigos(int aIdUsuario) {
 		throw new UnsupportedOperationException();
@@ -91,7 +91,7 @@ public class bd_usuarios {
 		throw new UnsupportedOperationException();
 	}
 
-	public Moderador obtenerPerfilMod(int aIdUser) {
+	public ModeradorClase obtenerPerfilMod(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 

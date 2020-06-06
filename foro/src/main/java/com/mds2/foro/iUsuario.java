@@ -64,9 +64,9 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public Usuario_registrado obtenerPerfilUsuario(int aIdUser);
 
-	public AdministradorBD obtenerPerfilAdmin(int aIdUser);
+	public Administrador obtenerPerfilAdmin(int aIdUser);
 
-	public ModeradorBD obtenerPerfilMod(int aIdUser);
+	public Moderador obtenerPerfilMod(int aIdUser);
 
 	public boolean eliminarNotificacion(int aIdNotificacion);
 

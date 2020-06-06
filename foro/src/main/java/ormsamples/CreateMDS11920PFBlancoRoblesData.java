@@ -1,5 +1,5 @@
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -9,42 +9,42 @@ public class CreateMDS11920PFBlancoRoblesData {
 	public void createTestData() throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			com.mds2.foro.NotificacionBD dB_DCLNotificacion = com.mds2.foro.NotificacionDAO.createNotificacion();
+			com.mds2.foro.Notificacion lcommds2foroNotificacion = com.mds2.foro.NotificacionDAO.createNotificacion();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : idUsuarioPropietario, usuarios
-			com.mds2.foro.NotificacionDAO.save(dB_DCLNotificacion);
-			com.mds2.foro.MensajeBD dB_DCLMensaje = com.mds2.foro.MensajeDAO.createMensaje();
+			com.mds2.foro.NotificacionDAO.save(lcommds2foroNotificacion);
+			com.mds2.foro.Mensaje lcommds2foroMensaje = com.mds2.foro.MensajeDAO.createMensaje();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_imagenes, eliminado, publico, idMedia, idPropietario, idTemaPropietario, numTotalMensajes, fechaCreacion, numMg, usuarios
-			com.mds2.foro.MensajeDAO.save(dB_DCLMensaje);
-			com.mds2.foro.UsuariosBD dB_DCLUsuarios = com.mds2.foro.UsuariosDAO.createUsuarios();
+			com.mds2.foro.MensajeDAO.save(lcommds2foroMensaje);
+			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.createUsuarios();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : usuariosAmigos, notificaciones, pro_secciones, pro_temas, usuarios, pro_mensajes, pro_tickets, oculto, publico, sancionado, amonestado
-			com.mds2.foro.UsuariosDAO.save(dB_DCLUsuarios);
-			com.mds2.foro.ModeradorBD dB_DCLModerador = com.mds2.foro.ModeradorDAO.createModerador();
+			com.mds2.foro.UsuariosDAO.save(lcommds2foroUsuarios);
+			com.mds2.foro.Moderador lcommds2foroModerador = com.mds2.foro.ModeradorDAO.createModerador();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : idMod
-			com.mds2.foro.ModeradorDAO.save(dB_DCLModerador);
-			com.mds2.foro.SeccionBD dB_DCLSeccion = com.mds2.foro.SeccionDAO.createSeccion();
+			com.mds2.foro.ModeradorDAO.save(lcommds2foroModerador);
+			com.mds2.foro.Seccion lcommds2foroSeccion = com.mds2.foro.SeccionDAO.createSeccion();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_temas, eliminado, oculto, privado, publico, idPropietarioSeccion, fecha, usuarios
-			com.mds2.foro.SeccionDAO.save(dB_DCLSeccion);
-			com.mds2.foro.TemaBD dB_DCLTema = com.mds2.foro.TemaDAO.createTema();
+			com.mds2.foro.SeccionDAO.save(lcommds2foroSeccion);
+			com.mds2.foro.Tema lcommds2foroTema = com.mds2.foro.TemaDAO.createTema();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_mensajes, eliminado, oculto, privado, publico, idTemaPropietario, fecha, usuarios
-			com.mds2.foro.TemaDAO.save(dB_DCLTema);
-			com.mds2.foro.AnuncioBD dB_DCLAnuncio = com.mds2.foro.AnuncioDAO.createAnuncio();
+			com.mds2.foro.TemaDAO.save(lcommds2foroTema);
+			com.mds2.foro.Anuncio lcommds2foroAnuncio = com.mds2.foro.AnuncioDAO.createAnuncio();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : publicado
-			com.mds2.foro.AnuncioDAO.save(dB_DCLAnuncio);
-			com.mds2.foro.TicketBD dB_DCLTicket = com.mds2.foro.TicketDAO.createTicket();
+			com.mds2.foro.AnuncioDAO.save(lcommds2foroAnuncio);
+			com.mds2.foro.Ticket lcommds2foroTicket = com.mds2.foro.TicketDAO.createTicket();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : cerrado, abierto, usuarios
-			com.mds2.foro.TicketDAO.save(dB_DCLTicket);
-			com.mds2.foro.media dB_DCLmedia = com.mds2.foro.mediaDAO.createMedia();
+			com.mds2.foro.TicketDAO.save(lcommds2foroTicket);
+			com.mds2.foro.media lcommds2foromedia = com.mds2.foro.mediaDAO.createMedia();
 			// Initialize the properties of the persistent object here
-			com.mds2.foro.mediaDAO.save(dB_DCLmedia);
-			com.mds2.foro.imagenes dB_DCLimagenes = com.mds2.foro.imagenesDAO.createImagenes();
+			com.mds2.foro.mediaDAO.save(lcommds2foromedia);
+			com.mds2.foro.imagenes lcommds2foroimagenes = com.mds2.foro.imagenesDAO.createImagenes();
 			// Initialize the properties of the persistent object here
-			com.mds2.foro.imagenesDAO.save(dB_DCLimagenes);
-			com.mds2.foro.AdministradorBD dB_DCLAdministrador = com.mds2.foro.AdministradorDAO.createAdministrador();
+			com.mds2.foro.imagenesDAO.save(lcommds2foroimagenes);
+			com.mds2.foro.Administrador lcommds2foroAdministrador = com.mds2.foro.AdministradorDAO.createAdministrador();
 			// Initialize the properties of the persistent object here
-			com.mds2.foro.AdministradorDAO.save(dB_DCLAdministrador);
-			com.mds2.foro.videos dB_DCLvideos = com.mds2.foro.videosDAO.createVideos();
+			com.mds2.foro.AdministradorDAO.save(lcommds2foroAdministrador);
+			com.mds2.foro.videos lcommds2forovideos = com.mds2.foro.videosDAO.createVideos();
 			// Initialize the properties of the persistent object here
-			com.mds2.foro.videosDAO.save(dB_DCLvideos);
+			com.mds2.foro.videosDAO.save(lcommds2forovideos);
 			t.commit();
 		}
 		catch (Exception e) {

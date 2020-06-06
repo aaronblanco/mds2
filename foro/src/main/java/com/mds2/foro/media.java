@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -25,8 +25,8 @@ public class media implements Serializable {
 	
 	@Column(name="IdMedia", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="DB_DCL_MEDIA_IDMEDIA_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="DB_DCL_MEDIA_IDMEDIA_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="COM_MDS2_FORO_MEDIA_IDMEDIA_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="COM_MDS2_FORO_MEDIA_IDMEDIA_GENERATOR", strategy="native")	
 	private int idMedia;
 	
 	@Column(name="Url", nullable=true, length=255)	

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -36,7 +36,7 @@ public class SeccionSetCollection extends org.orm.util.ORMSet {
 	 * Add the specified persistent object to ORMSet
 	 * @param value the persistent object
 	 */
-	public void add(SeccionBD value) {
+	public void add(Seccion value) {
 		if (value != null) {
 			super.add(value, value._ormAdapter);
 		}
@@ -46,7 +46,7 @@ public class SeccionSetCollection extends org.orm.util.ORMSet {
 	 * Remove the specified persistent object from ORMSet
 	 * @param value the persistent object
 	 */
-	public void remove(SeccionBD value) {
+	public void remove(Seccion value) {
 		super.remove(value, value._ormAdapter);
 	}
 	
@@ -55,7 +55,7 @@ public class SeccionSetCollection extends org.orm.util.ORMSet {
 	 * @param value the persistent object
 	 * @return True if this contains the specified persistent object
 	 */
-	public boolean contains(SeccionBD value) {
+	public boolean contains(Seccion value) {
 		return super.contains(value);
 	}
 	
@@ -63,8 +63,8 @@ public class SeccionSetCollection extends org.orm.util.ORMSet {
 	 * Return an array containing all of the persistent objects in ORMSet
 	 * @return The persistent objects array
 	 */
-	public SeccionBD[] toArray() {
-		return (SeccionBD[]) super.toArray(new SeccionBD[size()]);
+	public Seccion[] toArray() {
+		return (Seccion[]) super.toArray(new Seccion[size()]);
 	}
 	
 	/**
@@ -84,7 +84,7 @@ public class SeccionSetCollection extends org.orm.util.ORMSet {
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
-	public SeccionBD[] toArray(String propertyName) {
+	public Seccion[] toArray(String propertyName) {
 		return toArray(propertyName, true);
 	}
 	
@@ -106,12 +106,12 @@ public class SeccionSetCollection extends org.orm.util.ORMSet {
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
 	 */
-	public SeccionBD[] toArray(String propertyName, boolean ascending) {
-		return (SeccionBD[]) super.toArray(new SeccionBD[size()], propertyName, ascending);
+	public Seccion[] toArray(String propertyName, boolean ascending) {
+		return (Seccion[]) super.toArray(new Seccion[size()], propertyName, ascending);
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance();
+		return MDS11920PFBlancoRoblesPersistentManager.instance();
 	}
 	
 }

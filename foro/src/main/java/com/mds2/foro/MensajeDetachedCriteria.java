@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -38,7 +38,7 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression contiene_imagenes;
 	
 	public MensajeDetachedCriteria() {
-		super(com.mds2.foro.MensajeBD.class, com.mds2.foro.MensajeCriteria.class);
+		super(com.mds2.foro.Mensaje.class, com.mds2.foro.MensajeCriteria.class);
 		idMensaje = new IntegerExpression("idMensaje", this.getDetachedCriteria());
 		contiene_videosId = new IntegerExpression("contiene_videos.", this.getDetachedCriteria());
 		contiene_videos = new AssociationExpression("contiene_videos", this.getDetachedCriteria());
@@ -87,17 +87,17 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new UsuariosDetachedCriteria(createCriteria("usuarios"));
 	}
 	
-	public com.mds2.foro.imagenesDetachedCriteria createContiene_imagenesCriteria() {
-		return new com.mds2.foro.imagenesDetachedCriteria(createCriteria("ORM_contiene_imagenes"));
+	public imagenesDetachedCriteria createContiene_imagenesCriteria() {
+		return new imagenesDetachedCriteria(createCriteria("ORM_contiene_imagenes"));
 	}
 	
-	public MensajeBD uniqueMensaje(PersistentSession session) {
-		return (MensajeBD) super.createExecutableCriteria(session).uniqueResult();
+	public Mensaje uniqueMensaje(PersistentSession session) {
+		return (Mensaje) super.createExecutableCriteria(session).uniqueResult();
 	}
 	
-	public MensajeBD[] listMensaje(PersistentSession session) {
+	public Mensaje[] listMensaje(PersistentSession session) {
 		List list = super.createExecutableCriteria(session).list();
-		return (MensajeBD[]) list.toArray(new MensajeBD[list.size()]);
+		return (Mensaje[]) list.toArray(new Mensaje[list.size()]);
 	}
 }
 

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -19,9 +19,9 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class MensajeDAO {
-	public static MensajeBD loadMensajeByORMID(int idMensaje) throws PersistentException {
+	public static Mensaje loadMensajeByORMID(int idMensaje) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMensajeByORMID(session, idMensaje);
 		}
 		catch (Exception e) {
@@ -30,9 +30,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD getMensajeByORMID(int idMensaje) throws PersistentException {
+	public static Mensaje getMensajeByORMID(int idMensaje) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getMensajeByORMID(session, idMensaje);
 		}
 		catch (Exception e) {
@@ -41,9 +41,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD loadMensajeByORMID(int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Mensaje loadMensajeByORMID(int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMensajeByORMID(session, idMensaje, lockMode);
 		}
 		catch (Exception e) {
@@ -52,9 +52,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD getMensajeByORMID(int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Mensaje getMensajeByORMID(int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return getMensajeByORMID(session, idMensaje, lockMode);
 		}
 		catch (Exception e) {
@@ -63,9 +63,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD loadMensajeByORMID(PersistentSession session, int idMensaje) throws PersistentException {
+	public static Mensaje loadMensajeByORMID(PersistentSession session, int idMensaje) throws PersistentException {
 		try {
-			return (MensajeBD) session.load(com.mds2.foro.MensajeBD.class, new Integer(idMensaje));
+			return (Mensaje) session.load(com.mds2.foro.Mensaje.class, new Integer(idMensaje));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD getMensajeByORMID(PersistentSession session, int idMensaje) throws PersistentException {
+	public static Mensaje getMensajeByORMID(PersistentSession session, int idMensaje) throws PersistentException {
 		try {
-			return (MensajeBD) session.get(com.mds2.foro.MensajeBD.class, new Integer(idMensaje));
+			return (Mensaje) session.get(com.mds2.foro.Mensaje.class, new Integer(idMensaje));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD loadMensajeByORMID(PersistentSession session, int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Mensaje loadMensajeByORMID(PersistentSession session, int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (MensajeBD) session.load(com.mds2.foro.MensajeBD.class, new Integer(idMensaje), lockMode);
+			return (Mensaje) session.load(com.mds2.foro.Mensaje.class, new Integer(idMensaje), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD getMensajeByORMID(PersistentSession session, int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Mensaje getMensajeByORMID(PersistentSession session, int idMensaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (MensajeBD) session.get(com.mds2.foro.MensajeBD.class, new Integer(idMensaje), lockMode);
+			return (Mensaje) session.get(com.mds2.foro.Mensaje.class, new Integer(idMensaje), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class MensajeDAO {
 	
 	public static List queryMensaje(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryMensaje(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class MensajeDAO {
 	
 	public static List queryMensaje(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return queryMensaje(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -125,9 +125,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD[] listMensajeByQuery(String condition, String orderBy) throws PersistentException {
+	public static Mensaje[] listMensajeByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listMensajeByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -136,9 +136,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD[] listMensajeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Mensaje[] listMensajeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return listMensajeByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class MensajeDAO {
 	}
 	
 	public static List queryMensaje(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Mensaje as Mensaje");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Mensaje as Mensaje");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class MensajeDAO {
 	}
 	
 	public static List queryMensaje(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Mensaje as Mensaje");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Mensaje as Mensaje");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -180,10 +180,10 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD[] listMensajeByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+	public static Mensaje[] listMensajeByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryMensaje(session, condition, orderBy);
-			return (MensajeBD[]) list.toArray(new MensajeBD[list.size()]);
+			return (Mensaje[]) list.toArray(new Mensaje[list.size()]);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -191,10 +191,10 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD[] listMensajeByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Mensaje[] listMensajeByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryMensaje(session, condition, orderBy, lockMode);
-			return (MensajeBD[]) list.toArray(new MensajeBD[list.size()]);
+			return (Mensaje[]) list.toArray(new Mensaje[list.size()]);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -202,9 +202,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD loadMensajeByQuery(String condition, String orderBy) throws PersistentException {
+	public static Mensaje loadMensajeByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMensajeByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -213,9 +213,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD loadMensajeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Mensaje loadMensajeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return loadMensajeByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -224,16 +224,16 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD loadMensajeByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		MensajeBD[] mensajes = listMensajeByQuery(session, condition, orderBy);
+	public static Mensaje loadMensajeByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+		Mensaje[] mensajes = listMensajeByQuery(session, condition, orderBy);
 		if (mensajes != null && mensajes.length > 0)
 			return mensajes[0];
 		else
 			return null;
 	}
 	
-	public static MensajeBD loadMensajeByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		MensajeBD[] mensajes = listMensajeByQuery(session, condition, orderBy, lockMode);
+	public static Mensaje loadMensajeByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+		Mensaje[] mensajes = listMensajeByQuery(session, condition, orderBy, lockMode);
 		if (mensajes != null && mensajes.length > 0)
 			return mensajes[0];
 		else
@@ -242,7 +242,7 @@ public class MensajeDAO {
 	
 	public static java.util.Iterator iterateMensajeByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateMensajeByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class MensajeDAO {
 	
 	public static java.util.Iterator iterateMensajeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
+			PersistentSession session = MDS11920PFBlancoRoblesPersistentManager.instance().getSession();
 			return iterateMensajeByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class MensajeDAO {
 	}
 	
 	public static java.util.Iterator iterateMensajeByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Mensaje as Mensaje");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Mensaje as Mensaje");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class MensajeDAO {
 	}
 	
 	public static java.util.Iterator iterateMensajeByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From db_dcl.Mensaje as Mensaje");
+		StringBuffer sb = new StringBuffer("From com.mds2.foro.Mensaje as Mensaje");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -295,13 +295,13 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD createMensaje() {
-		return new com.mds2.foro.MensajeBD();
+	public static Mensaje createMensaje() {
+		return new com.mds2.foro.Mensaje();
 	}
 	
-	public static boolean save(com.mds2.foro.MensajeBD mensaje) throws PersistentException {
+	public static boolean save(com.mds2.foro.Mensaje mensaje) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(mensaje);
+			MDS11920PFBlancoRoblesPersistentManager.instance().saveObject(mensaje);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static boolean delete(com.mds2.foro.MensajeBD mensaje) throws PersistentException {
+	public static boolean delete(com.mds2.foro.Mensaje mensaje) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(mensaje);
+			MDS11920PFBlancoRoblesPersistentManager.instance().deleteObject(mensaje);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(com.mds2.foro.MensajeBD mensaje)throws PersistentException {
+	public static boolean deleteAndDissociate(com.mds2.foro.Mensaje mensaje)throws PersistentException {
 		try {
 			if (mensaje.getUsuarios() != null) {
 				mensaje.getUsuarios().pro_mensajes.remove(mensaje);
@@ -335,7 +335,7 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(com.mds2.foro.MensajeBD mensaje, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(com.mds2.foro.Mensaje mensaje, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (mensaje.getUsuarios() != null) {
 				mensaje.getUsuarios().pro_mensajes.remove(mensaje);
@@ -354,9 +354,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static boolean refresh(com.mds2.foro.MensajeBD mensaje) throws PersistentException {
+	public static boolean refresh(com.mds2.foro.Mensaje mensaje) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(mensaje);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().refresh(mensaje);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static boolean evict(com.mds2.foro.MensajeBD mensaje) throws PersistentException {
+	public static boolean evict(com.mds2.foro.Mensaje mensaje) throws PersistentException {
 		try {
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(mensaje);
+			MDS11920PFBlancoRoblesPersistentManager.instance().getSession().evict(mensaje);
 			return true;
 		}
 		catch (Exception e) {
@@ -376,15 +376,15 @@ public class MensajeDAO {
 		}
 	}
 	
-	public static MensajeBD loadMensajeByCriteria(MensajeCriteria mensajeCriteria) {
-		MensajeBD[] mensajes = listMensajeByCriteria(mensajeCriteria);
+	public static Mensaje loadMensajeByCriteria(MensajeCriteria mensajeCriteria) {
+		Mensaje[] mensajes = listMensajeByCriteria(mensajeCriteria);
 		if(mensajes == null || mensajes.length == 0) {
 			return null;
 		}
 		return mensajes[0];
 	}
 	
-	public static MensajeBD[] listMensajeByCriteria(MensajeCriteria mensajeCriteria) {
+	public static Mensaje[] listMensajeByCriteria(MensajeCriteria mensajeCriteria) {
 		return mensajeCriteria.listMensaje();
 	}
 }

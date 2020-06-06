@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -36,7 +36,7 @@ public class UsuariosSetCollection extends org.orm.util.ORMSet {
 	 * Add the specified persistent object to ORMSet
 	 * @param value the persistent object
 	 */
-	public void add(UsuariosBD value) {
+	public void add(Usuarios value) {
 		if (value != null) {
 			super.add(value, value._ormAdapter);
 		}
@@ -46,7 +46,7 @@ public class UsuariosSetCollection extends org.orm.util.ORMSet {
 	 * Remove the specified persistent object from ORMSet
 	 * @param value the persistent object
 	 */
-	public void remove(UsuariosBD value) {
+	public void remove(Usuarios value) {
 		super.remove(value, value._ormAdapter);
 	}
 	
@@ -55,7 +55,7 @@ public class UsuariosSetCollection extends org.orm.util.ORMSet {
 	 * @param value the persistent object
 	 * @return True if this contains the specified persistent object
 	 */
-	public boolean contains(UsuariosBD value) {
+	public boolean contains(Usuarios value) {
 		return super.contains(value);
 	}
 	
@@ -63,8 +63,8 @@ public class UsuariosSetCollection extends org.orm.util.ORMSet {
 	 * Return an array containing all of the persistent objects in ORMSet
 	 * @return The persistent objects array
 	 */
-	public UsuariosBD[] toArray() {
-		return (UsuariosBD[]) super.toArray(new UsuariosBD[size()]);
+	public Usuarios[] toArray() {
+		return (Usuarios[]) super.toArray(new Usuarios[size()]);
 	}
 	
 	/**
@@ -84,7 +84,7 @@ public class UsuariosSetCollection extends org.orm.util.ORMSet {
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
-	public UsuariosBD[] toArray(String propertyName) {
+	public Usuarios[] toArray(String propertyName) {
 		return toArray(propertyName, true);
 	}
 	
@@ -106,12 +106,12 @@ public class UsuariosSetCollection extends org.orm.util.ORMSet {
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
 	 */
-	public UsuariosBD[] toArray(String propertyName, boolean ascending) {
-		return (UsuariosBD[]) super.toArray(new UsuariosBD[size()], propertyName, ascending);
+	public Usuarios[] toArray(String propertyName, boolean ascending) {
+		return (Usuarios[]) super.toArray(new Usuarios[size()], propertyName, ascending);
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance();
+		return MDS11920PFBlancoRoblesPersistentManager.instance();
 	}
 	
 }

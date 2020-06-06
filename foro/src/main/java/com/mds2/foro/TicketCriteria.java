@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -39,24 +39,24 @@ public class TicketCriteria extends AbstractORMCriteria {
 	}
 	
 	public TicketCriteria(PersistentSession session) {
-		this(session.createCriteria(TicketBD.class));
+		this(session.createCriteria(Ticket.class));
 	}
 	
 	public TicketCriteria() throws PersistentException {
-		this(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
 	public UsuariosCriteria createUsuariosCriteria() {
 		return new UsuariosCriteria(createCriteria("usuarios"));
 	}
 	
-	public TicketBD uniqueTicket() {
-		return (TicketBD) super.uniqueResult();
+	public Ticket uniqueTicket() {
+		return (Ticket) super.uniqueResult();
 	}
 	
-	public TicketBD[] listTicket() {
+	public Ticket[] listTicket() {
 		java.util.List list = super.list();
-		return (TicketBD[]) list.toArray(new TicketBD[list.size()]);
+		return (Ticket[]) list.toArray(new Ticket[list.size()]);
 	}
 }
 

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -49,28 +49,28 @@ public class TemaCriteria extends AbstractORMCriteria {
 	}
 	
 	public TemaCriteria(PersistentSession session) {
-		this(session.createCriteria(TemaBD.class));
+		this(session.createCriteria(Tema.class));
 	}
 	
 	public TemaCriteria() throws PersistentException {
-		this(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
 	public UsuariosCriteria createUsuariosCriteria() {
 		return new UsuariosCriteria(createCriteria("usuarios"));
 	}
 	
-	public com.mds2.foro.MensajeCriteria createContiene_mensajesCriteria() {
-		return new com.mds2.foro.MensajeCriteria(createCriteria("ORM_contiene_mensajes"));
+	public MensajeCriteria createContiene_mensajesCriteria() {
+		return new MensajeCriteria(createCriteria("ORM_contiene_mensajes"));
 	}
 	
-	public TemaBD uniqueTema() {
-		return (TemaBD) super.uniqueResult();
+	public Tema uniqueTema() {
+		return (Tema) super.uniqueResult();
 	}
 	
-	public TemaBD[] listTema() {
+	public Tema[] listTema() {
 		java.util.List list = super.list();
-		return (TemaBD[]) list.toArray(new TemaBD[list.size()]);
+		return (Tema[]) list.toArray(new Tema[list.size()]);
 	}
 }
 

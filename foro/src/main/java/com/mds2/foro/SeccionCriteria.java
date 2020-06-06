@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -53,28 +53,28 @@ public class SeccionCriteria extends AbstractORMCriteria {
 	}
 	
 	public SeccionCriteria(PersistentSession session) {
-		this(session.createCriteria(SeccionBD.class));
+		this(session.createCriteria(Seccion.class));
 	}
 	
 	public SeccionCriteria() throws PersistentException {
-		this(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
 	public UsuariosCriteria createUsuariosCriteria() {
 		return new UsuariosCriteria(createCriteria("usuarios"));
 	}
 	
-	public com.mds2.foro.TemaCriteria createContiene_temasCriteria() {
-		return new com.mds2.foro.TemaCriteria(createCriteria("ORM_contiene_temas"));
+	public TemaCriteria createContiene_temasCriteria() {
+		return new TemaCriteria(createCriteria("ORM_contiene_temas"));
 	}
 	
-	public SeccionBD uniqueSeccion() {
-		return (SeccionBD) super.uniqueResult();
+	public Seccion uniqueSeccion() {
+		return (Seccion) super.uniqueResult();
 	}
 	
-	public SeccionBD[] listSeccion() {
+	public Seccion[] listSeccion() {
 		java.util.List list = super.list();
-		return (SeccionBD[]) list.toArray(new SeccionBD[list.size()]);
+		return (Seccion[]) list.toArray(new Seccion[list.size()]);
 	}
 }
 

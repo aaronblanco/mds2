@@ -64,7 +64,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public AdministradorBD obtenerPerfilAdmin(int aIdUser) {
+	public Administrador obtenerPerfilAdmin(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -112,7 +112,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public ModeradorBD obtenerPerfilModerador(int aIdUser) {
+	public Moderador obtenerPerfilModerador(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -240,7 +240,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public ModeradorBD obtenerPerfilMod(int aIdUser) {
+	public Moderador obtenerPerfilMod(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 

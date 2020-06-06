@@ -10,7 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_ventana{
 //	private Button _anadirAnuncio;
 	public Sistema_de_publicidad _unnamed_Sistema_de_publicidad_;
-	public Vector<Anuncio> _list_Anuncio = new Vector<Anuncio>();
+	public Vector<AnuncioClase> _list_Anuncio = new Vector<AnuncioClase>();
 
 	public Lista_Anuncios_disponibles() {
 		

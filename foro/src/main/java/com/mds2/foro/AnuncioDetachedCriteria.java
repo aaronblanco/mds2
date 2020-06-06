@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -24,7 +24,7 @@ public class AnuncioDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final BooleanExpression publicado;
 	
 	public AnuncioDetachedCriteria() {
-		super(com.mds2.foro.AnuncioBD.class, com.mds2.foro.AnuncioCriteria.class);
+		super(com.mds2.foro.Anuncio.class, com.mds2.foro.AnuncioCriteria.class);
 		idAnuncio = new IntegerExpression("idAnuncio", this.getDetachedCriteria());
 		imagen = new StringExpression("imagen", this.getDetachedCriteria());
 		publicado = new BooleanExpression("publicado", this.getDetachedCriteria());
@@ -37,13 +37,13 @@ public class AnuncioDetachedCriteria extends AbstractORMDetachedCriteria {
 		publicado = new BooleanExpression("publicado", this.getDetachedCriteria());
 	}
 	
-	public AnuncioBD uniqueAnuncio(PersistentSession session) {
-		return (AnuncioBD) super.createExecutableCriteria(session).uniqueResult();
+	public Anuncio uniqueAnuncio(PersistentSession session) {
+		return (Anuncio) super.createExecutableCriteria(session).uniqueResult();
 	}
 	
-	public AnuncioBD[] listAnuncio(PersistentSession session) {
+	public Anuncio[] listAnuncio(PersistentSession session) {
 		List list = super.createExecutableCriteria(session).list();
-		return (AnuncioBD[]) list.toArray(new AnuncioBD[list.size()]);
+		return (Anuncio[]) list.toArray(new Anuncio[list.size()]);
 	}
 }
 

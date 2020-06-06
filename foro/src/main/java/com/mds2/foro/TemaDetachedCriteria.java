@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -33,7 +33,7 @@ public class TemaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression contiene_mensajes;
 	
 	public TemaDetachedCriteria() {
-		super(com.mds2.foro.TemaBD.class, com.mds2.foro.TemaCriteria.class);
+		super(com.mds2.foro.Tema.class, com.mds2.foro.TemaCriteria.class);
 		idTema = new IntegerExpression("idTema", this.getDetachedCriteria());
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this.getDetachedCriteria());
 		usuarios = new AssociationExpression("usuarios", this.getDetachedCriteria());
@@ -68,17 +68,17 @@ public class TemaDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new UsuariosDetachedCriteria(createCriteria("usuarios"));
 	}
 	
-	public com.mds2.foro.MensajeDetachedCriteria createContiene_mensajesCriteria() {
-		return new com.mds2.foro.MensajeDetachedCriteria(createCriteria("ORM_contiene_mensajes"));
+	public MensajeDetachedCriteria createContiene_mensajesCriteria() {
+		return new MensajeDetachedCriteria(createCriteria("ORM_contiene_mensajes"));
 	}
 	
-	public TemaBD uniqueTema(PersistentSession session) {
-		return (TemaBD) super.createExecutableCriteria(session).uniqueResult();
+	public Tema uniqueTema(PersistentSession session) {
+		return (Tema) super.createExecutableCriteria(session).uniqueResult();
 	}
 	
-	public TemaBD[] listTema(PersistentSession session) {
+	public Tema[] listTema(PersistentSession session) {
 		List list = super.createExecutableCriteria(session).list();
-		return (TemaBD[]) list.toArray(new TemaBD[list.size()]);
+		return (Tema[]) list.toArray(new Tema[list.size()]);
 	}
 }
 
