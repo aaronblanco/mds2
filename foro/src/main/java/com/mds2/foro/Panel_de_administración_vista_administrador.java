@@ -12,7 +12,7 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 //	private Button _configurarPublicidad;
 //	private Label _ticketsL;
 //	private Label _candidatosAmonestadosL;
-	public Administrador _unnamed_Administrador_;
+	public AdministradorClase _unnamed_Administrador_;
 	public Sistema_de_tickets_vista_administrador _sistema_de_tickets_vista_administrador;
 	public Sistema_de_publicidad _sistema_de_publicidad;
 	public Lista_Usuario_Amonestado_V_Administrador _usuario_amonestado_vista_administrador;

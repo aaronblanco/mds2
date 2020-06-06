@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class bd_temas {
 	public Bd_principal _bd_principal_temas;
-	public Vector<TemaBD> _contiene_temas = new Vector<TemaBD>();
+	public Vector<Tema> _contiene_temas = new Vector<Tema>();
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {
 		throw new UnsupportedOperationException();

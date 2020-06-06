@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class bd_tickets {
 	public Bd_principal _bd_principal_tickets;
-	public Vector<TicketBD> _contiene_tickets = new Vector<TicketBD>();
+	public Vector<Ticket> _contiene_tickets = new Vector<Ticket>();
 
 	public List cargarTicket(int aIdUsuario) {
 		throw new UnsupportedOperationException();

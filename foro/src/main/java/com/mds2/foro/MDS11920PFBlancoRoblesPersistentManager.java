@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -37,17 +37,17 @@ public class MDS11920PFBlancoRoblesPersistentManager extends PersistentManager {
 	@Override
 	protected void configureMetadataSources(MetadataSources aMetadataSources) {
 		super.configureMetadataSources(aMetadataSources);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.NotificacionBD.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.MensajeBD.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.UsuariosBD.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.ModeradorBD.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.SeccionBD.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.TemaBD.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.AnuncioBD.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.TicketBD.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.NotificacionClase.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.MensajeClase.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.Usuarios.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.ModeradorClase.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.Seccion.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.TemaClase.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.Anuncio.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.TicketClase.class);
 		aMetadataSources.addAnnotatedClass(com.mds2.foro.media.class);
 		aMetadataSources.addAnnotatedClass(com.mds2.foro.imagenes.class);
-		aMetadataSources.addAnnotatedClass(com.mds2.foro.AdministradorBD.class);
+		aMetadataSources.addAnnotatedClass(com.mds2.foro.Administrador.class);
 		aMetadataSources.addAnnotatedClass(com.mds2.foro.videos.class);
 	}
 	

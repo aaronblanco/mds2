@@ -35,7 +35,7 @@ public interface iAdministrador extends iBanner_general, iMenu_UR {
 
 	public List cargarRespuestas(int aIdMensaje);
 
-	public AdministradorBD obtenerPerfilAdmin(int aIdUser);
+	public Administrador obtenerPerfilAdmin(int aIdUser);
 
 	public boolean subirAnuncio(String aAnuncioURL);
 

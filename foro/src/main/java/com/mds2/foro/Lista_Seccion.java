@@ -11,7 +11,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	public Usuario_no_registrado _unnamed_Usuario_no_registrado_;
-	public Vector<Sección> _list_Sección = new Vector<Sección>();
+	public Vector<SecciónClase> _list_Sección = new Vector<SecciónClase>();
 	//public Vector<Buscador_sección> _list_Buscador_sección = new Vector<Buscador_sección>();
 
 	public Lista_Seccion() {
@@ -28,7 +28,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 			
 		});
 		
-		listaSeccion.addComponent(new Sección());
+		listaSeccion.addComponent(new SecciónClase());
 		
 		crearNuevaSeccion.setVisible(false);
 	}

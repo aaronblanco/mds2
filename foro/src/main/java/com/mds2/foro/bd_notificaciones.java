@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class bd_notificaciones {
 	public Bd_principal _bd_principal_notificaciones;
-	public Vector<NotificacionBD> _contiene_notificaciones = new Vector<NotificacionBD>();
+	public Vector<Notificacion> _contiene_notificaciones = new Vector<Notificacion>();
 
 	public List cargarNotificacion(int aIdUsuario) {
 		throw new UnsupportedOperationException();

@@ -11,8 +11,8 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public class Lista_Tema extends Lista_Tema_ventana {
 	//private Orden _orden = DCLv3.Orden.Relevancia;
-	public Sección _sección;
-	public Vector<Tema> _list_Tema = new Vector<Tema>();
+	public SecciónClase _sección;
+	public Vector<TemaClase> _list_Tema = new Vector<TemaClase>();
 	//public Vector<Buscador_tema> _list_Buscador_tema = new Vector<Buscador_tema>();
 
 	public Lista_Tema() {

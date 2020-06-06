@@ -6,7 +6,7 @@ import java.util.Vector;
 //import DCLv3.Tema_vista_Admin;
 
 public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
-	public Administrador _administrador;
+	public AdministradorClase _administrador;
 	public SeccionVistaAdministrador _unnamed_SeccionVistaAdministrador_;
 	public Vector<Tema_eliminado> _list_Tema_eliminado = new Vector<Tema_eliminado>();
 	public Tema_vista_Admin _unnamed_Tema_vista_Admin_;

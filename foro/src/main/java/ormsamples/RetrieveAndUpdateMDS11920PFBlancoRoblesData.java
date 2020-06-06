@@ -1,5 +1,5 @@
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -9,42 +9,42 @@ public class RetrieveAndUpdateMDS11920PFBlancoRoblesData {
 	public void retrieveAndUpdateTestData() throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			com.mds2.foro.NotificacionBD dB_DCLNotificacion = com.mds2.foro.NotificacionDAO.loadNotificacionByQuery(null, null);
+			com.mds2.foro.Notificacion lcommds2foroNotificacion = com.mds2.foro.NotificacionDAO.loadNotificacionByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.NotificacionDAO.save(dB_DCLNotificacion);
-			com.mds2.foro.MensajeBD dB_DCLMensaje = com.mds2.foro.MensajeDAO.loadMensajeByQuery(null, null);
+			com.mds2.foro.NotificacionDAO.save(lcommds2foroNotificacion);
+			com.mds2.foro.Mensaje lcommds2foroMensaje = com.mds2.foro.MensajeDAO.loadMensajeByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.MensajeDAO.save(dB_DCLMensaje);
-			com.mds2.foro.UsuariosBD dB_DCLUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery(null, null);
+			com.mds2.foro.MensajeDAO.save(lcommds2foroMensaje);
+			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.UsuariosDAO.save(dB_DCLUsuarios);
-			com.mds2.foro.ModeradorBD dB_DCLModerador = com.mds2.foro.ModeradorDAO.loadModeradorByQuery(null, null);
+			com.mds2.foro.UsuariosDAO.save(lcommds2foroUsuarios);
+			com.mds2.foro.Moderador lcommds2foroModerador = com.mds2.foro.ModeradorDAO.loadModeradorByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.ModeradorDAO.save(dB_DCLModerador);
-			com.mds2.foro.SeccionBD dB_DCLSeccion = com.mds2.foro.SeccionDAO.loadSeccionByQuery(null, null);
+			com.mds2.foro.ModeradorDAO.save(lcommds2foroModerador);
+			com.mds2.foro.Seccion lcommds2foroSeccion = com.mds2.foro.SeccionDAO.loadSeccionByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.SeccionDAO.save(dB_DCLSeccion);
-			com.mds2.foro.TemaBD dB_DCLTema = com.mds2.foro.TemaDAO.loadTemaByQuery(null, null);
+			com.mds2.foro.SeccionDAO.save(lcommds2foroSeccion);
+			com.mds2.foro.Tema lcommds2foroTema = com.mds2.foro.TemaDAO.loadTemaByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.TemaDAO.save(dB_DCLTema);
-			com.mds2.foro.AnuncioBD dB_DCLAnuncio = com.mds2.foro.AnuncioDAO.loadAnuncioByQuery(null, null);
+			com.mds2.foro.TemaDAO.save(lcommds2foroTema);
+			com.mds2.foro.Anuncio lcommds2foroAnuncio = com.mds2.foro.AnuncioDAO.loadAnuncioByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.AnuncioDAO.save(dB_DCLAnuncio);
-			com.mds2.foro.TicketBD dB_DCLTicket = com.mds2.foro.TicketDAO.loadTicketByQuery(null, null);
+			com.mds2.foro.AnuncioDAO.save(lcommds2foroAnuncio);
+			com.mds2.foro.Ticket lcommds2foroTicket = com.mds2.foro.TicketDAO.loadTicketByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.TicketDAO.save(dB_DCLTicket);
-			com.mds2.foro.media dB_DCLmedia = com.mds2.foro.mediaDAO.loadMediaByQuery(null, null);
+			com.mds2.foro.TicketDAO.save(lcommds2foroTicket);
+			com.mds2.foro.media lcommds2foromedia = com.mds2.foro.mediaDAO.loadMediaByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.mediaDAO.save(dB_DCLmedia);
-			com.mds2.foro.imagenes dB_DCLimagenes = com.mds2.foro.imagenesDAO.loadImagenesByQuery(null, null);
+			com.mds2.foro.mediaDAO.save(lcommds2foromedia);
+			com.mds2.foro.imagenes lcommds2foroimagenes = com.mds2.foro.imagenesDAO.loadImagenesByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.imagenesDAO.save(dB_DCLimagenes);
-			com.mds2.foro.AdministradorBD dB_DCLAdministrador = com.mds2.foro.AdministradorDAO.loadAdministradorByQuery(null, null);
+			com.mds2.foro.imagenesDAO.save(lcommds2foroimagenes);
+			com.mds2.foro.Administrador lcommds2foroAdministrador = com.mds2.foro.AdministradorDAO.loadAdministradorByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.AdministradorDAO.save(dB_DCLAdministrador);
-			com.mds2.foro.videos dB_DCLvideos = com.mds2.foro.videosDAO.loadVideosByQuery(null, null);
+			com.mds2.foro.AdministradorDAO.save(lcommds2foroAdministrador);
+			com.mds2.foro.videos lcommds2forovideos = com.mds2.foro.videosDAO.loadVideosByQuery(null, null);
 			// Update the properties of the persistent object
-			com.mds2.foro.videosDAO.save(dB_DCLvideos);
+			com.mds2.foro.videosDAO.save(lcommds2forovideos);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -55,76 +55,76 @@ public class RetrieveAndUpdateMDS11920PFBlancoRoblesData {
 	
 	public void retrieveByCriteria() throws PersistentException {
 		System.out.println("Retrieving Notificacion by NotificacionCriteria");
-		com.mds2.foro.NotificacionCriteria dB_DCLNotificacionCriteria = new com.mds2.foro.NotificacionCriteria();
+		com.mds2.foro.NotificacionCriteria lcommds2foroNotificacionCriteria = new com.mds2.foro.NotificacionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLNotificacionCriteria.idNotificacion.eq();
-		System.out.println(dB_DCLNotificacionCriteria.uniqueNotificacion());
+		//lcommds2foroNotificacionCriteria.idNotificacion.eq();
+		System.out.println(lcommds2foroNotificacionCriteria.uniqueNotificacion());
 		
 		System.out.println("Retrieving Mensaje by MensajeCriteria");
-		com.mds2.foro.MensajeCriteria dB_DCLMensajeCriteria = new com.mds2.foro.MensajeCriteria();
+		com.mds2.foro.MensajeCriteria lcommds2foroMensajeCriteria = new com.mds2.foro.MensajeCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLMensajeCriteria.idMensaje.eq();
-		System.out.println(dB_DCLMensajeCriteria.uniqueMensaje());
+		//lcommds2foroMensajeCriteria.idMensaje.eq();
+		System.out.println(lcommds2foroMensajeCriteria.uniqueMensaje());
 		
 		System.out.println("Retrieving Usuarios by UsuariosCriteria");
-		com.mds2.foro.UsuariosCriteria dB_DCLUsuariosCriteria = new com.mds2.foro.UsuariosCriteria();
+		com.mds2.foro.UsuariosCriteria lcommds2foroUsuariosCriteria = new com.mds2.foro.UsuariosCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLUsuariosCriteria.idUsuario.eq();
-		System.out.println(dB_DCLUsuariosCriteria.uniqueUsuarios());
+		//lcommds2foroUsuariosCriteria.idUsuario.eq();
+		System.out.println(lcommds2foroUsuariosCriteria.uniqueUsuarios());
 		
 		System.out.println("Retrieving Moderador by ModeradorCriteria");
-		com.mds2.foro.ModeradorCriteria dB_DCLModeradorCriteria = new com.mds2.foro.ModeradorCriteria();
+		com.mds2.foro.ModeradorCriteria lcommds2foroModeradorCriteria = new com.mds2.foro.ModeradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLModeradorCriteria.idUsuario.eq();
-		System.out.println(dB_DCLModeradorCriteria.uniqueModerador());
+		//lcommds2foroModeradorCriteria.idUsuario.eq();
+		System.out.println(lcommds2foroModeradorCriteria.uniqueModerador());
 		
 		System.out.println("Retrieving Seccion by SeccionCriteria");
-		com.mds2.foro.SeccionCriteria dB_DCLSeccionCriteria = new com.mds2.foro.SeccionCriteria();
+		com.mds2.foro.SeccionCriteria lcommds2foroSeccionCriteria = new com.mds2.foro.SeccionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLSeccionCriteria.idSeccion.eq();
-		System.out.println(dB_DCLSeccionCriteria.uniqueSeccion());
+		//lcommds2foroSeccionCriteria.idSeccion.eq();
+		System.out.println(lcommds2foroSeccionCriteria.uniqueSeccion());
 		
 		System.out.println("Retrieving Tema by TemaCriteria");
-		com.mds2.foro.TemaCriteria dB_DCLTemaCriteria = new com.mds2.foro.TemaCriteria();
+		com.mds2.foro.TemaCriteria lcommds2foroTemaCriteria = new com.mds2.foro.TemaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLTemaCriteria.idTema.eq();
-		System.out.println(dB_DCLTemaCriteria.uniqueTema());
+		//lcommds2foroTemaCriteria.idTema.eq();
+		System.out.println(lcommds2foroTemaCriteria.uniqueTema());
 		
 		System.out.println("Retrieving Anuncio by AnuncioCriteria");
-		com.mds2.foro.AnuncioCriteria dB_DCLAnuncioCriteria = new com.mds2.foro.AnuncioCriteria();
+		com.mds2.foro.AnuncioCriteria lcommds2foroAnuncioCriteria = new com.mds2.foro.AnuncioCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLAnuncioCriteria.idAnuncio.eq();
-		System.out.println(dB_DCLAnuncioCriteria.uniqueAnuncio());
+		//lcommds2foroAnuncioCriteria.idAnuncio.eq();
+		System.out.println(lcommds2foroAnuncioCriteria.uniqueAnuncio());
 		
 		System.out.println("Retrieving Ticket by TicketCriteria");
-		com.mds2.foro.TicketCriteria dB_DCLTicketCriteria = new com.mds2.foro.TicketCriteria();
+		com.mds2.foro.TicketCriteria lcommds2foroTicketCriteria = new com.mds2.foro.TicketCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLTicketCriteria.idTicket.eq();
-		System.out.println(dB_DCLTicketCriteria.uniqueTicket());
+		//lcommds2foroTicketCriteria.idTicket.eq();
+		System.out.println(lcommds2foroTicketCriteria.uniqueTicket());
 		
 		System.out.println("Retrieving media by mediaCriteria");
-		com.mds2.foro.mediaCriteria dB_DCLmediaCriteria = new com.mds2.foro.mediaCriteria();
+		com.mds2.foro.mediaCriteria lcommds2foromediaCriteria = new com.mds2.foro.mediaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLmediaCriteria.idMedia.eq();
-		System.out.println(dB_DCLmediaCriteria.uniqueMedia());
+		//lcommds2foromediaCriteria.idMedia.eq();
+		System.out.println(lcommds2foromediaCriteria.uniqueMedia());
 		
 		System.out.println("Retrieving imagenes by imagenesCriteria");
-		com.mds2.foro.imagenesCriteria dB_DCLimagenesCriteria = new com.mds2.foro.imagenesCriteria();
+		com.mds2.foro.imagenesCriteria lcommds2foroimagenesCriteria = new com.mds2.foro.imagenesCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLimagenesCriteria.idMedia.eq();
-		System.out.println(dB_DCLimagenesCriteria.uniqueImagenes());
+		//lcommds2foroimagenesCriteria.idMedia.eq();
+		System.out.println(lcommds2foroimagenesCriteria.uniqueImagenes());
 		
 		System.out.println("Retrieving Administrador by AdministradorCriteria");
-		com.mds2.foro.AdministradorCriteria dB_DCLAdministradorCriteria = new com.mds2.foro.AdministradorCriteria();
+		com.mds2.foro.AdministradorCriteria lcommds2foroAdministradorCriteria = new com.mds2.foro.AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLAdministradorCriteria.idUsuario.eq();
-		System.out.println(dB_DCLAdministradorCriteria.uniqueAdministrador());
+		//lcommds2foroAdministradorCriteria.idUsuario.eq();
+		System.out.println(lcommds2foroAdministradorCriteria.uniqueAdministrador());
 		
 		System.out.println("Retrieving videos by videosCriteria");
-		com.mds2.foro.videosCriteria dB_DCLvideosCriteria = new com.mds2.foro.videosCriteria();
+		com.mds2.foro.videosCriteria lcommds2forovideosCriteria = new com.mds2.foro.videosCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//dB_DCLvideosCriteria.idMedia.eq();
-		System.out.println(dB_DCLvideosCriteria.uniqueVideos());
+		//lcommds2forovideosCriteria.idMedia.eq();
+		System.out.println(lcommds2forovideosCriteria.uniqueVideos());
 		
 	}
 	

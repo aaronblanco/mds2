@@ -4,9 +4,9 @@ import java.util.Vector;
 
 public class bd_administrador {
 	public Bd_principal _bd_principal_administrador;
-	public Vector<AdministradorBD> _contiene_administrador = new Vector<AdministradorBD>();
+	public Vector<Administrador> _contiene_administrador = new Vector<Administrador>();
 
-	public AdministradorBD obtenerPerfilAdmin(int aIdUser) {
+	public Administrador obtenerPerfilAdmin(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 }

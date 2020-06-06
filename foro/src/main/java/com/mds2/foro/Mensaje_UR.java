@@ -4,7 +4,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Mensaje_UR extends Mensaje {
+public class Mensaje_UR extends MensajeClase {
 //	private Button _darMeGusta;
 //	private Button _responder;
 	private boolean _meGusta;

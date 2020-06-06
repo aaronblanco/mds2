@@ -20,5 +20,5 @@ public interface iUsuario_no_registrado extends iBanner_general, iMenu_UNR {
 
 	public List buscarMensaje(String aKeyword, int aIdTema);
 
-	public void cargarRespuestas(int aIdMensaje);
+	public List cargarRespuestas(int aIdMensaje);
 }

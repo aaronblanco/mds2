@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class bd_secciones {
 	public Bd_principal _bd_principal_secciones;
-	public Vector<SeccionBD> _contiene_secciones = new Vector<SeccionBD>();
+	public Vector<Seccion> _contiene_secciones = new Vector<Seccion>();
 
 	public List cargarSeccionUNR(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {
 		throw new UnsupportedOperationException();

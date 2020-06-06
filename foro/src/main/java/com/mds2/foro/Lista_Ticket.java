@@ -5,7 +5,7 @@ package com.mds2.foro;
 public class Lista_Ticket extends Lista_Ticket_ventana{
 //	private Button _verTicket;
 	public Panel_de_administración_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
-	public Ticket _unnamed_Ticket_;
+	public TicketClase _unnamed_Ticket_;
 
 	public Lista_Ticket() {
 		

@@ -14,9 +14,9 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana{
 //	private Label _usuarioCreador;
 //	private Label _fechaCreacion;
 //	private Label _pagina;
-	public Tema _unnamed_Tema_;
+	public TemaClase _unnamed_Tema_;
 	//public Vector<Buscador_mensaje> _list_Buscador_mensaje = new Vector<Buscador_mensaje>();
-	public Vector<Mensaje> _list_Mensaje = new Vector<Mensaje>();
+	public Vector<MensajeClase> _list_Mensaje = new Vector<MensajeClase>();
 
 	public Lista_Mensaje() {
 		

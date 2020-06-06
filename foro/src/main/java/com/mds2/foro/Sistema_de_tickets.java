@@ -10,7 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Sistema_de_tickets extends Sistema_de_tickets_ventana implements View{
 //	private Button _responderTicket;
 //	public Responder_ticket _responder_ticket;
-	public Ticket _unnamed_Ticket_;
+	public TicketClase _unnamed_Ticket_;
 
 	public Sistema_de_tickets() {
 		

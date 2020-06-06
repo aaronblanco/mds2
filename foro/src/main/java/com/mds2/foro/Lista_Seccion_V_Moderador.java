@@ -13,7 +13,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 	//private Button _crearSeccion;
-	public Moderador _unnamed_Moderador_;
+	public ModeradorClase _unnamed_Moderador_;
 	//public Vector<Cambiar_accesibilidad> _list_Cambiar_accesibilidad = new Vector<Cambiar_accesibilidad>();
 	//public Vector<Crear_sección> _list_Crear_sección = new Vector<Crear_sección>();
 	public Vector<Sección_oculta> _list_Sección_oculta = new Vector<Sección_oculta>();

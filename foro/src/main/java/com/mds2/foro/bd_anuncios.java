@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class bd_anuncios {
 	public Bd_principal _bd_principal_anuncios;
-	public Vector<AnuncioBD> _contiene_anuncios = new Vector<AnuncioBD>();
+	public Vector<Anuncio> _contiene_anuncios = new Vector<Anuncio>();
 
 	public List cargarAnuncioDisponible(boolean aEstado) {
 		throw new UnsupportedOperationException();
