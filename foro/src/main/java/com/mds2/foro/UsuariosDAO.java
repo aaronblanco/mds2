@@ -326,8 +326,8 @@ public class UsuariosDAO {
 			return DB_DCL.ModeradorDAO.deleteAndDissociate((ModeradorBD.Moderador) usuarios);
 		}
 		
-		if (usuarios instanceof AdministradorBD.Administrador) {
-			return DB_DCL.AdministradorDAO.deleteAndDissociate((AdministradorBD.Administrador) usuarios);
+		if (usuarios instanceof AdministradorBD.AdministradorClase) {
+			return DB_DCL.AdministradorDAO.deleteAndDissociate((AdministradorBD.AdministradorClase) usuarios);
 		}
 		
 		try {
@@ -372,8 +372,8 @@ public class UsuariosDAO {
 			return DB_DCL.ModeradorDAO.deleteAndDissociate((ModeradorBD.Moderador) usuarios, session);
 		}
 		
-		if (usuarios instanceof AdministradorBD.Administrador) {
-			return DB_DCL.AdministradorDAO.deleteAndDissociate((AdministradorBD.Administrador) usuarios, session);
+		if (usuarios instanceof AdministradorBD.AdministradorClase) {
+			return DB_DCL.AdministradorDAO.deleteAndDissociate((AdministradorBD.AdministradorClase) usuarios, session);
 		}
 		
 		try {

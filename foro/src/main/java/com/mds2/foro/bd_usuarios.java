@@ -87,7 +87,7 @@ public class bd_usuarios {
 		throw new UnsupportedOperationException();
 	}
 
-	public Administrador obtenerPerfilAdmin(int aIdUser) {
+	public AdministradorClase obtenerPerfilAdmin(int aIdUser) {
 		throw new UnsupportedOperationException();
 	}
 

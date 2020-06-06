@@ -124,7 +124,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public ListaAmigos[] cargarListaAmigos() {
+	public Lista_Amigo[] cargarListaAmigos() {
 		throw new UnsupportedOperationException();
 	}
 

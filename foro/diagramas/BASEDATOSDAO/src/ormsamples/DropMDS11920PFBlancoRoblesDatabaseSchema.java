@@ -1,5 +1,5 @@
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -11,8 +11,8 @@ public class DropMDS11920PFBlancoRoblesDatabaseSchema {
 			System.out.println("Are you sure to drop table(s)? (Y/N)");
 			java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
 			if (reader.readLine().trim().toUpperCase().equals("Y")) {
-				ORMDatabaseInitiator.dropSchema(db_dcl.MDS11920PFBlancoRoblesPersistentManager.instance());
-				db_dcl.MDS11920PFBlancoRoblesPersistentManager.instance().disposePersistentManager();
+				ORMDatabaseInitiator.dropSchema(com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance());
+				com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().disposePersistentManager();
 			}
 			
 		}
