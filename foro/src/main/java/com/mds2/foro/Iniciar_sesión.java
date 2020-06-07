@@ -9,9 +9,9 @@ import com.vaadin.ui.TextField;
 public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	private String _nombreUsuario;
 	private String _contrasena;
-//	private Button _recordar;
-//	private Button _registrarse;
-//	private Button _iniciarSesion;
+	private Button _recordar;
+	private Button _registrarse;
+	private Button _iniciarSesion;
 	
 	public Menu_UNR _unnamed_Menu_UNR_;
 	public Recuperar_contrasena _recuperar_contraseña;
@@ -21,25 +21,29 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	public Iniciar_sesión() {
 		this._nombreUsuario = userName.toString();
 		this._contrasena = password.toString();
-		recordarPassw.addClickListener(new Button.ClickListener() {
+		this._recordar = recordarPassw;
+		this._registrarse = registrars;
+		this._iniciarSesion =iniSesion;
+		
+		_recordar.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("recordarPassw");
+				recordar();
 			}
 		});	
 		
-		registrars.addClickListener(new Button.ClickListener() {
+		_registrarse.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("Registrarse");
+				registrarse();
 			}
 		});	
 		
-		iniSesion.addClickListener(new Button.ClickListener() {
+		_iniciarSesion.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -51,7 +55,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	}
 	
 	public void recordar() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("recordarPassw");
 	}
 
 	public void iniciarSesion() {
@@ -61,6 +65,6 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	}
 
 	public void registrarse() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("Registrarse");
 	}
 }

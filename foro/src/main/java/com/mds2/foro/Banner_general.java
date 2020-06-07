@@ -8,8 +8,8 @@ import com.vaadin.ui.Button.ClickEvent;
 //import Package2.iBanner_general;
 
 public class Banner_general extends Banner_general_ventana implements View{
-//	private Button _faq;
-//	private Button _avisoLegal;
+	private Button _faq;
+	private Button _avisoLegal;
 //	private TextField _foroDesplegable;
 //	public iBanner_general _iBanner_general;
 //	public Banner _banner;
@@ -19,42 +19,32 @@ public class Banner_general extends Banner_general_ventana implements View{
 //	public FAQ _unnamed_FAQ_;
 
 	public Banner_general() {
+		this._faq = faq;
+		this._avisoLegal = avisoLegal;
 		
-		soporte.addStyleName("link");
-		soporte.addClickListener(new Button.ClickListener() {
+		
+		
+		_faq.addStyleName("link");
+		_faq.addClickListener(new Button.ClickListener() {
 			
-			//cancelar();
+		
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				faq();
 			}
 			
 		});	
 		
-		faq.addStyleName("link");
-		faq.addClickListener(new Button.ClickListener() {
+		_avisoLegal.addStyleName("link");
+		_avisoLegal.addClickListener(new Button.ClickListener() {
 			
-			//cancelar();
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
-			}
-			
-		});	
-		
-		avisoLegal.addStyleName("link");
-		avisoLegal.addClickListener(new Button.ClickListener() {
-			
-			//cancelar();
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				avisoLegal();
 			}
 			
 		});	
@@ -64,10 +54,10 @@ public class Banner_general extends Banner_general_ventana implements View{
 	}
 	
 	public void faq() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("faq");
 	}
 
 	public void avisoLegal() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("avisoLegal");
 	}
 }

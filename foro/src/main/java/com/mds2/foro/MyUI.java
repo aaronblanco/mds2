@@ -46,14 +46,15 @@ public class MyUI extends UI {
      	 navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
      	 navigator.addView("Iniciar sesión",  new Usuario_no_registrado(new Iniciar_sesión()));
      	 navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
-     	 
+     	 navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena() ) );
      	 
      	 
      	 
      	 
      	  navigator.addView("crearSeccion", new Usuario_registrado(new CreacionSeccion()));
     	  navigator.addView("Mi perfil", new Usuario_registrado(new PerfilUsuarioRegAdmin()));
-      	 
+    	  navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));
+    	  navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
       	 
      	 
      	 

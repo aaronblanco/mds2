@@ -8,41 +8,55 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Mi_perfil extends Mi_Perfil_ventana implements View {
-//	private Button _darseDeBaja;
-//	private Button _ocultarPerfil;
-//	private Button _cambiarDatos;
-//	private Label _nombre;
-//	private Label _contrasena;
-//	private Label _descripcion;
-//	private Label _fotoPerfil;
-//	private Label _listaNoti;
-//	private Label _listaSoli;
-//	private Label _listaAmi;
-//	private Image _foto;
-//	private Label _anadirAmigo;
+	private Button _darseDeBaja;
+	private Button _ocultarPerfil;
+	private Button _cambiarDatos;
+	private TextField _nombre;
+	private TextField _contrasena;
+	private TextField _descripcion;
+	private Label _fotoPerfil;
+	private TextField _listaNoti;
+	private TextField _listaSoli;
+	private TextField _listaAmi;
+	private Image _foto;
+	private Label _anadirAmigo;
 	public Menu_UR _unnamed_Menu_UR_;
 	public Lista_Notificación _notificación;
 	public Lista_Amigo _amigos;
 	public Lista_Solicitud _solicitud;
 	public Lista_UsuarioReg _unnamed_Lista_UsuarioReg_;
 
+	iUsuario iUsr = new DB_Main();
+	
+	
 	public Mi_perfil() {
+		_darseDeBaja = darseDeBaja;
+		_ocultarPerfil = ocultarMiPerfil;
+		_cambiarDatos = modificarPerfil;
+		_nombre = nombreUsuarioPerfil;
+		_contrasena = passwordMiPerfil;
+		_descripcion = descripcionMiPerfil;
+	
 		
-		darseDeBaja.addClickListener(new Button.ClickListener() {
+		
+		
+		
+		
+		_darseDeBaja.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("darseDeBaja");
+				darseDeBaja();
 			}
 		});
 		
-		modificarPerfil.addClickListener(new Button.ClickListener() {
+		_cambiarDatos.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("modificarPerfil");
+				cambiarDatos();
 			}
 		});
 		
@@ -55,12 +69,12 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 			}
 		});
 		
-		ocultarMiPerfil.addClickListener(new Button.ClickListener() {
+		_ocultarPerfil.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("ocultarMiPerfil");
+				ocultarPerfil();
 			}
 		});
 		
@@ -68,15 +82,15 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 	
 	
 	public void darseDeBaja() {
-		throw new UnsupportedOperationException();
+		iUsr.darDeBaja(aIdUsuario);
 	}
 
 	public void ocultarPerfil() {
-		throw new UnsupportedOperationException();
+		iUsr.ocultarPerfil(aIdUsuario, aPublico, aOculto);
 	}
 
 	public void cambiarDatos() {
-		throw new UnsupportedOperationException();
+		iUsr.cambiarDatos(aIdUsuario, aUsername, aPassword, aDescription, aFotoURL);
 	}
 
 	public void buscarUsuario() {
