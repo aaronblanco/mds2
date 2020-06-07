@@ -5,6 +5,7 @@ import com.vaadin.annotations.DesignRoot;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.declarative.Design;
@@ -24,6 +25,7 @@ public class Seccion_ventana extends VerticalLayout {
 	protected VerticalLayout seccionAdminLista;
 	protected HorizontalLayout seccion;
 	protected Button irSeccion;
+	protected Image imgSeccion;
 	protected ComboBox<java.lang.String> statusTema;
 	protected Button eliminarSeccion;
 	protected HorizontalLayout seccionDatos;

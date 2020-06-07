@@ -20,6 +20,8 @@ public class TemaClase extends Tema_ventana implements View{
 	
 	public TemaClase() {
 		
+		Inicializar();
+		
 			irTema.addClickListener(new Button.ClickListener() {
 				
 				@Override
@@ -29,23 +31,9 @@ public class TemaClase extends Tema_ventana implements View{
 				}
 			});	
 			
-			darMG.addClickListener(new Button.ClickListener() {
-				
-				@Override
-				public void buttonClick(ClickEvent event) {
-					// TODO Auto-generated method stub
-					UI.getCurrent().getNavigator().navigateTo("darMG");
-				}
-			});	
+
 			
-			notificarAdmin.addClickListener(new Button.ClickListener() {
-				
-				@Override
-				public void buttonClick(ClickEvent event) {
-					// TODO Auto-generated method stub
-					UI.getCurrent().getNavigator().navigateTo("notificarAdmin");
-				}
-			});	
+
 			
 			cerrarTema.addClickListener(new Button.ClickListener() {
 				
@@ -65,15 +53,21 @@ public class TemaClase extends Tema_ventana implements View{
 				}
 			});	
 			
-			cerrarTema.setVisible(false);
 			
-			darMG.setVisible(false);
-			
-			notificarAdmin.setVisible(false);
-			
-			cambiarAcc.setVisible(false);
-			
-			eliminarTema.setVisible(false);
 		}
+
+	private void Inicializar() {
+		// TODO Auto-generated method stub
+		cerrarTema.setVisible(false);
+		
+		darMG.setVisible(false);
+		
+		notificarAdmin.setVisible(false);
+		
+		cambiarAcc.setVisible(false);
+		
+		eliminarTema.setVisible(false);
+	}
+	
 	
 }

@@ -8,42 +8,47 @@ import java.util.Vector;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
 
 public class Lista_Tema extends Lista_Tema_ventana {
 	//private Orden _orden = DCLv3.Orden.Relevancia;
-	public SecciónClase _sección;
+	public SeccionClase _sección;
 	public Vector<TemaClase> _list_Tema = new Vector<TemaClase>();
 	//public Vector<Buscador_tema> _list_Buscador_tema = new Vector<Buscador_tema>();
+	iUsuario_no_registrado iUsrNR  = new DB_Main();
+
 
 	public Lista_Tema() {
+		
+		Inicializar();
 		
 		buscarTemaB.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cerrarTema");
+				buscarTema();
 			}
 		});	
 		
-		crearTemaB.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("crearTemaB");
-			}
-		});	
 		
+		
+		_list_Tema = (Vector<TemaClase>) iUsrNR.cargarTemasUNR(1, true, false, false, false);
+		listaTemas.addComponent((Component) _list_Tema);
+	
+	}
+	
+	private void Inicializar() {
+		// TODO Auto-generated method stub
 		crearTemaB.setVisible(false);
 		
 		statusTema.setVisible(false);
 		
 		buscarTemaB.setVisible(true);
 	}
-	
+//AQUI COSA ID PUM
 	public void buscarTema() {
-		throw new UnsupportedOperationException();
+		listaTemas.addComponent((Component) iUsrNR.buscarTema(buscarTemaTF.toString(), 1));
 	}
 
 	public void ordenar(Orden aNuevoOrden) {
