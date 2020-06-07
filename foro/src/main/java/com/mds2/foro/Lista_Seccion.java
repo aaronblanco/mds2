@@ -7,34 +7,48 @@ import java.util.Vector;
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
 
 public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	public Usuario_no_registrado _unnamed_Usuario_no_registrado_;
-	public Vector<SecciónClase> _list_Sección = new Vector<SecciónClase>();
-	//public Vector<Buscador_sección> _list_Buscador_sección = new Vector<Buscador_sección>();
-
+	public Vector<SeccionClase> _list_Seccion = new Vector<SeccionClase>();
+	//public Vector<Buscador_seccion> _list_Buscador_sección = new Vector<Buscador_seccion>();
+	iUsuario_no_registrado iUsrNR  = new DB_Main();
+	
 	public Lista_Seccion() {
 
+		Inicializar();
 		
 		buscarSeccionB.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-			//	navigator.navigateTo("crearSeccion");
 				buscarSeccion();
 			}
 			
 		});
 		
-		listaSeccion.addComponent(new SecciónClase());
 		
-		crearNuevaSeccion.setVisible(false);
+		
+		_list_Seccion = (Vector<SeccionClase>) iUsrNR.cargarListaSecciones(true, false, false, false);
+
+		listaSeccion.addComponent((Component) _list_Seccion);
+		
 	}
 	
 	
+	private void Inicializar() {
+		// TODO Auto-generated method stub
+		buscarSeccionB.setVisible(true);
+		crearNuevaSeccion.setVisible(true);
+
+	}
+
+
 	public void buscarSeccion() {
-		throw new UnsupportedOperationException();
+		listaSeccion.addComponent((Component) iUsrNR.buscarSeccion(keywordBS.toString()));
 	}
 }

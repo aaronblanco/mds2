@@ -30,7 +30,6 @@ public class Lista_Mensaje_ventana extends VerticalLayout {
 	protected Label usuarioCreador;
 	protected Label fechaCreacion;
 	protected VerticalLayout listaMensajeAdmin;
-	protected VerticalLayout msgAdminLista;
 
 	public Lista_Mensaje_ventana() {
 		Design.read(this);

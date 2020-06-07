@@ -7,6 +7,11 @@ import java.util.Vector;
 //import Package.Tema_UR;
 //import DCLv3.CreacionTema;
 
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
+
 public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 //	private Button _crearTema;
 	public Usuario_registrado _usuario_registrado;
@@ -16,15 +21,35 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 	public Vector<Tema_UR> _list_Tema_UR = new Vector<Tema_UR>();
 	public CreacionTema _unnamed_CreacionTema_;
 
+	iUsuario_no_registrado iUsrNR  = new DB_Main();
+	
 	public Lista_Tema_V_Usuario_Reg() {
 		
 		super();
 		
-		crearTemaB.setVisible(true);
+		Inicializar();
+		
+		crearTemaB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				crearTema();
+			}
+		});	
+		
+		
+		listaTemas.addComponent((Component) iUsrNR.cargarTemasUNR(1, true, true, false, false));
+		
 		
 	}
 	
+	private void Inicializar() {
+		crearTemaB.setVisible(true);
+
+	}
+	
 	public void crearTema() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("crearTemaB");
 	}
 }

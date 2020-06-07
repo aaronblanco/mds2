@@ -12,25 +12,46 @@ public class Tema_vista_Admin extends TemaVistaModerador {
 //	private Listener _listaTemaAdmin;
 	public Lista_Tema_V_Administrador _unnamed_Lista_Tema_V_Administrador_;
 	public Lista_Mensaje_V_Administrador _unnamed_Lista_Mensaje_V_Administrador_;
-
+	iAdministrador iAdmin = new DB_Main();
+	
 	public Tema_vista_Admin() {
 		super();
 		
+		//voy a dejar de hacer los inicializar en las clases superiores porque puede petar esto
 		notificarAdmin.setVisible(false);
 		
 		cerrarTema.setVisible(true);
 		
 		eliminarTema.setVisible(true);
 		
+		cerrarTema.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				cerrarTema();
+			}
+		});
+		
+		eliminarTema.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				eliminarTema();
+			}
+		});
+		
 	}
 	
 	
 	
+	//LOS IDS	
 	public void eliminarTema() {
-		throw new UnsupportedOperationException();
+		iAdmin.eliminarTema(1);
 	}
-
+	//	LOS IDS
 	public void cerrarTema() {
-		throw new UnsupportedOperationException();
+		iAdmin.cerrarTema(1);
 	}
 }

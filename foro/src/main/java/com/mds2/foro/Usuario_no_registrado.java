@@ -4,8 +4,6 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.VerticalLayout;
 
-//import Package2.iUsuario_no_registrado;
-
 public class Usuario_no_registrado extends Banner_general implements View{
 	//public iUsuario_no_registrado _iUsuario_no_registrado;
 	public Lista_Seccion _secciones;
