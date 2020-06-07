@@ -4,23 +4,26 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Image;
+import com.vaadin.ui.TextField;
 
 public class Registrarse extends Registrarse_ventana implements View {
-//	private TextField _nombreUser;
-//	private TextField _contrasena;
-//	private TextField _correoElectronico;
-//	private TextField _nombreCompleto;
-//	private TextField _descripcion;
-//	private Button _adjuntarFotoPerfil;
-//	private Image _foto;
-//	private Button _validarDatos;
+	private TextField _nombreUser;
+	private TextField _contrasena;
+	private TextField _correoElectronico;
+	private TextField _nombreCompleto;
+	private TextField _descripcion;
+	private Button _adjuntarFotoPerfil;
+	private Image _foto;
+	private Button _validarDatos;
 	public Correo_electrónico _unnamed_Correo_electrónico_;
 	public Menu_UNR _unnamed_Menu_UNR_;
 
 	public Registrarse() {
+		this._nombreUser = userNameRegistro;
 		
 		
-	
+		registro.setVisible(true);
 	//	enlaceIniciarSesion.setStyleName(Button.DESIGN_ATTR_PLAIN_TEXT);
 		enlaceIniciarSesion.addStyleName("link");
 		enlaceIniciarSesion.addClickListener(new Button.ClickListener() {
@@ -30,8 +33,8 @@ public class Registrarse extends Registrarse_ventana implements View {
 				// TODO Auto-generated method stub
 
 				UI.getCurrent().getNavigator().navigateTo("Iniciar sesión");
-
-
+				
+				
 			}
 			
 		});
