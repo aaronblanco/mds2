@@ -4,10 +4,11 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.TextField;
 
 public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
-//	private TextField _nombreUsuario;
-//	private TextField _contrasena;
+	private String _nombreUsuario;
+	private String _contrasena;
 //	private Button _recordar;
 //	private Button _registrarse;
 //	private Button _iniciarSesion;
@@ -15,8 +16,11 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	public Menu_UNR _unnamed_Menu_UNR_;
 	public Recuperar_contrasena _recuperar_contraseña;
 
+	iUsuario iUsr = new DB_Main();
+	
 	public Iniciar_sesión() {
-		
+		this._nombreUsuario = userName.toString();
+		this._contrasena = password.toString();
 		recordarPassw.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -40,7 +44,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("iniSesion");
+				iniciarSesion();
 			}
 		});	
 		
@@ -51,8 +55,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	}
 
 	public void iniciarSesion() {
-		throw new UnsupportedOperationException();
 		
+		int idU = iUsr.iniciarSesion(_nombreUsuario, _contrasena);
 		
 	}
 

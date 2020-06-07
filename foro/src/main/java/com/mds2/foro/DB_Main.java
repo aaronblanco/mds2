@@ -2,8 +2,12 @@ package com.mds2.foro;
 
 import java.util.List;
 
+import org.orm.PersistentException;
+
 public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario_registrado, iCorreo_electronico, iMenu_moderador, iMenu_UNR, iModerador, iMenu_UR, iUsuario_creador_de_mensaje, iUsuario, iUsuario_no_registrado {
 
+	bd_usuarios bdUsr = new bd_usuarios();
+	
 	public List cargarAnuncioDisponible(boolean aEstado) {
 		throw new UnsupportedOperationException();
 	}
@@ -145,7 +149,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 	}
 
 	public int iniciarSesion(String aUsername, String aPassword) {
-		throw new UnsupportedOperationException();
+		return bdUsr.iniciarSesion(aUsername, aPassword);
 	}
 
 	public List cargarAmigos(int aIdUsuario) {
