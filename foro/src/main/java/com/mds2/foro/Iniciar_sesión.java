@@ -31,7 +31,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("registrars");
+				UI.getCurrent().getNavigator().navigateTo("Registrarse");
 			}
 		});	
 		
@@ -52,6 +52,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 
 	public void iniciarSesion() {
 		throw new UnsupportedOperationException();
+		
+		
 	}
 
 	public void registrarse() {

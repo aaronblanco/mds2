@@ -254,6 +254,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 
 	public boolean registrarse(String aUsername, String aFullname, String aPassword, String aDescription, String aEmail, String aFotoURL) {
 		throw new UnsupportedOperationException();
+		
 	}
 
 	public List cargarListaSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {
