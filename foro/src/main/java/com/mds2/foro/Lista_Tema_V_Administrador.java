@@ -21,6 +21,11 @@ public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
 		//comprobar diferencia al cargar entre secciones y temas
 		listaTemas.addComponent((Component) iUsrNR.cargarTemasUNR(1, true, true, true, true));
 		
+		_list_Tema_eliminado = (Vector<Tema_eliminado>) iUsrNR.cargarTemasUNR(Integer.parseInt(_unnamed_SeccionVistaModerador_.getId()), false, false, false, true);
+		
+		for(Object it: _list_Tema_eliminado)
+			listaTemas.addComponent((Component) it);
+		
 	}
 	
 }
