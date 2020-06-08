@@ -5,12 +5,12 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Mensaje_UR extends MensajeClase {
-//	private Button _darMeGusta;
-//	private Button _responder;
+	private Button _darMeGusta;
+	private Button _responder;
 	private boolean _meGusta;
 //	private Listener _listaUltimoMsg;
 //	private Listener _listaMsgVUsuarioReg;
-//	private Button _notificarAdministrador;
+	private Button _notificarAdministrador;
 	public Lista_Mensaje_V_Usuario_Reg _unnamed_Lista_Mensaje_V_Usuario_Reg_;
 	public Lista_Ultimo_mensaje _unnamed_Lista_Ultimo_mensaje_;
 	//public Escribir_mensaje _escribir_mensaje;
@@ -21,7 +21,9 @@ public class Mensaje_UR extends MensajeClase {
 	public Mensaje_UR() {
 		super();
 		
-		
+		_darMeGusta = meGustaB;
+		_responder = responderMensaje;
+		_notificarAdministrador = notificarAdminB;
 		
 		meGustaB.setVisible(true);
 		
@@ -30,7 +32,8 @@ public class Mensaje_UR extends MensajeClase {
 		notificarAdminB.setVisible(true);
 		
 		
-		meGustaB.addClickListener(new Button.ClickListener() {
+		
+		_darMeGusta.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -40,7 +43,7 @@ public class Mensaje_UR extends MensajeClase {
 
 		});	
 		
-		responderMensaje.addClickListener(new Button.ClickListener() {
+		_responder.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -50,7 +53,7 @@ public class Mensaje_UR extends MensajeClase {
 		});	
 		
 		
-		notificarAdminB.addClickListener(new Button.ClickListener() {
+		_notificarAdministrador.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {

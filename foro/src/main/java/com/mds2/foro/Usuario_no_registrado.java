@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Layout;
 import com.vaadin.ui.VerticalLayout;
@@ -12,7 +14,7 @@ public class Usuario_no_registrado extends Banner_general implements View{
 	
 		
 		
-		public Usuario_no_registrado() {
+		public Usuario_no_registrado() throws PersistentException {
 			
 			
 			Lista_Seccion sec = new Lista_Seccion();

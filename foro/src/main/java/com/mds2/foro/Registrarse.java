@@ -61,7 +61,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 
 	}
 	public void validarDatos() {
-		iNusr.registrarse(_nombreUser, _nombreCompleto, _contrasena, _descripcion, _correoElectronico, _foto);
+		iNusr.registrarse(_nombreUser.toString(), _nombreCompleto.toString(), _contrasena.toString(), _descripcion.toString(), _correoElectronico.toString(), _foto.toString());
 	}
 
 	public void adjuntarFotoPerfil() {

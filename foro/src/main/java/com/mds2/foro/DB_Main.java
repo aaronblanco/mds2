@@ -7,6 +7,7 @@ import org.orm.PersistentException;
 public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario_registrado, iCorreo_electronico, iMenu_moderador, iMenu_UNR, iModerador, iMenu_UR, iUsuario_creador_de_mensaje, iUsuario, iUsuario_no_registrado {
 
 	bd_usuarios bdUsr = new bd_usuarios();
+	bd_secciones bdSec = new bd_secciones();
 	
 	public List cargarAnuncioDisponible(boolean aEstado) {
 		throw new UnsupportedOperationException();
@@ -196,7 +197,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean crearTema(String aTitulo, String aSubtitulo, String aDescripcion, int aIdSeccionPropietaria, int aIdTemaPropietario) {
+	public boolean crearTema(String aTitulo, String aSubtitulo, int aIdSeccionPropietaria, int aIdTemaPropietario) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -256,13 +257,13 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean registrarse(String aUsername, String aFullname, String aPassword, String aDescription, String aEmail, String aFotoURL) {
-		throw new UnsupportedOperationException();
+	public boolean registrarse(String aUsername, String aFullname, String aPassword, String aDescription, String aEmail, String aFotoURL) throws PersistentException {
+		return bdUsr.registrarse(aUsername, aFullname, aPassword, aDescription, aEmail, aFotoURL);
 		
 	}
 
-	public List cargarListaSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {
-		throw new UnsupportedOperationException();
+	public List cargarListaSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
+		return bdSec.cargarSecciones(aPublico, aPrivado, aOculto, aEliminado);
 	}
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {

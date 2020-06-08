@@ -4,6 +4,8 @@ import java.util.Vector;
 //import Package.Sección;
 //import Package.Buscador_sección;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
@@ -17,7 +19,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	//public Vector<Buscador_seccion> _list_Buscador_sección = new Vector<Buscador_seccion>();
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 	
-	public Lista_Seccion() {
+	public Lista_Seccion() throws PersistentException {
 
 		Inicializar();
 		

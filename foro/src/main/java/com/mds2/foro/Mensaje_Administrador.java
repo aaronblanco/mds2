@@ -7,7 +7,7 @@ import com.vaadin.ui.Button.ClickEvent;
 //import Package.Mensaje_moderador;
 
 public class Mensaje_Administrador extends Mensaje_moderador {
-	//private Button _eliminar;
+	private Button _eliminar;
 	public Lista_Mensaje_V_Administrador _unnamed_Lista_Mensaje_V_Administrador_;
 	iAdministrador iAd = new DB_Main();
 	
@@ -17,7 +17,9 @@ public class Mensaje_Administrador extends Mensaje_moderador {
 		notificarAdminB.setVisible(false);
 		eliminarMensaje.setVisible(true);
 
-		eliminarMensaje.addClickListener(new Button.ClickListener() {
+		_eliminar = eliminarMensaje;
+		
+		_eliminar.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
 			
