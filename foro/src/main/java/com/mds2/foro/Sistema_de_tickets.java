@@ -7,7 +7,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 //import DCLv3.Ticket;
 
-public class Sistema_de_tickets extends Sistema_de_tickets_ventana implements View{
+public class Sistema_de_tickets extends Sistema_de_ticket_ventana implements View{
 //	private Button _responderTicket;
 //	public Responder_ticket _responder_ticket;
 	public TicketClase _unnamed_Ticket_;
