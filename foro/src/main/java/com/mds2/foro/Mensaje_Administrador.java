@@ -13,11 +13,12 @@ public class Mensaje_Administrador extends Mensaje_moderador {
 	
 	public Mensaje_Administrador() {
 		super();
-		this._eliminar = eliminarMensaje;
 		
 		notificarAdminB.setVisible(false);
 		eliminarMensaje.setVisible(true);
 
+		_eliminar = eliminarMensaje;
+		
 		_eliminar.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
