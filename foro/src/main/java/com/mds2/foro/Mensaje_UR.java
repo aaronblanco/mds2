@@ -35,7 +35,7 @@ public class Mensaje_UR extends MensajeClase {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				darMeGusta(;)
+				darMeGusta();
 			}
 
 		});	
@@ -62,7 +62,7 @@ public class Mensaje_UR extends MensajeClase {
 	}
 	
 	public void darMeGusta() {
-		iUsr.darMeGustaMensaje(aIdMensaje, aIdUser);
+		iUsr.darMeGustaMensaje(this.getId(), aIdUser);
 	}
 
 	public void responderMsg() {
@@ -70,6 +70,6 @@ public class Mensaje_UR extends MensajeClase {
 	}
 
 	public void notificarAdministrador() {
-		iA.notificarMensaje(aIdMensaje, aIdUSer);
+		iA.notificarMensaje(this.getId(), aIdUSer);
 	}
 }
