@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
@@ -38,8 +39,37 @@ public class bd_secciones {
 		
 	}
 
-	public boolean crearSeccion(String aTitulo, String aSubtitulo, int aIdUserCreador) {
-		throw new UnsupportedOperationException();
+	public boolean crearSeccion(String aTitulo, String aSubtitulo, int aIdUserCreador) throws PersistentException {
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+	try {
+		Seccion sec = com.mds2.foro.SeccionDAO.createSeccion();
+		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUserCreador);
+		sec.setTitulo(aTitulo);
+		sec.setDescripcion(aSubtitulo);
+		
+		sec.setIdPropietarioSeccion(aIdUserCreador);
+		
+		
+		sec.setFecha(System.currentTimeMillis());
+		sec.setPublico(true);
+		sec.setCreador(u.getNombre());
+		com.mds2.foro.SeccionDAO.save(sec);
+		
+		t.commit();
+		
+		return true;
+	}
+	catch(Exception e) {
+			t.rollback();	
+			return false;
+		}
+		
+	
+		
+		
+	
+		
+		
 	}
 
 	public boolean cambiarAccesibilidadSeccion(Tipo aTipoNuevo) {

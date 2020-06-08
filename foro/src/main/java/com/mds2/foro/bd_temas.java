@@ -63,23 +63,42 @@ public class bd_temas {
 	}
 
 	public boolean crearTema(String aTitulo, String aSubtitulo, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
-		
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+	try {
 		Seccion sec = com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
 		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdTemaPropietario);
 		Tema tema = com.mds2.foro.TemaDAO.createTema();
 		
 		tema.setTitulo(aTitulo);
 		tema.setDescripcion(aSubtitulo);
+		tema.setFecha(System.currentTimeMillis());
+		tema.setIdTemaPropietario(aIdSeccionPropietaria);
+		tema.setUsuarios(u);
+		tema.setPublico(true);
+		com.mds2.foro.TemaDAO.save(tema);
+		
+		u.pro_temas.add(tema);
+		com.mds2.foro.UsuariosDAO.save(u);
+		
 		
 		sec.contiene_temas.add(tema);
-		u.pro_temas.add(tema);
-		//ESTO ESTA A MEDIAS
+		com.mds2.foro.SeccionDAO.save(sec);
 		
 		
-		return false;
 		
-		//tema.setFecha();
 		
+		t.commit();
+		return true;
+		
+	}
+	catch(Exception e) {
+			t.rollback();
+			return false;
+		}
+		
+	
+	
+	
 	}
 
 	public boolean darMeGustaTema(int aIdTema, int aIdUser) {
@@ -87,16 +106,37 @@ public class bd_temas {
 		
 	}
 
-	public boolean eliminarTema(int aIdTema) {
-		throw new UnsupportedOperationException();
+	public boolean eliminarTema(int aIdTema) throws PersistentException {
+		
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();	
+		try {
+			
+			
+		 Tema tema = com.mds2.foro.TemaDAO.getTemaByORMID(aIdTema);
+		 com.mds2.foro.TemaDAO.delete(tema);
+			
+			
+			
+			t.commit();
+			return true;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			t.rollback();
+			return false;
+		}
+		
+		
 	}
 
-	public boolean cerrarTema(int aIdTema) {
+	public boolean cerrarTema(int aIdTema) throws PersistentException {
 		throw new UnsupportedOperationException();
+		
 	}
 
-	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto) {
+	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto)  {
 		throw new UnsupportedOperationException();
+		
 	}
 
 	public List buscarTema(String aKeyword, int aIdSeccion) throws PersistentException {
