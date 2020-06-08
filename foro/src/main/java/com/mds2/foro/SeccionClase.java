@@ -8,7 +8,6 @@ import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 
-//import DCLv3.Tipo;
 
 public class SeccionClase extends Seccion_ventana implements View {
 	private String _nombreSeccion;

@@ -4,29 +4,30 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.TextField;
 
 //import Package.Lista_Mensaje_V_Usuario_Reg;
 
 public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
-//	private Button _color;
-//	private Button _fuente;
-//	private Button _adjuntarImagen;
-//	private TextField _cuerpo;
-//	private Button _enviar;
+	private Button _color;
+	private Button _fuente;
+	private Button _adjuntarImagen;
+	private TextField _cuerpo;
+	private Button _enviar;
 	public Lista_Mensaje_V_Usuario_Reg _unnamed_Lista_Mensaje_V_Usuario_Reg_;
-
+	iUsuario iUsr = new DB_Main();
+	
 	public CreacionMensaje(){
 		
 		
 		
 		crearMensaje.addClickListener(new Button.ClickListener() {
 			
-			//enviar();
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("crearMensaje");
+				iUsr.crearMensaje(_cuerpo, null, aIdUsuario, aIdTema);
 			}
 		});	
 		
@@ -49,7 +50,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				adjuntarImagen();
 			}
 			
 		});	
@@ -65,7 +66,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	}
 
 	public void adjuntarImagen() {
-		throw new UnsupportedOperationException();
+//??????????????????
 	}
 
 	public void enviar() {

@@ -3,6 +3,9 @@ package com.mds2.foro;
 import java.util.List;
 import java.util.Vector;
 
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
 public class bd_usuarios {
 	public Bd_principal _bd_principal_usuario;
 	public Vector<Usuarios> _contiene_usuarios = new Vector<Usuarios>();
@@ -97,5 +100,31 @@ public class bd_usuarios {
 
 	public Usuario_registrado obtenerPerfilUsuario(int aIdUser) {
 		throw new UnsupportedOperationException();
+	}
+	
+	public boolean registrarse(String aUsername, String aFullname, String aPassword, String aDescription, String aEmail, String aFotoURL) throws PersistentException {
+		
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			
+			com.mds2.foro.Usuarios u = com.mds2.foro.UsuariosDAO.createUsuarios();
+			u.setNombreUsuario(aUsername);
+			u.setAmonestado(false);
+			u.setContraseña(aPassword);
+			u.setDescripcion(aDescription);
+			u.setEmail(aEmail);
+			u.setFotoPerfil(aFotoURL);
+			u.setNombre(aFullname);
+			u.setOculto(false);
+			u.setPublico(true);
+			com.mds2.foro.UsuariosDAO.save(u);
+			t.commit();
+			
+		}catch(Exception e) {
+			t.rollback();
+		}
+	
+		return true;
 	}
 }

@@ -4,40 +4,45 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.TextField;
 
 //import Package.Lista_Tema_V_Usuario_Reg;
 
 public class CreacionTema extends Creacion_tema_ventana implements View {
-	//private TextField _tituloTema;
-	//private TextLabel _descripcionTema;
-	//private Button _enviar;
-//	private Button _cancelar;
+	private TextField _tituloTema;
+	private TextField _subtituloTema;
+	private Button _enviar;
+	private Button _cancelar;
 	public Lista_Tema_V_Usuario_Reg _unnamed_Lista_Tema_V_Usuario_Reg_;
-
+	iUsuario iUsr = new DB_Main();
 	
 	
 	public CreacionTema() {
 		
-		crearTema.addClickListener(new Button.ClickListener() {
-			
-			//cancelar();
+		this._enviar = crearTema;
+		this._cancelar = cancelarCreacionTema;
+		this._tituloTema = titulo;
+		this._subtituloTema = subtitulo;
+		
+		
+		_enviar.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				enviar();
 			}
 			
 		});	
 		
-		cancelarCreacionTema.addClickListener(new Button.ClickListener() {
+		_cancelar.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				cancelar();
 			}
 			
 		});	
@@ -45,12 +50,12 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 		
 	}
 	
-	
+	//LA DESCRIPCION NO EXISTE EN VD 
 	public void enviar() {
-		throw new UnsupportedOperationException();
+		iUsr.crearTema(_tituloTema, _subtituloTema,  aIdSeccionPropietaria, aIdTemaPropietario);
 	}
 
 	public void cancelar() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
 	}
 }

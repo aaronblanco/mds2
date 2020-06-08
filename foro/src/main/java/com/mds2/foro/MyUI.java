@@ -2,6 +2,8 @@ package com.mds2.foro;
 
 import javax.servlet.annotation.WebServlet;
 
+import org.orm.PersistentException;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.*;
@@ -31,7 +33,13 @@ public class MyUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
 
 		
-    	 Usuario_no_registrado pag = new Usuario_no_registrado();
+    	 Usuario_no_registrado pag = null;
+		try {
+			pag = new Usuario_no_registrado();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
     	 
     	 setContent(pag);

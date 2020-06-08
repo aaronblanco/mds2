@@ -10,7 +10,7 @@ import com.vaadin.ui.Label;
 
 public class TemaClase extends Tema_ventana implements View{
 //	private Tipo _tipo = DCLv3.Tipo.Publico;
-	private Label _titulo;
+	private String _titulo;
 	private Label _fechaCreacion;
 	private Label _creador;
 	private Label _meGustas;
@@ -22,6 +22,13 @@ public class TemaClase extends Tema_ventana implements View{
 	public TemaClase() {
 		
 		Inicializar();
+		
+		this._titulo = irTema.getCaption();
+		this._fechaCreacion = fechaCreacTema;
+		this._creador = creadorTema;
+		this._meGustas = numMGTema;
+		this._numMensajes = numMsgTema;
+		
 		
 			irTema.addClickListener(new Button.ClickListener() {
 				

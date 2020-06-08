@@ -29,6 +29,6 @@ public class Lista_Anuncios_publicados extends Lista_Anuncios_publicados_ventana
 	}
 	
 	public void eliminarAnuncio() {
-		iUsr.eliminarAnuncio(aIdAnuncio, aPublicado);
+		iUsr.eliminarAnuncio(Integer.parseInt(this.getId()), false);
 	}
 }
