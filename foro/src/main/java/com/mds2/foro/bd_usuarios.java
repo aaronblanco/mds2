@@ -43,10 +43,10 @@ public class bd_usuarios {
 			String orderBy;
 			AdministradorCriteria cr = new AdministradorCriteria();
 		
-			cr.add(Restrictions.eq("name", aUsername));
+			cr.add(Restrictions.eq("nombreUsuario", aUsername));
 			
 			
-			com.mds2.foro.Usuarios u = com.mds2.foro.UsuariosDAO.queryUsuarios(condition, orderBy);
+			com.mds2.foro.Usuarios u = com.mds2.foro.UsuariosDAO.queryUsuarios(cr.toString(), orderBy);
 			id = u.getIdUsuario();
 		
 			
