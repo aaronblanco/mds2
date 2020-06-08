@@ -11,7 +11,8 @@ public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_venta
 //	private Button _anadirAnuncio;
 	public Sistema_de_publicidad _unnamed_Sistema_de_publicidad_;
 	public Vector<AnuncioClase> _list_Anuncio = new Vector<AnuncioClase>();
-
+	iAdministrador iAd = new DB_Main();
+	
 	public Lista_Anuncios_disponibles() {
 		
 		anadirAnuncio.addClickListener(new Button.ClickListener() {
@@ -19,13 +20,13 @@ public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_venta
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("irTema");
+				anadirAnuncio();
 			}
 		});
 		
 	}
 	
 	public void anadirAnuncio() {
-		throw new UnsupportedOperationException();
+		iAd.anadirAnuncio(Integer.parseInt(this.getId(), aPublicado);
 	}
 }

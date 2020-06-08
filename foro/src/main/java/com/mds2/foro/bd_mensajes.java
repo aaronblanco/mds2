@@ -62,4 +62,5 @@ public class bd_mensajes {
 	public boolean ocultarMensaje(int aIdMensaje) {
 		throw new UnsupportedOperationException();
 	}
+	
 }

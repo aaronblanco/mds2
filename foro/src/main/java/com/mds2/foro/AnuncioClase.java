@@ -1,7 +1,9 @@
 package com.mds2.foro;
 
-public class AnuncioClase {
-	//private Image _fotoAnuncio;
+import com.vaadin.ui.Image;
+
+public class AnuncioClase extends Anuncio_ventana{
+	private Image _fotoAnuncio;
 	//private Listener _listaAnuncioDisponible;
 	//private Listener _listaAnuncioPublicado;
 	public Lista_Anuncios_publicados _unnamed_Lista_Anuncios_publicados_;
@@ -9,7 +11,7 @@ public class AnuncioClase {
 	public Sistema_de_publicidad _unnamed_Sistema_de_publicidad_;
 	
 	public AnuncioClase() {
-		
+		//this._fotoAnuncio = ;
 	}
 	
 	

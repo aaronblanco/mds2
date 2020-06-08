@@ -15,7 +15,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana{
 //	private Label _usuarioCreador;
 //	private Label _fechaCreacion;
 //	private Label _pagina;
-	public TemaClase _unnamed_Tema_;
+	public TemaClase _Tema;
 	//public Vector<Buscador_mensaje> _list_Buscador_mensaje = new Vector<Buscador_mensaje>();
 	public Vector<MensajeClase> _list_Mensaje = new Vector<MensajeClase>();
 	iUsuario_no_registrado iUsrNR = new DB_Main();
@@ -53,7 +53,10 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana{
 			}
 		});	
 		
-		listaMensajeAdmin.addComponent((Component) iUsrNR.cargarMensajeUNR(1, true, false, false, false));
+		
+		
+		
+		listaMensajeAdmin.addComponent((Component) iUsrNR.cargarMensajeUNR(Integer.parseInt(_Tema.getId()), true, false, false, false));
 		//NO ESTOY NADA SEGURO DE SI ESTO TIENE SENTIDO VALE?
 		listaMensajeAdmin.forEach((Consumer<? super Component>) iUsrNR.cargarRespuestas(1));
 	}

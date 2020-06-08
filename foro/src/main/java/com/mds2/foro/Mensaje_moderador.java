@@ -27,6 +27,6 @@ public class Mensaje_moderador extends Mensaje_UR {
 	
 	//Aqui sustituimos el notificar por notificar Y ocultar, asi que habra que sobreescribir cosas
 	public void ocultar() {
-		iUsr.ocultarMensaje(aIdMensaje);
+		iUsr.ocultarMensaje(Integer.parseInt(this.getId()));
 	}
 }

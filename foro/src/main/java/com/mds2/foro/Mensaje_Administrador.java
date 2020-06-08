@@ -33,6 +33,6 @@ public class Mensaje_Administrador extends Mensaje_moderador {
 	}
 	
 	public void eliminar() {
-		iAd.eliminarMensajeAdmin(aIdMensaje);
+		iAd.eliminarMensajeAdmin(Integer.parseInt(this.getId()));
 	}
 }
