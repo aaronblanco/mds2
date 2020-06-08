@@ -1,8 +1,10 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
 //import Package.Sección;
 //import Package.Buscador_sección;
+import java.util.function.Consumer;
 
 import org.orm.PersistentException;
 
@@ -33,11 +35,15 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 			
 		});
 		
+		List cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
+		
+		for(Object it : cosa ) {
+			listaSeccion.addComponent((Component) it);
+		}
 		
 		
-		_list_Seccion = (Vector<SeccionClase>) iUsrNR.cargarListaSecciones(true, false, false, false);
 
-		listaSeccion.addComponent((Component) _list_Seccion);
+	//	listaSeccion.addComponent((Component) _list_Seccion);
 		
 	}
 	
