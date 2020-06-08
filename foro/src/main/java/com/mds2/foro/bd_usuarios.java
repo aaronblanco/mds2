@@ -3,8 +3,11 @@ package com.mds2.foro;
 import java.util.List;
 import java.util.Vector;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
+import org.orm.criteria.CollectionExpression;
 
 public class bd_usuarios {
 	public Bd_principal _bd_principal_usuario;
@@ -31,7 +34,30 @@ public class bd_usuarios {
 	}
 
 	public int iniciarSesion(String aUsername, String aPassword) {
-		throw new UnsupportedOperationException();
+	PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+	
+		int id = -1;
+		try {
+			
+			String condition;
+			String orderBy;
+			AdministradorCriteria cr = new AdministradorCriteria();
+		
+			cr.add(Restrictions.eq("name", aUsername));
+			
+			
+			com.mds2.foro.Usuarios u = com.mds2.foro.UsuariosDAO.queryUsuarios(condition, orderBy);
+			id = u.getIdUsuario();
+		
+			
+			com.mds2.foro.UsuariosDAO.save(u);
+			t.commit();
+			
+		}catch(Exception e) {
+			t.rollback();
+		}
+	
+		return id;
 	}
 
 	public List cargarAmigo() {
