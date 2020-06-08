@@ -14,7 +14,7 @@ public class bd_secciones {
 	public List cargarSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 
 		
-		//PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		Vector<Seccion> listaSecciones = new Vector<Seccion>();
 		
 		try {
@@ -28,10 +28,10 @@ public class bd_secciones {
 					listaSecciones.add(s);
 			}
 				
-		//	t.commit();
+			t.commit();
 			
 		}catch(Exception e) {
-		//	t.rollback();
+			t.rollback();
 		}
 	
 		
