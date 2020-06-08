@@ -21,14 +21,12 @@ public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
 		
 		super();
 		
-		listaTemas.addComponent((Component) iUsrNR.cargarTemasUNR(1, true, true, true, false));
+		_list_Tema_oculto = (Vector<Tema_oculto>) iUsrNR.cargarTemasUNR(Integer.parseInt(_unnamed_SeccionVistaModerador_.getId()), false, false, true, false);
+		
+		for(Object it: _list_Tema_oculto)
+			listaTemas.addComponent((Component) it);
 		
 	}
-	
-	private void Inicializar() {
-		//ESTO NO DEBERAI ESTAR AQUI CREO
-		//statusTema.setVisible(true);
 
-	}
 	
 }

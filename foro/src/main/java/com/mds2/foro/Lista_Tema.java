@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.List;
 //import DCLv3.Orden;
 import java.util.Vector;
 //import Package.Tema;
@@ -32,9 +33,12 @@ public class Lista_Tema extends Lista_Tema_ventana {
 		});	
 		
 		
-		
 		_list_Tema = (Vector<TemaClase>) iUsrNR.cargarTemasUNR(1, true, false, false, false);
-		listaTemas.addComponent((Component) _list_Tema);
+		
+		for(Object it: _list_Tema)
+			listaTemas.addComponent((Component) it);
+		
+		//listaTemas.addComponent((Component) _list_Tema);
 	
 	}
 	
@@ -48,7 +52,13 @@ public class Lista_Tema extends Lista_Tema_ventana {
 	}
 //AQUI COSA ID PUM
 	public void buscarTema() {
-		listaTemas.addComponent((Component) iUsrNR.buscarTema(buscarTemaTF.toString(), 1));
+		
+		List st = iUsrNR.buscarTema(buscarTemaTF.toString(), 1);
+		
+		for(Object it : st) {
+			listaTemas.addComponent((Component) it);
+		}
+				
 	}
 
 	public void ordenar(Orden aNuevoOrden) {

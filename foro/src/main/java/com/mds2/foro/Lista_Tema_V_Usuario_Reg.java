@@ -38,8 +38,12 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 			}
 		});	
 		
+		_list_Tema_privado = (Vector<Tema_privado>) iUsrNR.cargarTemasUNR(Integer.parseInt(_unnamed_SeccionVistaUR_.getId()), false, true, false, false);
 		
-		listaTemas.addComponent((Component) iUsrNR.cargarTemasUNR(1, true, true, false, false));
+		for(Object it: _list_Tema_privado)
+			listaTemas.addComponent((Component) it);
+		
+		
 		
 		
 	}
