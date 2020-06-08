@@ -9,22 +9,14 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Mensaje_Administrador extends Mensaje_moderador {
 	//private Button _eliminar;
 	public Lista_Mensaje_V_Administrador _unnamed_Lista_Mensaje_V_Administrador_;
-
+	iAdministrador iAd = new DB_Main();
+	
 	public Mensaje_Administrador() {
 		super();
 		
-		notificarAdminB.addClickListener(new Button.ClickListener() {
-			
-			//cancelar();
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
-			}
-			
-		});	
-		
+		notificarAdminB.setVisible(false);
+		eliminarMensaje.setVisible(true);
+
 		eliminarMensaje.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
@@ -32,17 +24,15 @@ public class Mensaje_Administrador extends Mensaje_moderador {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				eliminar();
 			}
 			
 		});	
 		
-		notificarAdminB.setVisible(false);
 		
-		eliminarMensaje.setVisible(true);
 	}
 	
 	public void eliminar() {
-		throw new UnsupportedOperationException();
+		iAd.eliminarMensajeAdmin(aIdMensaje);
 	}
 }

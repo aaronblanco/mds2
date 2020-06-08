@@ -15,7 +15,9 @@ public class Mensaje_UR extends MensajeClase {
 	public Lista_Ultimo_mensaje _unnamed_Lista_Ultimo_mensaje_;
 	//public Escribir_mensaje _escribir_mensaje;
 	//public Interactuar_mensaje _interactuar_mensaje;
-
+	iUsuario iUsr = new DB_Main();
+	iAdministrador iA = new DB_Main();
+	
 	public Mensaje_UR() {
 		super();
 		
@@ -26,17 +28,48 @@ public class Mensaje_UR extends MensajeClase {
 		responderMensaje.setVisible(true);
 		
 		notificarAdminB.setVisible(true);
+		
+		
+		meGustaB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				darMeGusta(;)
+			}
+
+		});	
+		
+		responderMensaje.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				responderMsg();
+			}
+		});	
+		
+		
+		notificarAdminB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				notificarAdministrador();
+			}
+		});
+		
 	}
 	
 	public void darMeGusta() {
-		throw new UnsupportedOperationException();
+		iUsr.darMeGustaMensaje(aIdMensaje, aIdUser);
 	}
 
 	public void responderMsg() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("responderMensaje");
 	}
 
 	public void notificarAdministrador() {
-		throw new UnsupportedOperationException();
+		iA.notificarMensaje(aIdMensaje, aIdUSer);
 	}
 }
