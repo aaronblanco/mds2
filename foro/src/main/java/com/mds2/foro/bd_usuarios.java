@@ -33,7 +33,7 @@ public class bd_usuarios {
 		throw new UnsupportedOperationException();
 	}
 
-	public int iniciarSesion(String aUsername, String aPassword) {
+	public int iniciarSesion(String aUsername, String aPassword) throws PersistentException {
 	PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 	
 		int id = -1;
@@ -46,7 +46,7 @@ public class bd_usuarios {
 			cr.add(Restrictions.eq("nombreUsuario", aUsername));
 			
 			
-			com.mds2.foro.Usuarios u = com.mds2.foro.UsuariosDAO.queryUsuarios(cr.toString(), orderBy);
+			com.mds2.foro.Usuarios u =  (Usuarios) com.mds2.foro.UsuariosDAO.queryUsuarios(cr.toString(), null);
 			id = u.getIdUsuario();
 		
 			
@@ -145,6 +145,7 @@ public class bd_usuarios {
 			u.setOculto(false);
 			u.setPublico(true);
 			com.mds2.foro.UsuariosDAO.save(u);
+			
 			t.commit();
 			
 		}catch(Exception e) {

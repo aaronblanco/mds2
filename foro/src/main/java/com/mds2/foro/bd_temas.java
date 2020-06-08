@@ -73,7 +73,7 @@ public class bd_temas {
 		
 		sec.contiene_temas.add(tema);
 		u.pro_temas.add(tema);
-		
+		//ESTO ESTA A MEDIAS
 		
 		
 		return false;
