@@ -18,7 +18,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 	private String subtitulo;
 	private String usrCreador;
 	private String fechaCreacion;
-	private int numMsg;
+	private String numMsg;
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
 	public SeccionClase() {
@@ -28,7 +28,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 		this.subtitulo = subtitleSection.toString();
 		this.usrCreador = userCreadorSeccion.toString();
 		this.fechaCreacion = fechaCreacionSeccion.toString();
-		this.numMsg = Integer.parseInt(numMsgSection.toString());
+		this.numMsg = numMsgSection.toString();
 		
 		Inicializar();
 			
