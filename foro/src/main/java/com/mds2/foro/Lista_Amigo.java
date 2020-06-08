@@ -12,7 +12,7 @@ public class Lista_Amigo extends Lista_Amigo_ventana {
 	
 	public Lista_Amigo() {
 		//las ids lol
-		_list_Amigo = iUsr.cargarAmigos(iUsr.id);
+		_list_Amigo = iUsr.cargarListaAmigos(com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idUsuario));
 		
 		for(Object o : _list_Amigo)
 			amigosMiPerfil.addComponent((Component) o);

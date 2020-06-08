@@ -98,16 +98,24 @@ public class bd_usuarios {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargarUsuarioAmonestado() {
-		throw new UnsupportedOperationException();
+	public List cargarUsuarioAmonestado() throws PersistentException {
+		return cargarUsuario();
 	}
 
-	public List cargarUsuarioAmonestadoAdmin() {
-		throw new UnsupportedOperationException();
+	public List cargarUsuarioAmonestadoAdmin() throws PersistentException {
+		return cargarUsuario();
 	}
 
-	public List cargarUsuario() {
-		throw new UnsupportedOperationException();
+	public List cargarUsuario() throws PersistentException {
+		List amo = new ArrayList();
+		
+		UsuariosCriteria uc = new UsuariosCriteria();
+		for(Usuarios o : uc.listUsuarios()) {
+			if(o.getAmonestado())
+				amo.add(o);
+		}
+		
+		return amo;
 	}
 
 	public boolean recuperarPassword(String aEmail) {
@@ -118,28 +126,64 @@ public class bd_usuarios {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean aceptarSolicitud(int aIdUsuario, int aIdAmigo) {
-		throw new UnsupportedOperationException();
+	public boolean aceptarSolicitud(int aIdUsuario, int aIdAmigo) throws PersistentException {
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		Usuarios b = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdAmigo);
+		a.usuariosAmigos.add(b);
+		b.usuariosAmigos.add(a);
+		
+		a.notificaciones.remove(null);
+		return true;
 	}
 
+	//?????????
 	public boolean rechazarSolicitud() {
-		throw new UnsupportedOperationException();
+		Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		a.notificaciones.remove(null);
 	}
 
-	public boolean eliminarAmigo(int aIdUsuario, int aIdAmigo) {
-		throw new UnsupportedOperationException();
+	
+	public boolean eliminarAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException {
+		Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		Usuarios b = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdAmigo);
+		if(a.usuariosAmigos.contains(b)) {
+			a.usuariosAmigos.remove(b);
+			b.usuariosAmigos.remove(a);
+		}
+		
+		return !a.usuariosAmigos.contains(b);
 	}
 
-	public boolean sancionarUsuario(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public boolean sancionarUsuario(int aIdUsuario) throws PersistentException {
+		Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		a.setSancionado(true);
+		return a.getSancionado();
 	}
 
-	public boolean quitarSancion(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public boolean quitarSancion(int aIdUsuario) throws PersistentException {
+		Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		a.setSancionado(false);
+		return !a.getSancionado();
 	}
 
-	public boolean promocionarAMod(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public boolean promocionarAMod(int aIdUsuario) throws PersistentException {
+		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		Moderador mod = com.mds2.foro.ModeradorDAO.createModerador();
+		mod.setIdMod(u.getIdUsuario());
+		mod.setNombre(u.getNombre());
+		mod.setNombreUsuario(u.getNombreUsuario());
+		mod.setContraseña(u.getContraseña());
+		mod.setDescripcion(u.getDescripcion());
+		mod.setEmail(u.getEmail());
+		mod.setFotoPerfil(u.getFotoPerfil());
+		mod.setPublico(u.getPublico());
+		mod.setOculto(u.getOculto());
+		mod.setAmonestado(false);
+		mod.setSancionado(false);
+		com.mds2.foro.UsuariosDAO.delete(u);
+		return com.mds2.foro.ModeradorDAO.save(mod);
+		
 	}
 
 	public boolean amonestarUsuario(int aIdUsuario) {
