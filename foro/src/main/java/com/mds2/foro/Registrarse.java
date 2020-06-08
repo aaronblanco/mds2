@@ -43,7 +43,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					validarDatos();
+					registrarse();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -67,7 +67,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 		
 
 	}
-	public void validarDatos() throws PersistentException {
+	public void registrarse() throws PersistentException {
 		iNusr.registrarse(_nombreUser.toString(), _nombreCompleto.toString(), _contrasena.toString(), _descripcion.toString(), _correoElectronico.toString(), _foto.toString());
 	}
 
