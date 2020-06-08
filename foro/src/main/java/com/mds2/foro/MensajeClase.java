@@ -14,52 +14,31 @@ public class MensajeClase extends Mensaje_ventana implements View {
 
 	public MensajeClase() {
 		
-		meGustaB.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("meGustaB");
-			}
-
-		});	
+		Inicializar();
 		
-		responderMensaje.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("responderMensaje");
-			}
-		});	
 		
-		eliminarMensaje.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("eliminarMensaje");
-			}
-		});	
+		
+		
+		
+		
 		
 		irPerfil.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("irPerfil");
+				verPerfil();
 			}
 		});	
 		
-		notificarAdminB.addClickListener(new Button.ClickListener() {
 			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("notificarAdminB");
-			}
-		});	
 		
+
+		
+	}
+	
+	private void Inicializar() {
+		// TODO Auto-generated method stub
 		meGustaB.setVisible(false);
 		
 		responderMensaje.setVisible(false);
@@ -69,10 +48,9 @@ public class MensajeClase extends Mensaje_ventana implements View {
 		irPerfil.setVisible(true);
 		
 		notificarAdminB.setVisible(false);
-		
 	}
-	
+
 	public void verPerfil() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("irPerfil");
 	}
 }
