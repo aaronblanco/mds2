@@ -56,7 +56,8 @@ public class bd_secciones {
 		Vector<Seccion> listaSecciones = new Vector<Seccion>();
 		
 		try {
-
+			
+			
 			listaSecciones = (Vector<Seccion>) SeccionDAO.querySeccion("Titulo = '"+ aKeyword +"'", null);
 				
 			t.commit();

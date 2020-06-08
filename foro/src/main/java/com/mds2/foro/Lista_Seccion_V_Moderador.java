@@ -7,6 +7,8 @@ import java.util.Vector;
 //import DCLv3.SeccionVistaModerador;
 //import DCLv3.CreacionSeccion;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -23,15 +25,22 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 	iModerador iMod = new DB_Main();
 
 	
-	public Lista_Seccion_V_Moderador() {
+	public Lista_Seccion_V_Moderador() throws PersistentException {
 		
 		super();
 		
 		Inicializar();
 		
-		_list_Seccion_oculta = (Vector<Seccion_oculta>) iUsrNR.cargarListaSecciones(false, false, true, false);
 
-		listaSeccion.addComponent((Component) _list_Seccion_oculta);
+		_list_Seccion_oculta =(Vector<Seccion_oculta>) iUsrNR.cargarListaSecciones(false, false, true, false);
+		
+		for(Object it : _list_Seccion_oculta) {
+			listaSeccion.addComponent((Component) it);
+		}
+		//listaSeccion.addComponent((Component) _list_Seccion_oculta);
+		
+		
+		
 		_crearSeccion.addClickListener(new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {

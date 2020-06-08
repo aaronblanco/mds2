@@ -57,6 +57,11 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 
 
 	public void buscarSeccion() {
-		listaSeccion.addComponent((Component) iUsrNR.buscarSeccion(keywordBS.toString()));
+		List sb = iUsrNR.buscarSeccion(keywordBS.toString());
+		listaSeccion.removeAllComponents();
+		for(Object it : sb) {
+			listaSeccion.addComponent((Component) it);
+		}
+		
 	}
 }
