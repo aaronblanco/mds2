@@ -14,13 +14,14 @@ public class bd_secciones {
 
 		
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		List listaSecciones = null;
+		Vector<Seccion> listaSecciones = new Vector<Seccion>();
 		
 		try {
 			
 			SeccionCriteria sc = new SeccionCriteria();
 			Seccion[] cosa = new Seccion[50];
 			cosa = sc.listSeccion();
+		
 			for(Seccion s:cosa) {
 				if(s.getPublico())
 					listaSecciones.add(s);
