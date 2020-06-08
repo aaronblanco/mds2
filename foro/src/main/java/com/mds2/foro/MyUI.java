@@ -32,8 +32,9 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
 
+    	
 		
-    	 Usuario_no_registrado pag = null;
+    	Usuario_no_registrado pag = null;
 		try {
 			pag = new Usuario_no_registrado();
 		} catch (PersistentException e) {

@@ -50,7 +50,23 @@ public class bd_secciones {
 		throw new UnsupportedOperationException();
 	}
 
-	public List buscarSeccion(String aKeyword) {
-		throw new UnsupportedOperationException();
+	public List buscarSeccion(String aKeyword) throws PersistentException {
+		
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		Vector<Seccion> listaSecciones = new Vector<Seccion>();
+		
+		try {
+
+			listaSecciones = (Vector<Seccion>) SeccionDAO.querySeccion("Titulo = '"+ aKeyword +"'", null);
+				
+			t.commit();
+			
+		}catch(Exception e) {
+			t.rollback();
+		}
+		
+		
+		return listaSecciones;
+		
 	}
 }
