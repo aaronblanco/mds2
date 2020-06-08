@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
@@ -40,7 +42,12 @@ public class Registrarse extends Registrarse_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				validarDatos();
+				try {
+					validarDatos();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});	
 		
@@ -60,7 +67,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 		
 
 	}
-	public void validarDatos() {
+	public void validarDatos() throws PersistentException {
 		iNusr.registrarse(_nombreUser.toString(), _nombreCompleto.toString(), _contrasena.toString(), _descripcion.toString(), _correoElectronico.toString(), _foto.toString());
 	}
 

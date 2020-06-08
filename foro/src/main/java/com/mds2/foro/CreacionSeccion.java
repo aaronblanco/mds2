@@ -4,43 +4,51 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.TextField;
 
 //import Package.Lista_Seccion_V_Moderador;
 
 public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
-	//private TextField _tituloSeccion;
-//	private TextField _descipcionSeccion;
+	private TextField _tituloSeccion;
+	private TextField _descipcionSeccion;
 //	private Button _adjuntarImagen;
-	//private Button _enviar;
-//	private Button _cancelar;
+	private Button _enviar;
+	private Button _cancelar;
 //	private Image _imagenSeccion;
 	public Lista_Seccion_V_Moderador _unnamed_Lista_Seccion_V_Moderador_;
-
+	iModerador iMod = new DB_Main();
 	public CreacionSeccion() {
+		this._tituloSeccion = titulo;
+		this._descipcionSeccion = descripcion;
+		this._enviar = crearSeccionB;
+		this._cancelar = cancelarSeccionB;
 		
-		crearSeccionB.addClickListener(new Button.ClickListener() {
+		
+		_enviar.addClickListener(new Button.ClickListener() {
 			
-			//cancelar();
+			
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				enviar();
 			}
 			
 		});	
 		
-		cancelarSeccionB.addClickListener(new Button.ClickListener() {
+		_cancelar.addClickListener(new Button.ClickListener() {
 			
-			//cancelar();
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				cancelar();
 			}
 			
 		});	
+		
+		
+		
 		
 		
 		//Esto es un upload, no un boton hay que ver como funciona
@@ -59,11 +67,11 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 	}
 	
 	public void enviar() {
-		throw new UnsupportedOperationException();
+		iMod.crearSeccion(_tituloSeccion, _descipcionSeccion, aFotoURL, aIdUserCreador);
 	}
 
 	public void cancelar() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("listaSecciones");
 	}
 
 	public void adjuntarImagen() {

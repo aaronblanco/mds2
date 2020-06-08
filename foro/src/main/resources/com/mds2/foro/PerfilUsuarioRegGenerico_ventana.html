@@ -12,22 +12,37 @@
      <vaadin-horizontal-layout spacing="false" width-full _id="datosVisitaPerfil">
       <vaadin-image caption="Foto de perfil" _id="fotoPerfilUsuario"></vaadin-image>
       <vaadin-vertical-layout size-auto margin="false">
-       <vaadin-text-field caption="Nombre de usuario" _id="nombreUsuario"></vaadin-text-field>
-       <vaadin-text-field caption="Descripcion" _id="descripcionUsuario"></vaadin-text-field>
+       <vaadin-label caption="Nombre de usuario" plain-text _id="userName">
+         Label 
+       </vaadin-label>
+       <vaadin-label caption="Descripción" plain-text _id="description">
+         Label 
+       </vaadin-label>
       </vaadin-vertical-layout>
-      <vaadin-button plain-text _id="interaccionarAmigoUsuario" :right>
+      <vaadin-button plain-text _id="addFriend" :right>
         Añadir amigo 
       </vaadin-button>
+      <vaadin-button plain-text _id="eliminarAmigo">
+        Eliminar amigo 
+      </vaadin-button>
       <vaadin-vertical-layout size-auto margin="false" :right>
-       <vaadin-button plain-text _id="interaccionarSancionAdmin">
+       <vaadin-button visible="false" plain-text _id="sancionar">
          Sancionar 
        </vaadin-button>
-       <vaadin-button plain-text _id="interaccionarModeracionAdmin">
+       <vaadin-button visible="false" plain-text _id="eliminarSancion">
+         Eliminar sanción 
+       </vaadin-button>
+       <vaadin-button visible="false" plain-text _id="ascender">
          Ascender 
+       </vaadin-button>
+       <vaadin-button visible="false" plain-text _id="degradar">
+         Degradar 
        </vaadin-button>
       </vaadin-vertical-layout>
      </vaadin-horizontal-layout>
-     <vaadin-text-field caption="Estado:" _id="estadoUsuarioMod" :bottom></vaadin-text-field>
+     <vaadin-label visible="false" caption="Visibilidad" plain-text _id="visibilidad" :bottom>
+       Label 
+     </vaadin-label>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>

@@ -5,7 +5,7 @@ import com.vaadin.annotations.DesignRoot;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
-import com.vaadin.ui.TextField;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.declarative.Design;
 
@@ -23,12 +23,15 @@ import com.vaadin.ui.declarative.Design;
 public class PerfilUsuarioRegGenerico_ventana extends VerticalLayout {
 	protected HorizontalLayout datosVisitaPerfil;
 	protected Image fotoPerfilUsuario;
-	protected TextField nombreUsuario;
-	protected TextField descripcionUsuario;
-	protected Button interaccionarAmigoUsuario;
-	protected Button interaccionarSancionAdmin;
-	protected Button interaccionarModeracionAdmin;
-	protected TextField estadoUsuarioMod;
+	protected Label userName;
+	protected Label description;
+	protected Button addFriend;
+	protected Button eliminarAmigo;
+	protected Button sancionar;
+	protected Button eliminarSancion;
+	protected Button ascender;
+	protected Button degradar;
+	protected Label visibilidad;
 
 	public PerfilUsuarioRegGenerico_ventana() {
 		Design.read(this);

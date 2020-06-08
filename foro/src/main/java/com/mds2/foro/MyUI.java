@@ -65,6 +65,9 @@ public class MyUI extends UI {
     	  navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));
     	  navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
       	 
+    	  
+    	  
+    	  navigator.addView("listaSecciones", new ModeradorClase(new SeccionVistaModerador()) );
      	 
      	 
          navigator.addView("Panel de administración mod", new ModeradorClase(new Panel_de_administración_vista_moderador()) );

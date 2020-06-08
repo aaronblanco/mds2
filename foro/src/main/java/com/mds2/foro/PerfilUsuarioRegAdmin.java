@@ -7,58 +7,84 @@ import com.vaadin.ui.Button.ClickEvent;
 //import DCLv3.PerfilUsuarioRegGenerico;
 
 public class PerfilUsuarioRegAdmin extends PerfilUsuarioRegGenerico {
-//	private Button _sancionarUsuario;
-//	private Button _quitarSancion;
-//	private Button _promocionarAModerador;
-//	private Button _degradarAUsuarioRegistrado;
+
 //	private Listener _listaUsuarioAmonestadoAdmin;
 	public Lista_Usuario_Amonestado_V_Administrador _unnamed_Lista_Usuario_Amonestado_V_Administrador_;
 	public Lista_Usuario_Amonestado _usuario_amonestado;
-
+	iAdministrador iAd = new DB_Main();
+	
 	public PerfilUsuarioRegAdmin() {
 		
-		interaccionarModeracionAdmin.setVisible(true);
 		
-		interaccionarSancionAdmin.setVisible(true);
+		super();
 		
-		interaccionarModeracionAdmin.addClickListener(new Button.ClickListener() {
+		this._sancionarUsuario.setVisible(true);
+		this._quitarSancion.setVisible(true);
+		this._degradarAUsuarioRegistrado.setVisible(true);
+		this._promocionarAModerador.setVisible(true);
+		
+		
+		_sancionarUsuario.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-			//	navigator.navigateTo("crearSeccion");
-				UI.getCurrent().getNavigator().navigateTo("eliminarSeccion");
+		
+				sancionarUsuario();
 			}
 			
 		});
 		
-		interaccionarSancionAdmin.addClickListener(new Button.ClickListener() {
+		_quitarSancion.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-			//	navigator.navigateTo("crearSeccion");
-				UI.getCurrent().getNavigator().navigateTo("eliminarSeccion");
+				quitarSancion();
 			}
 			
 		});
+		
+		
+		_promocionarAModerador.addClickListener(new Button.ClickListener() {
+					
+					@Override
+					public void buttonClick(ClickEvent event) {
+						// TODO Auto-generated method stub
+						promocionarAMod();
+					}
+					
+				});
+			
+		_degradarAUsuarioRegistrado.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				degradarAUsuarioRegistrado();
+			}
+			
+		});
+		
+		
+	
 		
 	}
 	
 	
 	public void sancionarUsuario() {
-		throw new UnsupportedOperationException();
+		iAd.sancionarUsuario(aIdUsuario);
 	}
 
 	public void quitarSancion() {
-		throw new UnsupportedOperationException();
+		iAd.quitarSancion(aIdUsuario);
 	}
 
 	public void promocionarAMod() {
-		throw new UnsupportedOperationException();
+		iAd.promocionarAMod(aIdUsuario);
 	}
 
 	public void degradarAUsuarioRegistrado() {
-		throw new UnsupportedOperationException();
+		iAd.degradarAUsuarioRegistrado(aIdUsuario);
 	}
 }
