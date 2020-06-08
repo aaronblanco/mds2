@@ -28,8 +28,6 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public List cargarTemasSeccionPrivada(int aIdSeccion);
 
-	public List cargarAmigo();
-
 	public List cargarAnuncioPublicado(boolean aEstado);
 
 	public List cargarNotificacion(int aIdUsuario);

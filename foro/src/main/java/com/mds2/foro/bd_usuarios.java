@@ -1,11 +1,13 @@
 package com.mds2.foro;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.orm.PersistentException;
+import org.orm.PersistentSession;
 import org.orm.PersistentTransaction;
 import org.orm.criteria.CollectionExpression;
 
@@ -13,24 +15,56 @@ public class bd_usuarios {
 	public Bd_principal _bd_principal_usuario;
 	public Vector<Usuarios> _contiene_usuarios = new Vector<Usuarios>();
 
-	public List cargarListaAmigos(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public List cargarListaAmigos(int aIdUsuario) throws PersistentException {
+		
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		UsuariosCriteria uc = new UsuariosCriteria();
+		List amigos = new ArrayList();
+		Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+
+		for(Usuarios u : uc.listUsuarios()) {
+			if(u.usuariosAmigos.contains(a))
+				amigos.add(u);
+		}
+		
+		return _contiene_usuarios;
 	}
 
-	public List cargarSolicitudes(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public List cargarSolicitudes(int aIdUsuario) throws PersistentException {
+		List solicitudes = new ArrayList();
+		
+		UsuariosCriteria uc = new UsuariosCriteria();
+		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		for(Notificacion o : u.notificaciones.toArray())
+			solicitudes.add(o);
+		
+		return solicitudes;
+		
 	}
 
-	public boolean cambiarDatos(int aIdUsuario, String aUsername, String aPassword, String aDescription, String aFotoURL) {
-		throw new UnsupportedOperationException();
+	public boolean cambiarDatos(int aIdUsuario, String aUsername, String aPassword, String aDescription, String aFotoURL) throws PersistentException {
+		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		
+		try {
+			u.setNombreUsuario(aUsername);
+			u.setContraseña(aPassword);
+			u.setDescripcion(aDescription);
+			u.setFotoPerfil(aFotoURL);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return true;
 	}
 
-	public boolean darseDeBaja(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public boolean darseDeBaja(int aIdUsuario) throws PersistentException {
+		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		return com.mds2.foro.UsuariosDAO.delete(u);
 	}
 
-	public void ocultarPerfil(int aIdUsuario, boolean aPublico, boolean aOculto) {
-		throw new UnsupportedOperationException();
+	public void ocultarPerfil(int aIdUsuario, boolean aPublico, boolean aOculto) throws PersistentException {
+		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		u.setPublico(aPublico);
+		u.setOculto(aOculto);
 	}
 
 	public int iniciarSesion(String aUsername, String aPassword) throws PersistentException {
@@ -60,7 +94,7 @@ public class bd_usuarios {
 		return id;
 	}
 
-	public List cargarAmigo() {
+	public List cargarAmigos() {
 		throw new UnsupportedOperationException();
 	}
 

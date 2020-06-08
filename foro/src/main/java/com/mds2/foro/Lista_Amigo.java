@@ -1,6 +1,8 @@
 package com.mds2.foro;
 
 import java.util.Vector;
+
+import com.vaadin.ui.Component;
 //import Package.Amigo;
 
 public class Lista_Amigo extends Lista_Amigo_ventana {
@@ -9,10 +11,11 @@ public class Lista_Amigo extends Lista_Amigo_ventana {
 	iUsuario iUsr = new DB_Main();
 	
 	public Lista_Amigo() {
+		//las ids lol
+		_list_Amigo = iUsr.cargarAmigos(iUsr.id);
 		
-		this._list_Amigo = addComponent( iUsr.cargarAmigos(aIdUsuario));
-		
-		
+		for(Object o : _list_Amigo)
+			amigosMiPerfil.addComponent((Component) o);
 		
 	}
 	
