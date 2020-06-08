@@ -5,12 +5,12 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class PerfilUsuarioRegMod extends PerfilUsuarioRegGenerico {
-	//private Button _amonestar;
+	private Button _amonestar;
 	public UsuarioAmonestado _unnamed_UsuarioAmonestado_;
 
 	public PerfilUsuarioRegMod() {
-		
-		interaccionarSancionAdmin.addClickListener(new Button.ClickListener() {
+		this._amonestar = _sancionarUsuario;
+		_amonestar.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -21,7 +21,7 @@ public class PerfilUsuarioRegMod extends PerfilUsuarioRegGenerico {
 			
 		});
 		
-		interaccionarSancionAdmin.setVisible(true);
+		_amonestar.setVisible(true);
 
 		
 	}
