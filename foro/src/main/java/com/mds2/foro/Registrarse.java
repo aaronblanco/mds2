@@ -16,7 +16,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 	private TextField _nombreCompleto;
 	private TextField _descripcion;
 	private Button _adjuntarFotoPerfil;
-	private Image _foto;
+	private String _foto;
 	private Button _validarDatos;
 	public Correo_electrónico _unnamed_Correo_electrónico_;
 	public Menu_UNR _unnamed_Menu_UNR_;
@@ -31,7 +31,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 		this._nombreCompleto = nombreCompleto;
 		this._descripcion = descripcion;
 		this._validarDatos = registro;
-		
+		this._foto = "";
 		
 		
 		

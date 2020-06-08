@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Layout;
 
@@ -12,7 +14,7 @@ public class Usuario_registrado extends Banner_Usuario_registrado implements Vie
 	public Lista_Seccion_V_Usuario_Reg _unnamed_Lista_Seccion_V_Usuario_Reg_;
 	
 	
-	public Usuario_registrado() {
+	public Usuario_registrado() throws PersistentException {
 		
 
 		Menu_UR menu = new Menu_UR();

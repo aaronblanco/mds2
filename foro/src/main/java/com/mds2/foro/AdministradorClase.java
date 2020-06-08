@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Layout;
 
@@ -14,7 +16,7 @@ public class AdministradorClase extends ModeradorClase implements View{
 	
 	
 	
-	public AdministradorClase() {
+	public AdministradorClase() throws PersistentException {
 		
 
 		Menu_moderador menu = new Menu_moderador();
@@ -30,7 +32,7 @@ public class AdministradorClase extends ModeradorClase implements View{
 	}
 	
 
-	public AdministradorClase(Layout ventana ) {
+	public AdministradorClase(Layout ventana )  throws PersistentException{
 		
 		
 	

@@ -56,7 +56,7 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 		crearNuevaSeccion.setVisible(true);
 		buscarSeccionB.setVisible(true);
 		this._crearSeccion = crearNuevaSeccion;
-		listaSeccion.addComponent((Component) _list_Seccion_oculta);
+		//listaSeccion.addComponent( (Component) _list_Seccion_oculta);
 		
 	}
 	public void crearSeccion() {

@@ -67,12 +67,32 @@ public class MyUI extends UI {
       	 
     	  
     	  
-    	  navigator.addView("listaSecciones", new ModeradorClase(new SeccionVistaModerador()) );
+    	  try {
+			navigator.addView("listaSecciones", new ModeradorClase(new SeccionVistaModerador()) );
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
      	 
      	 
-         navigator.addView("Panel de administración mod", new ModeradorClase(new Panel_de_administración_vista_moderador()) );
-         navigator.addView("Panel de administración", new AdministradorClase(new Panel_de_administración_vista_administrador()) );
-         navigator.addView("Panel de publicidad", new AdministradorClase(new Sistema_de_publicidad()) );
+         try {
+			navigator.addView("Panel de administración mod", new ModeradorClase(new Panel_de_administración_vista_moderador()) );
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+         try {
+			navigator.addView("Panel de administración", new AdministradorClase(new Panel_de_administración_vista_administrador()) );
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+         try {
+			navigator.addView("Panel de publicidad", new AdministradorClase(new Sistema_de_publicidad()) );
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
          
          
          
