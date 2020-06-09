@@ -111,7 +111,7 @@ public class bd_mensajes {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean crearMensaje(String aCuerpoMensaje, int aIdUsuario, int aIdTema) throws PersistentException {
+	public boolean crearMensaje(String aCuerpoMensaje, String mediaURL, int aIdUsuario, int aIdTema) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 	
 	try {
@@ -121,9 +121,9 @@ public class bd_mensajes {
 		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
 		
 		Mensaje msj= com.mds2.foro.MensajeDAO.createMensaje();
-	
+	//PARA LO DE MEDIA HABRIA QUE CREAR UNA INSTANCIA DE MEDIA CON LA URL QUE LE PASA Y HACER COSAS DE ASOCIAR 
 		msj.setContenido(aCuerpoMensaje);
-	
+		
 		msj.setEliminado(false);
 		msj.setIdPropietario(aIdUsuario);
 		msj.setIdTemaPropietario(aIdTema);

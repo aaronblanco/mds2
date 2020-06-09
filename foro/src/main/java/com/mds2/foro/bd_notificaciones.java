@@ -28,7 +28,7 @@ public class bd_notificaciones {
 		return _contiene_notificaciones;
 	}
 
-	public boolean notificarAdministradorTema(int aIdTema, int aIdUser) {
+	public boolean notificarAdministradorTema(int aIdTema, int aIdUser) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		Notificacion not = com.mds2.foro.NotificacionDAO.createNotificacion();
 		
@@ -47,7 +47,7 @@ public class bd_notificaciones {
 	public boolean anadirAmigo(int aIdUsuario, int aIdAmigo) {
 		
 		//no existe?
-		
+		return true;
 		
 	}
 }
