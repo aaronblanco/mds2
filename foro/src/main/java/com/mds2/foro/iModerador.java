@@ -8,7 +8,7 @@ public interface iModerador extends iBanner_Usuario_registrado, iMenu_moderador 
 
 	public boolean crearSeccion(String aTitulo, String aSubtitulo, String aFotoURL, int aIdUserCreador);
 
-	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto);
+	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto, int idTema);
 
 	public boolean amonestarUsuario(int aIdUsuario);
 

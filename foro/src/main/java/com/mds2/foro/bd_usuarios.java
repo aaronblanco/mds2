@@ -94,9 +94,9 @@ public class bd_usuarios {
 		return id;
 	}
 
-	public List cargarAmigos() {
-		throw new UnsupportedOperationException();
-	}
+//	public List cargarAmigos() {
+//		throw new UnsupportedOperationException();
+//	}
 
 	public List cargarUsuarioAmonestado() throws PersistentException {
 		return cargarUsuario();
