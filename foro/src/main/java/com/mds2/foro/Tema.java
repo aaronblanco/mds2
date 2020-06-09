@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -31,7 +31,11 @@ public class Tema implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == ORMConstants.KEY_TEMA_USUARIOS) {
+		if (key == ORMConstants.KEY_TEMA_SECCION_MENSAJE) {
+			this.seccion_mensaje = (com.mds2.foro.Seccion) owner;
+		}
+		
+		else if (key == ORMConstants.KEY_TEMA_USUARIOS) {
 			this.usuarios = (com.mds2.foro.Usuarios) owner;
 		}
 	}
@@ -53,6 +57,11 @@ public class Tema implements Serializable {
 	@GeneratedValue(generator="COM_MDS2_FORO_TEMA_IDTEMA_GENERATOR")	
 	@org.hibernate.annotations.GenericGenerator(name="COM_MDS2_FORO_TEMA_IDTEMA_GENERATOR", strategy="native")	
 	private int idTema;
+	
+	@ManyToOne(targetEntity=com.mds2.foro.Seccion.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="SeccionIdSeccion", referencedColumnName="IdSeccion", nullable=false) }, foreignKey=@ForeignKey(name="FKTema655261"))	
+	private com.mds2.foro.Seccion seccion_mensaje;
 	
 	@ManyToOne(targetEntity=com.mds2.foro.Usuarios.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
@@ -83,9 +92,8 @@ public class Tema implements Serializable {
 	@Column(name="Eliminado", nullable=false, length=1)	
 	private boolean eliminado = false;
 	
-	@OneToMany(targetEntity=com.mds2.foro.Mensaje.class)	
+	@OneToMany(mappedBy="tema_mensaje", targetEntity=com.mds2.foro.Mensaje.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns({ @JoinColumn(name="TemaIdTema", nullable=false) })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_contiene_mensajes = new java.util.HashSet();
 	
@@ -165,6 +173,30 @@ public class Tema implements Serializable {
 		return eliminado;
 	}
 	
+	public void setSeccion_mensaje(com.mds2.foro.Seccion value) {
+		if (seccion_mensaje != null) {
+			seccion_mensaje.contiene_temas.remove(this);
+		}
+		if (value != null) {
+			value.contiene_temas.add(this);
+		}
+	}
+	
+	public com.mds2.foro.Seccion getSeccion_mensaje() {
+		return seccion_mensaje;
+	}
+	
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM_Seccion_mensaje(com.mds2.foro.Seccion value) {
+		this.seccion_mensaje = value;
+	}
+	
+	private com.mds2.foro.Seccion getORM_Seccion_mensaje() {
+		return seccion_mensaje;
+	}
+	
 	private void setORM_Contiene_mensajes(java.util.Set value) {
 		this.ORM_contiene_mensajes = value;
 	}
@@ -174,7 +206,7 @@ public class Tema implements Serializable {
 	}
 	
 	@Transient	
-	public final com.mds2.foro.MensajeSetCollection contiene_mensajes = new com.mds2.foro.MensajeSetCollection(this, _ormAdapter, ORMConstants.KEY_TEMA_CONTIENE_MENSAJES, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final com.mds2.foro.MensajeSetCollection contiene_mensajes = new com.mds2.foro.MensajeSetCollection(this, _ormAdapter, ORMConstants.KEY_TEMA_CONTIENE_MENSAJES, ORMConstants.KEY_MENSAJE_TEMA_MENSAJE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void setUsuarios(com.mds2.foro.Usuarios value) {
 		if (usuarios != null) {

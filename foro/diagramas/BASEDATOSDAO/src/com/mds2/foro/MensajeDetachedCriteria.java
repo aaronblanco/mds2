@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -20,8 +20,8 @@ import org.orm.criteria.*;
 
 public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idMensaje;
-	public final IntegerExpression contiene_videosId;
-	public final AssociationExpression contiene_videos;
+	public final IntegerExpression tema_mensajeId;
+	public final AssociationExpression tema_mensaje;
 	public final IntegerExpression usuariosId;
 	public final AssociationExpression usuarios;
 	public final StringExpression contenido;
@@ -36,12 +36,14 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final BooleanExpression publico;
 	public final BooleanExpression eliminado;
 	public final CollectionExpression contiene_imagenes;
+	public final IntegerExpression contiene_videosId;
+	public final AssociationExpression contiene_videos;
 	
 	public MensajeDetachedCriteria() {
 		super(com.mds2.foro.Mensaje.class, com.mds2.foro.MensajeCriteria.class);
 		idMensaje = new IntegerExpression("idMensaje", this.getDetachedCriteria());
-		contiene_videosId = new IntegerExpression("contiene_videos.", this.getDetachedCriteria());
-		contiene_videos = new AssociationExpression("contiene_videos", this.getDetachedCriteria());
+		tema_mensajeId = new IntegerExpression("tema_mensaje.idTema", this.getDetachedCriteria());
+		tema_mensaje = new AssociationExpression("tema_mensaje", this.getDetachedCriteria());
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this.getDetachedCriteria());
 		usuarios = new AssociationExpression("usuarios", this.getDetachedCriteria());
 		contenido = new StringExpression("contenido", this.getDetachedCriteria());
@@ -56,13 +58,15 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		publico = new BooleanExpression("publico", this.getDetachedCriteria());
 		eliminado = new BooleanExpression("eliminado", this.getDetachedCriteria());
 		contiene_imagenes = new CollectionExpression("ORM_contiene_imagenes", this.getDetachedCriteria());
+		contiene_videosId = new IntegerExpression("contiene_videos.idMensaje", this.getDetachedCriteria());
+		contiene_videos = new AssociationExpression("contiene_videos", this.getDetachedCriteria());
 	}
 	
 	public MensajeDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, com.mds2.foro.MensajeCriteria.class);
 		idMensaje = new IntegerExpression("idMensaje", this.getDetachedCriteria());
-		contiene_videosId = new IntegerExpression("contiene_videos.", this.getDetachedCriteria());
-		contiene_videos = new AssociationExpression("contiene_videos", this.getDetachedCriteria());
+		tema_mensajeId = new IntegerExpression("tema_mensaje.idTema", this.getDetachedCriteria());
+		tema_mensaje = new AssociationExpression("tema_mensaje", this.getDetachedCriteria());
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this.getDetachedCriteria());
 		usuarios = new AssociationExpression("usuarios", this.getDetachedCriteria());
 		contenido = new StringExpression("contenido", this.getDetachedCriteria());
@@ -77,10 +81,12 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		publico = new BooleanExpression("publico", this.getDetachedCriteria());
 		eliminado = new BooleanExpression("eliminado", this.getDetachedCriteria());
 		contiene_imagenes = new CollectionExpression("ORM_contiene_imagenes", this.getDetachedCriteria());
+		contiene_videosId = new IntegerExpression("contiene_videos.idMensaje", this.getDetachedCriteria());
+		contiene_videos = new AssociationExpression("contiene_videos", this.getDetachedCriteria());
 	}
 	
-	public videosDetachedCriteria createContiene_videosCriteria() {
-		return new videosDetachedCriteria(createCriteria("contiene_videos"));
+	public TemaDetachedCriteria createTema_mensajeCriteria() {
+		return new TemaDetachedCriteria(createCriteria("tema_mensaje"));
 	}
 	
 	public UsuariosDetachedCriteria createUsuariosCriteria() {
@@ -89,6 +95,10 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public imagenesDetachedCriteria createContiene_imagenesCriteria() {
 		return new imagenesDetachedCriteria(createCriteria("ORM_contiene_imagenes"));
+	}
+	
+	public videosDetachedCriteria createContiene_videosCriteria() {
+		return new videosDetachedCriteria(createCriteria("contiene_videos"));
 	}
 	
 	public Mensaje uniqueMensaje(PersistentSession session) {

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -20,8 +20,8 @@ import org.orm.criteria.*;
 
 public class MensajeCriteria extends AbstractORMCriteria {
 	public final IntegerExpression idMensaje;
-	public final IntegerExpression contiene_videosId;
-	public final AssociationExpression contiene_videos;
+	public final IntegerExpression tema_mensajeId;
+	public final AssociationExpression tema_mensaje;
 	public final IntegerExpression usuariosId;
 	public final AssociationExpression usuarios;
 	public final StringExpression contenido;
@@ -36,12 +36,14 @@ public class MensajeCriteria extends AbstractORMCriteria {
 	public final BooleanExpression publico;
 	public final BooleanExpression eliminado;
 	public final CollectionExpression contiene_imagenes;
+	public final IntegerExpression contiene_videosId;
+	public final AssociationExpression contiene_videos;
 	
 	public MensajeCriteria(Criteria criteria) {
 		super(criteria);
 		idMensaje = new IntegerExpression("idMensaje", this);
-		contiene_videosId = new IntegerExpression("contiene_videos.", this);
-		contiene_videos = new AssociationExpression("contiene_videos", this);
+		tema_mensajeId = new IntegerExpression("tema_mensaje.idTema", this);
+		tema_mensaje = new AssociationExpression("tema_mensaje", this);
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this);
 		usuarios = new AssociationExpression("usuarios", this);
 		contenido = new StringExpression("contenido", this);
@@ -56,6 +58,8 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		publico = new BooleanExpression("publico", this);
 		eliminado = new BooleanExpression("eliminado", this);
 		contiene_imagenes = new CollectionExpression("ORM_contiene_imagenes", this);
+		contiene_videosId = new IntegerExpression("contiene_videos.idMensaje", this);
+		contiene_videos = new AssociationExpression("contiene_videos", this);
 	}
 	
 	public MensajeCriteria(PersistentSession session) {
@@ -66,8 +70,8 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
-	public videosCriteria createContiene_videosCriteria() {
-		return new videosCriteria(createCriteria("contiene_videos"));
+	public TemaCriteria createTema_mensajeCriteria() {
+		return new TemaCriteria(createCriteria("tema_mensaje"));
 	}
 	
 	public UsuariosCriteria createUsuariosCriteria() {
@@ -76,6 +80,10 @@ public class MensajeCriteria extends AbstractORMCriteria {
 	
 	public imagenesCriteria createContiene_imagenesCriteria() {
 		return new imagenesCriteria(createCriteria("ORM_contiene_imagenes"));
+	}
+	
+	public videosCriteria createContiene_videosCriteria() {
+		return new videosCriteria(createCriteria("contiene_videos"));
 	}
 	
 	public Mensaje uniqueMensaje() {

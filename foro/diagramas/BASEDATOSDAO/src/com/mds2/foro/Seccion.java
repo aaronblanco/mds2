@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -89,9 +89,8 @@ public class Seccion implements Serializable {
 	@Column(name="Eliminado", nullable=false, length=1)	
 	private boolean eliminado = false;
 	
-	@OneToMany(targetEntity=com.mds2.foro.Tema.class)	
+	@OneToMany(mappedBy="seccion_mensaje", targetEntity=com.mds2.foro.Tema.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns({ @JoinColumn(name="SeccionIdSeccion", nullable=false) })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_contiene_temas = new java.util.HashSet();
 	
@@ -196,7 +195,7 @@ public class Seccion implements Serializable {
 	}
 	
 	@Transient	
-	public final com.mds2.foro.TemaSetCollection contiene_temas = new com.mds2.foro.TemaSetCollection(this, _ormAdapter, ORMConstants.KEY_SECCION_CONTIENE_TEMAS, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final com.mds2.foro.TemaSetCollection contiene_temas = new com.mds2.foro.TemaSetCollection(this, _ormAdapter, ORMConstants.KEY_SECCION_CONTIENE_TEMAS, ORMConstants.KEY_TEMA_SECCION_MENSAJE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void setUsuarios(com.mds2.foro.Usuarios value) {
 		if (usuarios != null) {

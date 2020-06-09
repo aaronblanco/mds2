@@ -2,6 +2,7 @@ package com.mds2.foro;
 
 import javax.servlet.annotation.WebServlet;
 
+import org.orm.ORMDatabaseInitiator;
 import org.orm.PersistentException;
 
 import com.vaadin.annotations.Theme;
@@ -31,9 +32,16 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-
     	
-		
+    
+    	try {
+    		com.mds2.foro.Usuarios[] commds2foroUsuarioses = com.mds2.foro.UsuariosDAO.listUsuariosByQuery(null, null);
+    		System.out.println("eeeeeee");
+		} catch (PersistentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	/*
     	Usuario_no_registrado pag = null;
 		try {
 			pag = new Usuario_no_registrado();
@@ -44,7 +52,8 @@ public class MyUI extends UI {
 	
     	 
     	 setContent(pag);
-    
+    	 
+
     	 
     	 
     	 Navigator navigator = new Navigator(this , this);
@@ -93,7 +102,7 @@ public class MyUI extends UI {
 			e.printStackTrace();
 		}
          
-         
+         */
          
          
          

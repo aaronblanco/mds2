@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -323,10 +323,18 @@ public class TemaDAO {
 	
 	public static boolean deleteAndDissociate(com.mds2.foro.Tema tema)throws PersistentException {
 		try {
+			if (tema.getSeccion_mensaje() != null) {
+				tema.getSeccion_mensaje().contiene_temas.remove(tema);
+			}
+			
 			if (tema.getUsuarios() != null) {
 				tema.getUsuarios().pro_temas.remove(tema);
 			}
 			
+			com.mds2.foro.Mensaje[] lContiene_mensajess = tema.contiene_mensajes.toArray();
+			for(int i = 0; i < lContiene_mensajess.length; i++) {
+				lContiene_mensajess[i].setTema_mensaje(null);
+			}
 			return delete(tema);
 		}
 		catch(Exception e) {
@@ -337,10 +345,18 @@ public class TemaDAO {
 	
 	public static boolean deleteAndDissociate(com.mds2.foro.Tema tema, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			if (tema.getSeccion_mensaje() != null) {
+				tema.getSeccion_mensaje().contiene_temas.remove(tema);
+			}
+			
 			if (tema.getUsuarios() != null) {
 				tema.getUsuarios().pro_temas.remove(tema);
 			}
 			
+			com.mds2.foro.Mensaje[] lContiene_mensajess = tema.contiene_mensajes.toArray();
+			for(int i = 0; i < lContiene_mensajess.length; i++) {
+				lContiene_mensajess[i].setTema_mensaje(null);
+			}
 			try {
 				session.delete(tema);
 				return true;

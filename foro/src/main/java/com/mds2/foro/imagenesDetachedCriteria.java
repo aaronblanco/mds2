@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -21,17 +21,27 @@ import org.orm.criteria.*;
 public class imagenesDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idMedia;
 	public final StringExpression url;
+	public final IntegerExpression mensaje_imagenId;
+	public final AssociationExpression mensaje_imagen;
 	
 	public imagenesDetachedCriteria() {
 		super(com.mds2.foro.imagenes.class, com.mds2.foro.imagenesCriteria.class);
 		idMedia = new IntegerExpression("idMedia", this.getDetachedCriteria());
 		url = new StringExpression("url", this.getDetachedCriteria());
+		mensaje_imagenId = new IntegerExpression("mensaje_imagen.idMensaje", this.getDetachedCriteria());
+		mensaje_imagen = new AssociationExpression("mensaje_imagen", this.getDetachedCriteria());
 	}
 	
 	public imagenesDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, com.mds2.foro.imagenesCriteria.class);
 		idMedia = new IntegerExpression("idMedia", this.getDetachedCriteria());
 		url = new StringExpression("url", this.getDetachedCriteria());
+		mensaje_imagenId = new IntegerExpression("mensaje_imagen.idMensaje", this.getDetachedCriteria());
+		mensaje_imagen = new AssociationExpression("mensaje_imagen", this.getDetachedCriteria());
+	}
+	
+	public MensajeDetachedCriteria createMensaje_imagenCriteria() {
+		return new MensajeDetachedCriteria(createCriteria("mensaje_imagen"));
 	}
 	
 	public imagenes uniqueImagenes(PersistentSession session) {

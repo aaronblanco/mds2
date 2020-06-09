@@ -40,14 +40,14 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 			
 		});
 		
-		List cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
+		//List cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
 		
-		for(Object it : cosa ) {
+	/*	for(Object it : cosa ) {
 			listaSeccion.addComponent((Component) it);
 		}
 		
 		
-
+*/
 	//	listaSeccion.addComponent((Component) _list_Seccion);
 		
 	}
@@ -58,6 +58,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		buscarSeccionB.setVisible(true);
 		crearNuevaSeccion.setVisible(false);
 
+		
 	}
 
 

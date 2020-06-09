@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -323,8 +323,20 @@ public class MensajeDAO {
 	
 	public static boolean deleteAndDissociate(com.mds2.foro.Mensaje mensaje)throws PersistentException {
 		try {
+			if (mensaje.getTema_mensaje() != null) {
+				mensaje.getTema_mensaje().contiene_mensajes.remove(mensaje);
+			}
+			
 			if (mensaje.getUsuarios() != null) {
 				mensaje.getUsuarios().pro_mensajes.remove(mensaje);
+			}
+			
+			com.mds2.foro.imagenes[] lContiene_imageness = mensaje.contiene_imagenes.toArray();
+			for(int i = 0; i < lContiene_imageness.length; i++) {
+				lContiene_imageness[i].setMensaje_imagen(null);
+			}
+			if (mensaje.getContiene_videos() != null) {
+				mensaje.getContiene_videos().setMensaje_video(null);
 			}
 			
 			return delete(mensaje);
@@ -337,8 +349,20 @@ public class MensajeDAO {
 	
 	public static boolean deleteAndDissociate(com.mds2.foro.Mensaje mensaje, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			if (mensaje.getTema_mensaje() != null) {
+				mensaje.getTema_mensaje().contiene_mensajes.remove(mensaje);
+			}
+			
 			if (mensaje.getUsuarios() != null) {
 				mensaje.getUsuarios().pro_mensajes.remove(mensaje);
+			}
+			
+			com.mds2.foro.imagenes[] lContiene_imageness = mensaje.contiene_imagenes.toArray();
+			for(int i = 0; i < lContiene_imageness.length; i++) {
+				lContiene_imageness[i].setMensaje_imagen(null);
+			}
+			if (mensaje.getContiene_videos() != null) {
+				mensaje.getContiene_videos().setMensaje_video(null);
 			}
 			
 			try {

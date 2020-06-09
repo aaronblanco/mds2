@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -21,17 +21,27 @@ import org.orm.criteria.*;
 public class videosDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idMedia;
 	public final StringExpression url;
+	public final IntegerExpression mensaje_videoId;
+	public final AssociationExpression mensaje_video;
 	
 	public videosDetachedCriteria() {
 		super(com.mds2.foro.videos.class, com.mds2.foro.videosCriteria.class);
 		idMedia = new IntegerExpression("idMedia", this.getDetachedCriteria());
 		url = new StringExpression("url", this.getDetachedCriteria());
+		mensaje_videoId = new IntegerExpression("mensaje_video.idMensaje", this.getDetachedCriteria());
+		mensaje_video = new AssociationExpression("mensaje_video", this.getDetachedCriteria());
 	}
 	
 	public videosDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, com.mds2.foro.videosCriteria.class);
 		idMedia = new IntegerExpression("idMedia", this.getDetachedCriteria());
 		url = new StringExpression("url", this.getDetachedCriteria());
+		mensaje_videoId = new IntegerExpression("mensaje_video.idMensaje", this.getDetachedCriteria());
+		mensaje_video = new AssociationExpression("mensaje_video", this.getDetachedCriteria());
+	}
+	
+	public MensajeDetachedCriteria createMensaje_videoCriteria() {
+		return new MensajeDetachedCriteria(createCriteria("mensaje_video"));
 	}
 	
 	public videos uniqueVideos(PersistentSession session) {

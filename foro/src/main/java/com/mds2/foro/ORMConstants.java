@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -17,6 +17,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_MENSAJE_CONTIENE_IMAGENES = 1120720347;
 	
 	final int KEY_MENSAJE_CONTIENE_VIDEOS = -238081710;
+	
+	final int KEY_MENSAJE_TEMA_MENSAJE = 4445669;
 	
 	final int KEY_MENSAJE_USUARIOS = -2138888059;
 	
@@ -27,6 +29,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_SECCION_USUARIOS = -372249426;
 	
 	final int KEY_TEMA_CONTIENE_MENSAJES = -1443905388;
+	
+	final int KEY_TEMA_SECCION_MENSAJE = 1168090076;
 	
 	final int KEY_TEMA_USUARIOS = 1362558495;
 	
@@ -45,5 +49,9 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_USUARIOS_USUARIOS = 2106197727;
 	
 	final int KEY_USUARIOS_USUARIOSAMIGOS = -1659408019;
+	
+	final int KEY_IMAGENES_MENSAJE_IMAGEN = -1992897167;
+	
+	final int KEY_VIDEOS_MENSAJE_VIDEO = -1081560460;
 	
 }

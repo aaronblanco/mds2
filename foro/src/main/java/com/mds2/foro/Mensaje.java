@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -31,7 +31,11 @@ public class Mensaje implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == ORMConstants.KEY_MENSAJE_USUARIOS) {
+		if (key == ORMConstants.KEY_MENSAJE_TEMA_MENSAJE) {
+			this.tema_mensaje = (com.mds2.foro.Tema) owner;
+		}
+		
+		else if (key == ORMConstants.KEY_MENSAJE_USUARIOS) {
 			this.usuarios = (com.mds2.foro.Usuarios) owner;
 		}
 		
@@ -58,10 +62,10 @@ public class Mensaje implements Serializable {
 	@org.hibernate.annotations.GenericGenerator(name="COM_MDS2_FORO_MENSAJE_IDMENSAJE_GENERATOR", strategy="native")	
 	private int idMensaje;
 	
-	@ManyToOne(targetEntity=com.mds2.foro.videos.class, fetch=FetchType.LAZY)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="videosmediaIdMedia", referencedColumnName="mediaIdMedia") }, foreignKey=@ForeignKey(name="FKMensaje876805"))	
-	private com.mds2.foro.videos contiene_videos;
+	@ManyToOne(targetEntity=com.mds2.foro.Tema.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="TemaIdTema", referencedColumnName="IdTema", nullable=false) }, foreignKey=@ForeignKey(name="FKMensaje869428"))	
+	private com.mds2.foro.Tema tema_mensaje;
 	
 	@ManyToOne(targetEntity=com.mds2.foro.Usuarios.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
@@ -101,11 +105,14 @@ public class Mensaje implements Serializable {
 	@Column(name="Eliminado", nullable=false, length=1)	
 	private boolean eliminado = false;
 	
-	@OneToMany(targetEntity=com.mds2.foro.imagenes.class)	
+	@OneToMany(mappedBy="mensaje_imagen", targetEntity=com.mds2.foro.imagenes.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns({ @JoinColumn(name="MensajeIdMensaje", nullable=false) })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_contiene_imagenes = new java.util.HashSet();
+	
+	@OneToOne(mappedBy="mensaje_video", targetEntity=com.mds2.foro.videos.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	private com.mds2.foro.videos contiene_videos;
 	
 	public void setContenido(String value) {
 		this.contenido = value;
@@ -207,6 +214,30 @@ public class Mensaje implements Serializable {
 		return eliminado;
 	}
 	
+	public void setTema_mensaje(com.mds2.foro.Tema value) {
+		if (tema_mensaje != null) {
+			tema_mensaje.contiene_mensajes.remove(this);
+		}
+		if (value != null) {
+			value.contiene_mensajes.add(this);
+		}
+	}
+	
+	public com.mds2.foro.Tema getTema_mensaje() {
+		return tema_mensaje;
+	}
+	
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM_Tema_mensaje(com.mds2.foro.Tema value) {
+		this.tema_mensaje = value;
+	}
+	
+	private com.mds2.foro.Tema getORM_Tema_mensaje() {
+		return tema_mensaje;
+	}
+	
 	public void setUsuarios(com.mds2.foro.Usuarios value) {
 		if (usuarios != null) {
 			usuarios.pro_mensajes.remove(this);
@@ -240,10 +271,19 @@ public class Mensaje implements Serializable {
 	}
 	
 	@Transient	
-	public final com.mds2.foro.imagenesSetCollection contiene_imagenes = new com.mds2.foro.imagenesSetCollection(this, _ormAdapter, ORMConstants.KEY_MENSAJE_CONTIENE_IMAGENES, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final com.mds2.foro.imagenesSetCollection contiene_imagenes = new com.mds2.foro.imagenesSetCollection(this, _ormAdapter, ORMConstants.KEY_MENSAJE_CONTIENE_IMAGENES, ORMConstants.KEY_IMAGENES_MENSAJE_IMAGEN, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void setContiene_videos(com.mds2.foro.videos value) {
-		this.contiene_videos = value;
+		if (this.contiene_videos != value) {
+			com.mds2.foro.videos lcontiene_videos = this.contiene_videos;
+			this.contiene_videos = value;
+			if (value != null) {
+				contiene_videos.setMensaje_video(this);
+			}
+			if (lcontiene_videos != null && lcontiene_videos.getMensaje_video() == this) {
+				lcontiene_videos.setMensaje_video(null);
+			}
+		}
 	}
 	
 	public com.mds2.foro.videos getContiene_videos() {

@@ -1,5 +1,5 @@
 CREATE TABLE Notificacion (IdNotificacion int(10) NOT NULL AUTO_INCREMENT, UsuariosIdUsuario int(10) NOT NULL, Titulo varchar(255), IdUsuarioPropietario int(10) NOT NULL, DescripcionCampo varchar(255), PRIMARY KEY (IdNotificacion)) ENGINE=InnoDB;
-CREATE TABLE Mensaje (IdMensaje int(10) NOT NULL AUTO_INCREMENT, TemaIdTema int(10) NOT NULL, videosmediaIdMedia int(10), UsuariosIdUsuario int(10) NOT NULL, Contenido varchar(255), Subtitulo varchar(255), NumMg int(10) NOT NULL, FechaCreacion bigint(20) NOT NULL, NumTotalMensajes int(10) NOT NULL, IdTemaPropietario int(10) NOT NULL, Titulo varchar(255), IdPropietario int(10) NOT NULL, IdMedia int(10) NOT NULL, Publico tinyint(1) NOT NULL, Eliminado tinyint(1) NOT NULL, PRIMARY KEY (IdMensaje)) ENGINE=InnoDB;
+CREATE TABLE Mensaje (IdMensaje int(10) NOT NULL AUTO_INCREMENT, TemaIdTema int(10) NOT NULL, UsuariosIdUsuario int(10) NOT NULL, Contenido varchar(255), Subtitulo varchar(255), NumMg int(10) NOT NULL, FechaCreacion bigint(20) NOT NULL, NumTotalMensajes int(10) NOT NULL, IdTemaPropietario int(10) NOT NULL, Titulo varchar(255), IdPropietario int(10) NOT NULL, IdMedia int(10) NOT NULL, Publico tinyint(1) NOT NULL, Eliminado tinyint(1) NOT NULL, PRIMARY KEY (IdMensaje)) ENGINE=InnoDB;
 CREATE TABLE Moderador (IdMod int(10) NOT NULL, UsuariosIdUsuario int(10) NOT NULL, PRIMARY KEY (UsuariosIdUsuario)) ENGINE=InnoDB;
 CREATE TABLE Seccion (IdSeccion int(10) NOT NULL AUTO_INCREMENT, UsuariosIdUsuario int(10) NOT NULL, ImagenSeccion varchar(255), Creador varchar(255), Titulo varchar(255), Descripcion varchar(255), Fecha bigint(20) NOT NULL, IdPropietarioSeccion int(10) NOT NULL, Publico tinyint(1) NOT NULL, Privado tinyint(1) NOT NULL, Oculto tinyint(1) NOT NULL, Eliminado tinyint(1) NOT NULL, PRIMARY KEY (IdSeccion)) ENGINE=InnoDB;
 CREATE TABLE Tema (IdTema int(10) NOT NULL AUTO_INCREMENT, SeccionIdSeccion int(10) NOT NULL, UsuariosIdUsuario int(10) NOT NULL, Titulo varchar(255), Fecha bigint(20) NOT NULL, Descripcion varchar(255), IdTemaPropietario int(10) NOT NULL, Publico tinyint(1) NOT NULL, Privado tinyint(1) NOT NULL, Oculto tinyint(1) NOT NULL, Eliminado tinyint(1) NOT NULL, PRIMARY KEY (IdTema)) ENGINE=InnoDB;
@@ -9,7 +9,7 @@ CREATE TABLE Ticket (IdTicket int(10) NOT NULL AUTO_INCREMENT, UsuariosIdUsuario
 CREATE TABLE imagenes (mediaIdMedia int(10) NOT NULL, MensajeIdMensaje int(10) NOT NULL, PRIMARY KEY (mediaIdMedia)) ENGINE=InnoDB;
 CREATE TABLE media (IdMedia int(10) NOT NULL AUTO_INCREMENT, Url varchar(255), PRIMARY KEY (IdMedia)) ENGINE=InnoDB;
 CREATE TABLE Administrador (UsuariosIdUsuario int(10) NOT NULL, PRIMARY KEY (UsuariosIdUsuario)) ENGINE=InnoDB;
-CREATE TABLE videos (mediaIdMedia int(10) NOT NULL, PRIMARY KEY (mediaIdMedia)) ENGINE=InnoDB;
+CREATE TABLE videos (mediaIdMedia int(10) NOT NULL, MensajeIdMensaje int(10) NOT NULL, PRIMARY KEY (mediaIdMedia)) ENGINE=InnoDB;
 CREATE TABLE Usuarios_Usuarios (UsuariosIdUsuario int(10) NOT NULL, UsuariosIdUsuario2 int(10) NOT NULL, PRIMARY KEY (UsuariosIdUsuario, UsuariosIdUsuario2)) ENGINE=InnoDB;
 ALTER TABLE Moderador ADD CONSTRAINT FKModerador408542 FOREIGN KEY (UsuariosIdUsuario) REFERENCES Usuarios (IdUsuario);
 ALTER TABLE imagenes ADD CONSTRAINT FKimagenes101868 FOREIGN KEY (mediaIdMedia) REFERENCES media (IdMedia);
@@ -19,7 +19,7 @@ ALTER TABLE Tema ADD CONSTRAINT FKTema54155 FOREIGN KEY (UsuariosIdUsuario) REFE
 ALTER TABLE Mensaje ADD CONSTRAINT FKMensaje665283 FOREIGN KEY (UsuariosIdUsuario) REFERENCES Usuarios (IdUsuario);
 ALTER TABLE Notificacion ADD CONSTRAINT FKNotificaci390464 FOREIGN KEY (UsuariosIdUsuario) REFERENCES Usuarios (IdUsuario);
 ALTER TABLE imagenes ADD CONSTRAINT FKimagenes489188 FOREIGN KEY (MensajeIdMensaje) REFERENCES Mensaje (IdMensaje);
-ALTER TABLE Mensaje ADD CONSTRAINT FKMensaje876805 FOREIGN KEY (videosmediaIdMedia) REFERENCES videos (mediaIdMedia);
+ALTER TABLE videos ADD CONSTRAINT FKvideos580226 FOREIGN KEY (MensajeIdMensaje) REFERENCES Mensaje (IdMensaje);
 ALTER TABLE Tema ADD CONSTRAINT FKTema655261 FOREIGN KEY (SeccionIdSeccion) REFERENCES Seccion (IdSeccion);
 ALTER TABLE Usuarios_Usuarios ADD CONSTRAINT amigos FOREIGN KEY (UsuariosIdUsuario) REFERENCES Usuarios (IdUsuario);
 ALTER TABLE Usuarios_Usuarios ADD CONSTRAINT amigos2 FOREIGN KEY (UsuariosIdUsuario2) REFERENCES Usuarios (IdUsuario);

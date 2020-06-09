@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -21,11 +21,15 @@ import org.orm.criteria.*;
 public class videosCriteria extends AbstractORMCriteria {
 	public final IntegerExpression idMedia;
 	public final StringExpression url;
+	public final IntegerExpression mensaje_videoId;
+	public final AssociationExpression mensaje_video;
 	
 	public videosCriteria(Criteria criteria) {
 		super(criteria);
 		idMedia = new IntegerExpression("idMedia", this);
 		url = new StringExpression("url", this);
+		mensaje_videoId = new IntegerExpression("mensaje_video.idMensaje", this);
+		mensaje_video = new AssociationExpression("mensaje_video", this);
 	}
 	
 	public videosCriteria(PersistentSession session) {
@@ -34,6 +38,10 @@ public class videosCriteria extends AbstractORMCriteria {
 	
 	public videosCriteria() throws PersistentException {
 		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
+	}
+	
+	public MensajeCriteria createMensaje_videoCriteria() {
+		return new MensajeCriteria(createCriteria("mensaje_video"));
 	}
 	
 	public videos uniqueVideos() {

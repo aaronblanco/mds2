@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -316,6 +316,39 @@ public class videosDAO {
 			return true;
 		}
 		catch (Exception e) {
+			e.printStackTrace();
+			throw new PersistentException(e);
+		}
+	}
+	
+	public static boolean deleteAndDissociate(com.mds2.foro.videos lvideos)throws PersistentException {
+		try {
+			if (lvideos.getMensaje_video() != null) {
+				lvideos.getMensaje_video().setContiene_videos(null);
+			}
+			
+			return delete(lvideos);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			throw new PersistentException(e);
+		}
+	}
+	
+	public static boolean deleteAndDissociate(com.mds2.foro.videos lvideos, org.orm.PersistentSession session)throws PersistentException {
+		try {
+			if (lvideos.getMensaje_video() != null) {
+				lvideos.getMensaje_video().setContiene_videos(null);
+			}
+			
+			try {
+				session.delete(lvideos);
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+		catch(Exception e) {
 			e.printStackTrace();
 			throw new PersistentException(e);
 		}

@@ -16,7 +16,7 @@
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -74,7 +74,7 @@
     <Column name="TemaIdTema">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Tema.IdTema</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Tema.IdTema</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -83,22 +83,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="videosmediaIdMedia">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.videos.mediaIdMedia</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -244,7 +232,7 @@
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -269,7 +257,7 @@
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -404,7 +392,7 @@
     <Column name="SeccionIdSeccion">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Seccion.IdSeccion</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Seccion.IdSeccion</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -416,7 +404,7 @@
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -687,7 +675,7 @@
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -745,7 +733,7 @@
     <Column name="mediaIdMedia">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.media.IdMedia</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.media.IdMedia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -757,7 +745,7 @@
     <Column name="MensajeIdMensaje">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Mensaje.IdMensaje</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Mensaje.IdMensaje</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -795,7 +783,7 @@
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -809,7 +797,19 @@
     <Column name="mediaIdMedia">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.media.IdMedia</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.media.IdMedia</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="MensajeIdMensaje">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>com.mds2.foro.Mensaje.IdMensaje</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -823,7 +823,7 @@
     <Column name="UsuariosIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -835,7 +835,7 @@
     <Column name="UsuariosIdUsuario2">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>DB DCL.Usuarios.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>com.mds2.foro.Usuarios.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -925,14 +925,14 @@
       <Column>IdMensaje</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKMensaje876805">
-    <ReferenceTable>Mensaje</ReferenceTable>
-    <ReferencedTable>videos</ReferencedTable>
+  <ForeignKey name="FKvideos580226">
+    <ReferenceTable>videos</ReferenceTable>
+    <ReferencedTable>Mensaje</ReferencedTable>
     <Columns>
-      <Column>videosmediaIdMedia</Column>
+      <Column>MensajeIdMensaje</Column>
     </Columns>
     <RefColumns>
-      <Column>mediaIdMedia</Column>
+      <Column>IdMensaje</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKTema655261">

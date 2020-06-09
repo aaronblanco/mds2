@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: trm187(University of Almeria)
+ * Licensee: aba693(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -316,6 +316,39 @@ public class imagenesDAO {
 			return true;
 		}
 		catch (Exception e) {
+			e.printStackTrace();
+			throw new PersistentException(e);
+		}
+	}
+	
+	public static boolean deleteAndDissociate(com.mds2.foro.imagenes limagenes)throws PersistentException {
+		try {
+			if (limagenes.getMensaje_imagen() != null) {
+				limagenes.getMensaje_imagen().contiene_imagenes.remove(limagenes);
+			}
+			
+			return delete(limagenes);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			throw new PersistentException(e);
+		}
+	}
+	
+	public static boolean deleteAndDissociate(com.mds2.foro.imagenes limagenes, org.orm.PersistentSession session)throws PersistentException {
+		try {
+			if (limagenes.getMensaje_imagen() != null) {
+				limagenes.getMensaje_imagen().contiene_imagenes.remove(limagenes);
+			}
+			
+			try {
+				session.delete(limagenes);
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+		catch(Exception e) {
 			e.printStackTrace();
 			throw new PersistentException(e);
 		}
