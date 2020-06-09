@@ -22,6 +22,7 @@ public class TicketClase extends Ticket_ventana implements View{
 	public TicketClase() {
 		this._cuerpoTicket = txtTicket;
 		this._enviar = responderTicket;
+		this._cerrarTicket = cerrarTicket;
 		
 		
 		_enviar.addClickListener(new Button.ClickListener() {
@@ -38,19 +39,19 @@ public class TicketClase extends Ticket_ventana implements View{
 			
 		});	
 		
-		cerrarTicket.addClickListener(new Button.ClickListener() {
+		_cerrarTicket.addClickListener(new Button.ClickListener() {
 			
 			//cancelar();
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("crearTicket");
+				responderTicket();
 			}
 			
 		});	
 		
-		cerrarTicket.setVisible(false);
+		_cerrarTicket.setVisible(true);
 		
 	}
 	
