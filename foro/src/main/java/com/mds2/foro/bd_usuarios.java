@@ -122,6 +122,8 @@ public class bd_usuarios {
 		throw new UnsupportedOperationException();
 	}
 
+	//Esto no creo que necesitase de una operacion con la bd
+
 	public boolean desconectarse() {
 		throw new UnsupportedOperationException();
 	}
@@ -190,12 +192,29 @@ public class bd_usuarios {
 		throw new UnsupportedOperationException();
 	}
 
-	public List buscarUsuario(String aKeyword) {
-		throw new UnsupportedOperationException();
+	public List buscarUsuario(String aKeyword) throws PersistentException {
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		Vector<Usuarios> listaUsuarios = new Vector<Usuarios>();
+		
+		try {
+			
+			listaUsuarios = (Vector<Usuarios>) UsuariosDAO.queryUsuarios("Nombre de usuario = '"+aKeyword+"'", null);
+				
+			t.commit();
+			
+		}catch(Exception e) {
+			t.rollback();
+		}
+		return listaUsuarios;
 	}
 
-	public AdministradorClase obtenerPerfilAdmin(int aIdUser) {
-		throw new UnsupportedOperationException();
+	//ESTO NO SE MUY BIEN COMO IRA
+	public AdministradorClase obtenerPerfilAdmin(int aIdUser) throws PersistentException {		
+
+		
+		
+		return com.mds2.foro.AdministradorDAO.getAdministradorByORMID(aIdUser);
+		
 	}
 
 	public ModeradorClase obtenerPerfilMod(int aIdUser) {

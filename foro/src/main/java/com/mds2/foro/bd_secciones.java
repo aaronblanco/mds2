@@ -15,27 +15,43 @@ public class bd_secciones {
 
 		
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		Vector<Seccion> listaSecciones = new Vector<Seccion>();
+		SeccionCriteria sc = new SeccionCriteria();
+		Seccion[] secc = new Seccion[50];
+
 		
 		try {
 			
-			SeccionCriteria sc = new SeccionCriteria();
-			Seccion[] cosa = new Seccion[50];
-			cosa = sc.listSeccion();
-		
-			for(Seccion s:cosa) {
-				if(s.getPublico())
-					listaSecciones.add(s);
-			}
+			secc = sc.listSeccion();
+			if(aPublico) {
+				for(Seccion s:secc) {
+					if(s.getPublico())
+						_contiene_secciones.add(s);
+				}
+			}else if(aPrivado) {
+				for(Seccion s:secc) {
+					if(s.getPrivado())
+						_contiene_secciones.add(s);
+				}
 				
+			}else if(aOculto) {
+				for(Seccion s:secc) {
+					if(s.getOculto())
+						_contiene_secciones.add(s);
+				}
+			}else if(aEliminado) {
+				for(Seccion s:secc) {
+					if(s.getEliminado())
+						_contiene_secciones.add(s);
+				}
+			}
+		
 			t.commit();
 			
 		}catch(Exception e) {
 			t.rollback();
 		}
-	
 		
-		return listaSecciones;
+		return _contiene_secciones;
 		
 	}
 
@@ -71,13 +87,21 @@ public class bd_secciones {
 		
 		
 	}
-
+//ESTE METODO ES MUY PROBABLE QUE YA NO EXISTA O QUE SEA DIFERENTE (VEASE TIPO)
 	public boolean cambiarAccesibilidadSeccion(Tipo aTipoNuevo) {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean eliminarSeccion(int aIdSeccion) {
-		throw new UnsupportedOperationException();
+	public boolean eliminarSeccion(int aIdSeccion) throws PersistentException {
+		
+		
+		Seccion sec = SeccionDAO.getSeccionByORMID(aIdSeccion);
+		sec.setPublico(false);
+		sec.setPrivado(false);
+		sec.setOculto(false);
+		sec.setEliminado(true);
+		
+		return true;
 	}
 
 	public List buscarSeccion(String aKeyword) throws PersistentException {
