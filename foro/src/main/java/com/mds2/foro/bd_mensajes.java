@@ -209,7 +209,7 @@ public class bd_mensajes {
 			msj.setEliminado(true);
 			
 			com.mds2.foro.MensajeDAO.save(msj);
-			
+			//
 			t.commit();
 			return true;
 		}catch(Exception e) {
