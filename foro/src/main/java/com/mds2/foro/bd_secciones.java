@@ -44,11 +44,14 @@ public class bd_secciones {
 						_contiene_secciones.add(s);
 				}
 			}
-		
+			
 			t.commit();
+			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().close();
 			
 		}catch(Exception e) {
+			 e.printStackTrace();
 			t.rollback();
+			
 		}
 		
 		return _contiene_secciones;

@@ -37,6 +37,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="diagramas/BASEDATOSDAO/lib/orm.jar"/>
+	<classpathentry kind="lib" path="diagramas/orm.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
