@@ -89,7 +89,7 @@ public class Seccion implements Serializable {
 	@Column(name="Eliminado", nullable=false, length=1)	
 	private boolean eliminado = false;
 	
-	@OneToMany(targetEntity=com.mds2.foro.TemaClase.class)	
+	@OneToMany(targetEntity=com.mds2.foro.Tema.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns({ @JoinColumn(name="SeccionIdSeccion", nullable=false) })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	

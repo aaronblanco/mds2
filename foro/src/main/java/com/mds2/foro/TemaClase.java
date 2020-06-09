@@ -9,7 +9,6 @@ import com.vaadin.ui.Label;
 //import DCLv3.Tipo;
 
 public class TemaClase extends Tema_ventana implements View{
-//	private Tipo _tipo = DCLv3.Tipo.Publico;
 	private String _titulo;
 	private Label _fechaCreacion;
 	private Label _creador;
