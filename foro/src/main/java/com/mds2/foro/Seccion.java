@@ -89,7 +89,7 @@ public class Seccion implements Serializable {
 	@Column(name="Eliminado", nullable=false, length=1)	
 	private boolean eliminado = false;
 	
-	@OneToMany(mappedBy="seccion_mensaje", targetEntity=com.mds2.foro.Tema.class)	
+	@OneToMany(targetEntity=com.mds2.foro.Tema.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_contiene_temas = new java.util.HashSet();
