@@ -19,8 +19,6 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	
 	public CreacionMensaje(){
 		
-		
-		
 		crearMensaje.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -32,15 +30,13 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 		
 		cancelarCreacionMsg.addClickListener(new Button.ClickListener() {
 			
-			//cancelar();
-			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				cancelar();
 			}
 			
-		});	
+		});
 		
 		adjuntarMediaMsg.addClickListener(new Button.ClickListener() {
 			
@@ -69,7 +65,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	}
 
 	public void enviar() {
-		iUsr.crearMensaje(_cuerpo, null, aIdUsuario, aIdTema);
+		iUsr.crearMensaje(_cuerpo, null, idUsuario, aIdTema);
 	}
 	
 	public void cancelar() {
