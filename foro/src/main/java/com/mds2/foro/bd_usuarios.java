@@ -188,8 +188,11 @@ public class bd_usuarios {
 		
 	}
 
-	public boolean amonestarUsuario(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	
+	public boolean amonestarUsuario(int aIdUsuario) throws PersistentException {
+		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+		u.setAmonestado(true);
+		return u.getAmonestado();
 	}
 
 	public List buscarUsuario(String aKeyword) throws PersistentException {
