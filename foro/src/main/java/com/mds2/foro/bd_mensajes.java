@@ -113,7 +113,6 @@ public class bd_mensajes {
 
 	public boolean crearMensaje(String aCuerpoMensaje, int aIdUsuario, int aIdTema) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		Vector<Mensaje> listaMensajes = new Vector<Mensaje>();
 	
 	try {
 		
@@ -219,8 +218,24 @@ public class bd_mensajes {
 		
 	}
 
-	public List buscarMensaje(String aKeyword, int aIdTema) {
-		throw new UnsupportedOperationException();
+	public List buscarMensaje(String aKeyword, int aIdTema) throws PersistentException {
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		Vector<Mensaje> listaMensajes = new Vector<Mensaje>();
+		
+		
+		try {
+			
+			
+			listaMensajes = (Vector<Mensaje>) MensajeDAO.queryMensaje("Titulo = '"+ aKeyword +"'", null);
+				
+			t.commit();
+			
+		}catch(Exception e) {
+			t.rollback();
+		}
+		
+		
+		return listaMensajes;
 	}
 
 	public List cargarRespuestas(int aIdMensaje)   throws PersistentException {
