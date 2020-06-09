@@ -14,9 +14,10 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 //	private Button _adjuntarImagen;
 	private Button _enviar;
 	private Button _cancelar;
-//	private Image _imagenSeccion;
+	private String _imagenSeccionURL;
 	public Lista_Seccion_V_Moderador _unnamed_Lista_Seccion_V_Moderador_;
 	iModerador iMod = new DB_Main();
+	
 	public CreacionSeccion() {
 		this._tituloSeccion = titulo;
 		this._descipcionSeccion = descripcion;
@@ -67,7 +68,8 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 	}
 	
 	public void enviar() {
-		iMod.crearSeccion(_tituloSeccion, _descipcionSeccion, aFotoURL, aIdUserCreador);
+		
+		//iMod.crearSeccion(_tituloSeccion, _descipcionSeccion, _imagenSeccionURL, );
 	}
 
 	public void cancelar() {

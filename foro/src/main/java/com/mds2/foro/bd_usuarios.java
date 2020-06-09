@@ -140,10 +140,10 @@ public class bd_usuarios {
 	}
 
 	//?????????
-	public boolean rechazarSolicitud() {
-		Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
-		a.notificaciones.remove(null);
-	}
+//	public boolean rechazarSolicitud() throws PersistentException {
+//		//Usuarios a = com.mds2.foro.UsuariosDAO.getUsuariosByORMID();
+//		//a.notificaciones.remove(null);
+//	}
 
 	
 	public boolean eliminarAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException {
@@ -215,8 +215,9 @@ public class bd_usuarios {
 	public AdministradorClase obtenerPerfilAdmin(int aIdUser) throws PersistentException {		
 
 		AdministradorClase admin = null;
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+			
 			
 			Administrador ad = com.mds2.foro.AdministradorDAO.getAdministradorByORMID(aIdUser);
 			
@@ -256,6 +257,7 @@ public class bd_usuarios {
 			u.setNombre(aFullname);
 			u.setOculto(false);
 			u.setPublico(true);
+			
 			com.mds2.foro.UsuariosDAO.save(u);
 			
 			t.commit();
@@ -266,4 +268,5 @@ public class bd_usuarios {
 	
 		return true;
 	}
+	
 }

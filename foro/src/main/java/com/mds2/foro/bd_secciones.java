@@ -12,12 +12,11 @@ public class bd_secciones {
 	public Vector<Seccion> _contiene_secciones = new Vector<Seccion>();
 
 	public List cargarSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
-
 		
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		SeccionCriteria sc = new SeccionCriteria();
 		Seccion[] secc = new Seccion[50];
-
+		
 		
 		try {
 			
@@ -57,25 +56,25 @@ public class bd_secciones {
 
 	public boolean crearSeccion(String aTitulo, String aSubtitulo, int aIdUserCreador) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-	try {
-		Seccion sec = com.mds2.foro.SeccionDAO.createSeccion();
-		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUserCreador);
-		sec.setTitulo(aTitulo);
-		sec.setDescripcion(aSubtitulo);
+		try {
+			Seccion sec = com.mds2.foro.SeccionDAO.createSeccion();
+			Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUserCreador);
+			sec.setTitulo(aTitulo);
+			sec.setDescripcion(aSubtitulo);
 		
-		sec.setIdPropietarioSeccion(aIdUserCreador);
+			sec.setIdPropietarioSeccion(aIdUserCreador);
 		
 		
-		sec.setFecha(System.currentTimeMillis());
-		sec.setPublico(true);
-		sec.setCreador(u.getNombre());
-		com.mds2.foro.SeccionDAO.save(sec);
+			sec.setFecha(System.currentTimeMillis());
+			sec.setPublico(true);
+			sec.setCreador(u.getNombre());
+			com.mds2.foro.SeccionDAO.save(sec);
 		
-		t.commit();
+			t.commit();
 		
-		return true;
-	}
-	catch(Exception e) {
+			return true;
+		}
+		catch(Exception e) {
 			t.rollback();	
 			return false;
 		}
