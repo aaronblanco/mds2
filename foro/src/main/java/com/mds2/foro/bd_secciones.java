@@ -80,20 +80,26 @@ public class bd_secciones {
 			return false;
 		}
 		
-	
-		
-		
-	
-		
-		
 	}
 //ESTE METODO ES MUY PROBABLE QUE YA NO EXISTA O QUE SEA DIFERENTE (VEASE TIPO)
-	public boolean cambiarAccesibilidadSeccion(Tipo aTipoNuevo) {
-		throw new UnsupportedOperationException();
+	public boolean cambiarAccesibilidadSeccion(boolean publico, boolean privado, boolean oculto, int idSeccion) throws PersistentException {
+
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		Seccion se = com.mds2.foro.SeccionDAO.getSeccionByORMID(idSeccion);
+		
+		try {
+			se.setPrivado(privado);
+			se.setPublico(publico);
+			se.setOculto(oculto);
+			t.commit();
+			return true;
+		}catch(Exception e) {
+			t.rollback();
+			return false;
+		}
 	}
 
 	public boolean eliminarSeccion(int aIdSeccion) throws PersistentException {
-		
 		
 		Seccion sec = SeccionDAO.getSeccionByORMID(aIdSeccion);
 		sec.setPublico(false);

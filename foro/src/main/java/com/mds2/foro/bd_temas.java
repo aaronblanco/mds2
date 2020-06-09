@@ -79,13 +79,9 @@ public class bd_temas {
 		
 		u.pro_temas.add(tema);
 		com.mds2.foro.UsuariosDAO.save(u);
-		
-		
+			
 		sec.contiene_temas.add(tema);
 		com.mds2.foro.SeccionDAO.save(sec);
-		
-		
-		
 		
 		t.commit();
 		return true;
@@ -95,9 +91,6 @@ public class bd_temas {
 			t.rollback();
 			return false;
 		}
-		
-	
-	
 	
 	}
 
@@ -112,13 +105,14 @@ public class bd_temas {
 		try {
 			
 			
-		 Tema tema = com.mds2.foro.TemaDAO.getTemaByORMID(aIdTema);
-		 com.mds2.foro.TemaDAO.delete(tema);
-			
-			
-			
+			Tema tema = com.mds2.foro.TemaDAO.getTemaByORMID(aIdTema);
+			tema.setEliminado(true);
+			tema.setPrivado(false);
+			tema.setPublico(false);
+			tema.setOculto(false);
+					
 			t.commit();
-			return true;
+		return true;
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -129,13 +123,26 @@ public class bd_temas {
 		
 	}
 
+	//AQUI DEBERIA SER PONER EL BOTON DE CREAR TEMA EN INVIS
 	public boolean cerrarTema(int aIdTema) throws PersistentException {
 		throw new UnsupportedOperationException();
 		
 	}
 
-	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto)  {
-		throw new UnsupportedOperationException();
+	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto, int idTema) throws PersistentException{
+		
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		Tema te = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
+		try {
+			te.setPrivado(aPrivado);
+			te.setPublico(aPublico);
+			te.setOculto(aOculto);
+			t.commit();
+			return true;
+		}catch(Exception e) {
+			t.rollback();
+			return false;
+		}
 		
 	}
 
