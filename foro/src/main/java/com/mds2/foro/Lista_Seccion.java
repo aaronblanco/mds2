@@ -30,7 +30,12 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				buscarSeccion();
+				try {
+					buscarSeccion();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		});
@@ -56,7 +61,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	}
 
 
-	public void buscarSeccion() {
+	public void buscarSeccion() throws PersistentException {
 		List sb = iUsrNR.buscarSeccion(keywordBS.toString());
 		listaSeccion.removeAllComponents();
 		for(Object it : sb) {

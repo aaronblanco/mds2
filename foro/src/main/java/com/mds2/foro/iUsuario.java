@@ -18,10 +18,6 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public List cargarAmigos(int aIdUsuario);
 
-	public List cargarSeccionesUR(String aAccesibilidadPub, String aAccesibilidadPriv);
-
-	public List cargarTemasUR(int aIdSeccion, String aAccesibilidadPub, String aAccesibilidadPriv);
-
 	public List cargarMensajeUR(int aIdTema, String aAccesibilidadPub);
 
 	public List cargarMensajeCreado(int aIdTema, int aIdUsuario)throws PersistentException;

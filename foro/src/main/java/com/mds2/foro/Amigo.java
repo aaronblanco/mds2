@@ -2,7 +2,6 @@ package com.mds2.foro;
 
 import com.vaadin.ui.Button;
 
-//import DCLv3.VerPerfilGenerico;
 
 public class Amigo extends VerPerfilGenerico {
 	private Button _anadirAmigo;
@@ -14,11 +13,6 @@ public class Amigo extends VerPerfilGenerico {
 	public Amigo() {
 		this._anadirAmigo = aceptarSolicitud;
 		this._eliminarAmigo = rechazarSolicitud;
-		
-	
-		
-		
-		
 	}
 	
 	

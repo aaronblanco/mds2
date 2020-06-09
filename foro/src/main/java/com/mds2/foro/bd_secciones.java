@@ -22,25 +22,27 @@ public class bd_secciones {
 			
 			secc = sc.listSeccion();
 			if(aPublico) {
+				
+				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+aPublico+"'", null);
+				
 				for(Seccion s:secc) {
-					if(s.getPublico())
-						_contiene_secciones.add(s);
+					_contiene_secciones.add(s);
 				}
 			}else if(aPrivado) {
+				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+aPrivado+"'", null);
 				for(Seccion s:secc) {
-					if(s.getPrivado())
-						_contiene_secciones.add(s);
+					_contiene_secciones.add(s);
 				}
 				
 			}else if(aOculto) {
+				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+aOculto+"'", null);
 				for(Seccion s:secc) {
-					if(s.getOculto())
-						_contiene_secciones.add(s);
+					_contiene_secciones.add(s);
 				}
 			}else if(aEliminado) {
+				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+aEliminado+"'", null);
 				for(Seccion s:secc) {
-					if(s.getEliminado())
-						_contiene_secciones.add(s);
+					_contiene_secciones.add(s);
 				}
 			}
 		
