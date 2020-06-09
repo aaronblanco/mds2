@@ -183,7 +183,7 @@ public class bd_usuarios {
 		mod.setOculto(u.getOculto());
 		mod.setAmonestado(false);
 		mod.setSancionado(false);
-		com.mds2.foro.UsuariosDAO.delete(u);
+		//com.mds2.foro.UsuariosDAO.delete(u);
 		return com.mds2.foro.ModeradorDAO.save(mod);
 		
 	}

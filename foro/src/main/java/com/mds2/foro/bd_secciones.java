@@ -54,7 +54,7 @@ public class bd_secciones {
 		
 	}
 
-	public boolean crearSeccion(String aTitulo, String aSubtitulo, int aIdUserCreador) throws PersistentException {
+	public boolean crearSeccion(String aTitulo, String aSubtitulo, String fotoURL, int aIdUserCreador) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Seccion sec = com.mds2.foro.SeccionDAO.createSeccion();
@@ -64,7 +64,7 @@ public class bd_secciones {
 		
 			sec.setIdPropietarioSeccion(aIdUserCreador);
 		
-		
+			
 			sec.setFecha(System.currentTimeMillis());
 			sec.setPublico(true);
 			sec.setCreador(u.getNombre());
