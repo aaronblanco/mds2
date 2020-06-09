@@ -14,7 +14,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	private Button _adjuntarImagen;
 	private TextField _cuerpo;
 	private Button _enviar;
-	public Lista_Mensaje_V_Usuario_Reg _unnamed_Lista_Mensaje_V_Usuario_Reg_;
+	public Lista_Mensaje_V_Usuario_Reg _Lista_Mensaje_V_Usuario_Reg_;
 	iUsuario iUsr = new DB_Main();
 	
 	public CreacionMensaje(){
@@ -23,11 +23,10 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 		
 		crearMensaje.addClickListener(new Button.ClickListener() {
 			
-			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				iUsr.crearMensaje(_cuerpo, null, aIdUsuario, aIdTema);
+				enviar();
 			}
 		});	
 		
@@ -38,7 +37,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+				cancelar();
 			}
 			
 		});	
@@ -70,10 +69,10 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	}
 
 	public void enviar() {
-		throw new UnsupportedOperationException();
+		iUsr.crearMensaje(_cuerpo, null, aIdUsuario, aIdTema);
 	}
 	
 	public void cancelar() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
 	}
 }
