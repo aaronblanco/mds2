@@ -21,7 +21,7 @@ public class Lista_Tema extends Lista_Tema_ventana {
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
 
-	public Lista_Tema() {
+	public Lista_Tema() throws PersistentException {
 		
 		Inicializar();
 		
@@ -34,16 +34,13 @@ public class Lista_Tema extends Lista_Tema_ventana {
 			}
 		});	
 		
+		List<Tema> t = iUsrNR.cargarTemasUNR(Integer.valueOf(_sección.getId()), true, false, false, false);
 		
-		try {
-			_list_Tema = (Vector<TemaClase>) iUsrNR.cargarTemasUNR(1, true, false, false, false);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
+		for(Tema it: t) {
+			TemaClase tema = new TemaClase(it);
+			listaTemas.addComponent(tema);
 		}
-		
-		for(Object it: _list_Tema)
-			listaTemas.addComponent((Component) it);
 		
 		//listaTemas.addComponent((Component) _list_Tema);
 	
