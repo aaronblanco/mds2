@@ -19,11 +19,19 @@ public class bd_secciones {
 		
 	//	List<Seccion> lista = new List<Seccion>();
 		
+		Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
+		 for(Seccion s:tal) {
+				_contiene_secciones.add(s);
+			}
+		;
+		return  _contiene_secciones;
+		
+		/*
 		try {
 			com.mds2.foro.Seccion[] commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
 			
 			if(aPublico) {
-				 Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+1+"'", null);
+				 Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+1+"'", "Titulo");
 				 for(Seccion s:tal) {
 						_contiene_secciones.add(s);
 					}
@@ -32,18 +40,18 @@ public class bd_secciones {
 				
 				
 			}else if(aPrivado) {
-				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+aPrivado+"'", null);
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+aPrivado+"'", "Titulo");
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
 				
 			}else if(aOculto) {
-				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+aOculto+"'", null);
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+aOculto+"'", "Titulo");
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
 			}else if(aEliminado) {
-				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+aEliminado+"'", null);
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+aEliminado+"'", "Titulo");
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
@@ -59,7 +67,7 @@ public class bd_secciones {
 		}
 		
 		return _contiene_secciones;
-		
+		*/
 	}
 
 	public boolean crearSeccion(String aTitulo, String aSubtitulo, String fotoURL, int aIdUserCreador) throws PersistentException {

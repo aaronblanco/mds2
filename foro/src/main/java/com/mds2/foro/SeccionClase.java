@@ -44,7 +44,11 @@ public class SeccionClase extends Seccion_ventana implements View {
 		this._nombreSeccion = s.getTitulo();
 		this.fechaCreacion = String.valueOf(s.getFecha());
 		this.usrCreador = s.getCreador();
-		
+		//this._imagenSeccion = s.getImagenSeccion();
+		//this.numMsg = s.contiene_temas.size();
+		this.irSeccion.setCaption(_nombreSeccion);
+		this.fechaCreacionSeccion.setCaption(fechaCreacion);
+		this.userCreadorSeccion.setCaption(usrCreador);
 		System.out.println(s.getCreador());
 		/*this._nombreSeccion = irSeccion.getCaption();
 		this._imagenSeccion = imgSeccion;
