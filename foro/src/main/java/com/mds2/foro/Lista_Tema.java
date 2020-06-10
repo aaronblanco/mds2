@@ -6,6 +6,8 @@ import java.util.Vector;
 //import Package.Tema;
 //import Package.Buscador_tema;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -33,7 +35,12 @@ public class Lista_Tema extends Lista_Tema_ventana {
 		});	
 		
 		
-		_list_Tema = (Vector<TemaClase>) iUsrNR.cargarTemasUNR(1, true, false, false, false);
+		try {
+			_list_Tema = (Vector<TemaClase>) iUsrNR.cargarTemasUNR(1, true, false, false, false);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		for(Object it: _list_Tema)
 			listaTemas.addComponent((Component) it);
@@ -53,11 +60,17 @@ public class Lista_Tema extends Lista_Tema_ventana {
 //AQUI COSA ID PUM
 	public void buscarTema() {
 		
-		List st = iUsrNR.buscarTema(buscarTemaTF.toString(), 1);
-		
+		List st;
+		try {
+			st = iUsrNR.buscarTema(buscarTemaTF.toString(), 1);
 		for(Object it : st) {
 			listaTemas.addComponent((Component) it);
 		}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 				
 	}
 

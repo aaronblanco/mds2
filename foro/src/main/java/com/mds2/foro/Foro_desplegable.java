@@ -20,7 +20,7 @@ public class Foro_desplegable {
 			Tree<String> menuMod = new Tree<String>("Menu");
 		
 		TreeData<String> data = new TreeData<String>();
-	    data.addItems(null,"Iniciar sesión", "Registrarse","Pagina principal");
+	    data.addItems(null,"Iniciar sesion", "Registrarse","Pagina principal");
 	    
 	    TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(data);
 	  

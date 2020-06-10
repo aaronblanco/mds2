@@ -17,31 +17,33 @@ public class bd_secciones {
 		//SeccionCriteria sc = new SeccionCriteria();
 		Seccion[] secc = new Seccion[50];
 		
+	//	List<Seccion> lista = new List<Seccion>();
 		
 		try {
-			//com.mds2.foro.Seccion[] commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
-			//secc = sc.listSeccion();
+			com.mds2.foro.Seccion[] commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
+			
 			if(aPublico) {
+				 Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+1+"'", null);
+				 for(Seccion s:tal) {
+						_contiene_secciones.add(s);
+					}
+				;
+				return  _contiene_secciones;
 				
-				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+aPublico+"'", null);
-				
-				for(Seccion s:secc) {
-					_contiene_secciones.add(s);
-				}
 				
 			}else if(aPrivado) {
-				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+aPrivado+"'", null);
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+aPrivado+"'", null);
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
 				
 			}else if(aOculto) {
-				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+aOculto+"'", null);
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+aOculto+"'", null);
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
 			}else if(aEliminado) {
-				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+aEliminado+"'", null);
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+aEliminado+"'", null);
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}

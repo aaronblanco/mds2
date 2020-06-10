@@ -23,12 +23,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 
 	public SeccionClase() {
 		
-		this._nombreSeccion = irSeccion.getCaption();
-		this._imagenSeccion = imgSeccion;
-		this.subtitulo = subtitleSection.toString();
-		this.usrCreador = userCreadorSeccion.toString();
-		this.fechaCreacion = fechaCreacionSeccion.toString();
-		this.numMsg = numMsgSection.toString();
+	
 		
 		Inicializar();
 			
@@ -44,8 +39,22 @@ public class SeccionClase extends Seccion_ventana implements View {
 			
 		
 	}
+	
 	public SeccionClase(Seccion s) {
 		this._nombreSeccion = s.getTitulo();
+		this.fechaCreacion = String.valueOf(s.getFecha());
+		this.usrCreador = s.getCreador();
+		
+		System.out.println(s.getCreador());
+		/*this._nombreSeccion = irSeccion.getCaption();
+		this._imagenSeccion = imgSeccion;
+		this.subtitulo = subtitleSection.toString();
+		this.usrCreador = userCreadorSeccion.toString();
+		this.fechaCreacion = fechaCreacionSeccion.toString();
+		this.numMsg = numMsgSection.toString();
+		*/
+		
+		
 		//etc
 	}
 	

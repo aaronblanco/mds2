@@ -70,17 +70,21 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 		Sesion sesion = new Sesion();
 		
 		int idU = iUsr.iniciarSesion(_nombreUsuario, _contrasena);
-		Sesion.setIDSESION(idU);
+		if(idU != 0) {
+			
 		
+		Sesion.setIDSESION(idU);
+		Sesion.setNOMBRESESION(_nombreUsuario);
 		Usuarios usr = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idU);
+		
 		Usuario_registrado ur = new Usuario_registrado();
 		
 		//ur.setId(ur.setId(Sesion.getIDSESION()));
 		
-		UI.getCurrent().getNavigator().addView(String.valueOf(Sesion.getIDSESION()), ur);
+		UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), ur);
 		
-		//UI.getCurrent().getNavigator().navigateTo("usuarioReg");
-		
+		UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
+		}
 	}
 
 	public void registrarse() {

@@ -26,7 +26,7 @@ public class Menu_UR extends Menu_UNR_ventana{
 		Foro_desplegable foro = new Foro_desplegable();
 	    Tree<String> var = foro.listaDesplegable();
 	    TreeData<String> datos = var.getTreeData();
-		datos.removeItem("Iniciar sesión");
+		datos.removeItem("Iniciar sesion");
 		datos.removeItem("Registrarse");
 		datos.addItem(null, "Mi perfil");
 		datos.addItem(null, "Cerrar sesión");
