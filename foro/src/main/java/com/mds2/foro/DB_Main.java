@@ -276,15 +276,8 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		
 	}
 
-	public List cargarListaSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) {
-		Lista_Seccion s = null;
-		try {
-			s = (Lista_Seccion) bdSec.cargarSecciones(aPublico, aPrivado, aOculto, aEliminado);
-		}catch(PersistentException e) {
-			e.printStackTrace();
-		}
-		
-		return (List) s;
+	public List cargarListaSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
+		return bdSec.cargarSecciones(aPublico, aPrivado, aOculto, aEliminado);
 	}
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {

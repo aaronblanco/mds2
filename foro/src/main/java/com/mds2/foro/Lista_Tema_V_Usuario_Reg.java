@@ -7,6 +7,8 @@ import java.util.Vector;
 //import Package.Tema_UR;
 //import DCLv3.CreacionTema;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -23,7 +25,7 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 	
-	public Lista_Tema_V_Usuario_Reg() {
+	public Lista_Tema_V_Usuario_Reg() throws NumberFormatException, PersistentException {
 		
 		super();
 		
