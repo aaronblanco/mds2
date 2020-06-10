@@ -28,19 +28,12 @@ public class Usuario_no_registrado extends Banner_general implements View{
 		}
 
 	public Usuario_no_registrado(Layout ventana ) {
-		
-		
 	
 		Menu_UNR menu = new Menu_UNR();
-	
-	
-	
 	    
 		this.panelMenu.setContent(menu);
 		
 		this.panelMain.setContent(ventana);
-		
-	
 		
 	}
 	

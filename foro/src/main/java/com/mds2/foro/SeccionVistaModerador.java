@@ -32,13 +32,13 @@ public class SeccionVistaModerador extends SeccionVistaUR {
 		String value = statusTema.getValue();
 		switch(value) {
 		case "Público":
-			iMod.cambiarAccesibilidad(true, false, false);
+			iMod.cambiarAccesibilidad(true, false, false, 0);
 			break;
 		case "Privado":
-			iMod.cambiarAccesibilidad(false, true, false);
+			iMod.cambiarAccesibilidad(false, true, false, 0);
 			break;
 		case "Oculto":
-			iMod.cambiarAccesibilidad(false, false, true);
+			iMod.cambiarAccesibilidad(false, false, true, 0);
 			break;
 		default:
 			break;

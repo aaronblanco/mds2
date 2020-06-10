@@ -3,7 +3,6 @@ package com.mds2.foro;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 
-//import DCLv3.VerPerfilGenerico;
 
 public class Solicitud extends VerPerfilGenerico {
 	private Button _aceptarSolicitud;
