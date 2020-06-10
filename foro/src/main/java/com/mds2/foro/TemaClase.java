@@ -9,14 +9,15 @@ import com.vaadin.ui.Label;
 //import DCLv3.Tipo;
 
 public class TemaClase extends Tema_ventana implements View{
-	private String _titulo;
-	private Label _fechaCreacion;
-	private Label _creador;
-	private Label _meGustas;
-	private Label _numMensajes;
+	private Button _titulo;
+	private String _fechaCreacion;
+	private String _creador;
+	private String _meGustas;
+	private String _numMensajes;
 //	private Listener _listaTema;
 	public Lista_Tema _Lista_Tema;
 	public Lista_Mensaje _mensajes;
+	
 	
 	public TemaClase() {
 		
@@ -39,6 +40,34 @@ public class TemaClase extends Tema_ventana implements View{
 			});	
 			
 		}
+	
+	
+	
+	
+	public TemaClase(Tema s) {
+		
+		Inicializar();
+		
+		this._titulo = s.getTitulo();
+		this._fechaCreacion = String.valueOf(s.getFecha());
+		this._creador = s.getTitulo();
+		
+		this.irSeccion.setCaption(s.getTitulo());
+		this.fechaCreacionSeccion.setCaption(_fechaCreacion);
+		this.userCreadorSeccion.setCaption(_creador);
+		
+		
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	private void Inicializar() {
 		// TODO Auto-generated method stub
