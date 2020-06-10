@@ -78,7 +78,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	private void Inicializar() {
 		// TODO Auto-generated method stub
 		buscarSeccionB.setVisible(true);
-		crearNuevaSeccion.setVisible(false);
+		crearNuevaSeccion.setVisible(true);
 
 		
 	}
