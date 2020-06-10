@@ -69,7 +69,7 @@ public class MyUI extends UI {
 			e.printStackTrace();
 		}
      	 
-     	 
+
      	navigator.addView("crearSeccion", new Usuario_registrado(new CreacionSeccion()));
     	navigator.addView("Mi perfil", new Usuario_registrado(new PerfilUsuarioRegAdmin()));
     	navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));

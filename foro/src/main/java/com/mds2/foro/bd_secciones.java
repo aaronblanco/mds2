@@ -17,16 +17,16 @@ public class bd_secciones {
 		//SeccionCriteria sc = new SeccionCriteria();
 		Seccion[] secc = new Seccion[50];
 		
-	//	List<Seccion> lista = new List<Seccion>();
-		
+		//List<Seccion> lista = new List<Seccion>();
+		/*
 		Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
 		for(Seccion s:tal) {
 			_contiene_secciones.add(s);
 		}
 		
 		return  _contiene_secciones;
+		*/
 		
-		/*
 		try {
 			com.mds2.foro.Seccion[] commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
 			
@@ -40,18 +40,18 @@ public class bd_secciones {
 				
 				
 			}else if(aPrivado) {
-				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+aPrivado+"'", "Titulo");
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+1+"'", "Titulo");
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
 				
 			}else if(aOculto) {
-				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+aOculto+"'", "Titulo");
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+1+"'", "Titulo");
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
 			}else if(aEliminado) {
-				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+aEliminado+"'", "Titulo");
+				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+1+"'", "Titulo");
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
@@ -67,7 +67,7 @@ public class bd_secciones {
 		}
 		
 		return _contiene_secciones;
-		*/
+		
 	}
 
 	public boolean crearSeccion(String aTitulo, String aSubtitulo, String fotoURL, int aIdUserCreador) throws PersistentException {
@@ -90,7 +90,7 @@ public class bd_secciones {
 			com.mds2.foro.SeccionDAO.save(sec);
 		
 			t.commit();
-			System.out.println("has creado una seccion puta madre sosio");
+		//	System.out.println("has creado una seccion puta madre sosio");
 			return true;
 		}
 		catch(Exception e) {
