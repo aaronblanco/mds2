@@ -114,7 +114,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 	}
 
 	public boolean crearSeccion(String aTitulo, String aSubtitulo, String aFotoURL, int aIdUserCreador) throws PersistentException {
-		return bdSec.crearSeccion(aTitulo, aSubtitulo, null, aIdUserCreador);
+		return bdSec.crearSeccion(aTitulo, aSubtitulo, aFotoURL, aIdUserCreador);
 	}
 
 	public boolean cambiarAccesibilidadSeccion(boolean aPublico, boolean aPrivado, boolean aOculto, int idSeccion) throws PersistentException {
