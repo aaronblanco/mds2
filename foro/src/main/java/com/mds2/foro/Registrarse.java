@@ -68,7 +68,11 @@ public class Registrarse extends Registrarse_ventana implements View {
 
 	}
 	public void registrarse() throws PersistentException {
-		iNusr.registrarse(_nombreUser.toString(), _nombreCompleto.toString(), _contrasena.toString(), _descripcion.toString(), _correoElectronico.toString(), _foto.toString());
+		boolean soyFeliz = false;
+		if(iNusr.registrarse(_nombreUser.toString(), _nombreCompleto.toString(), _contrasena.toString(), _descripcion.toString(), _correoElectronico.toString(), _foto.toString()))
+			soyFeliz = true;
+		System.out.println(soyFeliz);
+		System.out.println("Ya puedes iniciar sesion con tu cuenta.");
 	}
 
 	public void adjuntarFotoPerfil() {

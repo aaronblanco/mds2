@@ -41,8 +41,9 @@ public class MyUI extends UI {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-    	/*
+    	
     	Usuario_no_registrado pag = null;
+    	/*
 		try {
 			pag = new Usuario_no_registrado();
 		} catch (PersistentException e) {
@@ -50,7 +51,13 @@ public class MyUI extends UI {
 			e.printStackTrace();
 		}
 	
-    	 
+    	 */
+    	try {
+			pag = new Usuario_no_registrado();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	 setContent(pag);
     	 
 
@@ -75,7 +82,7 @@ public class MyUI extends UI {
     	 navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
       	 
     	  
-    	  try {
+    /*	  try {
 			navigator.addView("listaSecciones", new ModeradorClase(new SeccionVistaModerador()) );
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

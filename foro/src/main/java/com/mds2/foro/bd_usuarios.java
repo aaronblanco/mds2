@@ -73,18 +73,22 @@ public class bd_usuarios {
 		int id = -1;
 		try {
 			
-			String condition;
-			String orderBy;
-			AdministradorCriteria cr = new AdministradorCriteria();
-		
-			cr.add(Restrictions.eq("nombreUsuario", aUsername));
+			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery("Username = '"+aUsername+"' AND Password = '"+aPassword+"'", null);
 			
+			id = lcommds2foroUsuarios.getIdUsuario();
 			
-			com.mds2.foro.Usuarios u =  (Usuarios) com.mds2.foro.UsuariosDAO.queryUsuarios(cr.toString(), null);
-			id = u.getIdUsuario();
-		
-			
-			com.mds2.foro.UsuariosDAO.save(u);
+//			String condition;
+//			String orderBy;
+//			AdministradorCriteria cr = new AdministradorCriteria();
+//		
+//			cr.add(Restrictions.eq("nombreUsuario", aUsername));
+//			
+//			
+//			com.mds2.foro.Usuarios u =  (Usuarios) com.mds2.foro.UsuariosDAO.queryUsuarios(cr.toString(), null);
+//			id = u.getIdUsuario();
+//		
+//			
+//			com.mds2.foro.UsuariosDAO.save(u);
 			t.commit();
 			
 		}catch(Exception e) {

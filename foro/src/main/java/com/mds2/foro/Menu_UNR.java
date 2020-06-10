@@ -27,16 +27,6 @@ public class Menu_UNR extends Menu_UNR_ventana implements View {
 	
 		Tree<String> var = foro.listaDesplegable();
 	    
-	    
-	    
-	 
-		
-		
-		 
-	   
-	    
-	    
-	    
 	    this.addComponent(var);
 	    
 	    
@@ -47,6 +37,6 @@ public class Menu_UNR extends Menu_UNR_ventana implements View {
 	}
 
 	public void registrarse() {
-		throw new UnsupportedOperationException();
+		
 	}
 }

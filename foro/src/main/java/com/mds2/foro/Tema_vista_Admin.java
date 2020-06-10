@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -38,7 +40,12 @@ public class Tema_vista_Admin extends TemaVistaModerador {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				eliminarTema();
+				try {
+					eliminarTema();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -47,7 +54,7 @@ public class Tema_vista_Admin extends TemaVistaModerador {
 	
 	
 	//LOS IDS	
-	public void eliminarTema() {
+	public void eliminarTema() throws PersistentException {
 		iAdmin.eliminarTema(1);
 	}
 	//	LOS IDS
