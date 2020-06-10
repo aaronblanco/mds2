@@ -1,6 +1,8 @@
  package com.mds2.foro;
 
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -21,7 +23,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 	private int numMsg;
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
-	public SeccionClase() {
+	public SeccionClase() throws PersistentException {
 		
 	
 		
@@ -36,7 +38,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 				}
 			});
 			
-			
+		_temas = new Lista_Tema();
 		
 	}
 	
