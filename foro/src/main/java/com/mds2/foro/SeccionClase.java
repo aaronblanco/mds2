@@ -1,6 +1,7 @@
  package com.mds2.foro;
 
 
+import org.apache.log4j.xml.UnrecognizedElementHandler;
 import org.orm.PersistentException;
 
 import com.vaadin.navigator.View;
@@ -34,14 +35,14 @@ public class SeccionClase extends Seccion_ventana implements View {
 			
 				@Override
 				public void buttonClick(ClickEvent event) {
-					// TODO Auto-generated method stubn
-			    
-			    	
-			    	  
-					
-					
+					// TODO Auto-generated method stub
+					System.out.println("gnañoigneiñoawngñsdnoñifnwaeoñiefnñoawenfñon");
 					try {
-						UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Lista_Tema());
+						Usuario_no_registrado unr = new Usuario_no_registrado(new Lista_Tema());
+						System.out.println("SWOIFNAMGOINWEOÑGANIOWENGÑAWNGÑOIWNAEGOIWNEOIFNÑOWANGOWANGWNGOÑWNÑGO");
+						unr.panelMenu.setContent(new Lista_Tema());
+						
+						UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , unr);
 						UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
 					} catch (PersistentException e) {
 						// TODO Auto-generated catch block
@@ -54,7 +55,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 		
 	}
 	
-	public SeccionClase(Seccion s) {
+	public SeccionClase(Seccion s) throws PersistentException {
 		
 		Inicializar();
 		this._nombreSeccion = irSeccion;
@@ -76,15 +77,35 @@ public class SeccionClase extends Seccion_ventana implements View {
 		this.fechaCreacion = fechaCreacionSeccion.toString();
 		this.numMsg = numMsgSection.toString();
 		*/
+		_nombreSeccion.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("gnañoigneiñoawngñsdnoñifnwaeoñiefnñoawenfñon");
+				try {
+					Usuario_no_registrado unr = new Usuario_no_registrado(new Lista_Tema());
+					System.out.println("SWOIFNAMGOINWEOÑGANIOWENGÑAWNGÑOIWNAEGOIWNEOIFNÑOWANGOWANGWNGOÑWNÑGO");
+					unr.panelMenu.setContent(new Lista_Tema());
+					
+					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , unr);
+					UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 		
+		_temas = new Lista_Tema();
 		
-		//etc
 	}
 	
 	private void Inicializar() {
 		// TODO Auto-generated method stub
 		statusTema.setVisible(false);
 		eliminarSeccion.setVisible(false);
+		this._nombreSeccion = irSeccion;
 	}
 
 }
