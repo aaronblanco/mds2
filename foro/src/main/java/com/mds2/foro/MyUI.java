@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import java.util.List;
+
 import javax.servlet.annotation.WebServlet;
 
 import org.orm.ORMDatabaseInitiator;
@@ -45,18 +47,18 @@ public class MyUI extends UI {
     	 setContent(pag);
     	 
     	 
-    	 
-    	 Navigator navigator = new Navigator(this , this);
-         navigator.addView("Pagina principal", pag.getClass());
-     	
-     	 
+       	 Navigator navigator = new Navigator(this , this);
+         navigator.addView("", pag.getClass());
+         
+       
+         
      	 navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
      	 navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
      	 navigator.addView("Iniciar sesión",  new Usuario_no_registrado(new Iniciar_sesión()));
      	 navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
      	 navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena() ) );
      	 
-     	 try {
+     	try {
 			navigator.addView("usuarioReg", new Usuario_registrado());
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
@@ -70,11 +72,11 @@ public class MyUI extends UI {
     	 navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
       	 
     	  
-    /*	  try {
-			navigator.addView("listaSecciones", new ModeradorClase(new SeccionVistaModerador()) );
-		} catch (PersistentException e) {
+    	try {
+			navigator.addView("listaSecciones", new Usuario_no_registrado(new Lista_Seccion()));
+		} catch (PersistentException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
      	 
      	 
@@ -97,7 +99,6 @@ public class MyUI extends UI {
 			e.printStackTrace();
 		}
          
-         */
          
          
          

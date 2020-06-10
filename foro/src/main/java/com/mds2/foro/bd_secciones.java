@@ -13,7 +13,7 @@ public class bd_secciones {
 
 	public List cargarSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 		
-		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		//PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		//SeccionCriteria sc = new SeccionCriteria();
 		Seccion[] secc = new Seccion[50];
 		
@@ -47,12 +47,12 @@ public class bd_secciones {
 				}
 			}
 			
-			t.commit();
-			com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().close();
+			//t.commit();
+			//com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().close();
 			
 		}catch(Exception e) {
 			 e.printStackTrace();
-			t.rollback();
+			//t.rollback();
 			
 		}
 		
