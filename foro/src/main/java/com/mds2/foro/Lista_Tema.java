@@ -8,12 +8,13 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Component;
 
-public class Lista_Tema extends Lista_Tema_ventana {
+public class Lista_Tema extends Lista_Tema_ventana implements View {
 	//private Orden _orden = DCLv3.Orden.Relevancia;
 	public SeccionClase _sección;
 	public Vector<TemaClase> _list_Tema = new Vector<TemaClase>();

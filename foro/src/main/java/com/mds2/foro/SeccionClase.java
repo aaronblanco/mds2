@@ -1,6 +1,9 @@
  package com.mds2.foro;
 
 
+import org.orm.PersistentException;
+
+import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -24,15 +27,27 @@ public class SeccionClase extends Seccion_ventana implements View {
 	public SeccionClase() {
 		
 	
+	//	Navigator navigator = new Navigator(this , this);
 		
 		Inicializar();
 			
 		_nombreSeccion.addClickListener(new Button.ClickListener() {
-				
+			
 				@Override
 				public void buttonClick(ClickEvent event) {
-					// TODO Auto-generated method stub
-					UI.getCurrent().getNavigator().navigateTo("irSeccion");
+					// TODO Auto-generated method stubn
+			    
+			    	
+			    	  
+					
+					
+					try {
+						UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Lista_Tema());
+						UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			});
 			
