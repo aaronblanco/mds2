@@ -58,7 +58,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 
-				UI.getCurrent().getNavigator().navigateTo("Iniciar sesión");
+				UI.getCurrent().getNavigator().navigateTo("Iniciar sesion");
 				
 				
 			}

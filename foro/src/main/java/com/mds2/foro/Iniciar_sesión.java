@@ -67,13 +67,17 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	}
 
 	public void iniciarSesion() throws PersistentException {
+		Sesion sesion = new Sesion();
+		
 		int idU = iUsr.iniciarSesion(_nombreUsuario, _contrasena);
+		Sesion.setIDSESION(idU);
 		
 		Usuarios usr = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idU);
 		Usuario_registrado ur = new Usuario_registrado();
-		ur.setId(String.valueOf(usr.getIdUsuario()));
 		
-		UI.getCurrent().getNavigator().addView(ur.getId(), ur);
+		//ur.setId(ur.setId(Sesion.getIDSESION()));
+		
+		UI.getCurrent().getNavigator().addView(String.valueOf(Sesion.getIDSESION()), ur);
 		
 		//UI.getCurrent().getNavigator().navigateTo("usuarioReg");
 		

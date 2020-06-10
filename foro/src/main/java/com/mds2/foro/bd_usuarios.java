@@ -73,7 +73,7 @@ public class bd_usuarios {
 		int id = -1;
 		try {
 			
-			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery("Username = '"+aUsername+"' AND Password = '"+aPassword+"'", null);
+			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery("NombreUsuario = '"+aUsername+"' AND Contraseña = '"+aPassword+"'", null);
 			
 			id = lcommds2foroUsuarios.getIdUsuario();
 			

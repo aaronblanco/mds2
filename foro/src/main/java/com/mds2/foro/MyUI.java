@@ -54,7 +54,7 @@ public class MyUI extends UI {
          
      	 navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
      	 navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
-     	 navigator.addView("Iniciar sesión",  new Usuario_no_registrado(new Iniciar_sesión()));
+     	 navigator.addView("Iniciar sesion",  new Usuario_no_registrado(new Iniciar_sesión()));
      	 navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
      	 navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena() ) );
      	 
