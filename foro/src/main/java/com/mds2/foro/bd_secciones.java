@@ -14,13 +14,13 @@ public class bd_secciones {
 	public List cargarSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 		
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		SeccionCriteria sc = new SeccionCriteria();
+		//SeccionCriteria sc = new SeccionCriteria();
 		Seccion[] secc = new Seccion[50];
 		
 		
 		try {
-			
-			secc = sc.listSeccion();
+			//com.mds2.foro.Seccion[] commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
+			//secc = sc.listSeccion();
 			if(aPublico) {
 				
 				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+aPublico+"'", null);
@@ -28,6 +28,7 @@ public class bd_secciones {
 				for(Seccion s:secc) {
 					_contiene_secciones.add(s);
 				}
+				
 			}else if(aPrivado) {
 				secc = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+aPrivado+"'", null);
 				for(Seccion s:secc) {

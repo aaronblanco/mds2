@@ -21,8 +21,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	iUsuario iUsr = new DB_Main();
 	
 	public Iniciar_sesión() {
-		this._nombreUsuario = userName.toString();
-		this._contrasena = password.toString();
+		this._nombreUsuario = userName.getValue();
+		this._contrasena = password.getValue();
 		this._recordar = recordarPassw;
 		this._registrarse = registrars;
 		this._iniciarSesion =iniSesion;
@@ -73,6 +73,9 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 		Usuario_registrado ur = new Usuario_registrado();
 		ur.setId(String.valueOf(usr.getIdUsuario()));
 		
+		UI.getCurrent().getNavigator().addView(ur.getId(), ur);
+		
+		//UI.getCurrent().getNavigator().navigateTo("usuarioReg");
 		
 	}
 

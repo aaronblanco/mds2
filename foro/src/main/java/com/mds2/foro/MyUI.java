@@ -33,25 +33,9 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	
-    
-    	try {
-    		com.mds2.foro.Usuarios[] commds2foroUsuarioses = com.mds2.foro.UsuariosDAO.listUsuariosByQuery(null, null);
-    		System.out.println("eeeeeee");
-		} catch (PersistentException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
     	
     	Usuario_no_registrado pag = null;
-    	/*
-		try {
-			pag = new Usuario_no_registrado();
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
-    	 */
+    	
     	try {
 			pag = new Usuario_no_registrado();
 		} catch (PersistentException e) {
@@ -60,11 +44,10 @@ public class MyUI extends UI {
 		}
     	 setContent(pag);
     	 
-
     	 
     	 
     	 Navigator navigator = new Navigator(this , this);
-         navigator.addView("", pag.getClass());
+         navigator.addView("Pagina principal", pag.getClass());
      	
      	 
      	 navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
@@ -73,7 +56,12 @@ public class MyUI extends UI {
      	 navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
      	 navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena() ) );
      	 
-     	 
+     	 try {
+			navigator.addView("usuarioReg", new Usuario_registrado());
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
      	 
      	 
      	 navigator.addView("crearSeccion", new Usuario_registrado(new CreacionSeccion()));
