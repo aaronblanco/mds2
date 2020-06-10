@@ -23,7 +23,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 	private int numMsg;
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
-	public SeccionClase() {
+	public SeccionClase() throws PersistentException {
 		
 	
 	//	Navigator navigator = new Navigator(this , this);
@@ -50,7 +50,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 				}
 			});
 			
-			
+		_temas = new Lista_Tema();
 		
 	}
 	
