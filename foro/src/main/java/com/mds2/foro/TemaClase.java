@@ -16,30 +16,17 @@ public class TemaClase extends Tema_ventana implements View{
 	private String _creador;
 	private int _meGustas;
 	private String _numMensajes;
-//	private Listener _listaTema;
 	public Lista_Tema _Lista_Tema;
 	public Lista_Mensaje _mensajes;
-	
+	private long _fechaCreacionSeccion;
+	private String _userCreadorSeccion;
+	private String _nombreSeccion;
 	
 	public TemaClase() {
 		
 		Inicializar();
 		
-//		this._titulo = irTema.getCaption();
-//		this._fechaCreacion = fechaCreacTema;
-//		this._creador = creadorTema;
-//		this._meGustas = numMGTema;
-//		this._numMensajes = numMsgTema;
-//		
-//		
-//			irTema.addClickListener(new Button.ClickListener() {
-//				
-//				@Override
-//				public void buttonClick(ClickEvent event) {
-//					// TODO Auto-generated method stub
-//					UI.getCurrent().getNavigator().navigateTo("irTema");
-//				}
-//			});	
+
 			
 		}
 	
@@ -50,21 +37,16 @@ public class TemaClase extends Tema_ventana implements View{
 		
 		Inicializar();
 		
-//		this._titulo = s.getTitulo();
-//		this._fechaCreacion = String.valueOf(s.getFecha());
-//		this._creador = s.getTitulo();
-//		
-//		this.irSeccion.setCaption(s.getTitulo());
-//		this.fechaCreacionSeccion.setCaption(_fechaCreacion);
-//		this.userCreadorSeccion.setCaption(_creador);
+		this._titulo = irTema;
+		this._titulo.setCaption(s.getTitulo());
 		
-		this._creador = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(s.getIdTemaPropietario()).getNombre();
 		this._fechaCreacion = s.getFecha();
-		this.titulo.setCaption(s.getTitulo());
+		this._creador = s.getUsuarios().getNombreUsuario();
 		
-		this._titulo = titulo;
-
 		
+		this._fechaCreacionSeccion = s.getSeccion_mensaje().getFecha();
+		this._userCreadorSeccion = s.getSeccion_mensaje().getCreador();
+		this._nombreSeccion = s.getSeccion_mensaje().getTitulo();
 
 
         this._titulo.addStyleName("link");
@@ -74,6 +56,10 @@ public class TemaClase extends Tema_ventana implements View{
             public void buttonClick(ClickEvent event) {
                 // TODO Auto-generated method stub
                 
+            //	UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_no_registrado(new Lista_Tema(s.getIdSeccion())));
+			//	UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
+            	
+            	
             }
 
         });

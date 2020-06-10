@@ -30,28 +30,8 @@ public class SeccionClase extends Seccion_ventana implements View {
 	//	Navigator navigator = new Navigator(this , this);
 		
 		Inicializar();
-			
-		_nombreSeccion.addClickListener(new Button.ClickListener() {
-			
-				@Override
-				public void buttonClick(ClickEvent event) {
-					// TODO Auto-generated method stub
-					System.out.println("gnañoigneiñoawngñsdnoñifnwaeoñiefnñoawenfñon");
-					try {
-						Usuario_no_registrado unr = new Usuario_no_registrado(new Lista_Tema());
-						System.out.println("SWOIFNAMGOINWEOÑGANIOWENGÑAWNGÑOIWNAEGOIWNEOIFNÑOWANGOWANGWNGOÑWNÑGO");
-						unr.panelMenu.setContent(new Lista_Tema());
-						
-						UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , unr);
-						UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
-					} catch (PersistentException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			});
-			
-		_temas = new Lista_Tema();
+	
+		
 		
 	}
 	
@@ -82,13 +62,12 @@ public class SeccionClase extends Seccion_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				System.out.println("gnañoigneiñoawngñsdnoñifnwaeoñiefnñoawenfñon");
+				
 				try {
-					Usuario_no_registrado unr = new Usuario_no_registrado(new Lista_Tema());
-					System.out.println("SWOIFNAMGOINWEOÑGANIOWENGÑAWNGÑOIWNAEGOIWNEOIFNÑOWANGOWANGWNGOÑWNÑGO");
-					unr.panelMenu.setContent(new Lista_Tema());
+				
+				System.out.println(s.getIdSeccion());
 					
-					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , unr);
+					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_no_registrado(new Lista_Tema(s.getIdSeccion())));
 					UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
@@ -97,7 +76,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 			}
 		});
 		
-		_temas = new Lista_Tema();
+		
 		
 	}
 	

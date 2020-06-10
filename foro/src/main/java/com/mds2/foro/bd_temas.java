@@ -14,18 +14,15 @@ public class bd_temas {
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 		
-		Seccion sec = SeccionDAO.getSeccionByORMID(aIdSeccion);
-		
-		Tema[]temas = com.mds2.foro.TemaDAO.listTemaByQuery(null, null);
-		
+	
 		
 		
 		try {
-			com.mds2.foro.Tema[] commds2foroSeccions = com.mds2.foro.TemaDAO.listTemaByQuery(null, null);
+			
 			
 			if(aPublico) {
-				 Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Publico = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:tal) {
+				com.mds2.foro.Tema[] temas = com.mds2.foro.TemaDAO.listTemaByQuery("Publico = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				
@@ -33,22 +30,22 @@ public class bd_temas {
 				
 				
 			}else if(aPrivado) {
-				Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Privado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:tal) {
+				com.mds2.foro.Tema[] temas = com.mds2.foro.TemaDAO.listTemaByQuery("Privado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				
 				return  _contiene_temas;
 			}else if(aOculto) {
-				Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Oculto = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:tal) {
+				com.mds2.foro.Tema[] temas = com.mds2.foro.TemaDAO.listTemaByQuery("Oculto = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				
 				return  _contiene_temas;
 			}else if(aEliminado) {
-				Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Eliminado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:tal) {
+				com.mds2.foro.Tema[] temas= com.mds2.foro.TemaDAO.listTemaByQuery("Eliminado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				

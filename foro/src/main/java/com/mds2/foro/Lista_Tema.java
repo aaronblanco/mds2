@@ -22,7 +22,7 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
 
-	public Lista_Tema() throws PersistentException {
+	public Lista_Tema(int idSeccion) throws PersistentException {
 		
 		Inicializar();
 		
@@ -35,15 +35,16 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 			}
 		});	
 		
-		List<Tema> t = iUsrNR.cargarTemasUNR(Integer.valueOf(_sección.getId()), true, false, false, false);
-		
+		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, true, false, false, false);
+	
 		
 		for(Tema it: t) {
 			TemaClase tema = new TemaClase(it);
 			listaTemas.addComponent(tema);
+		
 		}
 		
-		//listaTemas.addComponent((Component) _list_Tema);
+	
 	
 	}
 	
@@ -55,7 +56,7 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 		
 		buscarTemaB.setVisible(true);
 	}
-//AQUI COSA ID PUM
+
 	public void buscarTema() {
 		
 		List st;

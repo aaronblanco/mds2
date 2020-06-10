@@ -59,14 +59,14 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		for(Seccion it : cosa ) {
 			
 			SeccionClase tal = new SeccionClase(it);
-			System.out.println(tal.toString());
+		//	System.out.println(tal.toString());
 			
 //			tal.setVisible(true);
 //			tal.userCreadorSeccion.setVisible(true);
 //			tal.userCreadorSeccion.setValue(it.getCreador());
 //			tal.fechaCreacionSeccion.setValue(String.valueOf(it.getFecha()));
 			listaSeccion.addComponent(tal);
-			System.out.println("MIRA MAMA HE AÑADIDO UNA SECCION JAJAJA");
+		//	System.out.println("MIRA MAMA HE AÑADIDO UNA SECCION JAJAJA");
 			listaSeccion.toString();
 		}
 		
