@@ -16,7 +16,7 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 //	private Button _adjuntarImagen;
 	private Button _enviar;
 	private Button _cancelar;
-	private String _imagenSeccionURL;
+	private String _imagenSeccionURL = "";
 	public Lista_Seccion_V_Moderador _unnamed_Lista_Seccion_V_Moderador_;
 	iModerador iMod = new DB_Main();
 	
@@ -75,9 +75,16 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 	}
 	
 	public void enviar() throws PersistentException {
+		try {
+		boolean hola = iMod.crearSeccion(_tituloSeccion.getValue(), _descipcionSeccion.getValue(), _imagenSeccionURL.toString(), 11);
+		if(hola)
+			System.out.println("bieeeeeeeeeeen");
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
 		
-		iMod.crearSeccion(_tituloSeccion.getValue(), _descipcionSeccion.getValue(), _imagenSeccionURL.toString(), Sesion.getIDSESION());
-	}
+		}
 
 	public void cancelar() {
 		UI.getCurrent().getNavigator().navigateTo("listaSecciones");

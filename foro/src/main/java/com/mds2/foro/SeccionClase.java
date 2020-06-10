@@ -11,14 +11,14 @@ import com.vaadin.ui.UI;
 
 public class SeccionClase extends Seccion_ventana implements View {
 	private String _nombreSeccion;
-	private Image _imagenSeccion;
+	private String _imagenSeccion;
 	private Listener _listaSeccion;
 	public Lista_Seccion _secciones;
 	public Lista_Tema _temas;
 	private String subtitulo;
 	private String usrCreador;
 	private String fechaCreacion;
-	private String numMsg;
+	private int numMsg;
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
 	public SeccionClase() {
@@ -41,6 +41,8 @@ public class SeccionClase extends Seccion_ventana implements View {
 	}
 	
 	public SeccionClase(Seccion s) {
+		
+		Inicializar();
 		this._nombreSeccion = s.getTitulo();
 		this.fechaCreacion = String.valueOf(s.getFecha());
 		this.usrCreador = s.getCreador();
@@ -49,7 +51,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 		this.irSeccion.setCaption(_nombreSeccion);
 		this.fechaCreacionSeccion.setCaption(fechaCreacion);
 		this.userCreadorSeccion.setCaption(usrCreador);
-		System.out.println(s.getCreador());
+		
 		/*this._nombreSeccion = irSeccion.getCaption();
 		this._imagenSeccion = imgSeccion;
 		this.subtitulo = subtitleSection.toString();

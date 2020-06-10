@@ -20,10 +20,10 @@ public class bd_secciones {
 	//	List<Seccion> lista = new List<Seccion>();
 		
 		Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
-		 for(Seccion s:tal) {
-				_contiene_secciones.add(s);
-			}
-		;
+		for(Seccion s:tal) {
+			_contiene_secciones.add(s);
+		}
+		
 		return  _contiene_secciones;
 		
 		/*
@@ -73,21 +73,24 @@ public class bd_secciones {
 	public boolean crearSeccion(String aTitulo, String aSubtitulo, String fotoURL, int aIdUserCreador) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			Seccion sec = com.mds2.foro.SeccionDAO.createSeccion();
+			com.mds2.foro.Seccion sec = com.mds2.foro.SeccionDAO.createSeccion();
 			Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUserCreador);
 			sec.setTitulo(aTitulo);
 			sec.setDescripcion(aSubtitulo);
-		
 			sec.setIdPropietarioSeccion(aIdUserCreador);
-		
-			
 			sec.setFecha(System.currentTimeMillis());
 			sec.setPublico(true);
 			sec.setCreador(u.getNombre());
+			sec.setEliminado(false);
+			sec.setImagenSeccion(fotoURL);
+			sec.setOculto(false);
+			sec.setPrivado(false);
+			sec.setUsuarios(u);
+			
 			com.mds2.foro.SeccionDAO.save(sec);
 		
 			t.commit();
-		
+			System.out.println("has creado una seccion puta madre sosio");
 			return true;
 		}
 		catch(Exception e) {
@@ -96,6 +99,7 @@ public class bd_secciones {
 		}
 		
 	}
+	
 //ESTE METODO ES MUY PROBABLE QUE YA NO EXISTA O QUE SEA DIFERENTE (VEASE TIPO)
 	public boolean cambiarAccesibilidadSeccion(boolean publico, boolean privado, boolean oculto, int idSeccion) throws PersistentException {
 

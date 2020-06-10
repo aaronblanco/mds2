@@ -9,7 +9,7 @@ public class CreateMDS11920PFBlancoRoblesData {
 	public void createTestData() throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-		/*	com.mds2.foro.Notificacion lcommds2foroNotificacion = com.mds2.foro.NotificacionDAO.createNotificacion();
+			com.mds2.foro.Notificacion lcommds2foroNotificacion = com.mds2.foro.NotificacionDAO.createNotificacion();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : idUsuarioPropietario, usuarios
 			com.mds2.foro.NotificacionDAO.save(lcommds2foroNotificacion);
 			com.mds2.foro.Mensaje lcommds2foroMensaje = com.mds2.foro.MensajeDAO.createMensaje();
@@ -46,7 +46,7 @@ public class CreateMDS11920PFBlancoRoblesData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : usuariosAmigos, notificaciones, pro_secciones, pro_temas, usuarios, pro_mensajes, pro_tickets, oculto, publico, sancionado, amonestado
 			com.mds2.foro.UsuariosDAO.save(lcommds2foroUsuarios);
 			
-				*/
+				
 			com.mds2.foro.Anuncio lcommds2foroAnuncio = com.mds2.foro.AnuncioDAO.createAnuncio();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : publicado
 			com.mds2.foro.AnuncioDAO.save(lcommds2foroAnuncio);
