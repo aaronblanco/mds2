@@ -52,6 +52,8 @@ public class SeccionClase extends Seccion_ventana implements View {
 		this.fechaCreacionSeccion.setCaption(fechaCreacion);
 		this.userCreadorSeccion.setCaption(usrCreador);
 		
+		
+		
 		/*this._nombreSeccion = irSeccion.getCaption();
 		this._imagenSeccion = imgSeccion;
 		this.subtitulo = subtitleSection.toString();

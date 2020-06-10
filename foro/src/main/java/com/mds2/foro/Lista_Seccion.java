@@ -54,7 +54,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		
 		List<Seccion> cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
 		System.out.println(cosa.toString());
-		listaSeccion.removeAllComponents();
+	//	listaSeccion.removeAllComponents();
 		
 		for(Seccion it : cosa ) {
 			System.out.println(it.getCreador());
