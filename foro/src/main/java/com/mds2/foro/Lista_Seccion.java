@@ -57,15 +57,17 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	//	listaSeccion.removeAllComponents();
 		
 		for(Seccion it : cosa ) {
-			System.out.println(it.getCreador());
 			
 			SeccionClase tal = new SeccionClase(it);
+			System.out.println(tal.toString());
 			
 //			tal.setVisible(true);
 //			tal.userCreadorSeccion.setVisible(true);
 //			tal.userCreadorSeccion.setValue(it.getCreador());
 //			tal.fechaCreacionSeccion.setValue(String.valueOf(it.getFecha()));
 			listaSeccion.addComponent(tal);
+			System.out.println("MIRA MAMA HE AÑADIDO UNA SECCION JAJAJA");
+			listaSeccion.toString();
 		}
 		
 		//listaSeccion.addComponent((Component) _list_Seccion);

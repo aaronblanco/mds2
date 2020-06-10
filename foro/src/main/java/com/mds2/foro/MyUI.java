@@ -50,7 +50,7 @@ public class MyUI extends UI {
        	Navigator navigator = new Navigator(this , this);
         navigator.addView("", pag.getClass());
 
-         
+        
      	navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
      	navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
      	navigator.addView("Iniciar sesion",  new Usuario_no_registrado(new Iniciar_sesión()));
