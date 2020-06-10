@@ -3,7 +3,6 @@
 
 import org.orm.PersistentException;
 
-
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
