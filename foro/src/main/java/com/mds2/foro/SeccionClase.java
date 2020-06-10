@@ -10,7 +10,7 @@ import com.vaadin.ui.UI;
 
 
 public class SeccionClase extends Seccion_ventana implements View {
-	private String _nombreSeccion;
+	private Button _nombreSeccion;
 	private String _imagenSeccion;
 	private Listener _listaSeccion;
 	public Lista_Seccion _secciones;
@@ -27,7 +27,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 		
 		Inicializar();
 			
-			irSeccion.addClickListener(new Button.ClickListener() {
+		_nombreSeccion.addClickListener(new Button.ClickListener() {
 				
 				@Override
 				public void buttonClick(ClickEvent event) {
@@ -43,12 +43,13 @@ public class SeccionClase extends Seccion_ventana implements View {
 	public SeccionClase(Seccion s) {
 		
 		Inicializar();
-		this._nombreSeccion = s.getTitulo();
+		this._nombreSeccion = irSeccion;
+		this._nombreSeccion.setCaption(s.getTitulo());
 		this.fechaCreacion = String.valueOf(s.getFecha());
 		this.usrCreador = s.getCreador();
 		//this._imagenSeccion = s.getImagenSeccion();
 		//this.numMsg = s.contiene_temas.size();
-		this.irSeccion.setCaption(_nombreSeccion);
+		//this.irSeccion.setCaption(_nombreSeccion);
 		this.fechaCreacionSeccion.setCaption(fechaCreacion);
 		this.userCreadorSeccion.setCaption(usrCreador);
 		

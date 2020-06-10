@@ -14,47 +14,50 @@ public class bd_temas {
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 		
-		TemaCriteria tc = new TemaCriteria();
-		Tema[]temas = tc.listTema();
+		Seccion sec = SeccionDAO.getSeccionByORMID(aIdSeccion);
 		
-		if(aPublico) {
-			try {
-				for(Tema tem : temas) {
-					if(tem.getPublico())
-						_contiene_temas.add(tem);
-				}
-			}catch(Exception e) {
+		Tema[]temas = com.mds2.foro.TemaDAO.listTemaByQuery(null, null);
+		
+		
+		
+		try {
+			com.mds2.foro.Tema[] commds2foroSeccions = com.mds2.foro.TemaDAO.listTemaByQuery(null, null);
+			
+			if(aPublico) {
+				 Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Publico = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:tal) {
+						_contiene_temas.add(s);
+					}
 				
-			}
-		}else if(aPrivado) {
-			try {
-				for(Tema tem : temas) {
-					if(tem.getPrivado())
-						_contiene_temas.add(tem);
-				}
-			}catch(Exception e) {
+				return  _contiene_temas;
 				
-			}
-		}else if(aOculto) {
-			try {
-				for(Tema tem : temas) {
-					if(tem.getOculto())
-						_contiene_temas.add(tem);
-				}
-			}catch(Exception e) {
 				
-			}
-		}else if(aEliminado) {
-			try {
-				for(Tema tem : temas) {
-					if(tem.getEliminado())
-						_contiene_temas.add(tem);
-				}
-			}catch(Exception e) {
+			}else if(aPrivado) {
+				Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Privado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:tal) {
+						_contiene_temas.add(s);
+					}
 				
+				return  _contiene_temas;
+			}else if(aOculto) {
+				Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Oculto = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:tal) {
+						_contiene_temas.add(s);
+					}
+				
+				return  _contiene_temas;
+			}else if(aEliminado) {
+				Tema[] tal = com.mds2.foro.TemaDAO.listTemaByQuery("Eliminado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
+				 for(Tema s:tal) {
+						_contiene_temas.add(s);
+					}
+				
+				return  _contiene_temas;
 			}
+		
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
-		
 		return _contiene_temas;
 	}
 

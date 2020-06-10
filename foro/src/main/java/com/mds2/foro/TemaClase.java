@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
@@ -10,9 +12,9 @@ import com.vaadin.ui.Label;
 
 public class TemaClase extends Tema_ventana implements View{
 	private Button _titulo;
-	private String _fechaCreacion;
+	private long _fechaCreacion;
 	private String _creador;
-	private String _meGustas;
+	private int _meGustas;
 	private String _numMensajes;
 //	private Listener _listaTema;
 	public Lista_Tema _Lista_Tema;
@@ -23,40 +25,58 @@ public class TemaClase extends Tema_ventana implements View{
 		
 		Inicializar();
 		
-		this._titulo = irTema.getCaption();
-		this._fechaCreacion = fechaCreacTema;
-		this._creador = creadorTema;
-		this._meGustas = numMGTema;
-		this._numMensajes = numMsgTema;
-		
-		
-			irTema.addClickListener(new Button.ClickListener() {
-				
-				@Override
-				public void buttonClick(ClickEvent event) {
-					// TODO Auto-generated method stub
-					UI.getCurrent().getNavigator().navigateTo("irTema");
-				}
-			});	
+//		this._titulo = irTema.getCaption();
+//		this._fechaCreacion = fechaCreacTema;
+//		this._creador = creadorTema;
+//		this._meGustas = numMGTema;
+//		this._numMensajes = numMsgTema;
+//		
+//		
+//			irTema.addClickListener(new Button.ClickListener() {
+//				
+//				@Override
+//				public void buttonClick(ClickEvent event) {
+//					// TODO Auto-generated method stub
+//					UI.getCurrent().getNavigator().navigateTo("irTema");
+//				}
+//			});	
 			
 		}
 	
 	
 	
 	
-	public TemaClase(Tema s) {
+	public TemaClase(Tema s) throws PersistentException {
 		
 		Inicializar();
 		
-		this._titulo = s.getTitulo();
-		this._fechaCreacion = String.valueOf(s.getFecha());
-		this._creador = s.getTitulo();
+//		this._titulo = s.getTitulo();
+//		this._fechaCreacion = String.valueOf(s.getFecha());
+//		this._creador = s.getTitulo();
+//		
+//		this.irSeccion.setCaption(s.getTitulo());
+//		this.fechaCreacionSeccion.setCaption(_fechaCreacion);
+//		this.userCreadorSeccion.setCaption(_creador);
 		
-		this.irSeccion.setCaption(s.getTitulo());
-		this.fechaCreacionSeccion.setCaption(_fechaCreacion);
-		this.userCreadorSeccion.setCaption(_creador);
+		this._creador = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(s.getIdTemaPropietario()).getNombre();
+		this._fechaCreacion = s.getFecha();
+		this.titulo.setCaption(s.getTitulo());
 		
+		this._titulo = titulo;
+
 		
+
+
+        this._titulo.addStyleName("link");
+        this._titulo.addClickListener(new Button.ClickListener() {
+
+            @Override
+            public void buttonClick(ClickEvent event) {
+                // TODO Auto-generated method stub
+                
+            }
+
+        });
 	
 	}
 	
