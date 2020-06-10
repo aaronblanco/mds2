@@ -74,7 +74,7 @@ public class MyUI extends UI {
     	navigator.addView("Mi perfil", new Usuario_registrado(new PerfilUsuarioRegAdmin()));
     	navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));
     	navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
-      	 
+    	
     	  
     	
      	 

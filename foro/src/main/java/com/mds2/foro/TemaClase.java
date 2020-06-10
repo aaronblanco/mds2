@@ -86,6 +86,7 @@ public class TemaClase extends Tema_ventana implements View{
 		cambiarAcc.setVisible(false);
 		
 		eliminarTema.setVisible(false);
+	
 	}
 	
 	

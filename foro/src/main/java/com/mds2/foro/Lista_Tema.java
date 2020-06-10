@@ -46,6 +46,9 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 		
 	
 	
+	
+		
+		
 	}
 	
 	private void Inicializar() {
@@ -72,7 +75,9 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 		
 				
 	}
-
+	public void crearTema() {
+		UI.getCurrent().getNavigator().navigateTo("crearTema");
+		}
 	public void ordenar(Orden aNuevoOrden) {
 		throw new UnsupportedOperationException();
 	}

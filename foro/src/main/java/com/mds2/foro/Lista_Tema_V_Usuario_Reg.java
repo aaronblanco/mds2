@@ -25,9 +25,9 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 	
-	public Lista_Tema_V_Usuario_Reg() throws NumberFormatException, PersistentException {
-		
-		super();
+	public Lista_Tema_V_Usuario_Reg(int idSeccion) throws NumberFormatException, PersistentException {
+		super(idSeccion);
+	
 		
 		Inicializar();
 		
@@ -36,11 +36,13 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				crearTema();
+				crearTema(idSeccion, Sesion.getIDSESION());
 			}
 		});	
 		
-		_list_Tema_privado = (Vector<Tema_privado>) iUsrNR.cargarTemasUNR(Integer.parseInt(_unnamed_SeccionVistaUR_.getId()), false, true, false, false);
+		
+		
+		_list_Tema_privado = (Vector<Tema_privado>) iUsrNR.cargarTemasUNR(idSeccion, false, true, false, false);
 		
 		for(Object it: _list_Tema_privado)
 			listaTemas.addComponent((Component) it);
@@ -55,7 +57,8 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 
 	}
 	
-	public void crearTema() {
-		UI.getCurrent().getNavigator().navigateTo("crearTemaB");
+	public void crearTema(int idSeccion, int idCreadorTema) {
+		UI.getCurrent().getNavigator().addView("crearTema", new Usuario_registrado(new CreacionTema( idSeccion, idCreadorTema)));
+		UI.getCurrent().getNavigator().navigateTo("crearTema");
 	}
 }
