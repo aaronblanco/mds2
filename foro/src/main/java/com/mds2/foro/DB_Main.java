@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.orm.PersistentException;
@@ -96,17 +97,17 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdAn.eliminarAnuncio(aIdAnuncio, aPublicado);
 	}
 
-//	public List cargarSeccionesMod(String aAccesibilidadPub, Object aAccesibilidadPriv, String aAccesibilidadOc) {
-//		bdSec.cargar
-//	}
-
-//	public List cargarTemasMod(int aIdSeccion, String aAccesibilidadPub, String aAccesibilidadPriv, String aAccesibilidadOc) {
-//		throw new UnsupportedOperationException();
-//	}
+////	public List cargarSeccionesMod(String aAccesibilidadPub, Object aAccesibilidadPriv, String aAccesibilidadOc) {
+////		bdSec.cargar
+////	}
 //
-//	public List cargarMensajeMod(int aIdTema, String aAccesibilidadPub) {
-//		throw new UnsupportedOperationException();
-//	}
+////	public List cargarTemasMod(int aIdSeccion, String aAccesibilidadPub, String aAccesibilidadPriv, String aAccesibilidadOc) {
+////		throw new UnsupportedOperationException();
+////	}
+////
+////	public List cargarMensajeMod(int aIdTema, String aAccesibilidadPub) {
+////		throw new UnsupportedOperationException();
+////	}
 
 	public List cargarUsuarioAmonestado() throws PersistentException {
 		return bdUsr.cargarUsuarioAmonestado();
@@ -142,9 +143,9 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 	}
 
 	//LOS IDS
-	public Lista_Amigo[] cargarListaAmigos() {
-		return bdUsr.cargarListaAmigos(id);
-	}
+//	public Lista_Amigo[] cargarListaAmigos() {
+//		return bdUsr.cargarListaAmigos(id);
+//	}
 
 	public List cargarSolicitudes(int aIdUsuario) throws PersistentException {
 		return bdUsr.cargarSolicitudes(aIdUsuario);

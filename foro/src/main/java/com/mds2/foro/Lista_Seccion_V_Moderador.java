@@ -34,9 +34,9 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 
 		_list_Seccion_oculta =(Vector<Seccion_oculta>) iUsrNR.cargarListaSecciones(false, false, true, false);
 		
-		for(Object it : _list_Seccion_oculta) {
-			listaSeccion.addComponent((Component) it);
-		}
+//		for(Object it : _list_Seccion_oculta) {
+//			listaSeccion.addComponent((Component) it);
+//		}
 		//listaSeccion.addComponent((Component) _list_Seccion_oculta);
 		
 		

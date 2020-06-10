@@ -44,7 +44,11 @@ public class SeccionClase extends Seccion_ventana implements View {
 			
 		
 	}
-
+	public SeccionClase(Seccion s) {
+		this._nombreSeccion = s.getTitulo();
+		//etc
+	}
+	
 	private void Inicializar() {
 		// TODO Auto-generated method stub
 		statusTema.setVisible(false);

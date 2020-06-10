@@ -20,7 +20,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	public Vector<SeccionClase> _list_Seccion = new Vector<SeccionClase>();
 	//public Vector<Buscador_seccion> _list_Buscador_sección = new Vector<Buscador_seccion>();
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
-	
+
 	public Lista_Seccion() throws PersistentException {
 
 		Inicializar();
@@ -39,24 +39,37 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 			}
 			
 		});
+		crearNuevaSeccion.addClickListener(new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				crearSeccion();
+			}
+			
+		});
 		
-		List cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
+		listaSeccion.removeAllComponents();
 		
-		for(Object it : cosa ) {
-			listaSeccion.addComponent((Component) it);
+		
+		
+		List<Seccion> cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
+		
+		for(Seccion it : cosa ) {
+			System.out.println("hola buenos dias");
+			listaSeccion.addComponent(new SeccionClase(it));
 		}
 		
-		
-
-		listaSeccion.addComponent((Component) _list_Seccion);
+		//listaSeccion.addComponent((Component) _list_Seccion);
 		
 	}
+	
+
 	
 	
 	private void Inicializar() {
 		// TODO Auto-generated method stub
 		buscarSeccionB.setVisible(true);
-		crearNuevaSeccion.setVisible(true);
+		crearNuevaSeccion.setVisible(false);
 
 		
 	}
@@ -70,4 +83,8 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		}
 		
 	}
+	
+	public void crearSeccion() {
+		UI.getCurrent().getNavigator().navigateTo("crearSeccion");
+		}
 }

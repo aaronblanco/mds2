@@ -17,7 +17,7 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 		super();
 		
 		_list_Seccion_eliminada = (Vector<Seccion_eliminada>) iUsrNR.cargarListaSecciones(false, false, false, true);
-		listaSeccion.addComponent((Component) _list_Seccion_eliminada);
+		//listaSeccion.addComponent((Component) _list_Seccion_eliminada);
 		
 	}
 	
