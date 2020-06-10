@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
@@ -32,7 +34,12 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				enviar();
+				try {
+					enviar();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		});	
@@ -67,9 +74,9 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 		
 	}
 	
-	public void enviar() {
+	public void enviar() throws PersistentException {
 		
-		//iMod.crearSeccion(_tituloSeccion, _descipcionSeccion, _imagenSeccionURL, );
+		iMod.crearSeccion(_tituloSeccion.getValue(), _descipcionSeccion.getValue(), _imagenSeccionURL.toString(), Sesion.getIDSESION());
 	}
 
 	public void cancelar() {
