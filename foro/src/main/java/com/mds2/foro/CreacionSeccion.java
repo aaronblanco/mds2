@@ -77,6 +77,8 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 	public void enviar() throws PersistentException {
 		try {
 		boolean hola = iMod.crearSeccion(_tituloSeccion.getValue(), _descipcionSeccion.getValue(), _imagenSeccionURL.toString(), 11);
+		
+		UI.getCurrent().getNavigator().navigateTo("Pagina principal");
 		if(hola)
 			System.out.println("bieeeeeeeeeeen");
 		}catch(Exception e) {
