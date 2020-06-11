@@ -1,9 +1,12 @@
 package com.mds2.foro;
 
+import java.util.List;
 //import DCLv3.SeccionVistaAdministrador;
 import java.util.Vector;
 //import Package.Tema_eliminado;
 //import DCLv3.Tema_vista_Admin;
+
+import org.orm.PersistentException;
 
 import com.vaadin.ui.Component;
 
@@ -14,17 +17,18 @@ public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
 	public Tema_vista_Admin _unnamed_Tema_vista_Admin_;
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
-	public Lista_Tema_V_Administrador() {
+	public Lista_Tema_V_Administrador(int idSeccion) throws NumberFormatException, PersistentException {
 		
-		super();
+		super(idSeccion);
 		
-		//comprobar diferencia al cargar entre secciones y temas
-		listaTemas.addComponent((Component) iUsrNR.cargarTemasUNR(1, true, true, true, true));
+		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, false, false, false, true);
+	
 		
-		_list_Tema_eliminado = (Vector<Tema_eliminado>) iUsrNR.cargarTemasUNR(Integer.parseInt(_unnamed_SeccionVistaModerador_.getId()), false, false, false, true);
+		for(Tema it: t) {
+			Tema_vista_Admin tema = new Tema_vista_Admin(it);
+			listaTemas.addComponent(tema);
 		
-		for(Object it: _list_Tema_eliminado)
-			listaTemas.addComponent((Component) it);
+		}
 		
 	}
 	

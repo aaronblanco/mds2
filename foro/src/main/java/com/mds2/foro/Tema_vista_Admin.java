@@ -16,10 +16,46 @@ public class Tema_vista_Admin extends TemaVistaModerador {
 	public Lista_Mensaje_V_Administrador _unnamed_Lista_Mensaje_V_Administrador_;
 	iAdministrador iAdmin = new DB_Main();
 	
-	public Tema_vista_Admin() {
-		super();
-		
-		//voy a dejar de hacer los inicializar en las clases superiores porque puede petar esto
+//	public Tema_vista_Admin() {
+//		super();
+//		
+//		//voy a dejar de hacer los inicializar en las clases superiores porque puede petar esto
+//		notificarAdmin.setVisible(false);
+//		
+//		cerrarTema.setVisible(true);
+//		
+//		eliminarTema.setVisible(true);
+//		
+//		cerrarTema.addClickListener(new Button.ClickListener() {
+//			
+//			@Override
+//			public void buttonClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//				cerrarTema();
+//			}
+//		});
+//		
+//		eliminarTema.addClickListener(new Button.ClickListener() {
+//			
+//			@Override
+//			public void buttonClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//				try {
+//					eliminarTema();
+//				} catch (PersistentException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//		
+//	}
+	
+	
+	
+	public Tema_vista_Admin(Tema it) throws PersistentException {
+		// TODO Auto-generated constructor stub
+		super(it);
 		notificarAdmin.setVisible(false);
 		
 		cerrarTema.setVisible(true);
@@ -48,11 +84,10 @@ public class Tema_vista_Admin extends TemaVistaModerador {
 				}
 			}
 		});
-		
 	}
-	
-	
-	
+
+
+
 	//LOS IDS	
 	public void eliminarTema() throws PersistentException {
 		iAdmin.eliminarTema(1);

@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 //import Package.Lista_Tema_V_Moderador;
 //import Package.Lista_Mensaje_V_Moderador;
 //import Package.Tema_UR;
@@ -9,8 +11,8 @@ public class TemaVistaModerador extends Tema_UR {
 	public Lista_Tema_V_Moderador _unnamed_Lista_Tema_V_Moderador_;
 	public Lista_Mensaje_V_Moderador _unnamed_Lista_Mensaje_V_Moderador_;
 
-	public TemaVistaModerador() {
-		super();
+	public TemaVistaModerador(Tema it) throws PersistentException {
+		super(it);
 		
 		cambiarAcc.setVisible(true);
 	}

@@ -48,6 +48,34 @@ public class Tema_UR extends TemaClase {
 				
 	}
 	
+	public Tema_UR(Tema it) throws PersistentException {
+		super(it);
+		Inicializar();
+		
+		darMG.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				darMeGusta();
+			}
+		});	
+		
+		notificarAdmin.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					notificarAdministrador();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});	
+	}
+
 	private void Inicializar() {
 		
 		darMG.setVisible(true);
