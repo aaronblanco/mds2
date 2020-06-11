@@ -21,6 +21,7 @@ public class TemaClase extends Tema_ventana implements View{
 	private long _fechaCreacionSeccion;
 	private String _userCreadorSeccion;
 	private String _nombreSeccion;
+	private int _idTema;
 	
 	public TemaClase() {
 		
@@ -47,7 +48,7 @@ public class TemaClase extends Tema_ventana implements View{
 		this._fechaCreacionSeccion = s.getSeccion_mensaje().getFecha();
 		this._userCreadorSeccion = s.getSeccion_mensaje().getCreador();
 		this._nombreSeccion = s.getSeccion_mensaje().getTitulo();
-
+		this._idTema = s.getIdTema();
 
         this._titulo.addStyleName("link");
         this._titulo.addClickListener(new Button.ClickListener() {
@@ -56,8 +57,13 @@ public class TemaClase extends Tema_ventana implements View{
             public void buttonClick(ClickEvent event) {
                 // TODO Auto-generated method stub
                 
-            //	UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_no_registrado(new Lista_Tema(s.getIdSeccion())));
-			//	UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
+            	try {
+					UI.getCurrent().getNavigator().addView(_nombreSeccion + "/" + _titulo.getCaption() , new Usuario_no_registrado(new Lista_Mensaje(_idTema)));
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				UI.getCurrent().getNavigator().navigateTo(_nombreSeccion+ "/" + _titulo.getCaption());
             	
             	
             }

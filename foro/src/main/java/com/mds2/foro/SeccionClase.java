@@ -65,7 +65,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 				
 				try {
 				
-				System.out.println(s.getIdSeccion());
+			
 					
 					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_no_registrado(new Lista_Tema(s.getIdSeccion())));
 					UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());

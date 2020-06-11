@@ -5,9 +5,9 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class MensajeClase extends Mensaje_ventana implements View {
-	private int idMensaje;
+	private int _idMensaje;
 	private Image _foto;
-	private TextField _cuerpoMsg;
+	private String _cuerpoMsg;
 	private Label _fechaPost;
 	private Button _verPerfil;
 	private Listener _listaMsg;
@@ -16,11 +16,7 @@ public class MensajeClase extends Mensaje_ventana implements View {
 	
 	public MensajeClase() {
 		
-		this._foto = fotoPerfil;
-		this._cuerpoMsg = contenidoMensaje;
-		this._fechaPost = fechaCreacionMsg;
-		this._verPerfil = irPerfil;
-		 
+		
 		
 		
 		Inicializar();
@@ -35,11 +31,21 @@ public class MensajeClase extends Mensaje_ventana implements View {
 		});	
 		
 			
-		idMensaje = Integer.parseInt(getId());
+		_idMensaje = Integer.parseInt(getId());
 		
 		
 	}
 	
+	public MensajeClase(Mensaje msj) {
+		Inicializar();
+		
+		this._idMensaje = msj.getIdMensaje();
+		this._cuerpoMsg = msj.getContenido();
+		
+		
+		
+		
+	}
 	
 	
 	private void Inicializar() {

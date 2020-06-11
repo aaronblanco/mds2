@@ -1,27 +1,38 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
 //import Package.Buscador_mensaje;
 //import Package.Mensaje;
 import java.util.function.Consumer;
 
+import org.orm.PersistentException;
+
+import com.vaadin.navigator.View;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Lista_Mensaje extends Lista_Mensaje_ventana{
-//	private Label _tituloTema;
-//	private Label _subtituloDescripcion;
-//	private Label _numTotalMensajes;
-//	private Label _usuarioCreador;
-//	private Label _fechaCreacion;
-//	private Label _pagina;
+public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
+	private Label _tituloTema;
+	private Label _subtituloDescripcion;
+	private Label _numTotalMensajes;
+	private Label _usuarioCreador;
+	private Label _fechaCreacion;
+	private Label _pagina;
+	private Button _crearMensaje;
 	public TemaClase _Tema;
 	//public Vector<Buscador_mensaje> _list_Buscador_mensaje = new Vector<Buscador_mensaje>();
 	public Vector<MensajeClase> _list_Mensaje = new Vector<MensajeClase>();
 	iUsuario_no_registrado iUsrNR = new DB_Main();
 	
 	
-	public Lista_Mensaje() {
+	public Lista_Mensaje(int idTema) throws PersistentException {
+		
+		this._subtituloDescripcion = subtitle;
+		this._fechaCreacion = fechaCreacion;
+		this._usuarioCreador = usuarioCreador;
+		this._crearMensaje = crearMensaje;
+		
 		
 		Inicializar();
 		
@@ -35,11 +46,12 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana{
 			
 		});	
 		
-		crearMensaje.addClickListener(new Button.ClickListener() {
+		_crearMensaje.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().addView("crearMensaje", new Usuario_registrado(new CreacionMensaje(int idTema)));
 				UI.getCurrent().getNavigator().navigateTo("crearMensaje");
 			}
 		});	
@@ -49,16 +61,25 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				buscarMensaje();
+				try {
+					buscarMensaje();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});	
 		
 		
 		
+	List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false, false, false);
+	System.out.println(t.toString());
 		
-		listaMensajeAdmin.addComponent((Component) iUsrNR.cargarMensajeUNR(Integer.parseInt(_Tema.getId()), true, false, false, false));
-		//NO ESTOY NADA SEGURO DE SI ESTO TIENE SENTIDO VALE?
-		listaMensajeAdmin.forEach((Consumer<? super Component>) iUsrNR.cargarRespuestas(1));
+		for(Mensaje it: t) {
+			MensajeClase msj = new MensajeClase(it);
+			_list_Mensaje.addElement(msj);
+		}
+		
 	}
 	
 	private void Inicializar() {
@@ -71,7 +92,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana{
 	}
 
 	//LOS IDS
-	public void buscarMensaje() {
+	public void buscarMensaje() throws PersistentException {
 		listaMensajeAdmin.addComponent((Component) iUsrNR.buscarMensaje(buscadorMensaje.toString(), 1));
 	}
 }
