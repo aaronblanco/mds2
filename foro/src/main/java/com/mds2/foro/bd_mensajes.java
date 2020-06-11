@@ -11,7 +11,6 @@ public class bd_mensajes {
 	public Bd_principal _bd_principal_mensajes;
 	public Vector<Mensaje> _contiene_mensajes = new Vector<Mensaje>();
 
-	//LOS MENSAJES PRIVADOS Y OCULTOS EN VD NO EXISTEN LOL
 	public List cargarMensajeUNR(int aIdTema, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
@@ -38,9 +37,6 @@ public class bd_mensajes {
 				
 				return men;
 			}
-			
-			//t.commit();
-			//com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().close();
 			
 		}catch(Exception e) {
 			 e.printStackTrace();
