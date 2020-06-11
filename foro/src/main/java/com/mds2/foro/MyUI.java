@@ -50,8 +50,19 @@ public class MyUI extends UI {
        	Navigator navigator = new Navigator(this , this);
         navigator.addView("", pag.getClass());
 
-        
-     	navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
+    	try {
+			navigator.addView("Cerrar sesión", new Usuario_no_registrado());
+		} catch (PersistentException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+    	
+     	try {
+			navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
      	navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
      	navigator.addView("Iniciar sesion",  new Usuario_no_registrado(new Iniciar_sesión()));
      	navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );

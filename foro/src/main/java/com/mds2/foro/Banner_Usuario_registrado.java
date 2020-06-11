@@ -15,11 +15,11 @@ public class Banner_Usuario_registrado extends Banner_general implements View {
 	public Banner_Usuario_registrado() {
 		_soporte = soporte;
 		
-		soporte.setVisible(true);
+		_soporte.setVisible(true);
 		
 		
-		soporte.addStyleName("link");
-		soporte.addClickListener(new Button.ClickListener() {
+		_soporte.addStyleName("link");
+		_soporte.addClickListener(new Button.ClickListener() {
 			
 			
 			
