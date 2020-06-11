@@ -38,9 +38,8 @@ public class Usuario_registrado extends Banner_Usuario_registrado implements Vie
 		
 	
 		Menu_UR menu = new Menu_UR();
-		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
 		
-	
+		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
 	    
 		this.panelMenu.setContent(menu);
 		

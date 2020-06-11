@@ -43,5 +43,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/xampp/apache/lib/mysql-connector-java-5.1.49.jar"/>
+	<classpathentry kind="lib" path="C:/xampp/apache/lib/mysql-connector-java-5.1.49.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
