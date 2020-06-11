@@ -24,9 +24,11 @@ public class Foro_desplegable {
 	    
 			TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(data);
 	  
+
 			inMemoryDataProvider.refreshAll();
 			menuMod.setDataProvider(inMemoryDataProvider);
 			menuMod.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()));
+
 	    
 	   
 	    return menuMod;

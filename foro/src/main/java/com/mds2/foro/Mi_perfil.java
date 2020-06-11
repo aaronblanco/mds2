@@ -43,6 +43,8 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 		_descripcion = descripcionMiPerfil;
 		System.out.println(idUs);
 		Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
+		System.out.println(usr.getNombre());
+		
 		this._nombre = nombreUsuarioPerfil;
 		
 		this._nombre.setValue(usr.getNombre());

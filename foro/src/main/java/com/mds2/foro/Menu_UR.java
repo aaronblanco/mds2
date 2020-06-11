@@ -21,7 +21,9 @@ public class Menu_UR extends Menu_UNR_ventana{
 	
 	public Menu_UR(){
 
+
 		this.removeAllComponents();
+
 
 		Foro_desplegable foro = new Foro_desplegable();
 	    Tree<String> var = foro.listaDesplegable();
@@ -31,7 +33,7 @@ public class Menu_UR extends Menu_UNR_ventana{
 		datos.addItem(null, "Mi perfil");
 		datos.addItem(null, "Cerrar sesión");
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
-		
+		System.out.println("ESTAMOS AQUI");
 		var.setDataProvider( inMemoryDataProvider);
 		var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()));
 		this.addComponent(var);
