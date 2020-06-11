@@ -82,6 +82,7 @@ public class MyUI extends UI {
      	 
      	
      	navigator.addView("crearSeccion", new Usuario_registrado(new CreacionSeccion()));
+     	
     	try {
 			navigator.addView("Mi perfil", new Usuario_registrado(new Mi_perfil(Sesion.getIDSESION())));
 		} catch (PersistentException e1) {

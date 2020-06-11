@@ -23,8 +23,8 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 		
 		this._enviar = crearTema;
 		this._cancelar = cancelarCreacionTema;
-		this._tituloTema = titulo.toString();
-		this._subtituloTema = subtitulo.toString();
+		this._tituloTema = titulo.getValue();
+		this._subtituloTema = subtitulo.getValue();
 		
 		
 		_enviar.addClickListener(new Button.ClickListener() {

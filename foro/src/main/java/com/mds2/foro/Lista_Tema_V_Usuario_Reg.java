@@ -57,7 +57,7 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 
 	}
 	
-	public void crearTema(int idSeccion, int idCreadorTema) {
+	public static void crearTema(int idSeccion, int idCreadorTema) {
 		UI.getCurrent().getNavigator().addView("crearTema", new Usuario_registrado(new CreacionTema( idSeccion, idCreadorTema)));
 		UI.getCurrent().getNavigator().navigateTo("crearTema");
 	}
