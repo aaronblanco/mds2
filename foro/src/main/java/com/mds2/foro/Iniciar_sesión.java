@@ -81,17 +81,17 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			
 		
 			Sesion.setIDSESION(idU);
-			System.out.println("ey");
+		
 			Administrador Adm = iAdm.obtenerPerfilAdmin(idU);
-			System.out.println("PASA POR AQUI");
+		
 			Moderador Mod = iMod.obtenerPerfilModerador(idU);
-			System.out.println("Y AQUI");
+			
 			if(Adm != null) {
 				Sesion.setNOMBRESESION(_nombreUsuario.toString());
 				AdministradorClase admin =  new AdministradorClase();
 			
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
-				System.out.println("LLEGA A AQUI");
+			
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
 			}
 				

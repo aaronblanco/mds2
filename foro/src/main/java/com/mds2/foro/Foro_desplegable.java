@@ -26,6 +26,7 @@ public class Foro_desplegable {
 	  
 	    inMemoryDataProvider.refreshAll();
 	    menuMod.setDataProvider(inMemoryDataProvider);
+	    System.out.println("OH AQUI");
 	    menuMod.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()));
 	    
 	   
