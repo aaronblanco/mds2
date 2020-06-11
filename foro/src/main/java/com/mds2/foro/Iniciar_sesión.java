@@ -7,11 +7,12 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 
 public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
-	private String _nombreUsuario;
-	private String _contrasena;
+	private TextField _nombreUsuario;
+	private PasswordField _contrasena;
 	private Button _recordar;
 	private Button _registrarse;
 	private Button _iniciarSesion;
@@ -24,8 +25,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	iModerador iMod = new DB_Main();
 	
 	public Iniciar_sesión() {
-		this._nombreUsuario = userName.getValue();
-		this._contrasena = password.getValue();
+		this._nombreUsuario = userName;
+		this._contrasena = password;
 		this._recordar = recordarPassw;
 		this._registrarse = registrars;
 		this._iniciarSesion =iniSesion;
@@ -72,24 +73,30 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	public void iniciarSesion() throws PersistentException {
 		Sesion sesion = new Sesion();
 		
-		int idU = iUsr.iniciarSesion(_nombreUsuario, _contrasena);
-		if(idU > 1) {
+		
+		int idU = iUsr.iniciarSesion(_nombreUsuario.getValue(), _contrasena.getValue());
+		
+		System.out.println(idU);
+		if(idU >= 1) {
 			
 		
 			Sesion.setIDSESION(idU);
+			System.out.println("ey");
 			Administrador Adm = iAdm.obtenerPerfilAdmin(idU);
+			System.out.println("PASA POR AQUI");
 			Moderador Mod = iMod.obtenerPerfilModerador(idU);
+			System.out.println("Y AQUI");
 			if(Adm != null) {
-				Sesion.setNOMBRESESION(_nombreUsuario);
+				Sesion.setNOMBRESESION(_nombreUsuario.toString());
 				AdministradorClase admin =  new AdministradorClase();
 			
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
-			
+				System.out.println("LLEGA A AQUI");
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
 			}
 				
 			else if(Mod != null) {
-				Sesion.setNOMBRESESION(_nombreUsuario);
+				Sesion.setNOMBRESESION(_nombreUsuario.toString());
 				ModeradorClase mod =  new ModeradorClase();
 			
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), mod);
@@ -109,16 +116,16 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), ur);
 			
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
+
 			
 			
 			}
-			
+			Notification notification = Notification.show(
+			        "FALLO AL INICIAR SESION");
 			
 		}
 		
-		Notification notification = Notification.show(
-		        "FALLO AL INICIAR SESION");
-		
+	
 		
 		
 	}
