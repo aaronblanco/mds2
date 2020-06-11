@@ -6,6 +6,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 
 public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
@@ -19,6 +20,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	public Recuperar_contrasena _recuperar_contraseña;
 
 	iUsuario iUsr = new DB_Main();
+	iAdministrador iAdm = new DB_Main();
+	iModerador iMod = new DB_Main();
 	
 	public Iniciar_sesión() {
 		this._nombreUsuario = userName.getValue();
@@ -70,11 +73,35 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 		Sesion sesion = new Sesion();
 		
 		int idU = iUsr.iniciarSesion(_nombreUsuario, _contrasena);
-		if(idU != 0) {
+		if(idU > 1) {
 			
 		
 			Sesion.setIDSESION(idU);
-			Sesion.setNOMBRESESION(_nombreUsuario);
+			Administrador Adm = iAdm.obtenerPerfilAdmin(idU);
+			Moderador Mod = iMod.obtenerPerfilModerador(idU);
+			if(Adm != null) {
+				Sesion.setNOMBRESESION(_nombreUsuario);
+				AdministradorClase admin =  new AdministradorClase();
+			
+				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
+			
+				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
+			}
+				
+			else if(Mod != null) {
+				Sesion.setNOMBRESESION(_nombreUsuario);
+				ModeradorClase mod =  new ModeradorClase();
+			
+				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), mod);
+			
+				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
+			}
+			
+			
+			else {
+				
+			
+			
 			Usuarios usr = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idU);
 		
 			Usuario_registrado ur = new Usuario_registrado();
@@ -84,7 +111,18 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), ur);
 		
 			UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
+			
+			
+			}
+			
+			
 		}
+		
+		Notification notification = Notification.show(
+		        "FALLO AL INICIAR SESION");
+		
+		
+		
 	}
 
 	public void registrarse() {
