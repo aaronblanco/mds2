@@ -99,18 +99,16 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			
 			
 			else {
-				
 			
+				Usuarios usr = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idU);
+		
+				Usuario_registrado ur = new Usuario_registrado();
+		
+				//ur.setId(ur.setId(Sesion.getIDSESION()));
+		
+				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), ur);
 			
-			Usuarios usr = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idU);
-		
-			Usuario_registrado ur = new Usuario_registrado();
-		
-			//ur.setId(ur.setId(Sesion.getIDSESION()));
-		
-			UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), ur);
-		
-			UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
+				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
 			
 			
 			}
