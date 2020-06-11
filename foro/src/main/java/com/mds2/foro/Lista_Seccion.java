@@ -87,11 +87,27 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 
 
 	public void buscarSeccion() throws PersistentException {
-		List sb = iUsrNR.buscarSeccion(keywordBS.toString());
+		List<Seccion> sb = iUsrNR.buscarSeccion(keywordBS.getValue());
 		listaSeccion.removeAllComponents();
-		for(Object it : sb) {
-			listaSeccion.addComponent((Component) it);
+		if(!sb.isEmpty()) {
+			//listaSeccion.removeAllComponents();
+			
+			for(Seccion s:sb) {
+				SeccionClase sc = new SeccionClase(s);
+				listaSeccion.addComponent(sc);
+			}
+		}else {
+				List<Seccion> cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
+				
+				for(Seccion it : cosa ) {
+					
+					SeccionClase tal = new SeccionClase(it);
+
+					listaSeccion.addComponent(tal);
+					listaSeccion.toString();
+				}
 		}
+		
 		
 	}
 	

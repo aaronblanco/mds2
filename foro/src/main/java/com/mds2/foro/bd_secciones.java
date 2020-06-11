@@ -98,7 +98,6 @@ public class bd_secciones {
 		
 	}
 	
-//ESTE METODO ES MUY PROBABLE QUE YA NO EXISTA O QUE SEA DIFERENTE (VEASE TIPO)
 	public boolean cambiarAccesibilidadSeccion(boolean publico, boolean privado, boolean oculto, int idSeccion) throws PersistentException {
 
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
@@ -118,25 +117,31 @@ public class bd_secciones {
 
 	public boolean eliminarSeccion(int aIdSeccion) throws PersistentException {
 		
+		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		Seccion sec = SeccionDAO.getSeccionByORMID(aIdSeccion);
-		sec.setPublico(false);
-		sec.setPrivado(false);
-		sec.setOculto(false);
-		sec.setEliminado(true);
 		
-		return true;
+		try {
+			sec.setPublico(false);
+			sec.setPrivado(false);
+			sec.setOculto(false);
+			sec.setEliminado(true);
+			t.commit();
+			return true;
+		}catch(Exception e) {
+			t.rollback();
+			return false;
+		}
 	}
 
 	public List buscarSeccion(String aKeyword) throws PersistentException {
 		
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		Vector<Seccion> listaSecciones = new Vector<Seccion>();
+		List<Seccion> listaSecciones = null;
 		
 		try {
 			
+			listaSecciones = SeccionDAO.querySeccion("Titulo LIKE ('%"+ aKeyword +"%')", null);
 			
-			listaSecciones = (Vector<Seccion>) SeccionDAO.querySeccion("Titulo = '"+ aKeyword +"'", null);
-				
 			t.commit();
 			
 		}catch(Exception e) {

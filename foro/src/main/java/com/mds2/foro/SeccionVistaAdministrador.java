@@ -1,11 +1,11 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-//import Package.Lista_Seccion_V_administrador;
-//import Package.Lista_Tema_V_Administrador;
 
 public class SeccionVistaAdministrador extends SeccionVistaModerador {
 //	private Button _eliminarSeccion;
@@ -14,14 +14,23 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 	public Lista_Tema_V_Administrador _unnamed_Lista_Tema_V_Administrador_;
 	iAdministrador iAdmin  = new DB_Main();
 
-	public SeccionVistaAdministrador() {
+	public SeccionVistaAdministrador() throws PersistentException {
 		super();
+	}
+	
+	public SeccionVistaAdministrador(Seccion s) throws PersistentException {
+		super(s);
 		eliminarSeccion.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				eliminarSeccion();
+				try {
+					eliminarSeccion(s.getIdSeccion());
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		});
@@ -32,8 +41,7 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 		eliminarSeccion.setVisible(true);
 
 	}
-	public void eliminarSeccion() {
-//		COSAS DEL ID DE LAS COSAS
-		//iAdmin.eliminarSeccion(this.id);
+	public void eliminarSeccion(int idSec) throws PersistentException {
+		iAdmin.eliminarSeccion(idSec);
 	}
 }

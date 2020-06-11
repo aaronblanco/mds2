@@ -63,7 +63,12 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				cambiarDatos();
+				try {
+					cambiarDatos();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -81,7 +86,12 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				ocultarPerfil();
+				try {
+					ocultarPerfil();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -92,12 +102,12 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 		iUsr.darDeBaja(Sesion.getIDSESION());
 	}
 
-	public void ocultarPerfil() {
-		iUsr.ocultarPerfil(Sesion.getIDSESION(), aPublico, aOculto);
+	public void ocultarPerfil() throws PersistentException {
+		iUsr.ocultarPerfil(Sesion.getIDSESION(), _ocultarPerfil.isEnabled(), !_ocultarPerfil.isEnabled());
 	}
 
-	public void cambiarDatos() {
-		iUsr.cambiarDatos(Sesion.getIDSESION(), aUsername, aPassword, aDescription, aFotoURL);
+	public void cambiarDatos() throws PersistentException {
+		iUsr.cambiarDatos(Sesion.getIDSESION(), _nombre.getValue(), _contrasena.getValue(), _descripcion.getValue(), null);
 	}
 
 	public void buscarUsuario() {
