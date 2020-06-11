@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
 //import Package.Cambiar_accesibilidad;
 //import Package.Crear_sección;
@@ -31,16 +32,6 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 		
 		Inicializar();
 		
-
-		_list_Seccion_oculta =(Vector<Seccion_oculta>) iUsrNR.cargarListaSecciones(false, false, true, false);
-		
-//		for(Object it : _list_Seccion_oculta) {
-//			listaSeccion.addComponent((Component) it);
-//		}
-		//listaSeccion.addComponent((Component) _list_Seccion_oculta);
-		
-		
-		
 		_crearSeccion.addClickListener(new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -50,14 +41,20 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 			
 		});
 		
+		List<Seccion> sec = iUsrNR.cargarListaSecciones(false, false, true, false);
+		
+		if(!sec.isEmpty()) {
+			for(Seccion s : sec) {
+				SeccionVistaModerador sc = new SeccionVistaModerador(s);
+				listaSeccion.addComponent(sc);
+			}
+		}
 	}
 	
 	private void Inicializar(){
 		crearNuevaSeccion.setVisible(true);
 		buscarSeccionB.setVisible(true);
-		this._crearSeccion = crearNuevaSeccion;
-		//listaSeccion.addComponent( (Component) _list_Seccion_oculta);
-		
+		this._crearSeccion = crearNuevaSeccion;		
 	}
 	public void crearSeccion() {
 		UI.getCurrent().getNavigator().navigateTo("crearSeccion");

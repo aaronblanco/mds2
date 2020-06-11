@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -15,10 +16,13 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 	
 	public Lista_Seccion_V_administrador() throws PersistentException {
 		super();
-		
-		_list_Seccion_eliminada = (Vector<Seccion_eliminada>) iUsrNR.cargarListaSecciones(false, false, false, true);
-		//listaSeccion.addComponent((Component) _list_Seccion_eliminada);
-		
+		List<Seccion> sec = iUsrNR.cargarListaSecciones(false, false, false, true);
+		if(!sec.isEmpty()) {
+			for(Seccion s : sec) {
+				SeccionVistaAdministrador sc = new SeccionVistaAdministrador(s);
+				listaSeccion.addComponent(sc);
+			}
+		}
 	}
 	
 }

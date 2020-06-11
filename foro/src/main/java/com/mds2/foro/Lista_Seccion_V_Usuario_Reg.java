@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
 //import Package.Sección_privada;
 //import DCLv3.SeccionVistaUR;
@@ -18,14 +19,14 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 	public Lista_Seccion_V_Usuario_Reg() throws PersistentException {
 		super();
 		
-		_list_Seccion_privada = (Vector<Seccion_privada>) iUsrNR.cargarListaSecciones(false, true, false, false);
+		List<Seccion> sec = iUsrNR.cargarListaSecciones(false, true, false, false);
 		
-//		for(Object it : _list_Seccion_privada) {
-//			listaSeccion.addComponent((Component) it);
-//		}
-		
-		//listaSeccion.addComponent((Component) _list_Seccion_privada);
-		
+		if(!sec.isEmpty()) {
+			for(Seccion s : sec) {
+				SeccionVistaUR sc = new SeccionVistaUR(s);
+				listaSeccion.addComponent(sc);
+			}
+		}
 	}
 	
 }
