@@ -95,36 +95,36 @@ public class bd_mensajes {
 	public boolean crearMensaje(String aCuerpoMensaje, String mediaURL, int aIdUsuario, int aIdTema) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 	
-	try {
+		try {
 		
-		Tema tema = com.mds2.foro.TemaDAO.getTemaByORMID(aIdTema);
+			Tema tema = com.mds2.foro.TemaDAO.getTemaByORMID(aIdTema);
 		
-		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
+			Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
 		
-		Mensaje msj= com.mds2.foro.MensajeDAO.createMensaje();
+			Mensaje msj= com.mds2.foro.MensajeDAO.createMensaje();
 	//PARA LO DE MEDIA HABRIA QUE CREAR UNA INSTANCIA DE MEDIA CON LA URL QUE LE PASA Y HACER COSAS DE ASOCIAR 
-		msj.setContenido(aCuerpoMensaje);
+			msj.setContenido(aCuerpoMensaje);
 		
-		msj.setEliminado(false);
-		msj.setIdPropietario(aIdUsuario);
-		msj.setIdTemaPropietario(aIdTema);
-		msj.setNumMg(0);
-		msj.setPublico(true);
-		msj.setUsuarios(u);
-		msj.setFechaCreacion(System.currentTimeMillis());
-		tema.contiene_mensajes.add(msj);
+			msj.setEliminado(false);
+			msj.setIdPropietario(aIdUsuario);
+			msj.setIdTemaPropietario(aIdTema);
+			msj.setNumMg(0);
+			msj.setPublico(true);
+			msj.setUsuarios(u);
+			msj.setFechaCreacion(System.currentTimeMillis());
+			tema.contiene_mensajes.add(msj);
 	
-		com.mds2.foro.TemaDAO.save(tema);
-		com.mds2.foro.MensajeDAO.save(msj);
+			com.mds2.foro.TemaDAO.save(tema);
+			com.mds2.foro.MensajeDAO.save(msj);
 		
 		
 		
-		t.commit();
-		return true;
-	}catch(Exception e) {
-		t.rollback();
-		return false;
-	}
+			t.commit();
+			return true;
+		}catch(Exception e) {
+			t.rollback();
+			return false;
+		}
 	
 	
 	

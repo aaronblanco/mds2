@@ -81,17 +81,31 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			listaMensajeAdmin.addComponent(msj);
 		}
 		
+		crearMensaje.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				crearMensaje();
+			}
+			
+		});
+		
 	}
 	
 	private void Inicializar() {
 		// TODO Auto-generated method stub
 		volverTema.setVisible(true);
 		
-		crearMensaje.setVisible(false);
+		crearMensaje.setVisible(true);
 		
 		buscadorBoton.setVisible(true);
 	}
 
+	public void crearMensaje() {
+		UI.getCurrent().getNavigator().navigateTo("crearMensaje");
+	}
+	
 	//LOS IDS
 	public void buscarMensaje(int aIdTema) throws PersistentException {
 		

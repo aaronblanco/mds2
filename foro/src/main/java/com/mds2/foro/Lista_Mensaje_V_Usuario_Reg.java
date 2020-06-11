@@ -6,6 +6,8 @@ import java.util.Vector;
 //import DCLv3.CreacionMensaje;
 import java.util.function.Consumer;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -20,8 +22,8 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 	public CreacionMensaje _unnamed_CreacionMensaje_;
 	
 	
-	public Lista_Mensaje_V_Usuario_Reg() {
-		super();
+	public Lista_Mensaje_V_Usuario_Reg(int idTema) throws PersistentException {
+		super(idTema);
 		
 		crearMensaje.setVisible(true);
 		
