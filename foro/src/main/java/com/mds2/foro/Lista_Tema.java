@@ -31,7 +31,12 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				buscarTema();
+				try {
+					buscarTema(idSeccion);
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});	
 		
@@ -44,34 +49,47 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 		
 		}
 		
-	
-	
-	
+		crearTemaB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				Lista_Tema_V_Usuario_Reg.crearTema(idSeccion, Sesion.getIDSESION());
+			}
+		});	
 		
+		Seccion s = SeccionDAO.getSeccionByORMID(idSeccion);
+		_sección = new SeccionClase(s);
 		
 	}
 	
 	private void Inicializar() {
 		// TODO Auto-generated method stub
-		crearTemaB.setVisible(false);
+		crearTemaB.setVisible(true);
 		
 		statusTema.setVisible(false);
 		
 		buscarTemaB.setVisible(true);
+		
 	}
 
-	public void buscarTema() {
+	public void buscarTema(int idSeccion) throws PersistentException {
 		
-		List st;
-		try {
-			st = iUsrNR.buscarTema(buscarTemaTF.toString(), 1);
-		for(Object it : st) {
-			listaTemas.addComponent((Component) it);
+		List<Tema> st = iUsrNR.buscarTema(buscarTemaTF.getValue(), idSeccion);
+			
+		if(!st.isEmpty()) {
+			for(Tema t : st) {
+				TemaClase tc = new TemaClase(t);
+				listaTemas.addComponent(tc);
+			}
+		}else {
+			List<Tema> tema = iUsrNR.cargarTemasUNR(idSeccion, true, false, false, false);
+			for(Tema te : tema) {
+				TemaClase tem = new TemaClase(te);
+				listaTemas.addComponent(tem);
+			}
 		}
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 				
 	}

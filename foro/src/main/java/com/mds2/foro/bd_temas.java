@@ -14,9 +14,6 @@ public class bd_temas {
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 		
-	
-		
-		
 		try {
 			
 			
@@ -64,30 +61,38 @@ public class bd_temas {
 
 	public boolean crearTema(String aTitulo, String aSubtitulo, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-	try {
-		Seccion sec = com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
-		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdTemaPropietario);
-		Tema tema = com.mds2.foro.TemaDAO.createTema();
-		
-		tema.setTitulo(aTitulo);
-		tema.setDescripcion(aSubtitulo);
-		tema.setFecha(System.currentTimeMillis());
-		tema.setIdTemaPropietario(aIdSeccionPropietaria);
-		tema.setUsuarios(u);
-		tema.setPublico(true);
-		com.mds2.foro.TemaDAO.save(tema);
-		
-		u.pro_temas.add(tema);
-		com.mds2.foro.UsuariosDAO.save(u);
+		try {
+			Seccion sec = com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
+			Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdTemaPropietario);
+			Tema tema = com.mds2.foro.TemaDAO.createTema();
 			
-		sec.contiene_temas.add(tema);
-		com.mds2.foro.SeccionDAO.save(sec);
+			tema.setTitulo(aTitulo);
+			tema.setDescripcion(aSubtitulo);
+			tema.setFecha(System.currentTimeMillis());
+			tema.setIdTemaPropietario(aIdTemaPropietario);
 		
-		t.commit();
-		return true;
+			tema.setUsuarios(u);
+			tema.setPublico(true);
+			tema.setSeccion_mensaje(sec);
+			tema.setPublico(true);
+			tema.setPrivado(false);
+			tema.setOculto(false);
+			tema.setEliminado(false);
+			sec.contiene_temas.add(tema);
+			
+			com.mds2.foro.TemaDAO.save(tema);
+			System.out.println("has creado un tema guapisimo que guapo");
+			u.pro_temas.add(tema);
+			com.mds2.foro.UsuariosDAO.save(u);
+			
+			sec.contiene_temas.add(tema);
+			com.mds2.foro.SeccionDAO.save(sec);
 		
-	}
-	catch(Exception e) {
+			t.commit();
+			return true;
+		
+		}
+		catch(Exception e) {
 			t.rollback();
 			return false;
 		}
