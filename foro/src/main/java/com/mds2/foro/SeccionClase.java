@@ -86,5 +86,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 		eliminarSeccion.setVisible(false);
 		this._nombreSeccion = irSeccion;
 	}
-
+	
+		
+	
 }

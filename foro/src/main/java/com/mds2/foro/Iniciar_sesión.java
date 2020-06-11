@@ -114,14 +114,13 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			
 			
 			}
-			Notification notification = Notification.show(
-			        "FALLO AL INICIAR SESION");
+
 			
 			
 		}
 		
-	
-		
+		Notification notification = Notification.show(
+		        "FALLO AL INICIAR SESION");
 		
 	}
 
