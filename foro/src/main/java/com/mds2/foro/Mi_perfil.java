@@ -30,19 +30,21 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 
 	iUsuario iUsr = new DB_Main();
 	
-	
 	public Mi_perfil() {
+		
+	}
+	
+	public Mi_perfil(int idUs) throws PersistentException {
 		_darseDeBaja = darseDeBaja;
 		_ocultarPerfil = ocultarMiPerfil;
 		_cambiarDatos = modificarPerfil;
 		_nombre = nombreUsuarioPerfil;
 		_contrasena = passwordMiPerfil;
 		_descripcion = descripcionMiPerfil;
-	
 		
+		Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
 		
-		
-		
+		_nombre.setCaption(usr.getNombre());
 		
 		_darseDeBaja.addClickListener(new Button.ClickListener() {
 			
