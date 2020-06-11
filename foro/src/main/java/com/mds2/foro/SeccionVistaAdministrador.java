@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import java.util.List;
+
 import org.orm.PersistentException;
 
 import com.vaadin.ui.Button;
@@ -34,6 +36,8 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 			}
 			
 		});
+		
+
 		
 	}
 	

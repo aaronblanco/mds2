@@ -1,12 +1,17 @@
 package com.mds2.foro;
 
+import java.util.List;
 //import DCLv3.SeccionVistaModerador;
 import java.util.Vector;
 //import Package.Tema_oculto;
 //import Package.Cambiar_accesibilidad;
 //import DCLv3.TemaVistaModerador;
 
+import org.orm.PersistentException;
+
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
 	public ModeradorClase _moderador;
@@ -17,14 +22,18 @@ public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
 	
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 	
-	public Lista_Tema_V_Moderador() {
+	public Lista_Tema_V_Moderador(int idSeccion) throws NumberFormatException, PersistentException {
 		
-		super();
+		super(idSeccion);
+
+		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, false, false, true, false);
+	
 		
-		_list_Tema_oculto = (Vector<Tema_oculto>) iUsrNR.cargarTemasUNR(Integer.parseInt(_unnamed_SeccionVistaModerador_.getId()), false, false, true, false);
+		for(Tema it: t) {
+			TemaVistaModerador tema = new TemaVistaModerador(it);
+			listaTemas.addComponent(tema);
 		
-		for(Object it: _list_Tema_oculto)
-			listaTemas.addComponent((Component) it);
+		}
 		
 	}
 

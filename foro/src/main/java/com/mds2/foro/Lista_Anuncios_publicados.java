@@ -3,6 +3,8 @@ package com.mds2.foro;
 import java.util.Vector;
 //import Package.Anuncio;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -22,13 +24,21 @@ public class Lista_Anuncios_publicados extends Lista_Anuncios_publicados_ventana
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				eliminarAnuncio();
+				try {
+					eliminarAnuncio();
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
 	}
 	
-	public void eliminarAnuncio() {
+	public void eliminarAnuncio() throws NumberFormatException, PersistentException {
 		iUsr.eliminarAnuncio(Integer.parseInt(this.getId()), false);
 	}
 }

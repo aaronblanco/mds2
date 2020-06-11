@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.List;
 //import DCLv3.SeccionVistaUR;
 import java.util.Vector;
 //import Package.Tema_privado;
@@ -40,14 +41,26 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 			}
 		});	
 		
+		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, false, true, false, false);
+	
 		
+		for(Tema it: t) {
+			Tema_UR tema = new Tema_UR(it);
+			listaTemas.addComponent(tema);
 		
-		_list_Tema_privado = (Vector<Tema_privado>) iUsrNR.cargarTemasUNR(idSeccion, false, true, false, false);
+		}
 		
-		for(Object it: _list_Tema_privado)
-			listaTemas.addComponent((Component) it);
+		crearTemaB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				Lista_Tema_V_Usuario_Reg.crearTema(idSeccion, Sesion.getIDSESION());
+			}
+		});	
 		
-		
+		Seccion s = SeccionDAO.getSeccionByORMID(idSeccion);
+		_sección = new SeccionClase(s);		
 		
 		
 	}
