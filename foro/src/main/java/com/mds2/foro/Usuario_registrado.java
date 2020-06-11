@@ -4,6 +4,7 @@ import org.orm.PersistentException;
 
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Layout;
+import com.vaadin.ui.UI;
 
 //import Package2.iUsuario_registrado;
 
@@ -21,7 +22,7 @@ public class Usuario_registrado extends Banner_Usuario_registrado implements Vie
 		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
 		Lista_Seccion_V_Usuario_Reg sec = new Lista_Seccion_V_Usuario_Reg();
 	
-		
+	
 	    
 		this.panelMenu.setContent(menu);
 		
@@ -33,7 +34,7 @@ public class Usuario_registrado extends Banner_Usuario_registrado implements Vie
 	}
 	
 
-	public Usuario_registrado(Layout ventana ) {
+	public Usuario_registrado(Layout ventana ) throws PersistentException {
 		
 		
 	

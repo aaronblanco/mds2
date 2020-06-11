@@ -35,7 +35,7 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	
-    	
+    	Sesion.setIDSESION(1);
     	Usuario_no_registrado pag = null;
     	
     	try {
@@ -50,12 +50,7 @@ public class MyUI extends UI {
        	Navigator navigator = new Navigator(this , this);
         navigator.addView("", pag.getClass());
 
-    	try {
-			navigator.addView("Cerrar sesión", new Usuario_no_registrado());
-		} catch (PersistentException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
+  
     	
      	try {
 			navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
@@ -66,38 +61,39 @@ public class MyUI extends UI {
      	navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
      	navigator.addView("Iniciar sesion",  new Usuario_no_registrado(new Iniciar_sesión()));
      	navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
-     	navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena() ) );
-     	try {
-			navigator.addView("Pagina principal", new Usuario_no_registrado(new Lista_Seccion()));
-     	} catch (PersistentException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-     	try {
-			navigator.addView("usuarioReg", new Usuario_registrado());
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-     	 
-     	
-     	navigator.addView("crearSeccion", new Usuario_registrado(new CreacionSeccion()));
-     	
+     	navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena()));
     	try {
-			navigator.addView("Mi perfil", new Usuario_registrado(new Mi_perfil(Sesion.getIDSESION())));
+			navigator.addView("Pagina principal",  new Usuario_no_registrado() );
 		} catch (PersistentException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
     	
     	try {
+			navigator.addView("Pagina principalUsr", new Usuario_registrado());
+			navigator.addView("Mi perfilUsr", new Usuario_registrado(new Mi_perfil()));  
+		} catch (PersistentException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+    	
+    	
+    	/*
+    	try {
 			navigator.addView("Mi perfil Administrador", new AdministradorClase(new Mi_perfil(Sesion.getIDSESION())));
 		} catch (PersistentException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		}*/
+     	
+    	try {
+			navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));	
+			navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
+		} catch (PersistentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-    	navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));
-    	navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
+    
     	
     	  
     	

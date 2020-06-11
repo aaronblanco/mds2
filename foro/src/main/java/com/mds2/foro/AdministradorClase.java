@@ -37,13 +37,13 @@ public class AdministradorClase extends ModeradorClase implements View{
 		
 	
 		Menu_moderador menu = new Menu_moderador();
-		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
 		
 	
 	    
 		this.panelMenu.setContent(menu);
 		
 		this.panelMain.setContent(ventana);
+		
 		
 		
 	}

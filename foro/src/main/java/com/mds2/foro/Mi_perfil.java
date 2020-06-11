@@ -30,17 +30,16 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 
 	iUsuario iUsr = new DB_Main();
 	
-	public Mi_perfil() {
-		
-	}
 	
-	public Mi_perfil(int idUs) throws PersistentException {
+	public Mi_perfil() throws PersistentException {
 		_darseDeBaja = darseDeBaja;
 		_ocultarPerfil = ocultarMiPerfil;
 		_cambiarDatos = modificarPerfil;
 		_nombre = nombreUsuarioPerfil;
 		_contrasena = passwordMiPerfil;
 		_descripcion = descripcionMiPerfil;
+		int idUs = Sesion.getIDSESION(); 
+		
 		System.out.println(idUs);
 		Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
 		System.out.println(usr.getNombre());

@@ -89,7 +89,7 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 		}
 
 	public void cancelar() {
-		UI.getCurrent().getNavigator().navigateTo("listaSecciones");
+		UI.getCurrent().getNavigator().navigateTo("Pagina principal");
 	}
 
 	public void adjuntarImagen() {

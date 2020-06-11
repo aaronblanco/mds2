@@ -21,9 +21,9 @@ public class Foro_desplegable {
 		
 			TreeData<String> data = new TreeData<String>();
 			data.addItems(null,"Iniciar sesion", "Registrarse","Pagina principal");
-	    
+			
 			TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(data);
-	  
+			
 
 			inMemoryDataProvider.refreshAll();
 			menuMod.setDataProvider(inMemoryDataProvider);
