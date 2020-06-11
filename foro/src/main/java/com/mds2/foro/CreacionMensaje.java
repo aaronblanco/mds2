@@ -6,7 +6,6 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.TextField;
 
-//import Package.Lista_Mensaje_V_Usuario_Reg;
 
 public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	private Button _color;
@@ -65,7 +64,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	}
 
 	public void enviar() {
-		iUsr.crearMensaje(_cuerpo, null, idUsuario, aIdTema);
+		iUsr.crearMensaje(_cuerpo, null, Sesion.getIDSESION(), aIdTema);
 	}
 	
 	public void cancelar() {

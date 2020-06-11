@@ -16,6 +16,15 @@ public class Amigo extends VerPerfilGenerico {
 	}
 	
 	
+	public Amigo(Amigo a) {
+		// TODO Auto-generated constructor stub
+		
+		this._anadirAmigo = aceptarSolicitud;
+		irPerfil.setCaption(a.getCaption());
+		
+	}
+
+
 	public void anadirAmigo() {
 		throw new UnsupportedOperationException();
 	}
