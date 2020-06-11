@@ -106,17 +106,14 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			
 			
 			else {
-				
-			
 
-		
 			UI.getCurrent().getNavigator().navigateTo("usuarioReg");
+
 			
 			
 			}
 			Notification notification = Notification.show(
 			        "FALLO AL INICIAR SESION");
-			
 			
 		}
 		
