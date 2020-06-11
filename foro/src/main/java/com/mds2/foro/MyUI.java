@@ -35,7 +35,7 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	
-    	Sesion.setIDSESION(1);
+    //	Sesion.setIDSESION(1);
     	Usuario_no_registrado pag = null;
     	
     	try {

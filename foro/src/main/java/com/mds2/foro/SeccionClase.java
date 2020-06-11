@@ -27,7 +27,6 @@ public class SeccionClase extends Seccion_ventana implements View {
 	public SeccionClase() throws PersistentException {
 		
 	
-	//	Navigator navigator = new Navigator(this , this);
 		
 		Inicializar();
 	
@@ -38,15 +37,15 @@ public class SeccionClase extends Seccion_ventana implements View {
 	public SeccionClase(Seccion s) throws PersistentException {
 		
 		Inicializar();
+		if(Sesion.getIDSESION() > 0 && s != null)  {
 		this._nombreSeccion = irSeccion;
 		this._nombreSeccion.setCaption(s.getTitulo());
 		this.fechaCreacion = String.valueOf(s.getFecha());
 		this.usrCreador = s.getCreador();
-		//this._imagenSeccion = s.getImagenSeccion();
-		//this.numMsg = s.contiene_temas.size();
-		//this.irSeccion.setCaption(_nombreSeccion);
 		this.fechaCreacionSeccion.setCaption(fechaCreacion);
 		this.userCreadorSeccion.setCaption(usrCreador);
+		
+	
 		
 		
 		
@@ -76,7 +75,7 @@ public class SeccionClase extends Seccion_ventana implements View {
 			}
 		});
 		
-		
+		}
 		
 	}
 	

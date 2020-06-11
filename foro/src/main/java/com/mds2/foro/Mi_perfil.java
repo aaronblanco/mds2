@@ -39,6 +39,9 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 		_contrasena = passwordMiPerfil;
 		_descripcion = descripcionMiPerfil;
 		int idUs = Sesion.getIDSESION(); 
+		if(Sesion.getIDSESION() > 0) {
+			
+	
 		
 		System.out.println(idUs);
 		Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
@@ -47,6 +50,7 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 		this._nombre = nombreUsuarioPerfil;
 		
 		this._nombre.setValue(usr.getNombre());
+		}
 		
 		_darseDeBaja.addClickListener(new Button.ClickListener() {
 			

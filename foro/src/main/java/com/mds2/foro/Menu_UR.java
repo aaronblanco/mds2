@@ -22,9 +22,10 @@ public class Menu_UR extends Menu_UNR_ventana{
 	
 	
 	public Menu_UR() throws PersistentException{
-
-
-		this.removeAllComponents();
+		
+		
+		if(Sesion.getIDSESION() >= 1 ) {
+					this.removeAllComponents();
 
 	
 		Foro_desplegable foro = new Foro_desplegable();
@@ -38,6 +39,9 @@ public class Menu_UR extends Menu_UNR_ventana{
 		var.setDataProvider( inMemoryDataProvider);
 		var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()+ "Usr"));
 		this.addComponent(var);
+		}
+
+
 		
 	}
 	

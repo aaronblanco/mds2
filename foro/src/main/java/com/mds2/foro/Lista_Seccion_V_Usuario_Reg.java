@@ -19,14 +19,20 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 	public Lista_Seccion_V_Usuario_Reg() throws PersistentException {
 		super();
 		
+		if(Sesion.getIDSESION() > 0) {
+			
 		List<Seccion> sec = iUsrNR.cargarListaSecciones(false, true, false, false);
 		
-		if(!sec.isEmpty()) {
-			for(Seccion s : sec) {
-				SeccionVistaUR sc = new SeccionVistaUR(s);
-				listaSeccion.addComponent(sc);
+			if(!sec.isEmpty()) {
+				for(Seccion s : sec) {
+					SeccionVistaUR sc = new SeccionVistaUR(s);
+					listaSeccion.addComponent(sc);
+				}
 			}
+			
+		
 		}
+		
 	}
 	
 }
