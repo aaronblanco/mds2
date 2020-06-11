@@ -167,21 +167,9 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdUsr.iniciarSesion(aUsername, aPassword);
 	}
 
-//	public List cargarAmigos(int aIdUsuario) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public List cargarSeccionesUR(String aAccesibilidadPub, String aAccesibilidadPriv) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public List cargarTemasUR(int aIdSeccion, String aAccesibilidadPub, String aAccesibilidadPriv) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public List cargarMensajeUR(int aIdTema, String aAccesibilidadPub) {
-//		throw new UnsupportedOperationException();
-//	}
+	public List cargarAmigos(int aIdUsuario) throws PersistentException {
+		return bdUsr.cargarListaAmigos(aIdUsuario);
+	}
 
 	public List cargarUltimoMensaje(int aIdUsuario) {
 		return bdMsg.cargarUltimoMensaje(aIdUsuario);
@@ -304,4 +292,10 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 	public List buscarMensaje(String aKeyword, int aIdTema) throws PersistentException {
 		return bdMsg.buscarMensaje(aKeyword, aIdTema);
 	}
+
+	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto, int idTema) {
+		
+		return false;
+	}
+
 }

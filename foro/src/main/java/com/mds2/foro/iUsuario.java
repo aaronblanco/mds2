@@ -16,9 +16,7 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public int iniciarSesion(String aUsername, String aPassword) throws PersistentException;
 
-	public List cargarAmigos(int aIdUsuario);
-
-	public List cargarMensajeUR(int aIdTema, String aAccesibilidadPub);
+	public List cargarAmigos(int aIdUsuario) throws PersistentException;
 
 	public List cargarMensajeCreado(int aIdTema, int aIdUsuario)throws PersistentException;
 
