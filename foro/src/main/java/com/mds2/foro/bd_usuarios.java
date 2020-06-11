@@ -76,19 +76,7 @@ public class bd_usuarios {
 			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.loadUsuariosByQuery("NombreUsuario = '"+aUsername+"' AND Contraseña = '"+aPassword+"'", null);
 			
 			id = lcommds2foroUsuarios.getIdUsuario();
-			
-//			String condition;
-//			String orderBy;
-//			AdministradorCriteria cr = new AdministradorCriteria();
-//		
-//			cr.add(Restrictions.eq("nombreUsuario", aUsername));
-//			
-//			
-//			com.mds2.foro.Usuarios u =  (Usuarios) com.mds2.foro.UsuariosDAO.queryUsuarios(cr.toString(), null);
-//			id = u.getIdUsuario();
-//		
-//			
-//			com.mds2.foro.UsuariosDAO.save(u);
+
 			t.commit();
 			
 		}catch(Exception e) {

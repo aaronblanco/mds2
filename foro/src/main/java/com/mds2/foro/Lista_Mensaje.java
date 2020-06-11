@@ -78,6 +78,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		for(Mensaje it: t) {
 			MensajeClase msj = new MensajeClase(it);
 			_list_Mensaje.addElement(msj);
+			listaMensajeAdmin.addComponent(msj);
 		}
 		
 	}
