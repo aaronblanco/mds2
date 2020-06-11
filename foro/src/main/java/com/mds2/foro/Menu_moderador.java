@@ -15,11 +15,13 @@ public class Menu_moderador extends Menu_UR implements View {
 		
 	
 	
-		this.removeComponent(this.components.get(1));
+		//this.removeComponent(this.components.get(1));
 		
 		Foro_desplegable foro = new Foro_desplegable();
 	    Tree<String> var = foro.listaDesplegable();
 	    TreeData<String> datos = var.getTreeData();
+	    datos.removeItem("Mi perfil");
+	    datos.addItem(null, "Mi perfil Administrador");
 		datos.addItem(null, "Panel de administración");
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 		

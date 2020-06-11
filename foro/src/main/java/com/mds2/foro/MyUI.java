@@ -88,6 +88,13 @@ public class MyUI extends UI {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+    	
+    	try {
+			navigator.addView("Mi perfil Administrador", new AdministradorClase(new Mi_perfil(Sesion.getIDSESION())));
+		} catch (PersistentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
     	navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));
     	navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
     	

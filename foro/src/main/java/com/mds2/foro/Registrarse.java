@@ -151,13 +151,14 @@ public class Registrarse extends Registrarse_ventana implements View {
 	  binder.forField(_nombreCompleto)
       .asRequired("El campo del nombre completo no puede estar vacío")
       .withValidator(_nombreCompleto -> _nombreCompleto.length() > 0,"Code shold be atleast 1 character long").bind(Registrarse::get_nombreCompleto,Registrarse::set_nombreCompleto);
-
+	  binder.validate();
 	  
 		System.out.println("VALIDANDO COSAS SE SUPONE");
 	}
 	private void valueChange(ValueChangeEvent<String> e) {
-         binder.validate();
+        
          System.out.println("DETECTA ALGO");
+         binder.validate();
     }
 	
 	public void registrarse() throws PersistentException {

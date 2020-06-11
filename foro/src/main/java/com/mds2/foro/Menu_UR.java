@@ -21,7 +21,7 @@ public class Menu_UR extends Menu_UNR_ventana{
 	
 	public Menu_UR(){
 
-		this.removeComponent(this.components.get(0));
+		this.removeAllComponents();
 	//	this.removeComponent(this.components.get(1));
 		Foro_desplegable foro = new Foro_desplegable();
 	    Tree<String> var = foro.listaDesplegable();

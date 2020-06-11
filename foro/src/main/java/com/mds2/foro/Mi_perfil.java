@@ -41,10 +41,11 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 		_nombre = nombreUsuarioPerfil;
 		_contrasena = passwordMiPerfil;
 		_descripcion = descripcionMiPerfil;
-		
+		System.out.println(idUs);
 		Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
+		this._nombre = nombreUsuarioPerfil;
 		
-		_nombre.setCaption(usr.getNombre());
+		this._nombre.setValue(usr.getNombre());
 		
 		_darseDeBaja.addClickListener(new Button.ClickListener() {
 			
