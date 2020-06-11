@@ -51,7 +51,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().addView("crearMensaje", new Usuario_registrado(new CreacionMensaje(int idTema)));
+				UI.getCurrent().getNavigator().addView("crearMensaje", new Usuario_registrado(new CreacionMensaje(idTema)));
 				UI.getCurrent().getNavigator().navigateTo("crearMensaje");
 			}
 		});	
@@ -62,7 +62,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					buscarMensaje();
+					buscarMensaje(idTema);
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -72,12 +72,12 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		
 		
 		
-	List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false, false, false);
-	System.out.println(t.toString());
+		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false, false, false);
+		System.out.println(t.toString());
 		
 		for(Mensaje it: t) {
 			MensajeClase msj = new MensajeClase(it);
-			_list_Mensaje.addElement(msj);
+			//_list_Mensaje.addElement(msj);
 			listaMensajeAdmin.addComponent(msj);
 		}
 		
@@ -93,7 +93,16 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 	}
 
 	//LOS IDS
-	public void buscarMensaje() throws PersistentException {
-		listaMensajeAdmin.addComponent((Component) iUsrNR.buscarMensaje(buscadorMensaje.toString(), 1));
+	public void buscarMensaje(int aIdTema) throws PersistentException {
+		
+		List<Mensaje> mb = iUsrNR.buscarMensaje(buscadorMensaje.getValue(), aIdTema);
+		
+		if(!mb.isEmpty()) {
+			listaMensajeAdmin.removeAllComponents();
+			for(Mensaje m : mb) {
+				MensajeClase mc = new MensajeClase(m);
+				listaMensajeAdmin.addComponent(mc);
+			}
+		}
 	}
 }
