@@ -134,7 +134,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			if(a != null) {
 				Sesion.setNOMBRESESION(_nombreUsuario.toString());
 				AdministradorClase admin =  new AdministradorClase();
-				
+				UI.getCurrent().getNavigator().addView("Pagina principalAdm", new AdministradorClase());
+
 				UI.getCurrent().getNavigator().addView("crearSeccion", new AdministradorClase(new CreacionSeccion()));
 				
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
@@ -147,7 +148,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			else if(Mod != null) {
 				Sesion.setNOMBRESESION(_nombreUsuario.toString());
 				ModeradorClase mod =  new ModeradorClase();
-			
+				UI.getCurrent().getNavigator().addView("Pagina principalMod", new ModeradorClase());
+
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), mod);
 			
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
@@ -159,7 +161,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			
 				try {
 					
-				
+					
 				
 					UI.getCurrent().getNavigator().addView("Cerrar sesiónUsr", new Usuario_no_registrado());	
 					
@@ -180,14 +182,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 					Notification.show("FALLO AL INICIAR SESION");
 				}
 	
-			
-		
-
-			
-			
 		}
-		
-		
 		
 	}
 

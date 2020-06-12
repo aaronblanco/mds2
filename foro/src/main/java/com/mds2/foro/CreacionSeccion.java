@@ -50,7 +50,12 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				cancelar();
+				try {
+					cancelar();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		});	
@@ -87,9 +92,13 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 		}
 			
 	}
-
-	public void cancelar() {
-		UI.getCurrent().getNavigator().navigateTo("Pagina principal");
+	
+	public void cancelar() throws PersistentException {
+		if(com.mds2.foro.AdministradorDAO.getAdministradorByORMID(Sesion.getIDSESION())!=null)
+			UI.getCurrent().getNavigator().navigateTo("Pagina principalAdm");
+		else
+			UI.getCurrent().getNavigator().navigateTo("Pagina principalMod");
+		
 	}
 
 	public void adjuntarImagen() {
