@@ -48,8 +48,8 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdSec.eliminarSeccion(aIdSeccion);
 	}
 
-	public boolean notificarMensaje(int aIdMensaje, int aIdUSer) {
-		throw new UnsupportedOperationException();
+	public boolean notificarMensaje(int aIdMensaje, int aIdUSer) throws PersistentException {
+		return bdNot.notificarMensaje(aIdMensaje, aIdUSer);
 	}
 
 	public boolean eliminarMensajeAdmin(int aIdMensaje) throws PersistentException {
@@ -121,12 +121,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdMsg.eliminarMensajePropio(aIdMensaje);
 	}
 
-	//LOS IDS
-//	public Lista_Amigo[] cargarListaAmigos() {
-//		return bdUsr.cargarListaAmigos(id);
-//	}
-
-	public List cargarSolicitudes(int aIdUsuario) throws PersistentException {
+	public List<Notificacion> cargarSolicitudes(int aIdUsuario) throws PersistentException {
 		return bdUsr.cargarSolicitudes(aIdUsuario);
 	}
 
@@ -156,10 +151,6 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 
 	public List cargarTemasSeccionPrivada(int aIdSeccion) {
 		return bdTema.cargarTemasSeccionPrivada(aIdSeccion);
-	}
-
-	public List cargarAmigo() {
-		throw new UnsupportedOperationException();
 	}
 
 	public List cargarAnuncioPublicado(boolean aEstado) throws PersistentException {
@@ -198,17 +189,12 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdMsg.darMeGustaMensaje(aIdMensaje, aIdUser);
 	}
 
-	//esto creo que no deberia existir
-	public boolean desconectarse() {
-		throw new UnsupportedOperationException();
-	}
-
 	public boolean aceptarSolicitud(int aIdUsuario, int aIdAmigo) throws PersistentException {
 		return bdUsr.aceptarSolicitud(aIdUsuario, aIdAmigo);
 	}
 
-	public boolean rechazarSolicitud() {
-		throw new UnsupportedOperationException();
+	public boolean rechazarSolicitud(int idUs, int idSol) throws PersistentException {
+		return bdUsr.rechazarSolicitud(idUs, idSol);
 	}
 
 	public boolean anadirAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException {
@@ -232,8 +218,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 	}
 
 	public boolean registrarse(String aUsername, String aFullname, String aPassword, String aDescription, String aEmail, String aFotoURL) throws PersistentException {
-		return bdUsr.registrarse(aUsername, aFullname, aPassword, aDescription, aEmail, aFotoURL);
-		
+		return bdUsr.registrarse(aUsername, aFullname, aPassword, aDescription, aEmail, aFotoURL);		
 	}
 
 	public List cargarListaSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
@@ -248,8 +233,8 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdMsg.cargarMensajeUNR(aIdTema, aPublico, aEliminado);
 	}
 
-	public boolean recuperarPassword(String aEmail) {
-		throw new UnsupportedOperationException();
+	public boolean recuperarPassword(String aEmail) throws PersistentException {
+		return bdUsr.recuperarPassword(aEmail);
 	}
 
 	public List buscarSeccion(String aKeyword) throws PersistentException {
@@ -264,9 +249,8 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdMsg.buscarMensaje(aKeyword, aIdTema);
 	}
 
-	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto, int idTema) {
-		
-		return false;
+	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto, int idTema) throws PersistentException {
+		return bdTema.cambiarAccesibilidad(aPublico, aPrivado, aOculto, idTema);
 	}
 
 }

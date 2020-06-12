@@ -21,7 +21,7 @@ public interface iAdministrador extends iBanner_general, iMenu_UR {
 
 	public boolean eliminarSeccion(int aIdSeccion) throws PersistentException;
 
-	public boolean notificarMensaje(int aIdMensaje, int aIdUSer);
+	public boolean notificarMensaje(int aIdMensaje, int aIdUSer) throws PersistentException;
 
 	public boolean eliminarMensajeAdmin(int aIdMensaje) throws PersistentException;
 

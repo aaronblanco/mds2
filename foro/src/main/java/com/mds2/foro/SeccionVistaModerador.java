@@ -39,7 +39,12 @@ public class SeccionVistaModerador extends SeccionVistaUR {
 		});
 		statusTema.setItems("Público","Privado","Oculto");
 		statusTema.addValueChangeListener(event -> {
-			cambiarAccesibilidad(s.getIdSeccion());
+			try {
+				cambiarAccesibilidad(s.getIdSeccion());
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		});
 		
 	}
@@ -48,7 +53,7 @@ public class SeccionVistaModerador extends SeccionVistaUR {
 		statusTema.setVisible(true);
 	}
 
-	public void cambiarAccesibilidad(int idSeccion) {
+	public void cambiarAccesibilidad(int idSeccion) throws PersistentException {
 		String value = statusTema.getValue();
 		switch(value) {
 		case "Público":

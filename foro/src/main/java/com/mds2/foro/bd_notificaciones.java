@@ -34,6 +34,7 @@ public class bd_notificaciones {
 			not.setDescripcionCampo("El tema " + tema.getTitulo() + " ha sido reportado por " + u.getNombreUsuario());
 			not.setTitulo(tema.getTitulo() + " reportado.");
 			not.setIdUsuarioPropietario(1);
+			
 			com.mds2.foro.NotificacionDAO.save(not);
 			t.commit();
 
