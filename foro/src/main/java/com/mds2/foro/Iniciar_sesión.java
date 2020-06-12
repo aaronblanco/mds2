@@ -101,11 +101,11 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	private void validar() {
 		  binder.forField(_nombreUsuario)
 		         .asRequired("El campo nombre de usuario no puede estar vacío")
-		         .withValidator(_nombreUser -> _nombreUser.length() > 0,"Code shold be atleast 1 character long").bind(Iniciar_sesión::get_nombreUsuario,Iniciar_sesión::set_nombreUsuario);
+		         .withValidator(_nombreUser -> _nombreUser.length() > 0,"Code should be atleast 1 character long").bind(Iniciar_sesión::get_nombreUsuario,Iniciar_sesión::set_nombreUsuario);
 		  
 		  binder.forField(_contrasena)
 	      .asRequired("El campo la contraseña no puede estar vacío")
-	      .withValidator(_contrasena -> _contrasena.length() > 0,"Code shold be atleast 1 character long").bind(Iniciar_sesión::get_contrasena,Iniciar_sesión::set_contrasena);
+	      .withValidator(_contrasena -> _contrasena.length() > 0,"Code should be atleast 1 character long").bind(Iniciar_sesión::get_contrasena,Iniciar_sesión::set_contrasena);
 
 		
 		  binder.validate();
