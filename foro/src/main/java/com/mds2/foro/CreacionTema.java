@@ -37,6 +37,8 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 				// TODO Auto-generated method stub
 				try {
 					enviar(aIdSeccionPropietaria, aIdTemaPropietario);
+					UI.getCurrent().getNavigator().addView(_tituloTema.toString(), new Usuario_registrado(new Lista_Mensaje(aIdTemaPropietario)));
+					UI.getCurrent().getNavigator().navigateTo(_tituloTema.toString());
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
