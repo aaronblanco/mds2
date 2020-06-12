@@ -11,7 +11,7 @@ import com.vaadin.ui.Label;
 //import DCLv3.Tipo;
 
 public class TemaClase extends Tema_ventana implements View{
-	private Button _titulo;
+	protected Button _titulo;
 	private long _fechaCreacion;
 	private String _creador;
 	private int _meGustas;
@@ -20,7 +20,7 @@ public class TemaClase extends Tema_ventana implements View{
 	public Lista_Mensaje _mensajes;
 	private long _fechaCreacionSeccion;
 	private String _userCreadorSeccion;
-	private String _nombreSeccion;
+	protected String _nombreSeccion;
 	private int _idTema;
 	
 	public TemaClase() {

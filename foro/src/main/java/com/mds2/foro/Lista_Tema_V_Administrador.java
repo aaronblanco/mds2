@@ -9,6 +9,7 @@ import java.util.Vector;
 import org.orm.PersistentException;
 
 import com.vaadin.ui.Component;
+import com.vaadin.ui.UI;
 
 public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
 	public AdministradorClase _administrador;
@@ -35,6 +36,8 @@ public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
 			for(Tema it: t) {
 				Tema_vista_Admin tema = new Tema_vista_Admin(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Adm/"+it.getTitulo(), new AdministradorClase(new Lista_Mensaje_V_Administrador(it.getIdTema())));
+
 			}
 		}	
 		
@@ -42,6 +45,8 @@ public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
 			for(Tema it: tu) {
 				Tema_vista_Admin tema = new Tema_vista_Admin(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Adm/"+it.getTitulo(), new AdministradorClase(new Lista_Mensaje_V_Administrador(it.getIdTema())));
+
 			}
 		}
 		
@@ -49,13 +54,17 @@ public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
 			for(Tema it: t) {
 				Tema_vista_Admin tema = new Tema_vista_Admin(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Adm/"+it.getTitulo(), new AdministradorClase(new Lista_Mensaje_V_Administrador(it.getIdTema())));
+
 			}
 		}
 		
 		if(!ta.isEmpty()) {
 			for(Tema it: ta) {
 				Tema_vista_Admin tema = new Tema_vista_Admin(it);
-				listaTemas.addComponent(tema);		
+				listaTemas.addComponent(tema);	
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Adm/"+it.getTitulo(), new AdministradorClase(new Lista_Mensaje_V_Administrador(it.getIdTema())));
+
 			}
 		}
 	}

@@ -19,6 +19,7 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 	public Lista_Seccion_V_Usuario_Reg() throws PersistentException {
 		super();
 		listaSeccion.removeAllComponents();
+		
 		if(Sesion.getIDSESION() > 0) {
 			
 			System.out.println(listaSeccion.getComponentCount());
@@ -32,12 +33,15 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 				for(Seccion s : su) {
 					SeccionVistaUR sur = new SeccionVistaUR(s);
 					listaSeccion.addComponent(sur);
+					UI.getCurrent().getNavigator().addView(s.getTitulo()+ "Usr", new Usuario_registrado(new Lista_Tema_V_Usuario_Reg(s.getIdSeccion())));
 				}
 			}
+			
 			if(!sec.isEmpty()) {
 				for(Seccion s : sec) {
 					SeccionVistaUR sc = new SeccionVistaUR(s);
 					listaSeccion.addComponent(sc);
+					UI.getCurrent().getNavigator().addView(s.getTitulo()+"Usr", new Usuario_registrado(new Lista_Tema_V_Usuario_Reg(s.getIdSeccion())));
 				}
 			}
 		}

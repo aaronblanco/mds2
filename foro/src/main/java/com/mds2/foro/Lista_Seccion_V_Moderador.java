@@ -56,6 +56,7 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 				for(Seccion s : su) {
 					SeccionVistaModerador sur = new SeccionVistaModerador(s);
 					listaSeccion.addComponent(sur);
+					UI.getCurrent().getNavigator().addView(s.getTitulo() + "Mod", new ModeradorClase(new Lista_Tema_V_Moderador(s.getIdSeccion())));
 				}
 			}
 			
@@ -63,6 +64,7 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 				for(Seccion s : sec) {
 					SeccionVistaModerador sc = new SeccionVistaModerador(s);
 					listaSeccion.addComponent(sc);
+					UI.getCurrent().getNavigator().addView(s.getTitulo() + "Mod", new ModeradorClase(new Lista_Tema_V_Moderador(s.getIdSeccion())));
 				}
 			}
 			
@@ -70,6 +72,7 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 				for(Seccion s : secM) {
 					SeccionVistaModerador sc = new SeccionVistaModerador(s);
 					listaSeccion.addComponent(sc);
+					UI.getCurrent().getNavigator().addView(s.getTitulo() + "Mod", new ModeradorClase(new Lista_Tema_V_Moderador(s.getIdSeccion())));
 				}
 			}
 		}	

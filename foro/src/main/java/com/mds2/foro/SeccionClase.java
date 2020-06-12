@@ -59,9 +59,6 @@ public class SeccionClase extends Seccion_ventana implements View {
 					// TODO Auto-generated method stub
 				
 					try {
-				
-			
-					
 						UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_no_registrado(new Lista_Tema(s.getIdSeccion())));
 						UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
 					} catch (PersistentException e) {

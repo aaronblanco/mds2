@@ -42,6 +42,8 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 			for(Tema it: t) {
 				Tema_UR tema = new Tema_UR(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Usr/"+it.getTitulo(), new Usuario_registrado(new Lista_Mensaje_V_Usuario_Reg(it.getIdTema())));
+
 			}
 		}	
 		
@@ -49,6 +51,8 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 			for(Tema it: tu) {
 				Tema_UR tema = new Tema_UR(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Usr/"+it.getTitulo(), new Usuario_registrado(new Lista_Mensaje_V_Usuario_Reg(it.getIdTema())));
+
 			}
 		}
 		
