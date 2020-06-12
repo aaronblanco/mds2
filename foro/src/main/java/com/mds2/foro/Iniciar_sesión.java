@@ -107,10 +107,8 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 	      .asRequired("El campo la contraseña no puede estar vacío")
 	      .withValidator(_contrasena -> _contrasena.length() > 0,"Code should be atleast 1 character long").bind(Iniciar_sesión::get_contrasena,Iniciar_sesión::set_contrasena);
 
-		
 		  binder.validate();
-		  
-			System.out.println("VALIDANDO COSAS SE SUPONE");
+
 		}
 		private void valueChange(ValueChangeEvent<String> e) {
 	        
@@ -128,18 +126,22 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			
 		
 			Sesion.setIDSESION(idU);
-		
-			Administrador Adm = iAdm.obtenerPerfilAdmin(idU);
-		
-			Moderador Mod = iMod.obtenerPerfilModerador(idU);
+				
+			Moderador Mod = com.mds2.foro.ModeradorDAO.getModeradorByORMID(idU);
 			
-			if(Adm != null) {
+			Administrador a = com.mds2.foro.AdministradorDAO.getAdministradorByORMID(idU);
+			
+			if(a != null) {
 				Sesion.setNOMBRESESION(_nombreUsuario.toString());
 				AdministradorClase admin =  new AdministradorClase();
-			
+				
+				UI.getCurrent().getNavigator().addView("crearSeccion", new AdministradorClase(new CreacionSeccion()));
+				
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
 			
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
+				
+				
 			}
 				
 			else if(Mod != null) {

@@ -207,17 +207,17 @@ public class bd_usuarios {
 	public AdministradorClase obtenerPerfilAdmin(int aIdUser) throws PersistentException {		
 
 		AdministradorClase admin = null;
-		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
+		//PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			
-			
 			Administrador ad = com.mds2.foro.AdministradorDAO.getAdministradorByORMID(aIdUser);
 			
+			
+			
 					//Sin hacer
-			t.commit();
+			//t.commit();
 			return admin;
 		}catch(Exception e) {
-			t.rollback();
+			//t.rollback();
 			return admin;
 		}
 		
