@@ -133,39 +133,53 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 			
 			if(a != null) {
 				Sesion.setNOMBRESESION(_nombreUsuario.toString());
+				Sesion.setADMINISTRADOR(true);
+				
 				AdministradorClase admin =  new AdministradorClase();
 				UI.getCurrent().getNavigator().addView("Pagina principalAdm", new AdministradorClase());
 
 				UI.getCurrent().getNavigator().addView("crearSeccion", new AdministradorClase(new CreacionSeccion()));
-				
+				UI.getCurrent().getNavigator().addView("Panel de administraciónAdm", new AdministradorClase(new Panel_de_administración_vista_administrador()) );
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
-			
+				UI.getCurrent().getNavigator().addView("Mi perfilAdm", new AdministradorClase(new Mi_perfil()));  
+				UI.getCurrent().getNavigator().addView("Panel de publicidad", new AdministradorClase(new Sistema_de_publicidad()) );
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
 				
 				
-			}else if(Mod != null) {
+			}
+				
+			else if(Mod != null) {
 				Sesion.setNOMBRESESION(_nombreUsuario.toString());
+				
 				ModeradorClase mod =  new ModeradorClase();
 				UI.getCurrent().getNavigator().addView("Pagina principalMod", new ModeradorClase());
-
+				UI.getCurrent().getNavigator().addView("Panel de administraciónMod", new ModeradorClase(new Panel_de_administración_vista_moderador()) );
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), mod);
-			
+				UI.getCurrent().getNavigator().addView("Mi perfilMod", new ModeradorClase(new Mi_perfil()));  
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
-			}else if(idU > 0) {
+			}
+			
+			
+				else if(idU > 0) {
 				
+			
 				try {
-				
-					UI.getCurrent().getNavigator().addView("Cerrar sesiónUsr", new Usuario_no_registrado());	
 					
+					Sesion.setADMINISTRADOR(false);
+				
+					UI.getCurrent().getNavigator().addView("Cerrar sesiónUsr", new Usuario_no_registrado());			
 					UI.getCurrent().getNavigator().addView("Pagina principalUsr", new Usuario_registrado());
 					UI.getCurrent().getNavigator().addView("Mi perfilUsr", new Usuario_registrado(new Mi_perfil()));  
-	
+					UI.getCurrent().getNavigator().addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));	
+					UI.getCurrent().getNavigator().addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
+					
 					UI.getCurrent().getNavigator().addView("", new Usuario_registrado());
 					
 				} catch (PersistentException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}		
+				
 					UI.getCurrent().getNavigator().navigateTo("");
 				}
 			
