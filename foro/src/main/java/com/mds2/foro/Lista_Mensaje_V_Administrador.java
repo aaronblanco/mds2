@@ -16,7 +16,7 @@ public class Lista_Mensaje_V_Administrador extends Lista_Mensaje_V_Moderador{
 	public Lista_Mensaje_V_Administrador(int idTema) throws PersistentException {
 		super(idTema);
 		
-		List<Mensaje> msg = iUsrNR.cargarMensajeUNR(idTema, false, false, false, true);
+		List<Mensaje> msg = iUsrNR.cargarMensajeUNR(idTema, false, true);
 		
 		if(!msg.isEmpty()) {
 			for(Mensaje m : msg) {

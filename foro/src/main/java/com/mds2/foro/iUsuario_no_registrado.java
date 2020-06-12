@@ -12,7 +12,7 @@ public interface iUsuario_no_registrado extends iBanner_general, iMenu_UNR {
 
 	public List cargarTemasUNR(int aIdSeccion, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException;
 
-	public List cargarMensajeUNR(int aIdTema, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException;
+	public List cargarMensajeUNR(int aIdTema, boolean aPublico, boolean aEliminado) throws PersistentException;
 
 	public boolean recuperarPassword(String aEmail);
 

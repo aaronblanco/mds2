@@ -82,7 +82,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		
 		
 		
-		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false, false, false);
+		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
 		System.out.println(t.toString());
 		
 		for(Mensaje it: t) {
