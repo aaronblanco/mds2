@@ -13,11 +13,8 @@ public class bd_tickets {
 	public Vector<Ticket> _contiene_tickets = new Vector<Ticket>();
 
 	public List cargarTicket(int aIdUsuario) throws PersistentException {
-		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
-		TicketCriteria tc = new TicketCriteria();
 		
-		tc.idUsuarioPropietarioTicket.eq(aIdUsuario);
-		Ticket[] t = com.mds2.foro.TicketDAO.listTicketByCriteria(tc);
+		List<Ticket> t = com.mds2.foro.TicketDAO.queryTicket("IdUsuarioPropietarioTicket = '"+aIdUsuario+"'", "Texto");
 		
 		for(Ticket a : t) {
 			_contiene_tickets.add(a);
@@ -35,17 +32,17 @@ public class bd_tickets {
 			ti.setCerrado(false);
 			ti.setIdUsuarioPropietarioTicket(aIdUsuarioPropietarioTicket);
 			ti.setTexto(aCuerpoTicket);
+			ti.setUsuarios(u);
 			
 			com.mds2.foro.TicketDAO.save(ti);
 			
 			t.commit();
 			
 			return true;
+		}catch(Exception e) {
+			t.rollback();	
+			return false;
 		}
-		catch(Exception e) {
-				t.rollback();	
-				return false;
-			}
 	}
 
 	public boolean cerrarTicket(int aIdTicket) throws PersistentException {

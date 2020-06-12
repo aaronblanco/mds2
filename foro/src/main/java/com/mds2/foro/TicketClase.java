@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
@@ -31,7 +33,12 @@ public class TicketClase extends Ticket_ventana implements View{
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				
-			responderTicket();
+				try {
+					responderTicket();
+				} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 			}
 			
@@ -46,7 +53,12 @@ public class TicketClase extends Ticket_ventana implements View{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				responderTicket();
+				try {
+					responderTicket();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		});	
@@ -55,9 +67,55 @@ public class TicketClase extends Ticket_ventana implements View{
 		
 	}
 	
-	public void responderTicket() {
+	public TicketClase(Ticket t) {
+		// TODO Auto-generated constructor stub
+		this._cuerpoTicket = txtTicket;
+		this._enviar = responderTicket;
+		this._cerrarTicket = cerrarTicket;
 		
-		iUsr.crearTicket(_cuerpoTicket, aIdUsuarioPropietarioTicket)
+		this._cuerpoTicket.setValue(t.getTexto());
+		
+		_enviar.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+			try {
+				responderTicket();
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			}
+			
+		
+			
+		});	
+		
+		_cerrarTicket.addClickListener(new Button.ClickListener() {
+			
+			//cancelar();
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					responderTicket();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		});	
+		
+		_cerrarTicket.setVisible(true);
+	}
+
+	public void responderTicket() throws PersistentException {
+		iUsr.crearTicket(_cuerpoTicket.getValue(), Sesion.getIDSESION());
 	}
 	
 }

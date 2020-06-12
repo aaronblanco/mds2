@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -11,7 +13,8 @@ public class Sistema_de_tickets_vista_usuario_registrado extends Sistema_de_tick
 	//public Crear_ticket _crear_ticket;
 
 	
-	public Sistema_de_tickets_vista_usuario_registrado() {
+	public Sistema_de_tickets_vista_usuario_registrado() throws PersistentException {
+		super();
 		_crearTicket = crearTicket;
 		
 		
