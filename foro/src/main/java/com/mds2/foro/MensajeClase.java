@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
@@ -9,11 +11,11 @@ public class MensajeClase extends Mensaje_ventana implements View {
 	private String _foto;
 	private TextField _cuerpoMsg;
 	private Label _fechaPost;
-	private Button _verPerfil;
+	protected Button _verPerfil;
 	private Listener _listaMsg;
 	public Lista_Mensaje _unnamed_Lista_Mensaje_;
 	iAdministrador iAd = new DB_Main();
-	
+	int idUser;
 	public MensajeClase() {
 		
 		
@@ -26,7 +28,12 @@ public class MensajeClase extends Mensaje_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				verPerfil();
+				try {
+					verPerfil();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});	
 		
@@ -48,8 +55,21 @@ public class MensajeClase extends Mensaje_ventana implements View {
 		this._cuerpoMsg.setValue(msj.getContenido());
 		this.meGustaB.setCaption("Me gusta: "+msj.getNumMg());
 		this._verPerfil = irPerfil;
+		idUser = msj.getIdPropietario();
 		
-		
+		_verPerfil.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					verPerfil();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});	
 		
 	}
 	
@@ -67,7 +87,10 @@ public class MensajeClase extends Mensaje_ventana implements View {
 		notificarAdminB.setVisible(false);
 	}
 
-	public void verPerfil() {
+	public void verPerfil() throws PersistentException {
+		int idSenor = idUser;
+		
+		UI.getCurrent().getNavigator().addView("irPerfil", new Usuario_no_registrado(new PerfilUsuarioRegGenerico(idSenor)));
 		UI.getCurrent().getNavigator().navigateTo("irPerfil");
 	}
 }

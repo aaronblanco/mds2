@@ -203,36 +203,6 @@ public class bd_usuarios {
 		return listaUsuarios;
 	}
 
-	
-	public AdministradorClase obtenerPerfilAdmin(int aIdUser) throws PersistentException {		
-
-		AdministradorClase admin = null;
-		//PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		try {
-			Administrador ad = com.mds2.foro.AdministradorDAO.getAdministradorByORMID(aIdUser);
-			
-			
-			
-					//Sin hacer
-			//t.commit();
-			return admin;
-		}catch(Exception e) {
-			//t.rollback();
-			return admin;
-		}
-		
-		
-		
-	}
-
-	public ModeradorClase obtenerPerfilMod(int aIdUser) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Usuario_registrado obtenerPerfilUsuario(int aIdUser) {
-		throw new UnsupportedOperationException();
-	}
-	
 	public boolean registrarse(String aUsername, String aFullname, String aPassword, String aDescription, String aEmail, String aFotoURL) throws PersistentException {
 		
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();

@@ -150,7 +150,7 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdUsr.cargarListaAmigos(aIdUsuario);
 	}
 
-	public List cargarUltimoMensaje(int aIdUsuario) {
+	public List cargarUltimoMensaje(int aIdUsuario) throws PersistentException {
 		return bdMsg.cargarUltimoMensaje(aIdUsuario);
 	}
 
@@ -211,12 +211,12 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean anadirAmigo(int aIdUsuario, int aIdAmigo) {
-		throw new UnsupportedOperationException();
+	public boolean anadirAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException {
+		return bdNot.anadirAmigo(aIdUsuario, aIdAmigo);
 	}
 
-	public boolean eliminarAmigo(int aIdUsuario, int aIdAmigo) {
-		throw new UnsupportedOperationException();
+	public boolean eliminarAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException {
+		return bdUsr.eliminarAmigo(aIdUsuario, aIdAmigo);
 	}
 
 	public List buscarUsuario(String aKeyword) throws PersistentException {

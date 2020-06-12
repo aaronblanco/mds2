@@ -9,6 +9,8 @@ public class VerPerfilGenerico  extends VerPerfilGenerico_ventana implements Vie
 	
 	public VerPerfilGenerico() {
 		
+		
+		
 	}
 	
 	
