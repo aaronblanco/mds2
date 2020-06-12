@@ -15,7 +15,9 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 	public SeccionVistaAdministrador _unnamed_SeccionVistaAdministrador_;
 	
 	public Lista_Seccion_V_administrador() throws PersistentException {
+		
 		super();
+		
 		List<Seccion> sec = iUsrNR.cargarListaSecciones(false, false, false, true);
 		if(!sec.isEmpty()) {
 			for(Seccion s : sec) {

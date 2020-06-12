@@ -53,7 +53,7 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 	
 	private void Inicializar(){
 		crearNuevaSeccion.setVisible(true);
-		buscarSeccionB.setVisible(true);
+		//buscarSeccionB.setVisible(true);
 		this._crearSeccion = crearNuevaSeccion;		
 	}
 	public void crearSeccion() {
