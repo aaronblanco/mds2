@@ -47,8 +47,4 @@ public class AdministradorClase extends ModeradorClase implements View{
 		
 		
 	}
-	
-	
-	
-	
 }

@@ -59,9 +59,9 @@ public class bd_temas {
 		return _contiene_temas;
 	}
 
-//	public List cargarTemasSeccionPrivada(int aIdSeccion) {
-//		throw new UnsupportedOperationException();
-//	}
+	public List cargarTemasSeccionPrivada(int aIdSeccion) {
+		throw new UnsupportedOperationException();
+	}
 
 	public boolean crearTema(String aTitulo, String aSubtitulo, String aDescripcion, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
