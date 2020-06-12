@@ -21,7 +21,7 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 		
 		if(Sesion.getIDSESION() > 0) {
 			
-		List<Seccion> sec = iUsrNR.cargarListaSecciones(false, true, false, false);
+			List<Seccion> sec = iUsrNR.cargarListaSecciones(false, true, false, false);
 		
 			if(!sec.isEmpty()) {
 				for(Seccion s : sec) {
@@ -29,10 +29,6 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 					listaSeccion.addComponent(sc);
 				}
 			}
-			
-		
-		}
-		
+		}	
 	}
-	
 }

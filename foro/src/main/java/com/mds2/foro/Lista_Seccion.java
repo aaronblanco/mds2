@@ -26,7 +26,6 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		Inicializar();
 		
 		buscarSeccionB.addClickListener(new Button.ClickListener() {
-			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -37,17 +36,23 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 					e.printStackTrace();
 				}
 			}
-			
-		});
-		crearNuevaSeccion.addClickListener(new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				crearSeccion();
-			}
-			
 		});
 		
+//		crearNuevaSeccion.addClickListener(new Button.ClickListener() {
+//			@Override
+//			public void buttonClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//				crearSeccion();
+//			}
+//		});
+	}
+	
+
+	
+	
+	private void Inicializar() throws PersistentException {
+		buscarSeccionB.setVisible(true);
+		crearNuevaSeccion.setVisible(false);
 		List<Seccion> cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
 		
 		for(Seccion it : cosa ) {
@@ -55,18 +60,6 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 			listaSeccion.addComponent(tal);
 			listaSeccion.toString();
 		}
-
-		
-	}
-	
-
-	
-	
-	private void Inicializar() {
-		// TODO Auto-generated method stub
-		buscarSeccionB.setVisible(true);
-		crearNuevaSeccion.setVisible(true);
-
 		
 	}
 
@@ -81,6 +74,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 				SeccionClase sc = new SeccionClase(s);
 				listaSeccion.addComponent(sc);
 			}
+			
 		}else {
 				List<Seccion> cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
 				
@@ -92,11 +86,9 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 					listaSeccion.toString();
 				}
 		}
-		
-		
 	}
 	
-	public void crearSeccion() {
-		UI.getCurrent().getNavigator().navigateTo("crearSeccion");
-		}
+//	public void crearSeccion() {
+//		UI.getCurrent().getNavigator().navigateTo("crearSeccion");
+//	}
 }
