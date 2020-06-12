@@ -46,7 +46,8 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				System.out.println(te.getSeccion_tema().getTitulo()+"/"+te.getTitulo());
-				UI.getCurrent().getNavigator().navigateTo(te.getSeccion_tema().getTitulo()+"/"+te.getTitulo());
+				
+				UI.getCurrent().getNavigator().navigateTo(te.getSeccion_tema().getTitulo());
 			}
 			
 		});	

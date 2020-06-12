@@ -37,7 +37,11 @@ public class MyUI extends UI {
     	
     	Sesion.setIDSESION(-1);
     	Sesion.setADMINISTRADOR(false);
-    	Usuario_no_registrado pag = null;
+    	
+    	 
+    	 
+       	Navigator navigator = new Navigator(this , this);
+       	Usuario_no_registrado pag = null;
     	
     	try {
 			pag = new Usuario_no_registrado();
@@ -46,12 +50,9 @@ public class MyUI extends UI {
 			e.printStackTrace();
 		}
     	setContent(pag);
-    	 
-    	 
-       	Navigator navigator = new Navigator(this , this);
         navigator.addView("", pag.getClass());
 
-  
+        
     	
      	try {
 			navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
