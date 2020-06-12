@@ -5,7 +5,16 @@ public class Sesion {
 	
 	public static int IDSESION;
 	public static String NOMBRESESION;
+	public static Boolean ADMINISTRADOR;
 	
+	public static Boolean getADMINISTRADOR() {
+		return ADMINISTRADOR;
+	}
+
+	public static void setADMINISTRADOR(Boolean aDMINISTRADOR) {
+		ADMINISTRADOR = aDMINISTRADOR;
+	}
+
 	public static int getIDSESION() {
 		return IDSESION;
 	}
