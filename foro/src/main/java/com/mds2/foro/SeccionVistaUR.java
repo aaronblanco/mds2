@@ -25,8 +25,8 @@ public class SeccionVistaUR extends SeccionClase {
 				// TODO Auto-generated method stub
 			
 				try {
-					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_registrado(new Lista_Tema_V_Usuario_Reg(s.getIdSeccion())));
-					UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
+					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption()+"Usr" , new Usuario_registrado(new Lista_Tema_V_Usuario_Reg(s.getIdSeccion())));
+					UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption()+"Usr");
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

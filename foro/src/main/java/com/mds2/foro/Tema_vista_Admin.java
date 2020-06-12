@@ -84,6 +84,25 @@ public class Tema_vista_Admin extends TemaVistaModerador {
 				}
 			}
 		});
+		
+		this._titulo.addClickListener(new Button.ClickListener() {
+
+            @Override
+            public void buttonClick(ClickEvent event) {
+                // TODO Auto-generated method stub
+                
+            	try {
+					UI.getCurrent().getNavigator().addView(_nombreSeccion + "Adm/" + _titulo.getCaption(), new AdministradorClase(new Lista_Mensaje_V_Administrador(it.getIdTema())));
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				UI.getCurrent().getNavigator().navigateTo(_nombreSeccion+ "Adm/" + _titulo.getCaption());
+            	
+            	
+            }
+
+        });
 	}
 
 

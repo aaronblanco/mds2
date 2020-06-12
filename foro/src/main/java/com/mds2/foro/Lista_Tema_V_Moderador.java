@@ -11,6 +11,7 @@ import org.orm.PersistentException;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
@@ -38,6 +39,8 @@ public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
 			for(Tema it: t) {
 				TemaVistaModerador tema = new TemaVistaModerador(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Mod/"+it.getTitulo(), new ModeradorClase(new Lista_Mensaje_V_Moderador(it.getIdTema())));
+
 			}
 		}	
 		
@@ -45,6 +48,8 @@ public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
 			for(Tema it: tu) {
 				TemaVistaModerador tema = new TemaVistaModerador(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Mod/"+it.getTitulo(), new ModeradorClase(new Lista_Mensaje_V_Moderador(it.getIdTema())));
+
 			}
 		}
 		
@@ -52,7 +57,8 @@ public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
 			for(Tema it: t) {
 				TemaVistaModerador tema = new TemaVistaModerador(it);
 				listaTemas.addComponent(tema);
-			
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"Mod/"+it.getTitulo(), new ModeradorClase(new Lista_Mensaje_V_Moderador(it.getIdTema())));
+
 			}
 		}	
 	}

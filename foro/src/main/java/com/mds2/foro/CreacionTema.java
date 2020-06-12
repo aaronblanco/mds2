@@ -39,7 +39,6 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 				try {
 					enviar(aIdSeccionPropietaria, aIdTemaPropietario);
 					Seccion s = com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
-					System.out.println(s.getTitulo()+"/"+_tituloTema.getValue());
 					UI.getCurrent().getNavigator().addView(s.getTitulo()+"/"+_tituloTema.getValue(), new Usuario_registrado(new Lista_Mensaje(aIdTemaPropietario)));
 					UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"/"+_tituloTema.getValue());
 					

@@ -39,14 +39,17 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 			
 		});	
 		
-//		List<Mensaje> m = iUsrNR.cargarMensajeUNR(idTema, false, true, false, false);
-//		
-//		if(!m.isEmpty()) {
-//			for(Mensaje me : m) {
-//				Mensaje_UR mur = new Mensaje_UR(me);
-//				listaMensajeAdmin.addComponent(mur);
-//			}
-//		}
+		
+		_volverTema.addClickListener(new Button.ClickListener() {
+			Tema te = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				UI.getCurrent().getNavigator().navigateTo(te.getSeccion_tema().getTitulo()+"Usr");
+			}
+			
+		});	
 		
 		
 	}

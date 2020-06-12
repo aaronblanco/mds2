@@ -8,6 +8,7 @@ import org.orm.PersistentException;
 import com.vaadin.ui.Component;
 //import Package.Sección_eliminada;
 //import DCLv3.SeccionVistaAdministrador;
+import com.vaadin.ui.UI;
 
 public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 	public AdministradorClase _unnamed_Administrador_;
@@ -34,6 +35,7 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 				for(Seccion s : su) {
 					SeccionVistaAdministrador sa = new SeccionVistaAdministrador(s);
 					listaSeccion.addComponent(sa);
+					UI.getCurrent().getNavigator().addView(s.getTitulo() + "Adm", new AdministradorClase(new Lista_Tema_V_Administrador(s.getIdSeccion())));
 				}
 			}
 			
@@ -41,6 +43,7 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 				for(Seccion s : sec) {
 					SeccionVistaAdministrador sa = new SeccionVistaAdministrador(s);
 					listaSeccion.addComponent(sa);
+					UI.getCurrent().getNavigator().addView(s.getTitulo() + "Adm", new AdministradorClase(new Lista_Tema_V_Administrador(s.getIdSeccion())));
 				}
 			}
 			
@@ -48,6 +51,7 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 				for(Seccion s : secM) {
 					SeccionVistaAdministrador sa = new SeccionVistaAdministrador(s);
 					listaSeccion.addComponent(sa);
+					UI.getCurrent().getNavigator().addView(s.getTitulo() + "Adm", new AdministradorClase(new Lista_Tema_V_Administrador(s.getIdSeccion())));
 				}
 			}
 			
@@ -55,6 +59,7 @@ public class Lista_Seccion_V_administrador extends Lista_Seccion_V_Moderador {
 				for(Seccion s : secA) {
 					SeccionVistaAdministrador sa = new SeccionVistaAdministrador(s);
 					listaSeccion.addComponent(sa);
+					UI.getCurrent().getNavigator().addView(s.getTitulo() + "Adm", new AdministradorClase(new Lista_Tema_V_Administrador(s.getIdSeccion())));
 				}
 			}
 		}	

@@ -20,7 +20,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 	private Label _fechaCreacion;
 	private Label _pagina;
 	private Button _crearMensaje;
-	private Button _volverTema;
+	protected Button _volverTema;
 	public TemaClase _Tema;
 	//public Vector<Buscador_mensaje> _list_Buscador_mensaje = new Vector<Buscador_mensaje>();
 	public Vector<MensajeClase> _list_Mensaje = new Vector<MensajeClase>();
@@ -45,7 +45,6 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				System.out.println(te.getSeccion_tema().getTitulo()+"/"+te.getTitulo());
 				
 				UI.getCurrent().getNavigator().navigateTo(te.getSeccion_tema().getTitulo());
 			}
@@ -91,16 +90,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			//_list_Mensaje.addElement(msj);
 			listaMensajeAdmin.addComponent(msj);
 		}
-		
-//		crearMensaje.addClickListener(new Button.ClickListener() {
-//			
-//			@Override
-//			public void buttonClick(ClickEvent event) {
-//				// TODO Auto-generated method stub
-//				crearMensaje();
-//			}
-//			
-//		});
+
 		
 	}
 	
@@ -113,10 +103,6 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		buscadorBoton.setVisible(true);
 	}
 
-//	public void crearMensaje() {
-//		UI.getCurrent().getNavigator().navigateTo("crearMensaje");
-//	}
-	
 	public void buscarMensaje(int aIdTema) throws PersistentException {
 		
 		List<Mensaje> mb = iUsrNR.buscarMensaje(buscadorMensaje.getValue(), aIdTema);

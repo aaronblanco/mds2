@@ -10,7 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 
 public class SeccionVistaAdministrador extends SeccionVistaModerador {
-//	private Button _eliminarSeccion;
+	private Button _eliminarSeccion;
 //	private Listener _listaSeccionAdmin;
 	public Lista_Seccion_V_administrador _unnamed_Lista_Seccion_V_administrador_;
 	public Lista_Tema_V_Administrador _unnamed_Lista_Tema_V_Administrador_;
@@ -22,7 +22,23 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 	
 	public SeccionVistaAdministrador(Seccion s) throws PersistentException {
 		super(s);
-		eliminarSeccion.addClickListener(new Button.ClickListener() {
+		_nombreSeccion.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+			
+				try {
+					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() +"Adm", new AdministradorClase(new Lista_Tema_V_Administrador(s.getIdSeccion())));
+					UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption()+"Adm");
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		_eliminarSeccion.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -43,6 +59,7 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 	
 	private void Inicializar() {
 		eliminarSeccion.setVisible(true);
+		_eliminarSeccion = eliminarSeccion;
 
 	}
 	public void eliminarSeccion(int idSec) throws PersistentException {

@@ -74,6 +74,25 @@ public class Tema_UR extends TemaClase {
 				}
 			}
 		});	
+		
+		this._titulo.addClickListener(new Button.ClickListener() {
+
+            @Override
+            public void buttonClick(ClickEvent event) {
+                // TODO Auto-generated method stub
+                
+            	try {
+					UI.getCurrent().getNavigator().addView(_nombreSeccion + "Usr/" + _titulo.getCaption(), new Usuario_registrado(new Lista_Mensaje_V_Usuario_Reg(it.getIdTema())));
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				UI.getCurrent().getNavigator().navigateTo(_nombreSeccion+ "Usr/" + _titulo.getCaption());
+            	
+            	
+            }
+
+        });
 	}
 
 	private void Inicializar() {
