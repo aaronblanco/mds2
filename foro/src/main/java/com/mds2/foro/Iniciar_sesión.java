@@ -143,9 +143,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
 				
 				
-			}
-				
-			else if(Mod != null) {
+			}else if(Mod != null) {
 				Sesion.setNOMBRESESION(_nombreUsuario.toString());
 				ModeradorClase mod =  new ModeradorClase();
 				UI.getCurrent().getNavigator().addView("Pagina principalMod", new ModeradorClase());
@@ -153,15 +151,9 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), mod);
 			
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
-			}
-			
-			
-				else if(idU > 0) {
+			}else if(idU > 0) {
 				
-			
 				try {
-					
-					
 				
 					UI.getCurrent().getNavigator().addView("Cerrar sesiónUsr", new Usuario_no_registrado());	
 					
@@ -174,7 +166,6 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}		
-				
 					UI.getCurrent().getNavigator().navigateTo("");
 				}
 			

@@ -18,7 +18,5 @@ public interface iModerador extends iBanner_Usuario_registrado, iMenu_moderador 
 
 	public List cargarMensajePropio(int aIdTema, int aIdUsuario) throws PersistentException;
 
-	public Moderador obtenerPerfilModerador(int aIdUser);
-
 	public boolean ocultarMensaje(int aIdMensaje) throws PersistentException;
 }

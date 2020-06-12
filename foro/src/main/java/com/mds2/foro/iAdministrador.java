@@ -37,8 +37,6 @@ public interface iAdministrador extends iBanner_general, iMenu_UR {
 
 	public List cargarRespuestas(int aIdMensaje) throws PersistentException;
 
-	public Administrador obtenerPerfilAdmin(int aIdUser);
-
 	public boolean subirAnuncio(String aAnuncioURL) throws PersistentException;
 
 	public boolean anadirAnuncio(int aIdAnuncio, boolean aPublicado) throws PersistentException;

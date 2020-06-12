@@ -80,10 +80,6 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdMsg.cargarRespuestas(aIdMensaje);
 	}
 
-	public Administrador obtenerPerfilAdmin(int aIdUser) {
-		//return bdUsr.obtenerPerfilAdmin(aIdUser);
-		return null;
-	}
 
 	public boolean subirAnuncio(String aAnuncioURL) throws PersistentException {
 		return bdAn.subirAnuncio(aAnuncioURL);
@@ -96,18 +92,6 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 	public boolean eliminarAnuncio(int aIdAnuncio, boolean aPublicado) throws PersistentException {
 		return bdAn.eliminarAnuncio(aIdAnuncio, aPublicado);
 	}
-
-////	public List cargarSeccionesMod(String aAccesibilidadPub, Object aAccesibilidadPriv, String aAccesibilidadOc) {
-////		bdSec.cargar
-////	}
-//
-////	public List cargarTemasMod(int aIdSeccion, String aAccesibilidadPub, String aAccesibilidadPriv, String aAccesibilidadOc) {
-////		throw new UnsupportedOperationException();
-////	}
-////
-////	public List cargarMensajeMod(int aIdTema, String aAccesibilidadPub) {
-////		throw new UnsupportedOperationException();
-////	}
 
 	public List cargarUsuarioAmonestado() throws PersistentException {
 		return bdUsr.cargarUsuarioAmonestado();
@@ -127,11 +111,6 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 
 	public List cargarMensajePropio(int aIdTema, int aIdUsuario) throws PersistentException {
 		return bdMsg.cargarMensajeCreado(aIdTema, aIdUsuario);
-	}
-
-	public Moderador obtenerPerfilModerador(int aIdUser) {
-		//poblemas con la vida
-		return null;
 	}
 
 	public boolean ocultarMensaje(int aIdMensaje) throws PersistentException {
@@ -242,14 +221,6 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 
 	public List buscarUsuario(String aKeyword) throws PersistentException {
 		return bdUsr.buscarUsuario(aKeyword);
-	}
-
-	public Usuario_registrado obtenerPerfilUsuario(int aIdUser) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Moderador obtenerPerfilMod(int aIdUser) {
-		throw new UnsupportedOperationException();
 	}
 
 	public boolean eliminarNotificacion(int aIdNotificacion) throws PersistentException {

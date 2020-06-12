@@ -56,12 +56,6 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public List cargarRespuestas(int aIdMensaje)throws PersistentException;
 
-	public Usuario_registrado obtenerPerfilUsuario(int aIdUser);
-
-	public AdministradorClase obtenerPerfilAdmin(int aIdUser);
-
-	public ModeradorClase obtenerPerfilMod(int aIdUser);
-
 	public boolean eliminarNotificacion(int aIdNotificacion) throws PersistentException;
 
 	public boolean eliminarTicket(int aIdTicket) throws PersistentException;
