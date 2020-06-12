@@ -273,8 +273,8 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdTema.cargarTemasUNR(aIdSeccion, aPublico, aPrivado, aOculto, aEliminado);
 	}
 
-	public List cargarMensajeUNR(int aIdTema, boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
-		return bdMsg.cargarMensajeUNR(aIdTema, aPublico, aPrivado, aOculto, aEliminado);
+	public List cargarMensajeUNR(int aIdTema, boolean aPublico, boolean aEliminado) throws PersistentException {
+		return bdMsg.cargarMensajeUNR(aIdTema, aPublico, aEliminado);
 	}
 
 	public boolean recuperarPassword(String aEmail) {

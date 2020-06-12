@@ -39,18 +39,15 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 			
 		});	
 		
-		List<Mensaje> m = iUsrNR.cargarMensajeUNR(idTema, false, true, false, false);
+//		List<Mensaje> m = iUsrNR.cargarMensajeUNR(idTema, false, true, false, false);
+//		
+//		if(!m.isEmpty()) {
+//			for(Mensaje me : m) {
+//				Mensaje_UR mur = new Mensaje_UR(me);
+//				listaMensajeAdmin.addComponent(mur);
+//			}
+//		}
 		
-		if(!m.isEmpty()) {
-			for(Mensaje me : m) {
-				Mensaje_UR mur = new Mensaje_UR(me);
-				listaMensajeAdmin.addComponent(mur);
-			}
-		}
-		//COSAS
-		listaMensajeAdmin.addComponent((Component) iUsrNR.cargarMensajeUNR(1, false, true, false, false));
-		//NO ESTOY NADA SEGURO DE SI ESTO TIENE SENTIDO VALE?
-		listaMensajeAdmin.forEach((Consumer<? super Component>) iUsrNR.cargarRespuestas(1));
 		
 	}
 	

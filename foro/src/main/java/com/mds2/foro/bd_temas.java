@@ -19,7 +19,8 @@ public class bd_temas {
 			
 			if(aPublico) {
 				com.mds2.foro.Tema[] temas = com.mds2.foro.TemaDAO.listTemaByQuery("Publico = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:temas) {
+				_contiene_temas = new Vector<Tema>(); 
+				for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				
@@ -28,21 +29,24 @@ public class bd_temas {
 				
 			}else if(aPrivado) {
 				com.mds2.foro.Tema[] temas = com.mds2.foro.TemaDAO.listTemaByQuery("Privado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:temas) {
+				_contiene_temas = new Vector<Tema>(); 
+				for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				
 				return  _contiene_temas;
 			}else if(aOculto) {
 				com.mds2.foro.Tema[] temas = com.mds2.foro.TemaDAO.listTemaByQuery("Oculto = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:temas) {
+				_contiene_temas = new Vector<Tema>(); 
+				for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				
 				return  _contiene_temas;
 			}else if(aEliminado) {
 				com.mds2.foro.Tema[] temas= com.mds2.foro.TemaDAO.listTemaByQuery("Eliminado = '"+1+"' AND SeccionIdSeccion = '"+aIdSeccion+"'", "Titulo");
-				 for(Tema s:temas) {
+				_contiene_temas = new Vector<Tema>(); 
+				for(Tema s:temas) {
 						_contiene_temas.add(s);
 					}
 				
@@ -55,9 +59,9 @@ public class bd_temas {
 		return _contiene_temas;
 	}
 
-	public List cargarTemasSeccionPrivada(int aIdSeccion) {
-		throw new UnsupportedOperationException();
-	}
+//	public List cargarTemasSeccionPrivada(int aIdSeccion) {
+//		throw new UnsupportedOperationException();
+//	}
 
 	public boolean crearTema(String aTitulo, String aSubtitulo, String aDescripcion, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();

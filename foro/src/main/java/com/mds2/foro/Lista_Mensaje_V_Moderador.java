@@ -18,13 +18,13 @@ public class Lista_Mensaje_V_Moderador extends Lista_Mensaje_V_Usuario_Reg {
 	public Lista_Mensaje_V_Moderador(int idTema) throws PersistentException {
 		super(idTema);
 		
-		List<Mensaje> msg = iUsrNR.cargarMensajeUNR(idTema, false, false, true, false);
-		
-		if(!msg.isEmpty()) {
-			for(Mensaje m :msg) {
-				MensajeClase me = new MensajeClase(m);
-				listaMensajeAdmin.addComponent(me);
-			}
-		}
+//		List<Mensaje> msg = iUsrNR.cargarMensajeUNR(idTema, false, false, true, false);
+//		
+//		if(!msg.isEmpty()) {
+//			for(Mensaje m :msg) {
+//				MensajeClase me = new MensajeClase(m);
+//				listaMensajeAdmin.addComponent(me);
+//			}
+//		}
 	}
 }
