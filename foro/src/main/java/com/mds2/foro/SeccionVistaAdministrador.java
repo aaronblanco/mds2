@@ -38,6 +38,7 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 			}
 		});
 		
+		_eliminarSeccion = eliminarSeccion;
 		_eliminarSeccion.addClickListener(new Button.ClickListener() {
 			
 			@Override

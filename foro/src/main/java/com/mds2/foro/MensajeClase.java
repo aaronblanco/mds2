@@ -46,7 +46,8 @@ public class MensajeClase extends Mensaje_ventana implements View {
 		this._verPerfil.setCaption(msj.getUsuarios().getNombreUsuario());
 		this._idMensaje = msj.getIdMensaje();
 		this._cuerpoMsg.setValue(msj.getContenido());
-		
+		this.meGustaB.setCaption("Me gusta: "+msj.getNumMg());
+		this._verPerfil = irPerfil;
 		
 		
 		

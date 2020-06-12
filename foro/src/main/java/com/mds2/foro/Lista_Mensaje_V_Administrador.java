@@ -19,14 +19,31 @@ public class Lista_Mensaje_V_Administrador extends Lista_Mensaje_V_Moderador{
 	public Lista_Mensaje_V_Administrador(int idTema) throws PersistentException {
 		super(idTema);
 		
+		listaMensajeAdmin.removeAllComponents();
+		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
+		System.out.println(t.toString());
+		
+		for(Mensaje it: t) {
+			Mensaje_Administrador msj = new Mensaje_Administrador(it);
+			listaMensajeAdmin.addComponent(msj);
+		}
+		
+		t = iUsr.cargarMensajeCreado(idTema, Sesion.getIDSESION());
+		System.out.println(t.toString());
+		for(Mensaje it : t) {
+			Mensaje_UR_creado muc = new Mensaje_UR_creado(it);
+			listaMensajeAdmin.addComponent(muc);
+		}
 		List<Mensaje> msg = iUsrNR.cargarMensajeUNR(idTema, false, true);
 		
 		if(!msg.isEmpty()) {
 			for(Mensaje m : msg) {
-				MensajeClase me = new MensajeClase(m);
+				Mensaje_Administrador me = new Mensaje_Administrador(m);
 				listaMensajeAdmin.addComponent(me);
 			}
 		}
+		
+		
 		
 		_volverTema.addClickListener(new Button.ClickListener() {
 			Tema te = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
