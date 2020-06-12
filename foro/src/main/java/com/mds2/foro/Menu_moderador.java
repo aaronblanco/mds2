@@ -10,29 +10,16 @@ import com.vaadin.ui.UI;
 
 //import Package2.iMenu_moderador;
 
-public class Menu_moderador extends Menu_UR implements View {
+public class Menu_moderador extends Menu_UR implements View{
 //	public iMenu_moderador _iMenu_moderador;
 	public Panel_de_administración_vista_moderador _unnamed_Panel_de_administración_vista_moderador_;
 	public Menu_moderador()throws PersistentException{
 		
 	
 	
-		//this.removeComponent(this.components.get(1));
-		removeAllComponents();
-		Foro_desplegable foro = new Foro_desplegable();
-	    Tree<String> var = foro.listaDesplegable();
-	    TreeData<String> datos = var.getTreeData();
-	   // datos.removeItem("Mi perfil");
-	    datos.addItem(null, "Mi perfil");
-		datos.addItem(null, "Cerrar sesión");
+		Tree<String> var = new Tree<String>();
 		
-		System.out.println("ESTAMOS AQUI ADMIN");
-		
-	    datos.addItem(null, "Mi perfil Administrador");
-		datos.addItem(null, "Panel de administración mod");
-		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
-		
-		var.setDataProvider( inMemoryDataProvider);
+	
 		var.addItemClickListener( event -> UI.getCurrent().getNavigator().navigateTo(event.getItem() + "Adm") );
 
 		this.addComponent(var);
@@ -40,7 +27,19 @@ public class Menu_moderador extends Menu_UR implements View {
 		
 	}
 	
-	 
+	@Override
+	public Tree<String> listaDesplegable() {
+		// TODO Auto-generated method stub
+		Tree<String> var = new Tree<String>();
+	    TreeData<String> datos = var.getTreeData();
+	    datos.clear();
+	  
+		datos.addItems(null, "Mi perfil", "Pagina principal", "Panel de administración mod","Cerrar sesión" ); 
+		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
+		System.out.println("ESTAMOS AQUI");
+		var.setDataProvider( inMemoryDataProvider);
+		return var;
+	}
 		
 	
 	
