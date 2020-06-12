@@ -31,5 +31,23 @@ public class Lista_Mensaje_V_Moderador extends Lista_Mensaje_V_Usuario_Reg {
 			}
 			
 		});	
+		
+		
+		listaMensajeAdmin.removeAllComponents();
+		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
+		System.out.println(t.toString());
+		
+		for(Mensaje it: t) {
+			Mensaje_moderador msj = new Mensaje_moderador(it);
+			listaMensajeAdmin.addComponent(msj);
+		}
+		
+		t = iUsr.cargarMensajeCreado(idTema, Sesion.getIDSESION());
+		System.out.println(t.toString());
+		for(Mensaje it : t) {
+			Mensaje_UR_creado muc = new Mensaje_UR_creado(it);
+			listaMensajeAdmin.addComponent(muc);
+		}
+		
 	}
 }

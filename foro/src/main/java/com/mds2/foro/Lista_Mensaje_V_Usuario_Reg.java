@@ -21,7 +21,7 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 	//public Vector<Ver_perfil_de_usuario> _list_Ver_perfil_de_usuario = new Vector<Ver_perfil_de_usuario>();
 	public Vector<Mensaje_UR> _list_Mensaje_UR = new Vector<Mensaje_UR>();
 	public CreacionMensaje _unnamed_CreacionMensaje_;
-	
+	iUsuario iUsr = new DB_Main();
 	
 	public Lista_Mensaje_V_Usuario_Reg(int idTema) throws PersistentException {
 		
@@ -51,6 +51,21 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 			
 		});	
 		
+		listaMensajeAdmin.removeAllComponents();
+		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
+		System.out.println(t.toString());
+		
+		for(Mensaje it: t) {
+			Mensaje_UR msj = new Mensaje_UR(it);
+			listaMensajeAdmin.addComponent(msj);
+		}
+		
+		t = iUsr.cargarMensajeCreado(idTema, Sesion.getIDSESION());
+		System.out.println(t.toString());
+		for(Mensaje it : t) {
+			Mensaje_UR_creado muc = new Mensaje_UR_creado(it);
+			listaMensajeAdmin.addComponent(muc);
+		}
 		
 	}
 	

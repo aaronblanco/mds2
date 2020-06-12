@@ -17,7 +17,7 @@ public class Mensaje_UR extends MensajeClase {
 	public Lista_Ultimo_mensaje _unnamed_Lista_Ultimo_mensaje_;
 	iUsuario iUsr = new DB_Main();
 	iAdministrador iA = new DB_Main();
-	private int idM;
+	protected int idM;
 	
 	public Mensaje_UR() {
 		super();
@@ -40,7 +40,7 @@ public class Mensaje_UR extends MensajeClase {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					darMeGusta();
+					darMeGusta(idM);
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -73,15 +73,19 @@ public class Mensaje_UR extends MensajeClase {
 		// TODO Auto-generated constructor stub
 		super(me);
 		idM = me.getIdMensaje();
-		_darMeGusta = meGustaB;
-		_responder = responderMensaje;
-		_notificarAdministrador = notificarAdminB;
 		
 		meGustaB.setVisible(true);
 		
 		responderMensaje.setVisible(true);
 		
 		notificarAdminB.setVisible(true);
+		
+		_darMeGusta = meGustaB;
+		_responder = responderMensaje;
+		_notificarAdministrador = notificarAdminB;
+		
+
+		
 				
 		_darMeGusta.addClickListener(new Button.ClickListener() {
 			
@@ -89,7 +93,7 @@ public class Mensaje_UR extends MensajeClase {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					darMeGusta();
+					darMeGusta(idM);
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -118,8 +122,8 @@ public class Mensaje_UR extends MensajeClase {
 		});
 	}
 
-	public void darMeGusta() throws PersistentException {
-		iUsr.darMeGustaMensaje(idM, Sesion.getIDSESION());
+	public void darMeGusta(int idMG) throws PersistentException {
+		iUsr.darMeGustaMensaje(idMG, Sesion.getIDSESION());
 	}
 
 	public void responderMsg() {
