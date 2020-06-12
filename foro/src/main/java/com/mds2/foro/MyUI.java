@@ -35,7 +35,8 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	
-    //	Sesion.setIDSESION(1);
+    	Sesion.setIDSESION(-1);
+    	Sesion.setADMINISTRADOR(false);
     	Usuario_no_registrado pag = null;
     	
     	try {
@@ -71,41 +72,12 @@ public class MyUI extends UI {
     	
     	
     	
-    	/*
-    	try {
-			navigator.addView("Mi perfil Administrador", new AdministradorClase(new Mi perfil(Sesion.getIDSESION())));
-		} catch (PersistentException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
-     	
-    	try {
-			navigator.addView("sistemaTickets", new Usuario_registrado(new Sistema_de_tickets_vista_usuario_registrado()));	
-			navigator.addView("crearTicket", new Usuario_registrado(new CreacionTicket()));
-		} catch (PersistentException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+    
+    
      	 
-        try {
-			navigator.addView("Panel de administración mod", new ModeradorClase(new Panel_de_administración_vista_moderador()) );
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        try {
-			navigator.addView("Panel de administración", new AdministradorClase(new Panel_de_administración_vista_administrador()) );
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        try {
-			navigator.addView("Panel de publicidad", new AdministradorClase(new Sistema_de_publicidad()) );
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-         
+      
+      
+        
          
          
          

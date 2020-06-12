@@ -19,9 +19,10 @@ public class Menu_moderador extends Menu_UR implements View{
 	
 		Tree<String> var = new Tree<String>();
 		
-	
-		var.addItemClickListener( event -> UI.getCurrent().getNavigator().navigateTo(event.getItem() + "Adm") );
-
+		if(Sesion.getADMINISTRADOR())
+			var.addItemClickListener( event -> UI.getCurrent().getNavigator().navigateTo(event.getItem() + "Adm") );
+		else
+			var.addItemClickListener( event -> UI.getCurrent().getNavigator().navigateTo(event.getItem() + "Mod") );
 		this.addComponent(var);
 		
 		
@@ -34,7 +35,7 @@ public class Menu_moderador extends Menu_UR implements View{
 	    TreeData<String> datos = var.getTreeData();
 	    datos.clear();
 	  
-		datos.addItems(null, "Mi perfil", "Pagina principal", "Panel de administración mod","Cerrar sesión" ); 
+		datos.addItems(null, "Mi perfil", "Pagina principal", "Panel de administración","Cerrar sesión" ); 
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 		System.out.println("ESTAMOS AQUI");
 		var.setDataProvider( inMemoryDataProvider);
