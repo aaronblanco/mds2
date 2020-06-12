@@ -69,18 +69,11 @@ public class MyUI extends UI {
 			e1.printStackTrace();
 		}
     	
-    	try {
-			navigator.addView("Pagina-principalUsr", new Usuario_registrado());
-			navigator.addView("Mi-perfilUsr", new Usuario_registrado(new Mi_perfil()));  
-		} catch (PersistentException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
     	
     	
     	/*
     	try {
-			navigator.addView("Mi perfil Administrador", new AdministradorClase(new Mi_perfil(Sesion.getIDSESION())));
+			navigator.addView("Mi perfil Administrador", new AdministradorClase(new Mi perfil(Sesion.getIDSESION())));
 		} catch (PersistentException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -93,11 +86,6 @@ public class MyUI extends UI {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-    
-    	
-    	  
-    	
-     	 
      	 
         try {
 			navigator.addView("Panel de administración mod", new ModeradorClase(new Panel_de_administración_vista_moderador()) );
