@@ -13,7 +13,7 @@ import com.vaadin.ui.UI;
 
 
 public class SeccionClase extends Seccion_ventana implements View {
-	private Button _nombreSeccion;
+	protected Button _nombreSeccion;
 	private String _imagenSeccion;
 	private Listener _listaSeccion;
 	public Lista_Seccion _secciones;

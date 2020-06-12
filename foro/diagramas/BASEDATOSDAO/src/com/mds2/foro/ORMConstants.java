@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -30,7 +30,7 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_TEMA_CONTIENE_MENSAJES = -1443905388;
 	
-	final int KEY_TEMA_SECCION_MENSAJE = 1168090076;
+	final int KEY_TEMA_SECCION_TEMA = 513348584;
 	
 	final int KEY_TEMA_USUARIOS = 1362558495;
 	

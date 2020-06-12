@@ -26,16 +26,34 @@ public class Lista_Tema_V_Moderador extends Lista_Tema_V_Usuario_Reg {
 		
 		super(idSeccion);
 
-		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, false, false, true, false);
-	
+		listaTemas.removeAllComponents();
 		
-		for(Tema it: t) {
-			TemaVistaModerador tema = new TemaVistaModerador(it);
-			listaTemas.addComponent(tema);
+		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, true, false, false, false);
 		
+		List<Tema> tu = iUsrNR.cargarTemasUNR(idSeccion, false, true, false, false);
+		
+		List<Tema> tm = iUsrNR.cargarTemasUNR(idSeccion, false, false, true, false);
+		
+		if(!t.isEmpty()) {
+			for(Tema it: t) {
+				TemaVistaModerador tema = new TemaVistaModerador(it);
+				listaTemas.addComponent(tema);
+			}
+		}	
+		
+		if(!tu.isEmpty()) {
+			for(Tema it: tu) {
+				TemaVistaModerador tema = new TemaVistaModerador(it);
+				listaTemas.addComponent(tema);
+			}
 		}
 		
+		if(!tm.isEmpty()) {
+			for(Tema it: t) {
+				TemaVistaModerador tema = new TemaVistaModerador(it);
+				listaTemas.addComponent(tema);
+			
+			}
+		}	
 	}
-
-	
 }

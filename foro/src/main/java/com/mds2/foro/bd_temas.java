@@ -59,30 +59,31 @@ public class bd_temas {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean crearTema(String aTitulo, String aSubtitulo, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
+	public boolean crearTema(String aTitulo, String aSubtitulo, String aDescripcion, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Seccion sec = com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
 			Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdTemaPropietario);
-			Tema tema = com.mds2.foro.TemaDAO.createTema();
+			com.mds2.foro.Tema tema = com.mds2.foro.TemaDAO.createTema();
 			
 			tema.setTitulo(aTitulo);
-			tema.setDescripcion(aSubtitulo);
+			
 			tema.setFecha(System.currentTimeMillis());
 			tema.setIdTemaPropietario(aIdTemaPropietario);
-		
+			tema.setDescripcion(aDescripcion);
 			tema.setUsuarios(u);
 			tema.setPublico(true);
-			tema.setSeccion_mensaje(sec);
+			tema.setSeccion_tema(sec);
 			tema.setPublico(true);
 			tema.setPrivado(false);
 			tema.setOculto(false);
 			tema.setEliminado(false);
 			sec.contiene_temas.add(tema);
-			
+		
 			com.mds2.foro.TemaDAO.save(tema);
 			System.out.println("has creado un tema guapisimo que guapo");
 			u.pro_temas.add(tema);
+			
 			com.mds2.foro.UsuariosDAO.save(u);
 			
 			sec.contiene_temas.add(tema);

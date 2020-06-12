@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -20,8 +20,8 @@ import org.orm.criteria.*;
 
 public class TemaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idTema;
-	public final IntegerExpression seccion_mensajeId;
-	public final AssociationExpression seccion_mensaje;
+	public final IntegerExpression seccion_temaId;
+	public final AssociationExpression seccion_tema;
 	public final IntegerExpression usuariosId;
 	public final AssociationExpression usuarios;
 	public final StringExpression titulo;
@@ -37,8 +37,8 @@ public class TemaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public TemaDetachedCriteria() {
 		super(com.mds2.foro.Tema.class, com.mds2.foro.TemaCriteria.class);
 		idTema = new IntegerExpression("idTema", this.getDetachedCriteria());
-		seccion_mensajeId = new IntegerExpression("seccion_mensaje.idSeccion", this.getDetachedCriteria());
-		seccion_mensaje = new AssociationExpression("seccion_mensaje", this.getDetachedCriteria());
+		seccion_temaId = new IntegerExpression("seccion_tema.idSeccion", this.getDetachedCriteria());
+		seccion_tema = new AssociationExpression("seccion_tema", this.getDetachedCriteria());
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this.getDetachedCriteria());
 		usuarios = new AssociationExpression("usuarios", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
@@ -55,8 +55,8 @@ public class TemaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public TemaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, com.mds2.foro.TemaCriteria.class);
 		idTema = new IntegerExpression("idTema", this.getDetachedCriteria());
-		seccion_mensajeId = new IntegerExpression("seccion_mensaje.idSeccion", this.getDetachedCriteria());
-		seccion_mensaje = new AssociationExpression("seccion_mensaje", this.getDetachedCriteria());
+		seccion_temaId = new IntegerExpression("seccion_tema.idSeccion", this.getDetachedCriteria());
+		seccion_tema = new AssociationExpression("seccion_tema", this.getDetachedCriteria());
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this.getDetachedCriteria());
 		usuarios = new AssociationExpression("usuarios", this.getDetachedCriteria());
 		titulo = new StringExpression("titulo", this.getDetachedCriteria());
@@ -70,8 +70,8 @@ public class TemaDetachedCriteria extends AbstractORMDetachedCriteria {
 		contiene_mensajes = new CollectionExpression("ORM_contiene_mensajes", this.getDetachedCriteria());
 	}
 	
-	public SeccionDetachedCriteria createSeccion_mensajeCriteria() {
-		return new SeccionDetachedCriteria(createCriteria("seccion_mensaje"));
+	public SeccionDetachedCriteria createSeccion_temaCriteria() {
+		return new SeccionDetachedCriteria(createCriteria("seccion_tema"));
 	}
 	
 	public UsuariosDetachedCriteria createUsuariosCriteria() {

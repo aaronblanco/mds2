@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;

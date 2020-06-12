@@ -21,14 +21,30 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 		listaSeccion.removeAllComponents();
 		if(Sesion.getIDSESION() > 0) {
 			
+			List<Seccion> su = iUsrNR.cargarListaSecciones(true, false, false, false);
+			
 			List<Seccion> sec = iUsrNR.cargarListaSecciones(false, true, false, false);
-		
+			
+			listaSeccion.removeAllComponents();
+			
+			if(!su.isEmpty()) {
+				for(Seccion s : su) {
+					SeccionVistaUR sur = new SeccionVistaUR(s);
+					listaSeccion.addComponent(sur);
+				}
+			}
+			
 			if(!sec.isEmpty()) {
 				for(Seccion s : sec) {
 					SeccionVistaUR sc = new SeccionVistaUR(s);
 					listaSeccion.addComponent(sc);
 				}
 			}
-		}	
+			
+			
+			
+		}
+		
+		
 	}
 }

@@ -6,13 +6,15 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.RichTextArea;
 import com.vaadin.ui.TextField;
 
 //import Package.Lista_Tema_V_Usuario_Reg;
 
 public class CreacionTema extends Creacion_tema_ventana implements View {
-	private String _tituloTema;
-	private String _subtituloTema;
+	private TextField _tituloTema;
+	private TextField _subtituloTema;
+	private RichTextArea _descripcion;
 	private Button _enviar;
 	private Button _cancelar;
 	public Lista_Tema_V_Usuario_Reg _unnamed_Lista_Tema_V_Usuario_Reg_;
@@ -23,9 +25,10 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 		
 		this._enviar = crearTema;
 		this._cancelar = cancelarCreacionTema;
-		this._tituloTema = titulo.getValue();
-		this._subtituloTema = subtitulo.getValue();
+		this._tituloTema = titulo;
 		
+		this._subtituloTema = subtitulo;
+		this._descripcion = textoTema;
 		
 		_enviar.addClickListener(new Button.ClickListener() {
 			
@@ -44,8 +47,6 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 		
 		_cancelar.addClickListener(new Button.ClickListener() {
 			
-			//cancelar();
-			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -59,7 +60,7 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 	
 	//LA DESCRIPCION NO EXISTE EN VD 
 	public void enviar(int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
-		iUsr.crearTema(_tituloTema, _subtituloTema,  aIdSeccionPropietaria, aIdTemaPropietario);
+		iUsr.crearTema(_tituloTema.getValue(), _subtituloTema.getValue(), _descripcion.getValue(), aIdSeccionPropietaria, aIdTemaPropietario);
 	}
 
 	public void cancelar() {

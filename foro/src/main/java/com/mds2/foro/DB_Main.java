@@ -199,8 +199,8 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdUsr.cargarUsuario();
 	}
 
-	public boolean crearTema(String aTitulo, String aSubtitulo, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
-		return bdTema.crearTema(aTitulo, aSubtitulo, aIdSeccionPropietaria, aIdTemaPropietario);
+	public boolean crearTema(String aTitulo, String aSubtitulo, String aDescripcion, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
+		return bdTema.crearTema(aTitulo, aSubtitulo, aDescripcion, aIdSeccionPropietaria, aIdTemaPropietario);
 	}
 
 	public boolean crearMensaje(String aCuerpoMensaje, String aMediaURL, int aIdUsuario, int aIdTema) throws PersistentException {

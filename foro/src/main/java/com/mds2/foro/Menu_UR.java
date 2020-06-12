@@ -7,11 +7,12 @@ import com.vaadin.data.provider.DataProvider;
 import com.vaadin.data.provider.TreeDataProvider;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.View;
 import com.vaadin.ui.*;
 
 //import Package2.iMenu_UR;
 
-public class Menu_UR extends Menu_UNR_ventana{
+public class Menu_UR extends Menu_UNR_ventana implements View, Foro_desplegable{
 
 	private Button _desconectarse;
 	private TextField _foroDesplegable;
@@ -23,21 +24,16 @@ public class Menu_UR extends Menu_UNR_ventana{
 	
 	public Menu_UR() throws PersistentException{
 		
+	
 		
 		if(Sesion.getIDSESION() >= 1 ) {
 			this.removeAllComponents();
 
-	
-			Foro_desplegable foro = new Foro_desplegable();
-		    Tree<String> var = foro.listaDesplegable();
-		    TreeData<String> datos = var.getTreeData();
-		    datos.clear();
-		  
-			datos.addItems(null, "Mi perfil", "Pagina Principal", "Cerrar sesión"); 
-			TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
-			System.out.println("ESTAMOS AQUI");
-			var.setDataProvider( inMemoryDataProvider);
-			var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()+ "Usr"));
+			
+			Tree<String> var = listaDesplegable();
+			
+		    
+			var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem().toString() + "Usr"));
 			this.addComponent(var);
 		}
 
@@ -51,5 +47,22 @@ public class Menu_UR extends Menu_UNR_ventana{
 		throw new UnsupportedOperationException();
 	}
 
+
+
+	@Override
+	public Tree<String> listaDesplegable() {
+		// TODO Auto-generated method stub
+		Tree<String> var = new Tree<String>();
+	    TreeData<String> datos = var.getTreeData();
+	    datos.clear();
+	  
+		datos.addItems(null, "Mi perfil", "Pagina principal", "Cerrar sesión"); 
+		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
+		System.out.println("ESTAMOS AQUI");
+		var.setDataProvider( inMemoryDataProvider);
+		return var;
+	}
+	
+	
 
 }

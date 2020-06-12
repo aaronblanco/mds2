@@ -32,7 +32,7 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public List cargarUsuario() throws PersistentException;
 
-	public boolean crearTema(String aTitulo, String aSubtitulo, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException;
+	public boolean crearTema(String aTitulo, String aSubtitulo, String _aDescripcion, int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException;
 
 	public boolean crearMensaje(String aCuerpoMensaje, String aMediaURL, int aIdUsuario, int aIdTema) throws PersistentException;
 

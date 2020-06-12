@@ -1,5 +1,5 @@
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -15,7 +15,9 @@ public class CreateMDS11920PFBlancoRoblesData {
 			com.mds2.foro.Mensaje lcommds2foroMensaje = com.mds2.foro.MensajeDAO.createMensaje();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_videos, contiene_imagenes, eliminado, publico, idMedia, idPropietario, idTemaPropietario, numTotalMensajes, fechaCreacion, numMg, usuarios, tema_mensaje
 			com.mds2.foro.MensajeDAO.save(lcommds2foroMensaje);
-			
+			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.createUsuarios();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : usuariosAmigos, notificaciones, pro_secciones, pro_temas, usuarios, pro_mensajes, pro_tickets, oculto, publico, sancionado, amonestado
+			com.mds2.foro.UsuariosDAO.save(lcommds2foroUsuarios);
 			com.mds2.foro.Moderador lcommds2foroModerador = com.mds2.foro.ModeradorDAO.createModerador();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : idMod
 			com.mds2.foro.ModeradorDAO.save(lcommds2foroModerador);
@@ -23,9 +25,11 @@ public class CreateMDS11920PFBlancoRoblesData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_temas, eliminado, oculto, privado, publico, idPropietarioSeccion, fecha, usuarios
 			com.mds2.foro.SeccionDAO.save(lcommds2foroSeccion);
 			com.mds2.foro.Tema lcommds2foroTema = com.mds2.foro.TemaDAO.createTema();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_mensajes, eliminado, oculto, privado, publico, idTemaPropietario, fecha, usuarios, seccion_mensaje
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_mensajes, eliminado, oculto, privado, publico, idTemaPropietario, fecha, usuarios, seccion_tema
 			com.mds2.foro.TemaDAO.save(lcommds2foroTema);
-		
+			com.mds2.foro.Anuncio lcommds2foroAnuncio = com.mds2.foro.AnuncioDAO.createAnuncio();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : publicado
+			com.mds2.foro.AnuncioDAO.save(lcommds2foroAnuncio);
 			com.mds2.foro.Ticket lcommds2foroTicket = com.mds2.foro.TicketDAO.createTicket();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : cerrado, abierto, usuarios
 			com.mds2.foro.TicketDAO.save(lcommds2foroTicket);
@@ -41,15 +45,6 @@ public class CreateMDS11920PFBlancoRoblesData {
 			com.mds2.foro.videos lcommds2forovideos = com.mds2.foro.videosDAO.createVideos();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : mensaje_video
 			com.mds2.foro.videosDAO.save(lcommds2forovideos);
-		
-			com.mds2.foro.Usuarios lcommds2foroUsuarios = com.mds2.foro.UsuariosDAO.createUsuarios();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : usuariosAmigos, notificaciones, pro_secciones, pro_temas, usuarios, pro_mensajes, pro_tickets, oculto, publico, sancionado, amonestado
-			com.mds2.foro.UsuariosDAO.save(lcommds2foroUsuarios);
-			
-				
-			com.mds2.foro.Anuncio lcommds2foroAnuncio = com.mds2.foro.AnuncioDAO.createAnuncio();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : publicado
-			com.mds2.foro.AnuncioDAO.save(lcommds2foroAnuncio);
 			t.commit();
 		}
 		catch (Exception e) {

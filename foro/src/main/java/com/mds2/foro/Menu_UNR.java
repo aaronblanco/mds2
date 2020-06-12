@@ -12,7 +12,7 @@ import com.vaadin.ui.UI;
 
 //import Package2.iMenu_UNR;
 
-public class Menu_UNR extends Menu_UNR_ventana implements View {
+public class Menu_UNR extends Menu_UNR_ventana implements View, Foro_desplegable {
 //	private Button _iniciarSesion;
 //	private Button _registrarse;
 //	private TextField _foroDesplegable;
@@ -22,10 +22,9 @@ public class Menu_UNR extends Menu_UNR_ventana implements View {
 
 	public Menu_UNR() {
 		
+		Tree<String> var = listaDesplegable();
 		
-		Foro_desplegable foro = new Foro_desplegable();
-	
-		Tree<String> var = foro.listaDesplegable();
+		var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem().toString()));
 	    
 	    this.addComponent(var);
 	    
@@ -38,5 +37,20 @@ public class Menu_UNR extends Menu_UNR_ventana implements View {
 
 	public void registrarse() {
 		
+	}
+	@Override
+	public Tree<String> listaDesplegable() {
+		// TODO Auto-generated method stub
+		Tree<String> var = new Tree<String>();
+		TreeData<String> datos = var.getTreeData();
+	    datos.clear();
+	  
+		datos.addItems(null, "Iniciar sesion", "Registrarse", "Pagina principal"); 
+		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
+		System.out.println("ESTAMOS AQUI");
+		var.setDataProvider( inMemoryDataProvider);
+		
+		
+		return var;
 	}
 }
