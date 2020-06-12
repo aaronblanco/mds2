@@ -45,9 +45,9 @@ public class TemaClase extends Tema_ventana implements View{
 		this._creador = s.getUsuarios().getNombreUsuario();
 		
 		
-		this._fechaCreacionSeccion = s.getSeccion_mensaje().getFecha();
-		this._userCreadorSeccion = s.getSeccion_mensaje().getCreador();
-		this._nombreSeccion = s.getSeccion_mensaje().getTitulo();
+		this._fechaCreacionSeccion = s.getSeccion_tema().getFecha();
+		this._userCreadorSeccion = s.getSeccion_tema().getCreador();
+		this._nombreSeccion = s.getSeccion_tema().getTitulo();
 		this._idTema = s.getIdTema();
 
         this._titulo.addStyleName("link");

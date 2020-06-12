@@ -35,10 +35,12 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
+				System.out.println(_tituloTema.getValue());
 				try {
 					enviar(aIdSeccionPropietaria, aIdTemaPropietario);
-					UI.getCurrent().getNavigator().addView(_tituloTema.toString(), new Usuario_registrado(new Lista_Mensaje(aIdTemaPropietario)));
-					UI.getCurrent().getNavigator().navigateTo(_tituloTema.toString());
+					UI.getCurrent().getNavigator().addView(_tituloTema.getValue(), new Usuario_registrado(new Lista_Mensaje(aIdTemaPropietario)));
+					UI.getCurrent().getNavigator().navigateTo(_tituloTema.getValue());
+					
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
