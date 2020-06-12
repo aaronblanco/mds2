@@ -51,6 +51,7 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	
 	
 	private void Inicializar() throws PersistentException {
+
 		buscarSeccionB.setVisible(true);
 		crearNuevaSeccion.setVisible(false);
 		
@@ -63,7 +64,12 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		//	_list_Seccion.add(tal);
 			listaSeccion.addComponent(tal);
 			listaSeccion.toString();
+			System.out.println(it.getTitulo());
+			UI.getCurrent().getNavigator().addView(it.getTitulo(), new Usuario_no_registrado(new Lista_Tema(it.getIdSeccion())));
+
 		}
+		
+		
 		
 		
 	}

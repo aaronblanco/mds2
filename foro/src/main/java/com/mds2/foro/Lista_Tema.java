@@ -15,10 +15,10 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Component;
 
 public class Lista_Tema extends Lista_Tema_ventana implements View {
-	//private Orden _orden = DCLv3.Orden.Relevancia;
 	public SeccionClase _sección;
 	public Vector<TemaClase> _list_Tema = new Vector<TemaClase>();
 	//public Vector<Buscador_tema> _list_Buscador_tema = new Vector<Buscador_tema>();
+	
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
 
@@ -46,6 +46,8 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 			for(Tema it: t) {
 				TemaClase tema = new TemaClase(it);
 				listaTemas.addComponent(tema);
+				UI.getCurrent().getNavigator().addView(it.getSeccion_tema().getTitulo()+"/"+it.getTitulo(), new Usuario_no_registrado(new Lista_Mensaje(it.getIdTema())));
+
 			}
 		}
 
@@ -57,11 +59,13 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 	
 	private void Inicializar() {
 		// TODO Auto-generated method stub
-		crearTemaB.setVisible(true);
+		crearTemaB.setVisible(false);
 		
 		statusTema.setVisible(false);
 		
 		buscarTemaB.setVisible(true);
+		
+		
 		
 	}
 
