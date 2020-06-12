@@ -74,6 +74,7 @@ public class TicketClase extends Ticket_ventana implements View{
 		this._cerrarTicket = cerrarTicket;
 		
 		this._cuerpoTicket.setValue(t.getTexto());
+		txtTicket.setValue(t.getTexto());
 		
 		_enviar.addClickListener(new Button.ClickListener() {
 			

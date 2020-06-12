@@ -15,9 +15,7 @@ public class Lista_Ticket extends Lista_Ticket_ventana{
 	public Lista_Ticket() throws PersistentException {
 		
 		List<Ticket> lista = iUsr.cargarTicket(Sesion.getIDSESION());
-		System.out.println("HOLA HE CREADO UNA LSITA DE TICKETS");
 		if(!lista.isEmpty()) {
-			System.out.println("HOLA ME HE TRAIDO TUS TICKETS");
 			for(Ticket t : lista) {
 				TicketClase tc = new TicketClase(t);
 				sistemaTicketsLista.addComponent(tc);
