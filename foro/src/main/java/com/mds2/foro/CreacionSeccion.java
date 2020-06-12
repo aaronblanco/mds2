@@ -29,8 +29,6 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 		
 		_enviar.addClickListener(new Button.ClickListener() {
 			
-			
-			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -45,8 +43,7 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 		});	
 		
 		_cancelar.addClickListener(new Button.ClickListener() {
-			
-			
+
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -57,12 +54,7 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 					e.printStackTrace();
 				}
 			}
-			
 		});	
-		
-		
-		
-		
 		
 		//Esto es un upload, no un boton hay que ver como funciona
 //		cargarImagenSeccionB.addClickListener(new Button.ClickListener() {
