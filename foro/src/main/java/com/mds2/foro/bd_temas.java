@@ -78,6 +78,7 @@ public class bd_temas {
 			tema.setPrivado(false);
 			tema.setOculto(false);
 			tema.setEliminado(false);
+			
 			sec.contiene_temas.add(tema);
 		
 			com.mds2.foro.TemaDAO.save(tema);

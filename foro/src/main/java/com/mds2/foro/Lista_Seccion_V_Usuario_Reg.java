@@ -21,11 +21,13 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 		listaSeccion.removeAllComponents();
 		if(Sesion.getIDSESION() > 0) {
 			
+			System.out.println(listaSeccion.getComponentCount());
+			
 			List<Seccion> su = iUsrNR.cargarListaSecciones(true, false, false, false);
 			
 			List<Seccion> sec = iUsrNR.cargarListaSecciones(false, true, false, false);
 			
-			listaSeccion.removeAllComponents();
+			//listaSeccion.removeAllComponents();
 			
 			if(!su.isEmpty()) {
 				for(Seccion s : su) {
@@ -33,18 +35,14 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 					listaSeccion.addComponent(sur);
 				}
 			}
-			
+			System.out.println("MIRA HE METIDO SECCIONES "+listaSeccion.getComponentCount());
 			if(!sec.isEmpty()) {
 				for(Seccion s : sec) {
 					SeccionVistaUR sc = new SeccionVistaUR(s);
 					listaSeccion.addComponent(sc);
 				}
 			}
-			
-			
-			
+			System.out.println(listaSeccion.getComponentCount());
 		}
-		
-		
 	}
 }

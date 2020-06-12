@@ -53,6 +53,9 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	private void Inicializar() throws PersistentException {
 		buscarSeccionB.setVisible(true);
 		crearNuevaSeccion.setVisible(false);
+		
+		listaSeccion.removeAllComponents();
+		
 		List<Seccion> cosa = iUsrNR.cargarListaSecciones(true, false, false, false);
 		
 		for(Seccion it : cosa ) {
