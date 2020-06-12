@@ -120,8 +120,36 @@ public class Mensaje_UR extends MensajeClase {
 				notificarAdministrador();
 			}
 		});
+		
+		_verPerfil.addClickListener(new Button.ClickListener() {
+	
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					verPerfil();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
+	@Override
+	public void verPerfil() throws PersistentException {
+		int idSenor = idUser;
+		if(Sesion.getIDSESION() != idSenor) {
+			UI.getCurrent().getNavigator().addView("irPerfil", new Usuario_no_registrado(new PerfilUsuarioRegGenerico(idSenor)));
+			UI.getCurrent().getNavigator().navigateTo("irPerfil");
+		}else {
+			UI.getCurrent().getNavigator().navigateTo("Mi perfilUsr");
+		}
+		
+		
+		
+	}
+	
 	public void darMeGusta(int idMG) throws PersistentException {
 		iUsr.darMeGustaMensaje(idMG, Sesion.getIDSESION());
 	}

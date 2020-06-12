@@ -70,8 +70,23 @@ public class bd_mensajes {
 	
 	}
 
-	public List cargarUltimoMensaje(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public List cargarUltimoMensaje(int aIdUsuario) throws PersistentException {
+
+		List<Mensaje> lista = null;
+		com.mds2.foro.Mensaje[] commds2foroMsg = com.mds2.foro.MensajeDAO.listMensajeByQuery("IdPropietario = '"+aIdUsuario+"'", null);
+		try {
+			lista = new ArrayList<Mensaje>();
+			
+			for(Mensaje m : commds2foroMsg) {
+				lista.add(m);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	
+		return lista;
+		
 	}
 
 	public boolean crearMensaje(String aCuerpoMensaje, String mediaURL, int aIdUsuario, int aIdTema) throws PersistentException {

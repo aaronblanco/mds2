@@ -20,7 +20,7 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public List cargarMensajeCreado(int aIdTema, int aIdUsuario)throws PersistentException;
 
-	public List cargarUltimoMensaje(int aIdUsuario);
+	public List cargarUltimoMensaje(int aIdUsuario) throws PersistentException;
 
 	public List cargarTemasSeccionPrivada(int aIdSeccion);
 
@@ -48,9 +48,9 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public boolean rechazarSolicitud();
 
-	public boolean anadirAmigo(int aIdUsuario, int aIdAmigo);
+	public boolean anadirAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException;
 
-	public boolean eliminarAmigo(int aIdUsuario, int aIdAmigo);
+	public boolean eliminarAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException;
 
 	public List buscarUsuario(String aKeyword) throws PersistentException;
 
