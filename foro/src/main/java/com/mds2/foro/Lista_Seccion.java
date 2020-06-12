@@ -57,9 +57,11 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		
 		for(Seccion it : cosa ) {
 			SeccionClase tal = new SeccionClase(it);
+		//	_list_Seccion.add(tal);
 			listaSeccion.addComponent(tal);
 			listaSeccion.toString();
 		}
+		
 		
 	}
 

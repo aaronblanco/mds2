@@ -37,17 +37,13 @@ public class SeccionClase extends Seccion_ventana implements View {
 	public SeccionClase(Seccion s) throws PersistentException {
 		
 		Inicializar();
-		if(Sesion.getIDSESION() > 0 && s != null)  {
-		this._nombreSeccion = irSeccion;
-		this._nombreSeccion.setCaption(s.getTitulo());
-		this.fechaCreacion = String.valueOf(s.getFecha());
-		this.usrCreador = s.getCreador();
-		this.fechaCreacionSeccion.setCaption(fechaCreacion);
-		this.userCreadorSeccion.setCaption(usrCreador);
-		
-	
-		
-		
+		if( s != null)  {
+			this._nombreSeccion = irSeccion;
+			this._nombreSeccion.setCaption(s.getTitulo());
+			this.fechaCreacion = String.valueOf(s.getFecha());
+			this.usrCreador = s.getCreador();
+			this.fechaCreacionSeccion.setCaption(fechaCreacion);
+			this.userCreadorSeccion.setCaption(usrCreador);
 		
 		/*this._nombreSeccion = irSeccion.getCaption();
 		this._imagenSeccion = imgSeccion;
@@ -56,24 +52,24 @@ public class SeccionClase extends Seccion_ventana implements View {
 		this.fechaCreacion = fechaCreacionSeccion.toString();
 		this.numMsg = numMsgSection.toString();
 		*/
-		_nombreSeccion.addClickListener(new Button.ClickListener() {
+			_nombreSeccion.addClickListener(new Button.ClickListener() {
 			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
+				@Override
+				public void buttonClick(ClickEvent event) {
+					// TODO Auto-generated method stub
 				
-				try {
+					try {
 				
 			
 					
-					UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_no_registrado(new Lista_Tema(s.getIdSeccion())));
-					UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
-				} catch (PersistentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+						UI.getCurrent().getNavigator().addView(_nombreSeccion.getCaption() , new Usuario_no_registrado(new Lista_Tema(s.getIdSeccion())));
+						UI.getCurrent().getNavigator().navigateTo(_nombreSeccion.getCaption());
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-			}
-		});
+			});
 		
 		}
 		

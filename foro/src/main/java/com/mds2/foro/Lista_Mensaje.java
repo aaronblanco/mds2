@@ -51,7 +51,12 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().addView("crearMensaje", new Usuario_registrado(new CreacionMensaje(idTema)));
+				try {
+					UI.getCurrent().getNavigator().addView("crearMensaje", new Usuario_registrado(new CreacionMensaje(idTema)));
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				UI.getCurrent().getNavigator().navigateTo("crearMensaje");
 			}
 		});	
@@ -81,15 +86,15 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			listaMensajeAdmin.addComponent(msj);
 		}
 		
-		crearMensaje.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				crearMensaje();
-			}
-			
-		});
+//		crearMensaje.addClickListener(new Button.ClickListener() {
+//			
+//			@Override
+//			public void buttonClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//				crearMensaje();
+//			}
+//			
+//		});
 		
 	}
 	
@@ -97,16 +102,15 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		// TODO Auto-generated method stub
 		volverTema.setVisible(true);
 		
-		crearMensaje.setVisible(true);
+		crearMensaje.setVisible(false);
 		
 		buscadorBoton.setVisible(true);
 	}
 
-	public void crearMensaje() {
-		UI.getCurrent().getNavigator().navigateTo("crearMensaje");
-	}
+//	public void crearMensaje() {
+//		UI.getCurrent().getNavigator().navigateTo("crearMensaje");
+//	}
 	
-	//LOS IDS
 	public void buscarMensaje(int aIdTema) throws PersistentException {
 		
 		List<Mensaje> mb = iUsrNR.buscarMensaje(buscadorMensaje.getValue(), aIdTema);

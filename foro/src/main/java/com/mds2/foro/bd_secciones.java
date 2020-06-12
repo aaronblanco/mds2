@@ -12,56 +12,38 @@ public class bd_secciones {
 	public Vector<Seccion> _contiene_secciones = new Vector<Seccion>();
 
 	public List cargarSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
-
-		Seccion[] secc = new Seccion[50];
-		
-		//List<Seccion> lista = new List<Seccion>();
-		/*
-		Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
-		for(Seccion s:tal) {
-			_contiene_secciones.add(s);
-		}
-		
-		return  _contiene_secciones;
-		*/
 		
 		try {
-			com.mds2.foro.Seccion[] commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery(null, null);
+			com.mds2.foro.Seccion[] commds2foroSeccions = new Seccion[50];
 			
 			if(aPublico) {
 				 Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+1+"'", "Titulo");
 				 for(Seccion s:tal) {
 						_contiene_secciones.add(s);
 					}
-				;
+				
 				return  _contiene_secciones;
 				
 				
 			}else if(aPrivado) {
 				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+1+"'", "Titulo");
-				for(Seccion s:secc) {
+				for(Seccion s:commds2foroSeccions) {
 					_contiene_secciones.add(s);
 				}
 				
 			}else if(aOculto) {
 				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+1+"'", "Titulo");
-				for(Seccion s:secc) {
+				for(Seccion s:commds2foroSeccions) {
 					_contiene_secciones.add(s);
 				}
 			}else if(aEliminado) {
 				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+1+"'", "Titulo");
-				for(Seccion s:secc) {
+				for(Seccion s:commds2foroSeccions) {
 					_contiene_secciones.add(s);
 				}
 			}
-			
-			//t.commit();
-			//com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().close();
-			
 		}catch(Exception e) {
-			 e.printStackTrace();
-			//t.rollback();
-			
+			 e.printStackTrace();			
 		}
 		
 		return _contiene_secciones;
@@ -88,7 +70,6 @@ public class bd_secciones {
 			com.mds2.foro.SeccionDAO.save(sec);
 		
 			t.commit();
-		//	System.out.println("has creado una seccion puta madre sosio");
 			return true;
 		}
 		catch(Exception e) {
@@ -107,8 +88,13 @@ public class bd_secciones {
 			se.setPrivado(privado);
 			se.setPublico(publico);
 			se.setOculto(oculto);
+			
+			com.mds2.foro.SeccionDAO.save(se);
+			
 			t.commit();
+			
 			return true;
+			
 		}catch(Exception e) {
 			t.rollback();
 			return false;

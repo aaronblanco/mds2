@@ -25,20 +25,20 @@ public class Menu_UR extends Menu_UNR_ventana{
 		
 		
 		if(Sesion.getIDSESION() >= 1 ) {
-					this.removeAllComponents();
+			this.removeAllComponents();
 
 	
-		Foro_desplegable foro = new Foro_desplegable();
-	    Tree<String> var = foro.listaDesplegable();
-	    TreeData<String> datos = var.getTreeData();
-	    datos.clear();
-	  
-		datos.addItems(null, "Mi perfil", "Pagina Principal", "Cerrar sesión"); 
-		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
-		System.out.println("ESTAMOS AQUI");
-		var.setDataProvider( inMemoryDataProvider);
-		var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()+ "Usr"));
-		this.addComponent(var);
+			Foro_desplegable foro = new Foro_desplegable();
+		    Tree<String> var = foro.listaDesplegable();
+		    TreeData<String> datos = var.getTreeData();
+		    datos.clear();
+		  
+			datos.addItems(null, "Mi perfil", "Pagina Principal", "Cerrar sesión"); 
+			TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
+			System.out.println("ESTAMOS AQUI");
+			var.setDataProvider( inMemoryDataProvider);
+			var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()+ "Usr"));
+			this.addComponent(var);
 		}
 
 
