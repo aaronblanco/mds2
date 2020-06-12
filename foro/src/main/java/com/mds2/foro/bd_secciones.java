@@ -14,30 +14,35 @@ public class bd_secciones {
 	public List cargarSecciones(boolean aPublico, boolean aPrivado, boolean aOculto, boolean aEliminado) throws PersistentException {
 		
 		try {
+			
 			com.mds2.foro.Seccion[] commds2foroSeccions = new Seccion[50];
 			
 			if(aPublico) {
 				 Seccion[] tal = com.mds2.foro.SeccionDAO.listSeccionByQuery("Publico = '"+1+"'", "Titulo");
+				 _contiene_secciones = new Vector<Seccion>();
 				 for(Seccion s:tal) {
 						_contiene_secciones.add(s);
-					}
+				}
 				
 				return  _contiene_secciones;
 				
 				
 			}else if(aPrivado) {
 				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Privado = '"+1+"'", "Titulo");
+				_contiene_secciones = new Vector<Seccion>();
 				for(Seccion s:commds2foroSeccions) {
 					_contiene_secciones.add(s);
 				}
 				
 			}else if(aOculto) {
 				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Oculto = '"+1+"'", "Titulo");
+				_contiene_secciones = new Vector<Seccion>();
 				for(Seccion s:commds2foroSeccions) {
 					_contiene_secciones.add(s);
 				}
 			}else if(aEliminado) {
 				commds2foroSeccions = com.mds2.foro.SeccionDAO.listSeccionByQuery("Eliminado = '"+1+"'", "Titulo");
+				_contiene_secciones = new Vector<Seccion>();
 				for(Seccion s:commds2foroSeccions) {
 					_contiene_secciones.add(s);
 				}

@@ -47,7 +47,7 @@ public class Menu_UNR extends Menu_UNR_ventana implements View, Foro_desplegable
 	  
 		datos.addItems(null, "Iniciar sesion", "Registrarse", "Pagina principal"); 
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
-		System.out.println("ESTAMOS AQUI");
+		//System.out.println("ESTAMOS AQUI");
 		var.setDataProvider( inMemoryDataProvider);
 		
 		
