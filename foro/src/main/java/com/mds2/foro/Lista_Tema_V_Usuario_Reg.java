@@ -32,22 +32,24 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 		
 		Inicializar();
 		
-		crearTemaB.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				crearTema(idSeccion, Sesion.getIDSESION());
+		listaTemas.removeAllComponents();
+		
+		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, true, false, false, false);
+		
+		List<Tema> tu = iUsrNR.cargarTemasUNR(idSeccion, false, true, false, false);
+		
+		if(!t.isEmpty()) {
+			for(Tema it: t) {
+				Tema_UR tema = new Tema_UR(it);
+				listaTemas.addComponent(tema);
 			}
-		});	
+		}	
 		
-		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, false, true, false, false);
-	
-		
-		for(Tema it: t) {
-			Tema_UR tema = new Tema_UR(it);
-			listaTemas.addComponent(tema);
-		
+		if(!tu.isEmpty()) {
+			for(Tema it: tu) {
+				Tema_UR tema = new Tema_UR(it);
+				listaTemas.addComponent(tema);
+			}
 		}
 		
 		crearTemaB.addClickListener(new Button.ClickListener() {
@@ -55,10 +57,14 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				Lista_Tema_V_Usuario_Reg.crearTema(idSeccion, Sesion.getIDSESION());
+				try {
+					crearTema(idSeccion, Sesion.getIDSESION());
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-		});	
-		
+		});
 		Seccion s = SeccionDAO.getSeccionByORMID(idSeccion);
 		_sección = new SeccionClase(s);		
 		
@@ -67,10 +73,11 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 	
 	private void Inicializar() {
 		crearTemaB.setVisible(true);
-
+		
+		
 	}
 	
-	public static void crearTema(int idSeccion, int idCreadorTema) {
+	public static void crearTema(int idSeccion, int idCreadorTema) throws PersistentException {
 		UI.getCurrent().getNavigator().addView("crearTema", new Usuario_registrado(new CreacionTema( idSeccion, idCreadorTema)));
 		UI.getCurrent().getNavigator().navigateTo("crearTema");
 	}

@@ -70,8 +70,8 @@ public class MyUI extends UI {
 		}
     	
     	try {
-			navigator.addView("Pagina principalUsr", new Usuario_registrado());
-			navigator.addView("Mi perfilUsr", new Usuario_registrado(new Mi_perfil()));  
+			navigator.addView("Pagina-principalUsr", new Usuario_registrado());
+			navigator.addView("Mi-perfilUsr", new Usuario_registrado(new Mi_perfil()));  
 		} catch (PersistentException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();

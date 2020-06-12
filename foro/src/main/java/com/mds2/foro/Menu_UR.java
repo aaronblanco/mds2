@@ -33,11 +33,11 @@ public class Menu_UR extends Menu_UNR_ventana{
 		    TreeData<String> datos = var.getTreeData();
 		    datos.clear();
 		  
-			datos.addItems(null, "Mi perfil", "Pagina Principal", "Cerrar sesión"); 
+			datos.addItems(null, "Mi perfil", "Pagina PrincipalUsr", "Cerrar sesión"); 
 			TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
 			System.out.println("ESTAMOS AQUI");
 			var.setDataProvider( inMemoryDataProvider);
-			var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()+ "Usr"));
+			//var.addItemClickListener(event -> UI.getCurrent().getNavigator().navigateTo(event.getItem()+ "Usr"));
 			this.addComponent(var);
 		}
 

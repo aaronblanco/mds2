@@ -70,19 +70,20 @@ public class bd_temas {
 			tema.setDescripcion(aSubtitulo);
 			tema.setFecha(System.currentTimeMillis());
 			tema.setIdTemaPropietario(aIdTemaPropietario);
-		
+			
 			tema.setUsuarios(u);
 			tema.setPublico(true);
-			tema.setSeccion_mensaje(sec);
+			tema.setSeccion_tema(sec);
 			tema.setPublico(true);
 			tema.setPrivado(false);
 			tema.setOculto(false);
 			tema.setEliminado(false);
 			sec.contiene_temas.add(tema);
-			
+		
 			com.mds2.foro.TemaDAO.save(tema);
 			System.out.println("has creado un tema guapisimo que guapo");
 			u.pro_temas.add(tema);
+			
 			com.mds2.foro.UsuariosDAO.save(u);
 			
 			sec.contiene_temas.add(tema);

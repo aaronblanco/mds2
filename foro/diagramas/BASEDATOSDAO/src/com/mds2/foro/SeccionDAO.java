@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -329,7 +329,7 @@ public class SeccionDAO {
 			
 			com.mds2.foro.Tema[] lContiene_temass = seccion.contiene_temas.toArray();
 			for(int i = 0; i < lContiene_temass.length; i++) {
-				lContiene_temass[i].setSeccion_mensaje(null);
+				lContiene_temass[i].setSeccion_tema(null);
 			}
 			return delete(seccion);
 		}
@@ -347,7 +347,7 @@ public class SeccionDAO {
 			
 			com.mds2.foro.Tema[] lContiene_temass = seccion.contiene_temas.toArray();
 			for(int i = 0; i < lContiene_temass.length; i++) {
-				lContiene_temass[i].setSeccion_mensaje(null);
+				lContiene_temass[i].setSeccion_tema(null);
 			}
 			try {
 				session.delete(seccion);

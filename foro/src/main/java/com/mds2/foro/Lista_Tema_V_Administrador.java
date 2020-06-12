@@ -21,15 +21,42 @@ public class Lista_Tema_V_Administrador extends Lista_Tema_V_Moderador {
 		
 		super(idSeccion);
 		
-		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, false, false, false, true);
-	
+		listaTemas.removeAllComponents();
 		
-		for(Tema it: t) {
-			Tema_vista_Admin tema = new Tema_vista_Admin(it);
-			listaTemas.addComponent(tema);
+		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, true, false, false, false);
 		
+		List<Tema> tu = iUsrNR.cargarTemasUNR(idSeccion, false, true, false, false);
+		
+		List<Tema> tm = iUsrNR.cargarTemasUNR(idSeccion, false, false, true, false);
+		
+		List<Tema> ta = iUsrNR.cargarTemasUNR(idSeccion, false, false, false, true);
+		
+		if(!t.isEmpty()) {
+			for(Tema it: t) {
+				Tema_vista_Admin tema = new Tema_vista_Admin(it);
+				listaTemas.addComponent(tema);
+			}
+		}	
+		
+		if(!tu.isEmpty()) {
+			for(Tema it: tu) {
+				Tema_vista_Admin tema = new Tema_vista_Admin(it);
+				listaTemas.addComponent(tema);
+			}
 		}
 		
+		if(!tm.isEmpty()) {
+			for(Tema it: t) {
+				Tema_vista_Admin tema = new Tema_vista_Admin(it);
+				listaTemas.addComponent(tema);
+			}
+		}
+		
+		if(!ta.isEmpty()) {
+			for(Tema it: ta) {
+				Tema_vista_Admin tema = new Tema_vista_Admin(it);
+				listaTemas.addComponent(tema);		
+			}
+		}
 	}
-	
 }

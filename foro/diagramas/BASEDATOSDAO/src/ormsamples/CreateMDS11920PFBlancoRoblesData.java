@@ -1,5 +1,5 @@
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -25,7 +25,7 @@ public class CreateMDS11920PFBlancoRoblesData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_temas, eliminado, oculto, privado, publico, idPropietarioSeccion, fecha, usuarios
 			com.mds2.foro.SeccionDAO.save(lcommds2foroSeccion);
 			com.mds2.foro.Tema lcommds2foroTema = com.mds2.foro.TemaDAO.createTema();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_mensajes, eliminado, oculto, privado, publico, idTemaPropietario, fecha, usuarios, seccion_mensaje
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene_mensajes, eliminado, oculto, privado, publico, idTemaPropietario, fecha, usuarios, seccion_tema
 			com.mds2.foro.TemaDAO.save(lcommds2foroTema);
 			com.mds2.foro.Anuncio lcommds2foroAnuncio = com.mds2.foro.AnuncioDAO.createAnuncio();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : publicado

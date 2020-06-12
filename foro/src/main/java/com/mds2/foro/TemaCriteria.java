@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: aba693(University of Almeria)
+ * Licensee: trm187(University of Almeria)
  * License Type: Academic
  */
 package com.mds2.foro;
@@ -20,8 +20,8 @@ import org.orm.criteria.*;
 
 public class TemaCriteria extends AbstractORMCriteria {
 	public final IntegerExpression idTema;
-	public final IntegerExpression seccion_mensajeId;
-	public final AssociationExpression seccion_mensaje;
+	public final IntegerExpression seccion_temaId;
+	public final AssociationExpression seccion_tema;
 	public final IntegerExpression usuariosId;
 	public final AssociationExpression usuarios;
 	public final StringExpression titulo;
@@ -37,8 +37,8 @@ public class TemaCriteria extends AbstractORMCriteria {
 	public TemaCriteria(Criteria criteria) {
 		super(criteria);
 		idTema = new IntegerExpression("idTema", this);
-		seccion_mensajeId = new IntegerExpression("seccion_mensaje.idSeccion", this);
-		seccion_mensaje = new AssociationExpression("seccion_mensaje", this);
+		seccion_temaId = new IntegerExpression("seccion_tema.idSeccion", this);
+		seccion_tema = new AssociationExpression("seccion_tema", this);
 		usuariosId = new IntegerExpression("usuarios.idUsuario", this);
 		usuarios = new AssociationExpression("usuarios", this);
 		titulo = new StringExpression("titulo", this);
@@ -60,8 +60,8 @@ public class TemaCriteria extends AbstractORMCriteria {
 		this(MDS11920PFBlancoRoblesPersistentManager.instance().getSession());
 	}
 	
-	public SeccionCriteria createSeccion_mensajeCriteria() {
-		return new SeccionCriteria(createCriteria("seccion_mensaje"));
+	public SeccionCriteria createSeccion_temaCriteria() {
+		return new SeccionCriteria(createCriteria("seccion_tema"));
 	}
 	
 	public UsuariosCriteria createUsuariosCriteria() {

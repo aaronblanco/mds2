@@ -41,22 +41,14 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 		});	
 		
 		List<Tema> t = iUsrNR.cargarTemasUNR(idSeccion, true, false, false, false);
-	
 		
-		for(Tema it: t) {
-			TemaClase tema = new TemaClase(it);
-			listaTemas.addComponent(tema);
-		
-		}
-		
-		crearTemaB.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				Lista_Tema_V_Usuario_Reg.crearTema(idSeccion, Sesion.getIDSESION());
+		if(!t.isEmpty()) {
+			for(Tema it: t) {
+				TemaClase tema = new TemaClase(it);
+				listaTemas.addComponent(tema);
 			}
-		});	
+		}
+
 		
 		Seccion s = SeccionDAO.getSeccionByORMID(idSeccion);
 		_sección = new SeccionClase(s);
