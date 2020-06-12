@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.List;
 import java.util.Vector;
 //import Package.Ver_perfil_de_usuario;
 //import Package.Mensaje_UR;
@@ -23,6 +24,7 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 	
 	
 	public Lista_Mensaje_V_Usuario_Reg(int idTema) throws PersistentException {
+		
 		super(idTema);
 		
 		crearMensaje.setVisible(true);
@@ -37,6 +39,14 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 			
 		});	
 		
+		List<Mensaje> m = iUsrNR.cargarMensajeUNR(idTema, false, true, false, false);
+		
+		if(!m.isEmpty()) {
+			for(Mensaje me : m) {
+				Mensaje_UR mur = new Mensaje_UR(me);
+				listaMensajeAdmin.addComponent(mur);
+			}
+		}
 		//COSAS
 		listaMensajeAdmin.addComponent((Component) iUsrNR.cargarMensajeUNR(1, false, true, false, false));
 		//NO ESTOY NADA SEGURO DE SI ESTO TIENE SENTIDO VALE?

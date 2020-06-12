@@ -50,7 +50,6 @@ public class Mensaje_UR extends MensajeClase {
 			}
 		});	
 		
-		
 		_notificarAdministrador.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -62,8 +61,54 @@ public class Mensaje_UR extends MensajeClase {
 		
 	}
 	
+	public Mensaje_UR(Mensaje me) {
+		// TODO Auto-generated constructor stub
+		super(me);
+		
+		_darMeGusta = meGustaB;
+		_responder = responderMensaje;
+		_notificarAdministrador = notificarAdminB;
+		
+		meGustaB.setVisible(true);
+		
+		responderMensaje.setVisible(true);
+		
+		notificarAdminB.setVisible(true);
+		
+		
+		
+		_darMeGusta.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				darMeGusta();
+			}
+
+		});	
+		
+		_responder.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				responderMsg();
+			}
+		});	
+		
+		
+		_notificarAdministrador.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				notificarAdministrador();
+			}
+		});
+	}
+
 	public void darMeGusta() {
-		iUsr.darMeGustaMensaje(this.getId(), aIdUser);
+		iUsr.darMeGustaMensaje(, Sesion.getIDSESION());
 	}
 
 	public void responderMsg() {
