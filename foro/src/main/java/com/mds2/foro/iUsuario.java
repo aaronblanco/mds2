@@ -42,11 +42,9 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public int darMeGustaMensaje(int aIdMensaje, int aIdUser) throws PersistentException;
 
-	public boolean desconectarse();
-
 	public boolean aceptarSolicitud(int aIdUsuario, int aIdAmigo) throws PersistentException;
 
-	public boolean rechazarSolicitud();
+	public boolean rechazarSolicitud(int idUs, int idSol)throws PersistentException;
 
 	public boolean anadirAmigo(int aIdUsuario, int aIdAmigo) throws PersistentException;
 

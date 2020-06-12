@@ -10,7 +10,7 @@ public interface iModerador extends iBanner_Usuario_registrado, iMenu_moderador 
 
 	public boolean crearSeccion(String aTitulo, String aSubtitulo, String aFotoURL, int aIdUserCreador) throws PersistentException;
 
-	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto, int idTema);
+	public boolean cambiarAccesibilidad(boolean aPublico, boolean aPrivado, boolean aOculto, int idTema) throws PersistentException;
 
 	public boolean amonestarUsuario(int aIdUsuario) throws PersistentException;
 

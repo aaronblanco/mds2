@@ -1,5 +1,6 @@
 package com.mds2.foro;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -86,7 +87,6 @@ public class bd_temas {
 			sec.contiene_temas.add(tema);
 		
 			com.mds2.foro.TemaDAO.save(tema);
-			System.out.println("has creado un tema guapisimo que guapo");
 			u.pro_temas.add(tema);
 			
 			com.mds2.foro.UsuariosDAO.save(u);
@@ -158,17 +158,13 @@ public class bd_temas {
 	}
 
 	public List buscarTema(String aKeyword, int aIdSeccion) throws PersistentException {
-		List temas = null;
-		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		
-		try {
-				
-			temas.add(TemaDAO.queryTema("Titulo='"+aKeyword+"'", null));
-				
-			t.commit();
-			
-		}catch(Exception e) {
-			t.rollback();
+		List<Tema> temas = null;
+
+		com.mds2.foro.Tema[] commds2foroTemas = com.mds2.foro.TemaDAO.listTemaByQuery("SeccionIdSeccion = '"+aIdSeccion+"' AND Titulo LIKE('%"+aKeyword+"%')", "Titulo");
+
+		temas = new ArrayList<Tema>();
+		for(Tema t : commds2foroTemas) {
+			temas.add(t);
 		}
 		
 		return temas;

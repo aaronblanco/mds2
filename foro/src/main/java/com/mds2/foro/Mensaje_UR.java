@@ -63,7 +63,12 @@ public class Mensaje_UR extends MensajeClase {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				notificarAdministrador();
+				try {
+					notificarAdministrador();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -117,7 +122,12 @@ public class Mensaje_UR extends MensajeClase {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				notificarAdministrador();
+				try {
+					notificarAdministrador();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -158,7 +168,7 @@ public class Mensaje_UR extends MensajeClase {
 		UI.getCurrent().getNavigator().navigateTo("responderMensaje");
 	}
 
-	public void notificarAdministrador() {
+	public void notificarAdministrador() throws PersistentException {
 		iA.notificarMensaje(idM, Sesion.getIDSESION());
 	}
 }

@@ -197,27 +197,23 @@ public class bd_mensajes {
 	}
 
 	public List buscarMensaje(String aKeyword, int aIdTema) throws PersistentException {
-		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
-		Vector<Mensaje> listaMensajes = new Vector<Mensaje>();
 		
-		
-		try {
-			
-			
-			listaMensajes = (Vector<Mensaje>) MensajeDAO.queryMensaje("Titulo = '"+ aKeyword +"'", null);
-				
-			t.commit();
-			
-		}catch(Exception e) {
-			t.rollback();
+		List<Mensaje> lista = null;
+		com.mds2.foro.Mensaje[] commds2foroMensajes = com.mds2.foro.MensajeDAO.listMensajeByQuery(null, null);
+
+		lista = new ArrayList<Mensaje>();
+		for(Mensaje m : commds2foroMensajes) {
+			lista.add(m);
 		}
 		
-		
-		return listaMensajes;
+		return lista;
 	}
 
 	public List cargarRespuestas(int aIdMensaje)   throws PersistentException {
-		throw new UnsupportedOperationException();
+		
+		List<Mensaje> lista = null;
+
+		return lista;
 	}
 
 	public List cargarRespuestasUR(int aIdMensaje) {
@@ -228,21 +224,21 @@ public class bd_mensajes {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		
 	
-	try {
-		
-		Mensaje msj = com.mds2.foro.MensajeDAO.getMensajeByORMID(aIdMensaje);
-
-		if(msj.getPublico())
-			msj.setPublico(false);
-		else
-			msj.setPublico(true);
-		com.mds2.foro.MensajeDAO.save(msj);	
-		t.commit();
-		return true;
-	}catch(Exception e) {
-		t.rollback();
-		return false;
-	}
+		try {
+			
+			Mensaje msj = com.mds2.foro.MensajeDAO.getMensajeByORMID(aIdMensaje);
+	
+			if(msj.getPublico())
+				msj.setPublico(false);
+			else
+				msj.setPublico(true);
+			com.mds2.foro.MensajeDAO.save(msj);	
+			t.commit();
+			return true;
+		}catch(Exception e) {
+			t.rollback();
+			return false;
+		}
 	
 	}
 	
