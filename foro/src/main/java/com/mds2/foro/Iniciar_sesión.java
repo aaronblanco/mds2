@@ -161,17 +161,17 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				
 					UI.getCurrent().getNavigator().addView("Cerrar sesiónUsr", new Usuario_no_registrado());	
 					
-			//		UI.getCurrent().getNavigator().addView("Pagina principalUsr", new Usuario_registrado());
-				//	UI.getCurrent().getNavigator().addView("Mi perfilUsr", new Usuario_registrado(new Mi_perfil()));  
+					UI.getCurrent().getNavigator().addView("Pagina principalUsr", new Usuario_registrado());
+					UI.getCurrent().getNavigator().addView("Mi perfilUsr", new Usuario_registrado(new Mi_perfil()));  
 	
-					UI.getCurrent().getNavigator().addView("usuarioReg", new Usuario_registrado());
+					UI.getCurrent().getNavigator().addView("", new Usuario_registrado());
 					
 				} catch (PersistentException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}		
 				
-					UI.getCurrent().getNavigator().navigateTo("usuarioReg");
+					UI.getCurrent().getNavigator().navigateTo("");
 				}
 			
 				else {
