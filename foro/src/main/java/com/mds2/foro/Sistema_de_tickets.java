@@ -16,9 +16,7 @@ public class Sistema_de_tickets extends Sistema_de_ticket_ventana implements Vie
 
 	public Sistema_de_tickets() throws PersistentException {
 		
-		Lista_Ticket lis = new Lista_Ticket();
-		
-		listaTickets.addComponent(lis);
+		//Lista_Ticket lis = new Lista_Ticket();
 		
 	}
 	
