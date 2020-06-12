@@ -9,8 +9,6 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.RichTextArea;
 import com.vaadin.ui.TextField;
 
-//import Package.Lista_Tema_V_Usuario_Reg;
-
 public class CreacionTema extends Creacion_tema_ventana implements View {
 	private TextField _tituloTema;
 	private TextField _subtituloTema;
@@ -30,6 +28,8 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 		this._subtituloTema = subtitulo;
 		this._descripcion = textoTema;
 		
+		
+		
 		_enviar.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -38,8 +38,10 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 				System.out.println(_tituloTema.getValue());
 				try {
 					enviar(aIdSeccionPropietaria, aIdTemaPropietario);
-					UI.getCurrent().getNavigator().addView(_tituloTema.getValue(), new Usuario_registrado(new Lista_Mensaje(aIdTemaPropietario)));
-					UI.getCurrent().getNavigator().navigateTo(_tituloTema.getValue());
+					Seccion s = com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
+					System.out.println(s.getTitulo()+"/"+_tituloTema.getValue());
+					UI.getCurrent().getNavigator().addView(s.getTitulo()+"/"+_tituloTema.getValue(), new Usuario_registrado(new Lista_Mensaje(aIdTemaPropietario)));
+					UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"/"+_tituloTema.getValue());
 					
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
