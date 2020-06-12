@@ -70,6 +70,6 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 	}
 
 	public void cancelar() {
-		UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+		UI.getCurrent().getNavigator().navigateTo("");
 	}
 }
