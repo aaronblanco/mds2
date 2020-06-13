@@ -139,6 +139,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				UI.getCurrent().getNavigator().addView("Pagina principalAdm", new AdministradorClase());
 
 				UI.getCurrent().getNavigator().addView("crearSeccion", new AdministradorClase(new CreacionSeccion()));
+				UI.getCurrent().getNavigator().addView("Cerrar sesiónAdm",  new Usuario_no_registrado());
 				UI.getCurrent().getNavigator().addView("Panel de administraciónAdm", new AdministradorClase(new Panel_de_administración_vista_administrador()) );
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
 				UI.getCurrent().getNavigator().addView("Mi perfilAdm", new AdministradorClase(new Mi_perfil()));  
@@ -154,6 +155,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				ModeradorClase mod =  new ModeradorClase();
 				UI.getCurrent().getNavigator().addView("Pagina principalMod", new ModeradorClase());
 				UI.getCurrent().getNavigator().addView("Panel de administraciónMod", new ModeradorClase(new Panel_de_administración_vista_moderador()) );
+				UI.getCurrent().getNavigator().addView("Cerrar sesiónMod",  new Usuario_no_registrado());
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), mod);
 				UI.getCurrent().getNavigator().addView("Mi perfilMod", new ModeradorClase(new Mi_perfil()));  
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());

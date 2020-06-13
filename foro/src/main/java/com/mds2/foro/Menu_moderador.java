@@ -17,8 +17,8 @@ public class Menu_moderador extends Menu_UR implements View{
 		
 	
 	
-		Tree<String> var = new Tree<String>();
-		
+		this.removeAllComponents();
+		Tree<String> var = listaDesplegable();
 		if(Sesion.getADMINISTRADOR())
 			var.addItemClickListener( event -> UI.getCurrent().getNavigator().navigateTo(event.getItem() + "Adm") );
 		else
