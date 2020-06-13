@@ -130,11 +130,10 @@ public class bd_mensajes {
 	public boolean eliminarMensajePropio(int aIdMensaje) throws PersistentException {
 		PersistentTransaction t = com.mds2.foro.MDS11920PFBlancoRoblesPersistentManager.instance().getSession().beginTransaction();
 		
-
 		try {
 			
 			Mensaje msj= com.mds2.foro.MensajeDAO.getMensajeByORMID(aIdMensaje);
-
+			msj.setPublico(false);
 			msj.setEliminado(true);
 			
 			t.commit();

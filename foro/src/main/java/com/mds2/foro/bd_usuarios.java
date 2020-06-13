@@ -144,7 +144,7 @@ public class bd_usuarios {
 			a.usuariosAmigos.add(b);
 			b.usuariosAmigos.add(a);
 			
-			Notificacion not = com.mds2.foro.NotificacionDAO.loadNotificacionByQuery("IdUsuarioPropietario = '"+aIdUsuario+"' AND DescipcionCampo LIKE%"+b.getNombreUsuario()+"%", "Titulo");
+			Notificacion not = com.mds2.foro.NotificacionDAO.loadNotificacionByQuery("IdUsuarioPropietario = '"+aIdUsuario+"'", "Titulo");
 			
 			com.mds2.foro.NotificacionDAO.delete(not);
 			
