@@ -98,6 +98,7 @@ public class bd_notificaciones {
 			not.setDescripcionCampo("El usuario " + u.getNombreUsuario() + " quiere ser tu amigo.");
 			not.setTitulo("Nueva solicitud de amistad.");
 			not.setIdUsuarioPropietario(aIdAmigo);
+			not.setUsuarios(amigo);
 			com.mds2.foro.NotificacionDAO.save(not);
 			t.commit();
 			return true;

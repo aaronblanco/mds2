@@ -3,6 +3,7 @@ package com.mds2.foro;
 import org.orm.PersistentException;
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Mensaje_moderador extends Mensaje_UR {
@@ -32,7 +33,31 @@ public class Mensaje_moderador extends Mensaje_UR {
 				}
 			}
 		});
+		
+		_verPerfil.addClickListener(new Button.ClickListener() {
+	
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					verPerfil();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});	
+		
 	}
+	
+	@Override
+	public void verPerfil() throws PersistentException {
+		int idSenor = idUser;
+		
+		UI.getCurrent().getNavigator().addView("irPerfilMod", new ModeradorClase(new PerfilUsuarioRegAdmin(idSenor)));
+		UI.getCurrent().getNavigator().navigateTo("irPerfilMod");
+	}
+	
 	
 	//Aqui sustituimos el notificar por notificar Y ocultar, asi que habra que sobreescribir cosas
 	public void ocultar(int idMo) throws PersistentException {
