@@ -10,18 +10,15 @@ import com.vaadin.ui.Button.ClickEvent;
 //import DCLv3.PanelAdministracionGenerico;
 
 public class Panel_de_administración_vista_administrador extends PanelAdministracionGenerico {
-//	private Button _modificarNumUltimoMensaje;
-//	private Button _configurarPublicidad;
-//	private Label _ticketsL;
-//	private Label _candidatosAmonestadosL;
+
 	public AdministradorClase _unnamed_Administrador_;
 	public Sistema_de_tickets_vista_administrador _sistema_de_tickets_vista_administrador;
 	public Sistema_de_publicidad _sistema_de_publicidad;
 	public Lista_Usuario_Amonestado_V_Administrador _usuario_amonestado_vista_administrador;
-	//public Buscar_usuario _buscar_usuario;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
 
 	public Panel_de_administración_vista_administrador() throws PersistentException {
+		super();
 		
 		modNumUM.setVisible(true);
 		
@@ -29,7 +26,7 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 		
 		configPubliAdmin.setVisible(true);
 		
-		System.out.println("creo el panel de publicidad");
+
 		UI.getCurrent().getNavigator().addView("sistemaPublicidad", new AdministradorClase(new Sistema_de_publicidad()));
 		
 		modNumUM.addClickListener(new Button.ClickListener() {
@@ -37,18 +34,11 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("irTema");
+				modificarNumUltimoMensaje();
 			}
 		});	
 		
-		buscador.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("irTema");
-			}
-		});	
+		
 		
 		configPubliAdmin.addClickListener(new Button.ClickListener() {
 			
@@ -59,15 +49,17 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 			}
 		});	
 		
+		panelLayout.addComponent(new Lista_Usuario_Amonestado_V_Administrador());
+		
+		panelLayout.addComponent(new Sistema_de_tickets_vista_administrador());
+		
 	}
 	
 	public void modificarNumUltimoMensaje() {
 		throw new UnsupportedOperationException();
 	}
 
-	public void buscarUsuario() {
-		throw new UnsupportedOperationException();
-	}
+
 
 	public void configurarPublicidad() {
 		UI.getCurrent().getNavigator().navigateTo("sistemaPublicidad");
