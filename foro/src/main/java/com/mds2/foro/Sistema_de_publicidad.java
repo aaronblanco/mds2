@@ -1,9 +1,14 @@
 package com.mds2.foro;
 
+import java.io.File;
+
 import com.vaadin.navigator.View;
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Image;
 
 public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana implements View{
 	private Button _subirAnuncio;
@@ -25,9 +30,9 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 			}
 		});
 		
+		System.out.println("estoy poniendo los anuncios");
 		anunciosLayout.addComponent(new Lista_Anuncios_publicados());
-		anunciosLayout.addComponent(new Lista_Anuncios_publicados());
-		
+		anunciosLayout.addComponent(new Lista_Anuncios_disponibles());
 		
 		
 	}

@@ -141,7 +141,6 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				UI.getCurrent().getNavigator().addView("Panel de administraciónAdm", new AdministradorClase(new Panel_de_administración_vista_administrador()) );
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
 				UI.getCurrent().getNavigator().addView("Mi perfilAdm", new AdministradorClase(new Mi_perfil()));  
-				UI.getCurrent().getNavigator().addView("Panel de publicidad", new AdministradorClase(new Sistema_de_publicidad()) );
 				UI.getCurrent().getNavigator().addView("sisTicketAdm", new AdministradorClase(new Sistema_de_tickets_vista_administrador()));
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
 				

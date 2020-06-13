@@ -58,7 +58,6 @@ public class Menu_UR extends Menu_UNR_ventana implements View, Foro_desplegable{
 	  
 		datos.addItems(null, "Mi perfil", "Pagina principal", "Cerrar sesión"); 
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
-		System.out.println("ESTAMOS AQUI");
 		var.setDataProvider( inMemoryDataProvider);
 		return var;
 	}

@@ -37,7 +37,6 @@ public class Menu_moderador extends Menu_UR implements View{
 	  
 		datos.addItems(null, "Mi perfil", "Pagina principal", "Panel de administración","Cerrar sesión" ); 
 		TreeDataProvider<String> inMemoryDataProvider = new TreeDataProvider<String>(datos);
-		System.out.println("ESTAMOS AQUI");
 		var.setDataProvider( inMemoryDataProvider);
 		return var;
 	}

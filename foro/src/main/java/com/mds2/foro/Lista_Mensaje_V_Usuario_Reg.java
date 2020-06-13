@@ -53,7 +53,6 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 		
 		listaMensajeAdmin.removeAllComponents();
 		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
-		System.out.println(t.toString());
 		
 		for(Mensaje it: t) {
 			Mensaje_UR msj = new Mensaje_UR(it);
@@ -61,7 +60,6 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 		}
 		
 		t = iUsr.cargarMensajeCreado(idTema, Sesion.getIDSESION());
-		System.out.println(t.toString());
 		for(Mensaje it : t) {
 			Mensaje_UR_creado muc = new Mensaje_UR_creado(it);
 			listaMensajeAdmin.addComponent(muc);
