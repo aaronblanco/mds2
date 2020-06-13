@@ -9,19 +9,22 @@ import org.orm.PersistentException;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.ComboBox;
 
 public class SeccionVistaModerador extends SeccionVistaUR {
 	//private Listener _listaSeccionMod;
 	public Lista_Seccion_V_Moderador _unnamed_Lista_Seccion_V_Moderador_;
 	public Vector<Lista_Tema_V_Moderador> _list_Tema_V_Moderador = new Vector<Lista_Tema_V_Moderador>();
 	iModerador iMod  = new DB_Main();
-
+	private ComboBox _estadoSec;
+	
 	public SeccionVistaModerador() throws PersistentException {
 		super();
 	}
 	
 	public SeccionVistaModerador(Seccion s) throws PersistentException {
 		super(s);
+		Inicializar();
 		_nombreSeccion.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -37,8 +40,9 @@ public class SeccionVistaModerador extends SeccionVistaUR {
 				}
 			}
 		});
-		statusTema.setItems("Público","Privado","Oculto");
-		statusTema.addValueChangeListener(event -> {
+		_estadoSec.setItems("Público","Privado","Oculto");
+		_estadoSec.setCaption("Público");
+		_estadoSec.addValueChangeListener(event -> {
 			try {
 				cambiarAccesibilidad(s.getIdSeccion());
 			} catch (PersistentException e) {
@@ -50,7 +54,8 @@ public class SeccionVistaModerador extends SeccionVistaUR {
 	}
 	
 	private void Inicializar() {
-		statusTema.setVisible(true);
+		_estadoSec = statusTema;
+		_estadoSec.setVisible(true);
 	}
 
 	public void cambiarAccesibilidad(int idSeccion) throws PersistentException {

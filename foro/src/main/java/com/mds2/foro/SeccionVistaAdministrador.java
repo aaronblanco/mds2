@@ -39,6 +39,8 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 		});
 		
 		_eliminarSeccion = eliminarSeccion;
+		Inicializar();
+		
 		_eliminarSeccion.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -59,8 +61,9 @@ public class SeccionVistaAdministrador extends SeccionVistaModerador {
 	}
 	
 	private void Inicializar() {
-		eliminarSeccion.setVisible(true);
-		_eliminarSeccion = eliminarSeccion;
+		
+		_eliminarSeccion.setVisible(true);
+		
 
 	}
 	public void eliminarSeccion(int idSec) throws PersistentException {

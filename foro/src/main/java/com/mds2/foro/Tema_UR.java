@@ -24,15 +24,6 @@ public class Tema_UR extends TemaClase {
 		
 		Inicializar();
 		
-		darMG.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				darMeGusta();
-			}
-		});	
-		
 		notificarAdmin.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -53,15 +44,15 @@ public class Tema_UR extends TemaClase {
 		super(it);
 		Inicializar();
 		this.idT = it.getIdTema();
-		darMG.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				darMeGusta();
-			}
-		});	
-		
+//		darMG.addClickListener(new Button.ClickListener() {
+//			
+//			@Override
+//			public void buttonClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//				darMeGusta();
+//			}
+//		});	
+//		
 		
 		
 		notificarAdmin.addClickListener(new Button.ClickListener() {
@@ -102,16 +93,16 @@ public class Tema_UR extends TemaClase {
 
 	private void Inicializar() {
 		 
-		darMG.setVisible(true);
+		darMG.setVisible(false);
 		
 		notificarAdmin.setVisible(false);
 
 	}
-	//LAS IDS	
-	public void darMeGusta() {
-		iUsr.darMeGustaTema(1, 1);
-	}
-//las ids wey
+//	//LAS IDS	
+//	public void darMeGusta() {
+//		iUsr.darMeGustaTema(1, 1);
+//	}
+
 	public void notificarAdministrador(int idTema) throws PersistentException {
 		iAdmin.notificarAdministrador(idTema, 1);
 	}

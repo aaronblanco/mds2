@@ -11,7 +11,7 @@ public class Sistema_de_tickets_vista_administrador extends Sistema_de_tickets {
 		
 		super();
 		
-		
+		crearTicket.setVisible(false);
 	}
 	
 	

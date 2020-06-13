@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 import org.orm.PersistentException;
 
 import com.vaadin.navigator.View;
+import com.vaadin.server.Page;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -99,6 +100,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		crearMensaje.setVisible(false);
 		
 		buscadorBoton.setVisible(true);
+		
 	}
 
 	public void buscarMensaje(int aIdTema) throws PersistentException {

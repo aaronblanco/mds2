@@ -17,7 +17,7 @@ public class ModeradorClase extends Usuario_registrado implements View{
 	
 	
 	public ModeradorClase() throws PersistentException {
-		
+		super();
 
 		Menu_moderador menu = new Menu_moderador();
 		Banner_Usuario_registrado ban = new Banner_Usuario_registrado();
@@ -35,7 +35,7 @@ public class ModeradorClase extends Usuario_registrado implements View{
 	
 
 	public ModeradorClase(Layout ventana ) throws PersistentException {
-		
+		super();
 		
 	
 		Menu_moderador menu = new Menu_moderador();

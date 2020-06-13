@@ -34,6 +34,9 @@ public class Banner_Usuario_registrado extends Banner_general implements View {
 	}
 	
 	public void soporte() {
-		UI.getCurrent().getNavigator().navigateTo("sistemaTickets");
+		if(Sesion.getADMINISTRADOR())
+			UI.getCurrent().getNavigator().navigateTo("sisTicketsAdm");
+		else
+			UI.getCurrent().getNavigator().navigateTo("sistemaTickets");
 	}
 }

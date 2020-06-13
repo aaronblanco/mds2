@@ -17,7 +17,7 @@ public class AdministradorClase extends ModeradorClase implements View{
 	
 	
 	public AdministradorClase() throws PersistentException {
-		
+		super();
 
 		Menu_moderador menu = new Menu_moderador();
 	
@@ -33,7 +33,7 @@ public class AdministradorClase extends ModeradorClase implements View{
 	
 
 	public AdministradorClase(Layout ventana )  throws PersistentException{
-		
+		super();
 		
 	
 		Menu_moderador menu = new Menu_moderador();

@@ -3,6 +3,7 @@ package com.mds2.foro;
 import org.orm.PersistentException;
 
 import com.vaadin.navigator.View;
+import com.vaadin.server.Page;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -20,7 +21,11 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	iUsuario iUsr = new DB_Main();
 	
 	public CreacionMensaje(int idTema) throws PersistentException{
+		Tema t = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
 		
+		this.tituloTema.setValue(t.getTitulo());
+		this.subtitulo.setValue(t.getDescripcion());
+		this.fechaCreacion.setValue(String.valueOf(t.getFecha()));
 		this._enviar = crearMensaje;
 		this._cuerpo = textoTema;
 		_enviar.addClickListener(new Button.ClickListener() {
@@ -37,6 +42,8 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 					
 					UI.getCurrent().getNavigator().addView(s.getTitulo()+"Usr/"+t.getTitulo(), new Usuario_registrado(new Lista_Mensaje(t.getIdTema())));
 					UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Usr/"+t.getTitulo());
+					
+
 					
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block

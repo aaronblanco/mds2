@@ -8,6 +8,7 @@ public class FAQ extends FAQ_ventana implements View {
 			
 		public FAQ() {
 			textoFAQ.setCaption("FAQ");
+			textoFAQ.setEnabled(false);
 		}
 			
 	

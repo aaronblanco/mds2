@@ -11,7 +11,7 @@ public class Aviso_legal extends Aviso_legal_ventana implements View {
 		
 		avisoLegalTexto.setCaption("AVISO LEGAL");
 		
-		
+		avisoLegalTexto.setEnabled(false);
 		
 	}
 	

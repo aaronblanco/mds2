@@ -240,9 +240,10 @@ public class bd_usuarios {
 		try {
 			Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
 			Moderador mod = com.mds2.foro.ModeradorDAO.createModerador();
-			mod.setIdMod(u.getIdUsuario());
+			
+			
 			mod.setNombre(u.getNombre());
-			mod.setNombreUsuario(u.getNombreUsuario());
+			mod.setNombreUsuario(u.getNombreUsuario()+"Mod");
 			mod.setContraseña(u.getContraseña());
 			mod.setDescripcion(u.getDescripcion());
 			mod.setEmail(u.getEmail());
@@ -251,6 +252,39 @@ public class bd_usuarios {
 			mod.setOculto(u.getOculto());
 			mod.setAmonestado(false);
 			mod.setSancionado(false);
+			
+			com.mds2.foro.Notificacion[] commds2foroNotificacions = com.mds2.foro.NotificacionDAO.listNotificacionByQuery("IdUsuarioPropietario = '"+u.getIdUsuario()+"'", "IdNotificacion");
+
+			for(Notificacion n : commds2foroNotificacions) {
+				mod.notificaciones.add(n);
+			}
+			
+			com.mds2.foro.Mensaje[] me = com.mds2.foro.MensajeDAO.listMensajeByQuery("IdUsuarioPropietario = '"+u.getIdUsuario()+"'", "IdMensaje");
+
+			for(Mensaje m : me) {
+				mod.pro_mensajes.add(m);
+			}
+			
+			com.mds2.foro.Tema[] te = com.mds2.foro.TemaDAO.listTemaByQuery("IdUsuarioPropietario = '"+u.getIdUsuario()+"'", "IdTema");
+
+			for(Tema tem : te) {
+				mod.pro_temas.add(tem);
+			}
+			
+			com.mds2.foro.Seccion[] sec = com.mds2.foro.SeccionDAO.listSeccionByQuery("IdUsuarioPropietario = '"+u.getIdUsuario()+"'", "IdSeccion");
+
+			for(Seccion se : sec) {
+				mod.pro_secciones.add(se);
+			}
+			
+			com.mds2.foro.Ticket[] tic = com.mds2.foro.TicketDAO.listTicketByQuery("IdUsuarioPropietario = '"+u.getIdUsuario()+"'", "IdTicket");
+
+			for(Ticket ti : tic) {
+				mod.pro_tickets.add(ti);
+			}
+			
+			
+			
 			//com.mds2.foro.UsuariosDAO.delete(u);
 			com.mds2.foro.ModeradorDAO.save(mod);
 			t.commit();

@@ -41,7 +41,6 @@ public class Sistema_de_tickets extends Sistema_de_ticket_ventana implements Vie
 			
 		});	
 		
-		
 		//listaTickets.setVisible(true);
 	}
 	public void crearTicket() {

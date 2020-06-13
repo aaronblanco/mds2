@@ -15,7 +15,8 @@ public class TicketClase extends Ticket_ventana implements View{
 	private TextField _cuerpoTicket;
 	private Button _cerrarTicket;
 	private Button _elimnarTicket;
-
+	private Button _responderTicket;
+	
 //	private Listener _listaTicket;
 	public Sistema_de_tickets _unnamed_Sistema_de_tickets_;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
@@ -60,6 +61,7 @@ public class TicketClase extends Ticket_ventana implements View{
 		this._elimnarTicket = eliminarTicket;
 		this.idTi = t.getIdTicket();
 		this._cuerpoTicket.setValue(t.getTexto());
+		this._responderTicket = responderTicket;
 		
 		Inicializar();
 		
@@ -149,7 +151,7 @@ public class TicketClase extends Ticket_ventana implements View{
 	public void cerrarTicket() throws PersistentException {
 		iAdm.cerrarTicket(idTi);
 
-		UI.getCurrent().getNavigator().navigateTo("sisTicketAdm");
+		UI.getCurrent().getNavigator().navigateTo("sisTicketsAdm");
 		
 	}
 	
