@@ -25,7 +25,7 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 	private Image _foto;
 	private Label _anadirAmigo;
 	public Menu_UR _unnamed_Menu_UR_;
-	public Lista_Notificación _notificación;
+	public Lista_Notificacion _notificación;
 	public Lista_Amigo _amigos;
 	public Lista_Solicitud _solicitud;
 	public Lista_UsuarioReg _unnamed_Lista_UsuarioReg_;

@@ -10,7 +10,7 @@ import com.vaadin.ui.UI;
 
 
 public class Menu_moderador extends Menu_UR implements View{
-	public Panel_de_administración_vista_moderador _unnamed_Panel_de_administración_vista_moderador_;
+	public Panel_de_administracion_vista_moderador _unnamed_Panel_de_administración_vista_moderador_;
 	public Menu_moderador()throws PersistentException{
 		
 	

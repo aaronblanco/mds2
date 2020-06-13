@@ -13,7 +13,7 @@ import com.vaadin.ui.UI;
 
 public class Menu_UNR extends Menu_UNR_ventana implements View, Foro_desplegable {
 
-	public Iniciar_sesión _unnamed_Iniciar_sesión_;
+	public Iniciar_sesion _unnamed_Iniciar_sesión_;
 	public Registrarse _unnamed_Registrarse_;
 
 	public Menu_UNR() {

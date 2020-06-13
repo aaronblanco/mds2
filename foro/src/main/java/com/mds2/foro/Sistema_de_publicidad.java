@@ -14,7 +14,7 @@ import com.vaadin.ui.Image;
 
 public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana implements View{
 	private Button _subirAnuncio;
-	public Panel_de_administración_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
+	public Panel_de_administracion_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
 	public AnuncioClase _unnamed_Anuncio_;
 	public Lista_Anuncios_publicados _anuncios_publicados;
 	public Lista_Anuncios_disponibles _anuncios_disponibles;
