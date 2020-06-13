@@ -112,7 +112,6 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 		}
 		private void valueChange(ValueChangeEvent<String> e) {
 	        
-	         System.out.println("DETECTA ALGO");
 	         binder.validate();
 	    }
 	public void iniciarSesion() throws PersistentException {
@@ -121,7 +120,6 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 		
 		int idU = iUsr.iniciarSesion(_nombreUsuario.getValue(), _contrasena.getValue());
 		
-		System.out.println(idU);
 		if(idU >= 1) {
 			
 		
@@ -144,6 +142,7 @@ public class Iniciar_sesión extends Iniciar_sesion_ventana implements View{
 				UI.getCurrent().getNavigator().addView(Sesion.getNOMBRESESION(), admin);
 				UI.getCurrent().getNavigator().addView("Mi perfilAdm", new AdministradorClase(new Mi_perfil()));  
 				UI.getCurrent().getNavigator().addView("Panel de publicidad", new AdministradorClase(new Sistema_de_publicidad()) );
+				UI.getCurrent().getNavigator().addView("sisTicketAdm", new AdministradorClase(new Sistema_de_tickets_vista_administrador()));
 				UI.getCurrent().getNavigator().navigateTo(Sesion.getNOMBRESESION());
 				
 				

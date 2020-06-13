@@ -4,47 +4,21 @@ import java.util.List;
 
 import org.orm.PersistentException;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class Sistema_de_tickets_vista_usuario_registrado extends Sistema_de_tickets {
-	private Button _elimnarTicket;
+public class Sistema_de_tickets_vista_usuario_registrado extends Sistema_de_tickets implements View{
 	private Button _crearTicket;
 	public Banner_Usuario_registrado _unnamed_Banner_Usuario_registrado_;
 	iUsuario iUsr = new DB_Main();
 	
 	public Sistema_de_tickets_vista_usuario_registrado() throws PersistentException {
+		
 		super();
-		
-		List<Ticket> lista = iUsr.cargarTicket(Sesion.getIDSESION());
-		if(!lista.isEmpty()) {
-			for(Ticket t : lista) {
-				TicketClase tc = new TicketClase(t);
-				listaTickets.addComponent(tc);
-			}
-		}
-		
-		_crearTicket = crearTicket;
-		
-		_crearTicket.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				crearTicket();
-			}
-			
-		});	
-		
-		
-		listaTickets.setVisible(true);
 	}
-	
-	
-	public void eliminarTicket() {
-		throw new UnsupportedOperationException();
-	}
+
 
 	public void crearTicket() {
 		UI.getCurrent().getNavigator().navigateTo("crearTicket");

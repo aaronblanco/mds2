@@ -14,6 +14,8 @@ public class TicketClase extends Ticket_ventana implements View{
 	private Button _enviar;
 	private TextField _cuerpoTicket;
 	private Button _cerrarTicket;
+	private Button _elimnarTicket;
+
 //	private Listener _listaTicket;
 	public Sistema_de_tickets _unnamed_Sistema_de_tickets_;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
@@ -26,7 +28,7 @@ public class TicketClase extends Ticket_ventana implements View{
 		this._cuerpoTicket = txtTicket;
 		this._enviar = responderTicket;
 		this._cerrarTicket = cerrarTicket;
-		
+		_elimnarTicket = eliminarTicket;
 		
 		_enviar.addClickListener(new Button.ClickListener() {
 			
@@ -46,26 +48,8 @@ public class TicketClase extends Ticket_ventana implements View{
 		
 			
 		});	
-		
-		_cerrarTicket.addClickListener(new Button.ClickListener() {
-			
-			//cancelar();
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				try {
-					responderTicket();
-				} catch (PersistentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			
-		});	
-		
-		_cerrarTicket.setVisible(true);
-		
+
+				
 	}
 	
 	public TicketClase(Ticket t) {
@@ -73,9 +57,11 @@ public class TicketClase extends Ticket_ventana implements View{
 		this._cuerpoTicket = txtTicket;
 		this._enviar = responderTicket;
 		this._cerrarTicket = cerrarTicket;
+		this._elimnarTicket = eliminarTicket;
 		this.idTi = t.getIdTicket();
 		this._cuerpoTicket.setValue(t.getTexto());
-		txtTicket.setValue(t.getTexto());
+		
+		Inicializar();
 		
 		_enviar.addClickListener(new Button.ClickListener() {
 			
@@ -83,28 +69,27 @@ public class TicketClase extends Ticket_ventana implements View{
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				
-			try {
-				responderTicket();
-			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				try {
+					responderTicket();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 			}
 			
 		
 			
 		});	
-		
-		_cerrarTicket.addClickListener(new Button.ClickListener() {
+				
+		_elimnarTicket.addClickListener(new Button.ClickListener() {
 			
-			//cancelar();
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					cerrarTicket();
+					eliminarTicket();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -113,16 +98,59 @@ public class TicketClase extends Ticket_ventana implements View{
 			
 		});	
 		
-		_cerrarTicket.setVisible(true);
+
+		_cerrarTicket.addClickListener(new Button.ClickListener() {
+				
+				//cancelar();
+				
+				@Override
+				public void buttonClick(ClickEvent event) {
+					// TODO Auto-generated method stub
+					try {
+						cerrarTicket();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+			});	
+		
+		
+		
+
+		
+	}
+
+	private void Inicializar() {
+		// TODO Auto-generated method stub
+		if(Sesion.getADMINISTRADOR()) {
+			_cerrarTicket.setVisible(true);
+			_elimnarTicket.setVisible(false);
+		}else {
+			_cerrarTicket.setVisible(false);
+			_elimnarTicket.setVisible(true);
+		}
+
 	}
 
 	public void responderTicket() throws PersistentException {
 		iUsr.crearTicket(_cuerpoTicket.getValue(), Sesion.getIDSESION());
 	}
 	
+	public void eliminarTicket() throws PersistentException {
+		if(iUsr.eliminarTicket(idTi))
+		
+		UI.getCurrent().getNavigator().navigateTo("sistemaTickets");
+		
+	
+	}
+	
 	public void cerrarTicket() throws PersistentException {
 		iAdm.cerrarTicket(idTi);
+
 		UI.getCurrent().getNavigator().navigateTo("sisTicketAdm");
+		
 	}
 	
 }

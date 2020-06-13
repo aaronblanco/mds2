@@ -12,6 +12,7 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 	public Lista_Anuncios_publicados _anuncios_publicados;
 	public Lista_Anuncios_disponibles _anuncios_disponibles;
 	iAdministrador iAd = new DB_Main();
+	
 	public Sistema_de_publicidad() {
 		this._subirAnuncio = subirAnuncio;
 		
@@ -24,10 +25,16 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 			}
 		});
 		
+		anunciosLayout.addComponent(new Lista_Anuncios_publicados());
+		anunciosLayout.addComponent(new Lista_Anuncios_publicados());
+		
+		
+		
 	}
 	
 	
 	public void subirAnuncio() {
-		iAd.subirAnuncio(aAnuncioURL);
+		//iAd.subirAnuncio(aAnuncioURL);
+		//esto es subir cosa
 	}
 }
