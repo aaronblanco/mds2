@@ -1,6 +1,7 @@
 package com.mds2.foro;
 
 import java.io.File;
+import java.util.List;
 import java.util.Vector;
 //import Package.Anuncio;
 
@@ -19,10 +20,32 @@ public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_venta
 	public Vector<AnuncioClase> _list_Anuncio = new Vector<AnuncioClase>();
 	iAdministrador iAd = new DB_Main();
 	
-	public Lista_Anuncios_disponibles() {
+	public Lista_Anuncios_disponibles() throws PersistentException {
 		
 		this._anadirAnuncio = anadirAnuncio;
 		
+		
+		
+		
+	/*	
+		List<Anuncio> anunc = iAd.cargarAnuncioDisponible(false);
+		
+		for( Anuncio it : anunc) {
+			String url = it.getImagen();
+			
+			FileResource resource = new FileResource(new File(url));
+ 
+
+			Image image = new Image("", resource);
+			
+		
+			AnuncioClase anun= new AnuncioClase(image);
+			
+			 _list_Anuncio.add(anun);
+			 
+		
+		}
+		*/
 		_anadirAnuncio.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -40,17 +63,10 @@ public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_venta
 			}
 		});
 		
-		String basepath = VaadinService.getCurrent()
-                .getBaseDirectory().getAbsolutePath();
-		System.out.println(basepath+"ey que pasa");
+
 
 		//Image as a file resource
-		FileResource resource = new FileResource(new File(basepath +
-                      "/WEB-INF/images/image.jpg"));
-
-		//Show the image in the application
-		Image image = new Image("Image from file", resource);
-		listaAnunciosDisponibles.addComponent(image);
+		
 		//In a Maven based Vaadin project the image file should be located inside src/main/webapp/WEB-INF/images/image.png.
 		
 		

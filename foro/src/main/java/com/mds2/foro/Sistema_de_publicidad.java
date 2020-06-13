@@ -20,7 +20,7 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 	public Lista_Anuncios_disponibles _anuncios_disponibles;
 	iAdministrador iAd = new DB_Main();
 	
-	public Sistema_de_publicidad() {
+	public Sistema_de_publicidad() throws PersistentException {
 		this._subirAnuncio = subirAnuncio;
 		
 		_subirAnuncio.addClickListener(new Button.ClickListener() {
@@ -29,7 +29,35 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					subirAnuncio("hola");
+					String aAnuncioURL = "";
+					
+					String basepath = VaadinService.getCurrent()
+			                .getBaseDirectory().getAbsolutePath();
+					
+					for(int i = 1; i >= 4; i++) {
+						aAnuncioURL = basepath +
+			                    "/WEB-INF/images/image" +i +".jpg";
+					}	
+				 
+					/*
+					String basepath = VaadinService.getCurrent()
+			                .getBaseDirectory().getAbsolutePath();
+					
+					for(int i = 1; i >= 4; i++) {
+					FileResource resource = new FileResource(new File(basepath +
+			                    "/WEB-INF/images/image" +i +".jpg"));
+			 
+			
+					Image image = new Image("", resource);
+					
+					listaAnunciosDisponibles.addComponent(image);
+				
+					
+					
+					*/
+					subirAnuncio(aAnuncioURL);
+					anunciosLayout.addComponent(new Lista_Anuncios_publicados());
+					anunciosLayout.addComponent(new Lista_Anuncios_disponibles());
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -37,8 +65,8 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 			}
 		});
 		
-		anunciosLayout.addComponent(new Lista_Anuncios_publicados());
-		anunciosLayout.addComponent(new Lista_Anuncios_disponibles());
+		
+	
 		
 		
 	}
