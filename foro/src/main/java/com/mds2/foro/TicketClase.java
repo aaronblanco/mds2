@@ -17,9 +17,10 @@ public class TicketClase extends Ticket_ventana implements View{
 //	private Listener _listaTicket;
 	public Sistema_de_tickets _unnamed_Sistema_de_tickets_;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
+	private int idTi;
 	
 	iUsuario iUsr = new DB_Main();
-	
+	iAdministrador iAdm = new DB_Main();
 	
 	public TicketClase() {
 		this._cuerpoTicket = txtTicket;
@@ -72,7 +73,7 @@ public class TicketClase extends Ticket_ventana implements View{
 		this._cuerpoTicket = txtTicket;
 		this._enviar = responderTicket;
 		this._cerrarTicket = cerrarTicket;
-		
+		this.idTi = t.getIdTicket();
 		this._cuerpoTicket.setValue(t.getTexto());
 		txtTicket.setValue(t.getTexto());
 		
@@ -103,7 +104,7 @@ public class TicketClase extends Ticket_ventana implements View{
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					responderTicket();
+					cerrarTicket();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -117,6 +118,11 @@ public class TicketClase extends Ticket_ventana implements View{
 
 	public void responderTicket() throws PersistentException {
 		iUsr.crearTicket(_cuerpoTicket.getValue(), Sesion.getIDSESION());
+	}
+	
+	public void cerrarTicket() throws PersistentException {
+		iAdm.cerrarTicket(idTi);
+		UI.getCurrent().getNavigator().navigateTo("sisTicketAdm");
 	}
 	
 }

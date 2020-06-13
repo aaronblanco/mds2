@@ -16,7 +16,6 @@ public class Sistema_de_tickets_vista_usuario_registrado extends Sistema_de_tick
 	
 	public Sistema_de_tickets_vista_usuario_registrado() throws PersistentException {
 		super();
-		//listaTickets = new Lista_Ticket();
 		
 		List<Ticket> lista = iUsr.cargarTicket(Sesion.getIDSESION());
 		if(!lista.isEmpty()) {
