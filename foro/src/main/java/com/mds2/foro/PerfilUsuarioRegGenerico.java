@@ -100,7 +100,7 @@ public class PerfilUsuarioRegGenerico extends PerfilUsuarioRegGenerico_ventana{
 		Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idSenor);
 		
 		_nombre.setValue(u.getNombre());
-		_descripcion.setCaption(u.getDescripcion()); 
+		_descripcion.setValue(u.getDescripcion()); 
 		
 		
 		
@@ -130,11 +130,15 @@ public class PerfilUsuarioRegGenerico extends PerfilUsuarioRegGenerico_ventana{
 		}else {
 			Usuarios amijo = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(idU);
 			Usuarios yo = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(Sesion.getIDSESION());
+			_sancionarUsuario.setVisible(false);
+			_quitarSancion.setVisible(false);
+			_degradarAUsuarioRegistrado.setVisible(false);
 			if(yo.usuariosAmigos.contains(amijo)) {
 				_eliminarAmigo.setVisible(true);
 				_anadirAmigo.setVisible(false);
 			}else {
 				_anadirAmigo.setVisible(true);
+				_eliminarAmigo.setVisible(false);
 			}
 			
 		}
