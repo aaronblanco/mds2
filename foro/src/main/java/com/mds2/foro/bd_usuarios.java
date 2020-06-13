@@ -89,7 +89,7 @@ public class bd_usuarios {
 		List<Usuarios> lista = new ArrayList<Usuarios>();
 		Usuarios[] u = null;
 		
-		u = com.mds2.foro.UsuariosDAO.listUsuariosByQuery("Sancionado = '"+1+"'", "NombreUsuario");
+		u = com.mds2.foro.UsuariosDAO.listUsuariosByQuery("Amonestado = '"+1+"'", "NombreUsuario");
 		
 		
 		for(Usuarios ua : u) {

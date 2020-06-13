@@ -10,7 +10,6 @@ public class Lista_Usuario_Amonestado_V_Administrador extends Lista_Usuario_Amon
 	public Vector<PerfilUsuarioRegAdmin> _list_Usuario_registrado = new Vector<PerfilUsuarioRegAdmin>();
 	
 	public Lista_Usuario_Amonestado_V_Administrador() throws PersistentException {
-		
 		super();
 		
 	}

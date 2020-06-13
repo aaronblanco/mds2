@@ -17,11 +17,14 @@ public class Lista_Usuario_Amonestado extends Lista_Usuario_Amonestado_ventana i
 
 	iModerador iUsr = new DB_Main();
 	public Lista_Usuario_Amonestado() throws PersistentException {
-		List<PerfilUsuarioRegAdmin> u = iUsr.cargarUsuarioAmonestado();
+		List<Usuarios> u = iUsr.cargarUsuarioAmonestado();
+		
+		
 		
 		if(!u.isEmpty()) {
-			for(PerfilUsuarioRegAdmin p : u) {
-				usuAmonestadoLista.addComponent(p);
+			for(Usuarios p : u) {
+				VerPerfilGenerico pu = new VerPerfilGenerico(p);
+				usuAmonestadoLista.addComponent(pu);
 			}
 		}
 		

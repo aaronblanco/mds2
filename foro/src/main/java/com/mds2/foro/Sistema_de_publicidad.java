@@ -2,6 +2,8 @@ package com.mds2.foro;
 
 import java.io.File;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
@@ -26,11 +28,15 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				subirAnuncio();
+				try {
+					subirAnuncio("hola");
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
-		System.out.println("estoy poniendo los anuncios");
 		anunciosLayout.addComponent(new Lista_Anuncios_publicados());
 		anunciosLayout.addComponent(new Lista_Anuncios_disponibles());
 		
@@ -38,8 +44,10 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 	}
 	
 	
-	public void subirAnuncio() {
+	public void subirAnuncio(String aAnuncioURL) throws PersistentException {
 		//iAd.subirAnuncio(aAnuncioURL);
 		//esto es subir cosa
+		iAd.subirAnuncio(aAnuncioURL);
+		
 	}
 }

@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import java.util.List;
+
 import org.orm.PersistentException;
 
 import com.vaadin.navigator.View;
@@ -39,17 +41,14 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 		_contrasena = passwordMiPerfil;
 		_descripcion = descripcionMiPerfil;
 		int idUs = Sesion.getIDSESION(); 
+		
 		if(Sesion.getIDSESION() > 0) {
-			
-	
+				
+			Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
 		
-		System.out.println(idUs);
-		Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
-		System.out.println(usr.getNombre());
+			this._nombre = nombreUsuarioPerfil;
 		
-		this._nombre = nombreUsuarioPerfil;
-		
-		this._nombre.setValue(usr.getNombre());
+			this._nombre.setValue(usr.getNombre());
 		}
 		
 		_darseDeBaja.addClickListener(new Button.ClickListener() {
@@ -85,7 +84,12 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("buscar");
+				try {
+					buscarUsuario(buscadorAmigosMiPerfil.getValue());
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -108,6 +112,7 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 	
 	public void darseDeBaja() throws PersistentException {
 		iUsr.darDeBaja(Sesion.getIDSESION());
+		UI.getCurrent().getNavigator().navigateTo("Pagina princial");
 	}
 
 	public void ocultarPerfil() throws PersistentException {
@@ -118,7 +123,12 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 		iUsr.cambiarDatos(Sesion.getIDSESION(), _nombre.getValue(), _contrasena.getValue(), _descripcion.getValue(), null);
 	}
 
-	public void buscarUsuario() {
-		throw new UnsupportedOperationException();
+	public void buscarUsuario(String aKeyword) throws PersistentException {
+		List<Usuarios> lista = iUsr.buscarUsuario(aKeyword);
+		for(Usuarios u : lista) {
+			PerfilUsuarioRegMod ur = new PerfilUsuarioRegMod(u.getIdUsuario());
+			listaAmigosVL.addComponent(ur);
+			
+		}
 	}
 }
