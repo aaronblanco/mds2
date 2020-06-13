@@ -83,11 +83,9 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		
 		
 		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
-		System.out.println(t.toString());
 		
 		for(Mensaje it: t) {
 			MensajeClase msj = new MensajeClase(it);
-			//_list_Mensaje.addElement(msj);
 			listaMensajeAdmin.addComponent(msj);
 		}
 

@@ -21,7 +21,6 @@ public class Lista_Mensaje_V_Administrador extends Lista_Mensaje_V_Moderador{
 		
 		listaMensajeAdmin.removeAllComponents();
 		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
-		System.out.println(t.toString());
 		
 		for(Mensaje it: t) {
 			Mensaje_Administrador msj = new Mensaje_Administrador(it);

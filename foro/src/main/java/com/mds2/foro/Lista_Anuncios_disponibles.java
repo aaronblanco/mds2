@@ -1,11 +1,15 @@
 package com.mds2.foro;
 
+import java.io.File;
 import java.util.Vector;
 //import Package.Anuncio;
 
 import org.orm.PersistentException;
 
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -35,6 +39,20 @@ public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_venta
 				}
 			}
 		});
+		
+		String basepath = VaadinService.getCurrent()
+                .getBaseDirectory().getAbsolutePath();
+		System.out.println(basepath+"ey que pasa");
+
+		//Image as a file resource
+		FileResource resource = new FileResource(new File(basepath +
+                      "/WEB-INF/images/image.jpg"));
+
+		//Show the image in the application
+		Image image = new Image("Image from file", resource);
+		listaAnunciosDisponibles.addComponent(image);
+		//In a Maven based Vaadin project the image file should be located inside src/main/webapp/WEB-INF/images/image.png.
+		
 		
 	}
 	

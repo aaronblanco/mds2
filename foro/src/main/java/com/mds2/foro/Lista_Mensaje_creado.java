@@ -15,7 +15,6 @@ public class Lista_Mensaje_creado extends Lista_Mensaje_V_Usuario_Reg {
 	
 	public Lista_Mensaje_creado(int idTema) throws PersistentException {
 		super(idTema);
-		//LAS IDS
 		
 		List<Mensaje> m = iUsr.cargarMensajeCreado(idTema, Sesion.getIDSESION());
 		

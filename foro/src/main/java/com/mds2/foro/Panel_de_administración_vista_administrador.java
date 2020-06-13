@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
@@ -19,13 +21,16 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 	//public Buscar_usuario _buscar_usuario;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
 
-	public Panel_de_administración_vista_administrador() {
+	public Panel_de_administración_vista_administrador() throws PersistentException {
 		
 		modNumUM.setVisible(true);
 		
 		buscador.setVisible(true);
 		
 		configPubliAdmin.setVisible(true);
+		
+		System.out.println("creo el panel de publicidad");
+		UI.getCurrent().getNavigator().addView("sistemaPublicidad", new AdministradorClase(new Sistema_de_publicidad()));
 		
 		modNumUM.addClickListener(new Button.ClickListener() {
 			
@@ -50,7 +55,7 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				UI.getCurrent().getNavigator().navigateTo("irTema");
+				configurarPublicidad();
 			}
 		});	
 		
@@ -65,6 +70,6 @@ public class Panel_de_administración_vista_administrador extends PanelAdministr
 	}
 
 	public void configurarPublicidad() {
-		throw new UnsupportedOperationException();
+		UI.getCurrent().getNavigator().navigateTo("sistemaPublicidad");
 	}
 }

@@ -22,8 +22,6 @@ public class Lista_Seccion_V_Usuario_Reg extends Lista_Seccion {
 		
 		if(Sesion.getIDSESION() > 0) {
 			
-			System.out.println(listaSeccion.getComponentCount());
-			
 			List<Seccion> su = iUsrNR.cargarListaSecciones(true, false, false, false);
 			
 			List<Seccion> sec = iUsrNR.cargarListaSecciones(false, true, false, false);
