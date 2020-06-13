@@ -38,8 +38,6 @@ public interface iUsuario extends iBanner_Usuario_registrado, iMenu_UR {
 
 	public boolean crearTicket(String aCuerpoTicket, int aIdUsuarioPropietarioTicket) throws PersistentException;
 
-	public boolean darMeGustaTema(int aIdTema, int aIdUser);
-
 	public int darMeGustaMensaje(int aIdMensaje, int aIdUser) throws PersistentException;
 
 	public boolean aceptarSolicitud(int aIdUsuario, int aIdAmigo) throws PersistentException;

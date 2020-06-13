@@ -1,0 +1,799 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Web Wireframe - Pagina_Mensajes</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initWireframeDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		MDS1-1920-PF-BlancoRobles	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Web Wireframe - Pagina_Mensajes		</span>
+<a onclick="javascript: showVpLink('MDS1-1920-PF-BlancoRobles.vpp://diagram/OcE7NHaGAqACJR6o', 'Pagina_Mensajes\nMDS1-1920-PF-BlancoRobles.vpp://diagram/OcE7NHaGAqACJR6o', 'Pagina_Mensajes', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="auto" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;">
+			<tr>
+				<td>
+<a href="javascript:showWireframeStatesDialog()"><span class="TableContent ItemLink">Show State Overview</span></a>				</td>
+				<td width="10px">
+				</td>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0" id="selectShapeucE7NHaGAqACJR6q">
+						<tr>
+							<td>
+<span class="TableContent">Jump to:</span>								<select class="TableContent" onChange="scrollWin('diagramucE7NHaGAqACJR6q', this.value);hideLinkPopup();showSpotLight('diagramucE7NHaGAqACJR6q', this.value)">
+<option value="">Please select an element</option>
+<option value="shape|2.0|2.0|1024.0|768.0|#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6w|#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6w|LCE7NHaGAqACJR6w" id="optionLCE7NHaGAqACJR6w">Web Browser : Browser</option>
+<option value="shape|17.0|251.0|175.0|180.0|#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6y|#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6y|LCE7NHaGAqACJR6y" id="optionLCE7NHaGAqACJR6y">List Group : List Group</option>
+<option value="shape|50.0|256.0|92.0|21.0|#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR60|#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR60|LCE7NHaGAqACJR60" id="optionLCE7NHaGAqACJR60">Iniciar Sesion : Label</option>
+<option value="shape|50.0|301.0|78.0|21.0|#ucE7NHaGAqACJR6q;rCE7NHaGAqACJR64|#ucE7NHaGAqACJR6q;rCE7NHaGAqACJR64|rCE7NHaGAqACJR64" id="optionrCE7NHaGAqACJR64">Registrarse : Label</option>
+<option value="shape|50.0|337.0|122.0|77.0|#ucE7NHaGAqACJR6q;rCE7NHaGAqACJR68|#ucE7NHaGAqACJR6q;rCE7NHaGAqACJR68|rCE7NHaGAqACJR68" id="optionrCE7NHaGAqACJR68">Foro
+  -Sección
+    -Tema
+ : Label</option>
+<option value="shape|846.0|248.0|172.0|436.0|#ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7J|#ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7J|bCE7NHaGAqACJR7J" id="optionbCE7NHaGAqACJR7J">Panel : Panel</option>
+<option value="shape|887.0|286.0|90.0|21.0|#ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7L|#ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7L|bCE7NHaGAqACJR7L" id="optionbCE7NHaGAqACJR7L">PUBLICIDAD : Label</option>
+<option value="shape|237.0|248.0|609.0|436.0|#ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7Q|#ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7Q|7CE7NHaGAqACJR7Q" id="option7CE7NHaGAqACJR7Q">Panel : Panel</option>
+<option value="shape|553.0|251.0|283.0|37.0|#ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7S|#ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7S|7CE7NHaGAqACJR7S" id="option7CE7NHaGAqACJR7S">Input Group : Input Group</option>
+<option value="shape|246.0|251.0|285.0|32.0|#ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7Z|#ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7Z|HCE7NHaGAqACJR7Z" id="optionHCE7NHaGAqACJR7Z">TituloTema : Text Field</option>
+<option value="shape|248.0|289.0|141.0|30.0|#ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7c|#ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7c|HCE7NHaGAqACJR7c" id="optionHCE7NHaGAqACJR7c">SubtituloDescripción : Text Field</option>
+<option value="shape|709.0|289.0|109.0|30.0|#ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7f|#ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7f|nCE7NHaGAqACJR7f" id="optionnCE7NHaGAqACJR7f">FechaCreacion : Text Field</option>
+<option value="shape|591.0|289.0|112.0|30.0|#ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7i|#ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7i|nCE7NHaGAqACJR7i" id="optionnCE7NHaGAqACJR7i">UsuarioCreador : Text Field</option>
+<option value="shape|402.0|289.0|176.0|30.0|#ucE7NHaGAqACJR6q;InletHaGAqACJQd4|#ucE7NHaGAqACJR6q;InletHaGAqACJQd4|InletHaGAqACJQd4" id="optionInletHaGAqACJQd4">Numero total de mensajes : Text Field</option>
+<option value="shape|329.0|733.0|108.0|30.0|#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7s|#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7s|3CE7NHaGAqACJR7s" id="option3CE7NHaGAqACJR7s">Aviso legal : Text Field</option>
+<option value="shape|591.0|728.0|137.0|30.0|#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7v|#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7v|3CE7NHaGAqACJR7v" id="option3CE7NHaGAqACJR7v">FAQ, etc : Text Field</option>
+<option value="shape|237.0|319.0|609.0|366.0|#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7y|#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7y|3CE7NHaGAqACJR7y" id="option3CE7NHaGAqACJR7y">Rectangle : Rectangle</option>
+<option value="shape|239.0|323.0|605.0|156.0|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR70|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR70|PCE7NHaGAqACJR70" id="optionPCE7NHaGAqACJR70">Rectangle : Rectangle</option>
+<option value="shape|239.0|323.0|148.0|156.0|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR72|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR72|PCE7NHaGAqACJR72" id="optionPCE7NHaGAqACJR72">Rectangle : Rectangle</option>
+<option value="shape|239.0|432.0|148.0|47.0|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR74|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR74|PCE7NHaGAqACJR74" id="optionPCE7NHaGAqACJR74">Rectangle : Rectangle</option>
+<option value="shape|249.0|441.0|127.0|30.0|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR76|#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR76|PCE7NHaGAqACJR76" id="optionPCE7NHaGAqACJR76">Nick : Text Field</option>
+<option value="shape|239.0|325.0|148.0|106.0|#ucE7NHaGAqACJR6q;vCE7NHaGAqACJR7.|#ucE7NHaGAqACJR6q;vCE7NHaGAqACJR7.|vCE7NHaGAqACJR7." id="optionvCE7NHaGAqACJR7.">Image : Image</option>
+<option value="shape|391.0|328.0|442.0|104.0|#ucE7NHaGAqACJR6q;DyE7NHaGAqACJR8D|#ucE7NHaGAqACJR6q;DyE7NHaGAqACJR8D|DyE7NHaGAqACJR8D" id="optionDyE7NHaGAqACJR8D">Rectangle : Rectangle</option>
+<option value="shape|395.0|335.0|438.0|97.0|#ucE7NHaGAqACJR6q;jyE7NHaGAqACJR8F|#ucE7NHaGAqACJR6q;jyE7NHaGAqACJR8F|jyE7NHaGAqACJR8F" id="optionjyE7NHaGAqACJR8F">MENSAJES : Text Field</option>
+<option value="shape|708.0|441.0|127.0|30.0|#ucE7NHaGAqACJR6q;TyE7NHaGAqACJR8J|#ucE7NHaGAqACJR6q;TyE7NHaGAqACJR8J|TyE7NHaGAqACJR8J" id="optionTyE7NHaGAqACJR8J">FechaPost : Text Field</option>
+<option value="shape|239.0|479.0|605.0|206.0|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8R|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8R|zyE7NHaGAqACJR8R" id="optionzyE7NHaGAqACJR8R">Rectangle : Rectangle</option>
+<option value="shape|239.0|479.0|148.0|156.0|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8T|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8T|zyE7NHaGAqACJR8T" id="optionzyE7NHaGAqACJR8T">Rectangle : Rectangle</option>
+<option value="shape|239.0|588.0|148.0|47.0|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8V|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8V|zyE7NHaGAqACJR8V" id="optionzyE7NHaGAqACJR8V">Rectangle : Rectangle</option>
+<option value="shape|249.0|597.0|127.0|30.0|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8X|#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8X|zyE7NHaGAqACJR8X" id="optionzyE7NHaGAqACJR8X">Nick : Text Field</option>
+<option value="shape|239.0|481.0|148.0|106.0|#ucE7NHaGAqACJR6q;LyE7NHaGAqACJR8b|#ucE7NHaGAqACJR6q;LyE7NHaGAqACJR8b|LyE7NHaGAqACJR8b" id="optionLyE7NHaGAqACJR8b">Image : Image</option>
+<option value="shape|391.0|484.0|442.0|151.0|#ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8g|#ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8g|y6E7NHaGAqACJR8g" id="optiony6E7NHaGAqACJR8g">Rectangle : Rectangle</option>
+<option value="shape|395.0|491.0|438.0|136.0|#ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8i|#ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8i|y6E7NHaGAqACJR8i" id="optiony6E7NHaGAqACJR8i">MENSAJES : Text Field</option>
+<option value="shape|708.0|640.0|127.0|30.0|#ucE7NHaGAqACJR6q;K6E7NHaGAqACJR8m|#ucE7NHaGAqACJR6q;K6E7NHaGAqACJR8m|K6E7NHaGAqACJR8m" id="optionK6E7NHaGAqACJR8m">FechaPost : Text Field</option>
+<option value="shape|493.0|691.0|100.0|30.0|#ucE7NHaGAqACJR6q;mMa.tHaGAqACJQjv|#ucE7NHaGAqACJR6q;mMa.tHaGAqACJQjv|mMa.tHaGAqACJQjv" id="optionmMa.tHaGAqACJQjv">Paginas : Button</option>
+<option value="shape|6.0|91.0|1024.0|113.0|#ucE7NHaGAqACJR6q;q6E7NHaGAqACJR8w|#ucE7NHaGAqACJR6q;q6E7NHaGAqACJR8w|q6E7NHaGAqACJR8w" id="optionq6E7NHaGAqACJR8w">Image : Image</option>
+</select>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<span data-value="ucE7NHaGAqACJR6q" style="display: none;" id="defaultState">
+		</span>
+		<span data-value="Web Wireframe - Pagina_Mensajes - Initial" style="display: none;" id="defaultPageTitleText">
+		</span>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagramucE7NHaGAqACJR6q" src="../images/Pagina_Mensajes_Initial.png" usemap="#diagramucE7NHaGAqACJR6q_map" class="Image" width="1034" height="774"/>
+					<map name="diagramucE7NHaGAqACJR6q_map">
+<area imageId="diagramucE7NHaGAqACJR6q" coords="6, 91, 1030, 204" coords2="6, 91, 1030, 204" shape="rect" alt="Image:Image" id="areadiagramucE7NHaGAqACJR6q_map_q6E7NHaGAqACJR8w" href="#ucE7NHaGAqACJR6q;q6E7NHaGAqACJR8w" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="493, 691, 593, 721" coords2="493, 691, 593, 721" shape="rect" alt="Paginas:Button" id="areadiagramucE7NHaGAqACJR6q_map_mMa.tHaGAqACJQjv" href="#ucE7NHaGAqACJR6q;mMa.tHaGAqACJQjv" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="708, 640, 835, 670" coords2="708, 640, 835, 670" shape="rect" alt="FechaPost:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_K6E7NHaGAqACJR8m" href="#ucE7NHaGAqACJR6q;K6E7NHaGAqACJR8m" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="395, 491, 833, 627" coords2="395, 491, 833, 627" shape="rect" alt="MENSAJES:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_y6E7NHaGAqACJR8i" href="#ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8i" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="391, 484, 833, 635" coords2="391, 484, 833, 635" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_y6E7NHaGAqACJR8g" href="#ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8g" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 481, 387, 587" coords2="239, 481, 387, 587" shape="rect" alt="Image:Image" id="areadiagramucE7NHaGAqACJR6q_map_LyE7NHaGAqACJR8b" href="#ucE7NHaGAqACJR6q;LyE7NHaGAqACJR8b" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="249, 597, 376, 627" coords2="249, 597, 376, 627" shape="rect" alt="Nick:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_zyE7NHaGAqACJR8X" href="#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8X" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 588, 387, 635" coords2="239, 588, 387, 635" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_zyE7NHaGAqACJR8V" href="#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8V" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 479, 387, 635" coords2="239, 479, 387, 635" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_zyE7NHaGAqACJR8T" href="#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8T" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 479, 844, 685" coords2="239, 479, 844, 685" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_zyE7NHaGAqACJR8R" href="#ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8R" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="708, 441, 835, 471" coords2="708, 441, 835, 471" shape="rect" alt="FechaPost:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_TyE7NHaGAqACJR8J" href="#ucE7NHaGAqACJR6q;TyE7NHaGAqACJR8J" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="395, 335, 833, 432" coords2="395, 335, 833, 432" shape="rect" alt="MENSAJES:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_jyE7NHaGAqACJR8F" href="#ucE7NHaGAqACJR6q;jyE7NHaGAqACJR8F" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="391, 328, 833, 432" coords2="391, 328, 833, 432" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_DyE7NHaGAqACJR8D" href="#ucE7NHaGAqACJR6q;DyE7NHaGAqACJR8D" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 325, 387, 431" coords2="239, 325, 387, 431" shape="rect" alt="Image:Image" id="areadiagramucE7NHaGAqACJR6q_map_vCE7NHaGAqACJR7." href="#ucE7NHaGAqACJR6q;vCE7NHaGAqACJR7." onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="249, 441, 376, 471" coords2="249, 441, 376, 471" shape="rect" alt="Nick:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_PCE7NHaGAqACJR76" href="#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR76" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 432, 387, 479" coords2="239, 432, 387, 479" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_PCE7NHaGAqACJR74" href="#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR74" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 323, 387, 479" coords2="239, 323, 387, 479" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_PCE7NHaGAqACJR72" href="#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR72" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="239, 323, 844, 479" coords2="239, 323, 844, 479" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_PCE7NHaGAqACJR70" href="#ucE7NHaGAqACJR6q;PCE7NHaGAqACJR70" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="237, 319, 846, 685" coords2="237, 319, 846, 685" shape="rect" alt="Rectangle:Rectangle" id="areadiagramucE7NHaGAqACJR6q_map_3CE7NHaGAqACJR7y" href="#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7y" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="591, 728, 728, 758" coords2="591, 728, 728, 758" shape="rect" alt="FAQ, etc:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_3CE7NHaGAqACJR7v" href="#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7v" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="329, 733, 437, 763" coords2="329, 733, 437, 763" shape="rect" alt="Aviso legal:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_3CE7NHaGAqACJR7s" href="#ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7s" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="402, 289, 578, 319" coords2="402, 289, 578, 319" shape="rect" alt="Numero total de mensajes:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_InletHaGAqACJQd4" href="#ucE7NHaGAqACJR6q;InletHaGAqACJQd4" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="591, 289, 703, 319" coords2="591, 289, 703, 319" shape="rect" alt="UsuarioCreador:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_nCE7NHaGAqACJR7i" href="#ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7i" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="709, 289, 818, 319" coords2="709, 289, 818, 319" shape="rect" alt="FechaCreacion:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_nCE7NHaGAqACJR7f" href="#ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7f" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="248, 289, 389, 319" coords2="248, 289, 389, 319" shape="rect" alt="SubtituloDescripción:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_HCE7NHaGAqACJR7c" href="#ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7c" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="246, 251, 531, 283" coords2="246, 251, 531, 283" shape="rect" alt="TituloTema:Text Field" id="areadiagramucE7NHaGAqACJR6q_map_HCE7NHaGAqACJR7Z" href="#ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7Z" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="553, 251, 836, 288" coords2="553, 251, 836, 288" shape="rect" alt="Input Group:Input Group" id="areadiagramucE7NHaGAqACJR6q_map_7CE7NHaGAqACJR7S" href="#ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7S" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="237, 248, 846, 684" coords2="237, 248, 846, 684" shape="rect" alt="Panel:Panel" id="areadiagramucE7NHaGAqACJR6q_map_7CE7NHaGAqACJR7Q" href="#ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7Q" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="887, 286, 977, 307" coords2="887, 286, 977, 307" shape="rect" alt="PUBLICIDAD:Label" id="areadiagramucE7NHaGAqACJR6q_map_bCE7NHaGAqACJR7L" href="#ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7L" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="846, 248, 1018, 684" coords2="846, 248, 1018, 684" shape="rect" alt="Panel:Panel" id="areadiagramucE7NHaGAqACJR6q_map_bCE7NHaGAqACJR7J" href="#ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7J" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="50, 337, 172, 414" coords2="50, 337, 172, 414" shape="rect" alt="Foro
+  -Sección
+    -Tema
+:Label" id="areadiagramucE7NHaGAqACJR6q_map_rCE7NHaGAqACJR68" href="#ucE7NHaGAqACJR6q;rCE7NHaGAqACJR68" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="50, 301, 128, 322" coords2="50, 301, 128, 322" shape="rect" alt="Registrarse:Label" id="areadiagramucE7NHaGAqACJR6q_map_rCE7NHaGAqACJR64" href="#ucE7NHaGAqACJR6q;rCE7NHaGAqACJR64" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="50, 256, 142, 277" coords2="50, 256, 142, 277" shape="rect" alt="Iniciar Sesion:Label" id="areadiagramucE7NHaGAqACJR6q_map_LCE7NHaGAqACJR60" href="#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR60" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="17, 251, 192, 431" coords2="17, 251, 192, 431" shape="rect" alt="List Group:List Group" id="areadiagramucE7NHaGAqACJR6q_map_LCE7NHaGAqACJR6y" href="#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6y" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagramucE7NHaGAqACJR6q" coords="2, 2, 1026, 770" coords2="2, 2, 1026, 770" shape="rect" alt="Web Browser:Browser" id="areadiagramucE7NHaGAqACJR6q_map_LCE7NHaGAqACJR6w" href="#ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6w" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+</map>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0" id="elementsucE7NHaGAqACJR6q">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Display Text</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Browser.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Browser.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Web Browser : Browser</span>				</span>
+<a name="ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6w"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ListGroup.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ListGroup.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">List Group : List Group</span>				</span>
+<a name="ucE7NHaGAqACJR6q;LCE7NHaGAqACJR6y"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Label.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Label.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Iniciar Sesion : Label</span>				</span>
+<a name="ucE7NHaGAqACJR6q;LCE7NHaGAqACJR60"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Label.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Label.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Registrarse : Label</span>				</span>
+<a name="ucE7NHaGAqACJR6q;rCE7NHaGAqACJR64"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Label.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Label.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Foro<br>  -Sección<br>    -Tema<br> : Label</span>				</span>
+<a name="ucE7NHaGAqACJR6q;rCE7NHaGAqACJR68"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Panel.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Panel.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Panel : Panel</span>				</span>
+<a name="ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7J"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Label.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Label.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">PUBLICIDAD : Label</span>				</span>
+<a name="ucE7NHaGAqACJR6q;bCE7NHaGAqACJR7L"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Panel.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Panel.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Panel : Panel</span>				</span>
+<a name="ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7Q"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/InputGroup.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/InputGroup.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Input Group : Input Group</span>				</span>
+<a name="ucE7NHaGAqACJR6q;7CE7NHaGAqACJR7S"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">TituloTema : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7Z"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">SubtituloDescripción : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;HCE7NHaGAqACJR7c"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">FechaCreacion : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7f"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">UsuarioCreador : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;nCE7NHaGAqACJR7i"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Numero total de mensajes : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;InletHaGAqACJQd4"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Aviso legal : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7s"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">FAQ, etc : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7v"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;3CE7NHaGAqACJR7y"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;PCE7NHaGAqACJR70"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;PCE7NHaGAqACJR72"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;PCE7NHaGAqACJR74"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Nick : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;PCE7NHaGAqACJR76"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Image.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Image.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Image : Image</span>				</span>
+<a name="ucE7NHaGAqACJR6q;vCE7NHaGAqACJR7."></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;DyE7NHaGAqACJR8D"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">MENSAJES : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;jyE7NHaGAqACJR8F"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">FechaPost : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;TyE7NHaGAqACJR8J"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8R"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8T"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8V"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Nick : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;zyE7NHaGAqACJR8X"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Image.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Image.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Image : Image</span>				</span>
+<a name="ucE7NHaGAqACJR6q;LyE7NHaGAqACJR8b"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/RoundedRectangle.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/RoundedRectangle.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Rectangle : Rectangle</span>				</span>
+<a name="ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8g"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">MENSAJES : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;y6E7NHaGAqACJR8i"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/TextField.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/TextField.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">FechaPost : Text Field</span>				</span>
+<a name="ucE7NHaGAqACJR6q;K6E7NHaGAqACJR8m"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Button.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Button.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Paginas : Button</span>				</span>
+<a name="ucE7NHaGAqACJR6q;mMa.tHaGAqACJQjv"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Image.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Image.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <span class="TableContent">Image : Image</span>				</span>
+<a name="ucE7NHaGAqACJR6q;q6E7NHaGAqACJR8w"></a>			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="width:370px; height:255px; position: fixed; _position: absolute; overflow: scroll; background-color: #F0F0F0; top: 100px; left: 100px; padding: 10px; display: none;" id="wireframeStatesDialog">
+		<span data-value="Web Wireframe - Pagina_Mensajes - Initial" style="display: none;" id="pageTitleTextucE7NHaGAqACJR6q">
+		</span>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style=" left: 30; top: 30; width: 340; height: 225; position: absolute; z-index: 10; background: white; border: black 3px solid; padding: 15px 20px 10px 20px; text-align: center;">
+			<tr>
+				<td>
+<a href="javascript:okWireframeStatesDialog('selectShapeucE7NHaGAqACJR6q', 'diagramucE7NHaGAqACJR6q', 'none', 'elementsucE7NHaGAqACJR6q', 'PageTitleText', 'pageTitleTextucE7NHaGAqACJR6q')"><img src="../images/Pagina_Mensajes_Initial_preview.png" class="Image" style=" width: 267; height: 200; border: none !important;"/>
+</a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:okWireframeStatesDialog('selectShapeucE7NHaGAqACJR6q', 'diagramucE7NHaGAqACJR6q', 'none', 'elementsucE7NHaGAqACJR6q', 'PageTitleText', 'pageTitleTextucE7NHaGAqACJR6q')"><span style="color: black !important" class="TableContent ItemLink">Initial</span></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		MDS1-1920-PF-BlancoRobles	</div>
+</body>
+</html>

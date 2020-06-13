@@ -8,16 +8,15 @@ import com.vaadin.ui.Layout;
 //import Package2.iAdministrador;
 
 public class AdministradorClase extends ModeradorClase implements View{
-	//public iAdministrador _iAdministrador;
 	public Lista_Tema_V_Administrador _tema_vista_administrador;
 	public Lista_Mensaje_V_Administrador _mensaje_vista_administrador;
 	public Lista_Seccion_V_administrador _unnamed_Lista_Seccion_V_administrador_;
-	public Panel_de_administración_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
+	public Panel_de_administracion_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
 	
 	
 	
 	public AdministradorClase() throws PersistentException {
-		
+		super();
 
 		Menu_moderador menu = new Menu_moderador();
 	
@@ -33,7 +32,7 @@ public class AdministradorClase extends ModeradorClase implements View{
 	
 
 	public AdministradorClase(Layout ventana )  throws PersistentException{
-		
+		super();
 		
 	
 		Menu_moderador menu = new Menu_moderador();

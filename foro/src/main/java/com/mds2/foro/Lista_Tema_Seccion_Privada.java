@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
-//import Package.Tema_privado;
 
 public class Lista_Tema_Seccion_Privada extends Lista_Tema_V_Usuario_Reg {
 	public Seccion_privada _unnamed_Sección_privada_;

@@ -14,7 +14,7 @@ import com.vaadin.ui.Image;
 
 public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana implements View{
 	private Button _subirAnuncio;
-	public Panel_de_administración_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
+	public Panel_de_administracion_vista_administrador _unnamed_Panel_de_administración_vista_administrador_;
 	public AnuncioClase _unnamed_Anuncio_;
 	public Lista_Anuncios_publicados _anuncios_publicados;
 	public Lista_Anuncios_disponibles _anuncios_disponibles;
@@ -39,22 +39,7 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 			                    "/WEB-INF/images/image" +i +".jpg";
 					}	
 				 
-					/*
-					String basepath = VaadinService.getCurrent()
-			                .getBaseDirectory().getAbsolutePath();
 					
-					for(int i = 1; i >= 4; i++) {
-					FileResource resource = new FileResource(new File(basepath +
-			                    "/WEB-INF/images/image" +i +".jpg"));
-			 
-			
-					Image image = new Image("", resource);
-					
-					listaAnunciosDisponibles.addComponent(image);
-				
-					
-					
-					*/
 					subirAnuncio(aAnuncioURL);
 					anunciosLayout.addComponent(new Lista_Anuncios_publicados());
 					anunciosLayout.addComponent(new Lista_Anuncios_disponibles());

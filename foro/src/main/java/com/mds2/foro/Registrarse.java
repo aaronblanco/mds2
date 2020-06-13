@@ -33,7 +33,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 	private Button _adjuntarFotoPerfil;
 	private Upload _foto;
 	private Button _validarDatos;
-	public Correo_electrónico _unnamed_Correo_electrónico_;
+	public Correo_electronico _unnamed_Correo_electrónico_;
 	public Menu_UNR _unnamed_Menu_UNR_;
 
 	iUsuario_no_registrado iNusr = new DB_Main();
