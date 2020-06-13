@@ -39,7 +39,7 @@ public class TemaClase extends Tema_ventana implements View{
 		Inicializar();
 		irTema.setCaption(s.getTitulo());
 		this._titulo = irTema;
-		//this._titulo.setCaption(s.getTitulo());
+		this._titulo.setCaption(s.getTitulo());
 		
 		this._fechaCreacion = s.getFecha();
 		this._creador = s.getUsuarios().getNombreUsuario();

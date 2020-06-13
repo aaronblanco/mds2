@@ -17,6 +17,7 @@ public class Tema_UR extends TemaClase {
 	public Lista_Mensaje_V_Usuario_Reg _lista_Mensaje_V_Usuario_Reg_;
 	iUsuario iUsr = new DB_Main();
 	iAdministrador iAdmin = new DB_Main();
+	private int idT;
 	
 	public Tema_UR() {
 		super();
@@ -38,7 +39,7 @@ public class Tema_UR extends TemaClase {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					notificarAdministrador();
+					notificarAdministrador(idT);
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -51,7 +52,7 @@ public class Tema_UR extends TemaClase {
 	public Tema_UR(Tema it) throws PersistentException {
 		super(it);
 		Inicializar();
-		
+		this.idT = it.getIdTema();
 		darMG.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -61,19 +62,23 @@ public class Tema_UR extends TemaClase {
 			}
 		});	
 		
+		
+		
 		notificarAdmin.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
-					notificarAdministrador();
+					notificarAdministrador(idT);
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		});	
+		
+		
 		
 		this._titulo.addClickListener(new Button.ClickListener() {
 
@@ -96,10 +101,10 @@ public class Tema_UR extends TemaClase {
 	}
 
 	private void Inicializar() {
-		
+		 
 		darMG.setVisible(true);
 		
-		notificarAdmin.setVisible(true);
+		notificarAdmin.setVisible(false);
 
 	}
 	//LAS IDS	
@@ -107,7 +112,7 @@ public class Tema_UR extends TemaClase {
 		iUsr.darMeGustaTema(1, 1);
 	}
 //las ids wey
-	public void notificarAdministrador() throws PersistentException {
-		iAdmin.notificarAdministrador(1, 1);
+	public void notificarAdministrador(int idTema) throws PersistentException {
+		iAdmin.notificarAdministrador(idTema, 1);
 	}
 }

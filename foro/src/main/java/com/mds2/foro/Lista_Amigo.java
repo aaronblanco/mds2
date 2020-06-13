@@ -16,13 +16,13 @@ public class Lista_Amigo extends Lista_Amigo_ventana {
 	public Lista_Amigo() throws PersistentException {
 		//las ids lol
 		
-		List<Amigo> lista = iUsr.cargarAmigos(com.mds2.foro.UsuariosDAO.getUsuariosByORMID(Sesion.getIDSESION()).getIdUsuario());
+		List<Usuarios> lista = iUsr.cargarAmigos(Sesion.getIDSESION());
 	
-		for(Amigo a : lista) {
+		for(Usuarios u : lista) {
 			
-			Amigo am = new Amigo(a);
+			Amigo a = new Amigo(u);
 			
-			amigosMiPerfil.addComponent(am);
+			amigosMiPerfil.addComponent(a);
 			
 		}
 		

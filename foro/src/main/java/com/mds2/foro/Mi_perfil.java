@@ -34,21 +34,21 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 	
 	
 	public Mi_perfil() throws PersistentException {
-		_darseDeBaja = darseDeBaja;
-		_ocultarPerfil = ocultarMiPerfil;
-		_cambiarDatos = modificarPerfil;
-		_nombre = nombreUsuarioPerfil;
-		_contrasena = passwordMiPerfil;
-		_descripcion = descripcionMiPerfil;
+		this._darseDeBaja = darseDeBaja;
+		this._ocultarPerfil = ocultarMiPerfil;
+		this._cambiarDatos = modificarPerfil;
+		this._nombre = nombreUsuarioPerfil;
+		this._contrasena = passwordMiPerfil;
+		this._descripcion = descripcionMiPerfil;
 		int idUs = Sesion.getIDSESION(); 
 		
 		if(Sesion.getIDSESION() > 0) {
 				
 			Usuarios usr = UsuariosDAO.getUsuariosByORMID(idUs);
 		
-			this._nombre = nombreUsuarioPerfil;
-		
 			this._nombre.setValue(usr.getNombre());
+			this._contrasena.setValue(usr.getContraseña());
+			this._descripcion.setValue(usr.getDescripcion());
 		}
 		
 		_darseDeBaja.addClickListener(new Button.ClickListener() {
@@ -107,12 +107,14 @@ public class Mi_perfil extends Mi_Perfil_ventana implements View {
 			}
 		});
 		
+		listaAmigosVL.addComponent(new Lista_Amigo());
+		listaSolicitudesVL.addComponent(new Lista_Solicitud());
 	}
 	
 	
 	public void darseDeBaja() throws PersistentException {
 		iUsr.darDeBaja(Sesion.getIDSESION());
-		UI.getCurrent().getNavigator().navigateTo("Pagina princial");
+		UI.getCurrent().getNavigator().navigateTo("Pagina principal");
 	}
 
 	public void ocultarPerfil() throws PersistentException {
