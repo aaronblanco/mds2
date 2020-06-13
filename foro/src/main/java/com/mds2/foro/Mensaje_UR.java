@@ -10,8 +10,6 @@ public class Mensaje_UR extends MensajeClase {
 	private Button _darMeGusta;
 	private Button _responder;
 	private boolean _meGusta;
-//	private Listener _listaUltimoMsg;
-//	private Listener _listaMsgVUsuarioReg;
 	private Button _notificarAdministrador;
 	public Lista_Mensaje_V_Usuario_Reg _unnamed_Lista_Mensaje_V_Usuario_Reg_;
 	public Lista_Ultimo_mensaje _unnamed_Lista_Ultimo_mensaje_;

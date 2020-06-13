@@ -63,9 +63,7 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 		});
 		
 		adjuntarMediaMsg.addClickListener(new Button.ClickListener() {
-			
-			//cancelar();
-			
+						
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -83,7 +81,6 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	}
 
 	public void adjuntarImagen() {
-//??????????????????
 	}
 
 	public void enviar(int idTema) throws PersistentException {

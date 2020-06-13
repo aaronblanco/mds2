@@ -8,7 +8,6 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.TextField;
 
-//import Package.Sistema_de_tickets;
 
 public class TicketClase extends Ticket_ventana implements View{
 	private Button _enviar;
@@ -17,7 +16,6 @@ public class TicketClase extends Ticket_ventana implements View{
 	private Button _elimnarTicket;
 	private Button _responderTicket;
 	
-//	private Listener _listaTicket;
 	public Sistema_de_tickets _unnamed_Sistema_de_tickets_;
 	public Lista_Ticket _unnamed_Lista_Ticket_;
 	private int idTi;

@@ -1,6 +1,5 @@
 package com.mds2.foro;
 
-//import Package.Mi_perfil;
 
 public class Lista_UsuarioReg {
 	public Mi_perfil _unnamed_Mi_perfil_;

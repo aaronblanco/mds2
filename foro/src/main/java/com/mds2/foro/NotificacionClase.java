@@ -8,7 +8,6 @@ public class NotificacionClase extends VerPerfilGenerico{
 	private Button _eliminarNotificacion;
 	private Label _titulo;
 	private TextField _descripcion;
-//	private Listener _listaNotificacion;
 	public Lista_Notificación _unnamed_Lista_Notificación_;
 
 	public NotificacionClase(Notificacion n) {

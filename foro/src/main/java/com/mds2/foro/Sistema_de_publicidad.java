@@ -39,22 +39,7 @@ public class Sistema_de_publicidad extends Sistema_de_Publicidad_ventana impleme
 			                    "/WEB-INF/images/image" +i +".jpg";
 					}	
 				 
-					/*
-					String basepath = VaadinService.getCurrent()
-			                .getBaseDirectory().getAbsolutePath();
 					
-					for(int i = 1; i >= 4; i++) {
-					FileResource resource = new FileResource(new File(basepath +
-			                    "/WEB-INF/images/image" +i +".jpg"));
-			 
-			
-					Image image = new Image("", resource);
-					
-					listaAnunciosDisponibles.addComponent(image);
-				
-					
-					
-					*/
 					subirAnuncio(aAnuncioURL);
 					anunciosLayout.addComponent(new Lista_Anuncios_publicados());
 					anunciosLayout.addComponent(new Lista_Anuncios_disponibles());

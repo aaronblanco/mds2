@@ -6,8 +6,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-//import DCLv3.Lista_Ticket;
-//import DCLv3.PanelAdministracionGenerico;
+
 
 public class Panel_de_administración_vista_administrador extends PanelAdministracionGenerico {
 

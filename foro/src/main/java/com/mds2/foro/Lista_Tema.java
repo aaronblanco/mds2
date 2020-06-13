@@ -17,7 +17,6 @@ import com.vaadin.ui.Component;
 public class Lista_Tema extends Lista_Tema_ventana implements View {
 	public SeccionClase _sección;
 	public Vector<TemaClase> _list_Tema = new Vector<TemaClase>();
-	//public Vector<Buscador_tema> _list_Buscador_tema = new Vector<Buscador_tema>();
 	
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 

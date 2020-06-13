@@ -14,7 +14,6 @@ public class Lista_Amigo extends Lista_Amigo_ventana {
 	iUsuario iUsr = new DB_Main();
 	
 	public Lista_Amigo() throws PersistentException {
-		//las ids lol
 		
 		List<Usuarios> lista = iUsr.cargarAmigos(Sesion.getIDSESION());
 	

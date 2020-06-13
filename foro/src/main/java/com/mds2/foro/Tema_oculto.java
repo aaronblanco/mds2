@@ -6,10 +6,8 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-//import DCLv3.TemaVistaModerador;
 
 public class Tema_oculto extends Tema_UR {
-//	private Listener _listaTemaMod;
 	public Lista_Tema_V_Moderador _unnamed_Lista_Tema_V_Moderador_;
 	
 	public Tema_oculto(Tema it) throws PersistentException {

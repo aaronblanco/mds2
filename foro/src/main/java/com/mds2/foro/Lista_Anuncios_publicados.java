@@ -24,26 +24,6 @@ public class Lista_Anuncios_publicados extends Lista_Anuncios_publicados_ventana
 		this._eliminarAnuncio = eliminarAnuncio;
 		
 		
-		/*
-	
-		List<Anuncio> anunc = iAd.cargarAnuncioDisponible(true);
-		
-		for( Anuncio it : anunc) {
-			String url = it.getImagen();
-			
-			FileResource resource = new FileResource(new File(url));
- 
-
-			Image image = new Image("", resource);
-			
-			AnuncioClase anun= new AnuncioClase(image);
-			 _list_Anuncio.add(anun);
-			 
-		
-		}
-		*/
-		
-		
 		_eliminarAnuncio.addClickListener(new Button.ClickListener() {
 			
 			

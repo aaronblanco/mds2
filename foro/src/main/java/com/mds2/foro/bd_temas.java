@@ -105,10 +105,6 @@ public class bd_temas {
 	
 	}
 
-	public boolean darMeGustaTema(int aIdTema, int aIdUser) {
-		//TemaDAO.getTemaByORMID(aIdTema)
-		throw new UnsupportedOperationException();
-	}
 
 	public boolean eliminarTema(int aIdTema) throws PersistentException {
 		

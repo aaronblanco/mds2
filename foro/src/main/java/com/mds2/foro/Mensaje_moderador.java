@@ -8,9 +8,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public class Mensaje_moderador extends Mensaje_UR {
 	private Button _ocultar;
-	//private Listener _listaMsgMod;
 	public Lista_Mensaje_V_Moderador _unnamed_Lista_Mensaje_V_Moderador_;
-	//public Ver_información_de_usuario_registrado _ver_información_de_usuario_registrado;
 	iModerador iUsr = new DB_Main();
 	
 	public Mensaje_moderador(Mensaje m) {
@@ -59,7 +57,6 @@ public class Mensaje_moderador extends Mensaje_UR {
 	}
 	
 	
-	//Aqui sustituimos el notificar por notificar Y ocultar, asi que habra que sobreescribir cosas
 	public void ocultar(int idMo) throws PersistentException {
 		
 		iUsr.ocultarMensaje(idMo);

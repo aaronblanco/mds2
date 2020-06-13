@@ -7,7 +7,6 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Seccion_eliminada extends Seccion_oculta {
-	//private Listener _listaSeccionAdmin;
 	public Lista_Seccion_V_administrador _unnamed_Lista_Seccion_V_administrador_;
 	
 	public Seccion_eliminada(Seccion s) throws PersistentException {

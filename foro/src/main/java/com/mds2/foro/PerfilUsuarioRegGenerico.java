@@ -9,13 +9,10 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 
-//import Package.Lista_Ultimo_mensaje;
 
 public class PerfilUsuarioRegGenerico extends PerfilUsuarioRegGenerico_ventana{
 	private Label _nombre;
 	private Label _descripcion;
-//	private Image _foto;
-//	private TextField _ultimosMsg;
 	private Button _anadirAmigo;
 	private Button _eliminarAmigo;
 	private Label _estado;

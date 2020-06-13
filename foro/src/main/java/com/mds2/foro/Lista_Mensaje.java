@@ -23,7 +23,6 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 	private Button _crearMensaje;
 	protected Button _volverTema;
 	public TemaClase _Tema;
-	//public Vector<Buscador_mensaje> _list_Buscador_mensaje = new Vector<Buscador_mensaje>();
 	public Vector<MensajeClase> _list_Mensaje = new Vector<MensajeClase>();
 	iUsuario_no_registrado iUsrNR = new DB_Main();
 	

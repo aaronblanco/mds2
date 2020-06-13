@@ -181,10 +181,6 @@ public class DB_Main implements iAdministrador, iBanner_general, iBanner_Usuario
 		return bdTick.crearTicket(aCuerpoTicket, aIdUsuarioPropietarioTicket);
 	}
 
-	public boolean darMeGustaTema(int aIdTema, int aIdUser) {
-		return bdTema.darMeGustaTema(aIdTema, aIdUser);
-	}
-
 	public int darMeGustaMensaje(int aIdMensaje, int aIdUser) throws PersistentException {
 		return bdMsg.darMeGustaMensaje(aIdMensaje, aIdUser);
 	}

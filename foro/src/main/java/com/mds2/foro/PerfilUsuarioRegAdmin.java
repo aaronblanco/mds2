@@ -6,11 +6,9 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-//import DCLv3.PerfilUsuarioRegGenerico;
 
 public class PerfilUsuarioRegAdmin extends PerfilUsuarioRegGenerico {
 
-//	private Listener _listaUsuarioAmonestadoAdmin;
 	public Lista_Usuario_Amonestado_V_Administrador _unnamed_Lista_Usuario_Amonestado_V_Administrador_;
 	public Lista_Usuario_Amonestado _usuario_amonestado;
 	iAdministrador iAd = new DB_Main();

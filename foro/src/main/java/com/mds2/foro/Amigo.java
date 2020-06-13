@@ -10,7 +10,6 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Amigo extends VerPerfilGenerico {
 	private Button _anadirAmigo;
 	private Button _eliminarAmigo;
-	//private Listener _listaAmigo;
 	public Lista_Amigo _unnamed_Lista_Amigo_;
 
 	

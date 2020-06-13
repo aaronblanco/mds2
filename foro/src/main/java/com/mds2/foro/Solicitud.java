@@ -9,7 +9,6 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Solicitud extends VerPerfilGenerico {
 	private Button _aceptarSolicitud;
     private Button _rechazarSolicitud;
-//	private Listener _listaSolicitud;
 	public Lista_Solicitud _unnamed_Lista_Solicitud_;
 	iUsuario iUsr = new DB_Main();
 	private int idS;

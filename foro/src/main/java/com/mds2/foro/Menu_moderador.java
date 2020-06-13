@@ -8,10 +8,8 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Tree;
 import com.vaadin.ui.UI;
 
-//import Package2.iMenu_moderador;
 
 public class Menu_moderador extends Menu_UR implements View{
-//	public iMenu_moderador _iMenu_moderador;
 	public Panel_de_administración_vista_moderador _unnamed_Panel_de_administración_vista_moderador_;
 	public Menu_moderador()throws PersistentException{
 		

@@ -24,28 +24,6 @@ public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_venta
 		
 		this._anadirAnuncio = anadirAnuncio;
 		
-		
-		
-		
-	/*	
-		List<Anuncio> anunc = iAd.cargarAnuncioDisponible(false);
-		
-		for( Anuncio it : anunc) {
-			String url = it.getImagen();
-			
-			FileResource resource = new FileResource(new File(url));
- 
-
-			Image image = new Image("", resource);
-			
-		
-			AnuncioClase anun= new AnuncioClase(image);
-			
-			 _list_Anuncio.add(anun);
-			 
-		
-		}
-		*/
 		_anadirAnuncio.addClickListener(new Button.ClickListener() {
 			
 			@Override
@@ -62,12 +40,6 @@ public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_venta
 				}
 			}
 		});
-		
-
-
-		//Image as a file resource
-		
-		//In a Maven based Vaadin project the image file should be located inside src/main/webapp/WEB-INF/images/image.png.
 		
 		
 	}

@@ -44,7 +44,6 @@ public class bd_mensajes {
 			
 		}catch(Exception e) {
 			 e.printStackTrace();
-			//t.rollback();
 			
 		}
 		
@@ -99,7 +98,6 @@ public class bd_mensajes {
 			Usuarios u = com.mds2.foro.UsuariosDAO.getUsuariosByORMID(aIdUsuario);
 		
 			Mensaje msj= com.mds2.foro.MensajeDAO.createMensaje();
-	//PARA LO DE MEDIA HABRIA QUE CREAR UNA INSTANCIA DE MEDIA CON LA URL QUE LE PASA Y HACER COSAS DE ASOCIAR 
 			msj.setContenido(aCuerpoMensaje);
 		
 			msj.setEliminado(false);

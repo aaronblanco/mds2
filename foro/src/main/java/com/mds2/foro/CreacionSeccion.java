@@ -13,7 +13,6 @@ import com.vaadin.ui.TextField;
 public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 	private TextField _tituloSeccion;
 	private TextField _descipcionSeccion;
-//	private Button _adjuntarImagen;
 	private Button _enviar;
 	private Button _cancelar;
 	private String _imagenSeccionURL = "";

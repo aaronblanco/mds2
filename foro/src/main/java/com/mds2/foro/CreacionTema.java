@@ -63,7 +63,6 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 		
 	}
 	
-	//LA DESCRIPCION NO EXISTE EN VD 
 	public void enviar(int aIdSeccionPropietaria, int aIdTemaPropietario) throws PersistentException {
 		iUsr.crearTema(_tituloTema.getValue(), _subtituloTema.getValue(), _descripcion.getValue(), aIdSeccionPropietaria, aIdTemaPropietario);
 	}

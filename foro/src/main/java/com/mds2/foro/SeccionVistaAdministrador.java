@@ -11,7 +11,6 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public class SeccionVistaAdministrador extends SeccionVistaModerador {
 	private Button _eliminarSeccion;
-//	private Listener _listaSeccionAdmin;
 	public Lista_Seccion_V_administrador _unnamed_Lista_Seccion_V_administrador_;
 	public Lista_Tema_V_Administrador _unnamed_Lista_Tema_V_Administrador_;
 	iAdministrador iAdmin  = new DB_Main();

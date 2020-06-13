@@ -12,7 +12,6 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public class Sistema_de_tickets extends Sistema_de_ticket_ventana implements View{
 	private Button _responderTicket;
-//	public Responder_ticket _responder_ticket;
 	public TicketClase _unnamed_Ticket_;
 	iUsuario iUsr = new DB_Main();
 	private Button _elimnarTicket;
@@ -41,7 +40,6 @@ public class Sistema_de_tickets extends Sistema_de_ticket_ventana implements Vie
 			
 		});	
 		
-		//listaTickets.setVisible(true);
 	}
 	public void crearTicket() {
 		UI.getCurrent().getNavigator().navigateTo("crearTicket");

@@ -15,10 +15,8 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Component;
 
 public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
-	//private Button _crearMensaje;
 	public Usuario_registrado _usuario_registrado;
 	public Tema_UR _unnamed_Tema_UR_;
-	//public Vector<Ver_perfil_de_usuario> _list_Ver_perfil_de_usuario = new Vector<Ver_perfil_de_usuario>();
 	public Vector<Mensaje_UR> _list_Mensaje_UR = new Vector<Mensaje_UR>();
 	public CreacionMensaje _unnamed_CreacionMensaje_;
 	iUsuario iUsr = new DB_Main();

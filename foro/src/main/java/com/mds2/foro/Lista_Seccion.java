@@ -18,7 +18,6 @@ import com.vaadin.ui.Component;
 public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 	public Usuario_no_registrado _unnamed_Usuario_no_registrado_;
 	public Vector<SeccionClase> _list_Seccion = new Vector<SeccionClase>();
-	//public Vector<Buscador_seccion> _list_Buscador_sección = new Vector<Buscador_seccion>();
 	iUsuario_no_registrado iUsrNR  = new DB_Main();
 
 	public Lista_Seccion() throws PersistentException {
@@ -38,13 +37,6 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 			}
 		});
 		
-//		crearNuevaSeccion.addClickListener(new Button.ClickListener() {
-//			@Override
-//			public void buttonClick(ClickEvent event) {
-//				// TODO Auto-generated method stub
-//				crearSeccion();
-//			}
-//		});
 	}
 	
 
@@ -61,7 +53,6 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		
 		for(Seccion it : cosa ) {
 			SeccionClase tal = new SeccionClase(it);
-		//	_list_Seccion.add(tal);
 			listaSeccion.addComponent(tal);
 			listaSeccion.toString();
 			UI.getCurrent().getNavigator().addView(it.getTitulo(), new Usuario_no_registrado(new Lista_Tema(it.getIdSeccion())));
@@ -78,7 +69,6 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 		List<Seccion> sb = iUsrNR.buscarSeccion(keywordBS.getValue());
 		listaSeccion.removeAllComponents();
 		if(!sb.isEmpty()) {
-			//listaSeccion.removeAllComponents();
 			
 			for(Seccion s:sb) {
 				SeccionClase sc = new SeccionClase(s);
@@ -97,8 +87,5 @@ public class Lista_Seccion extends Lista_Seccion_ventana implements View{
 				}
 		}
 	}
-	
-//	public void crearSeccion() {
-//		UI.getCurrent().getNavigator().navigateTo("crearSeccion");
-//	}
+
 }

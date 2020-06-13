@@ -16,11 +16,9 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Component;
 
 public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
-//	private Button _crearTema;
 	public Usuario_registrado _usuario_registrado;
 	public SeccionVistaUR _unnamed_SeccionVistaUR_;
 	public Vector<Tema_privado> _list_Tema_privado = new Vector<Tema_privado>();
-	//public Vector<Crear_tema> _list_Crear_tema = new Vector<Crear_tema>();
 	public Vector<Tema_UR> _list_Tema_UR = new Vector<Tema_UR>();
 	public CreacionTema _unnamed_CreacionTema_;
 

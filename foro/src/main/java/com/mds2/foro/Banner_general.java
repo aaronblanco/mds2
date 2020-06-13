@@ -10,13 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Banner_general extends Banner_general_ventana implements View{
 	private Button _faq;
 	private Button _avisoLegal;
-//	private TextField _foroDesplegable;
-//	public iBanner_general _iBanner_general;
-//	public Banner _banner;
-//	public Publicidad _publicidad;
-//	public Aviso_legal _unnamed_Aviso_legal_;
-//	public Foro_desplegable _unnamed_Foro_desplegable_;
-//	public FAQ _unnamed_FAQ_;
+
 
 	public Banner_general() {
 		this._faq = faq;

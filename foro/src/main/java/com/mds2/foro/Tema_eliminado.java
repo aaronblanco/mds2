@@ -6,10 +6,8 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
-//import DCLv3.Tema_vista_Admin;
 
 public class Tema_eliminado extends Tema_oculto {
-	//private Listener _listaTemaAdmin;
 	public Lista_Tema_V_Administrador _unnamed_Lista_Tema_V_Administrador_;
 	
 	public Tema_eliminado(Tema it) throws PersistentException {

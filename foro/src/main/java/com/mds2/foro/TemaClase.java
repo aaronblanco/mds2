@@ -8,7 +8,6 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 
-//import DCLv3.Tipo;
 
 public class TemaClase extends Tema_ventana implements View{
 	protected Button _titulo;
