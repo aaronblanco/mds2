@@ -20,6 +20,7 @@ import com.vaadin.ui.declarative.Design;
 @SuppressWarnings("serial")
 public class Ticket_ventana extends VerticalLayout {
 	protected Button cerrarTicket;
+	protected Button eliminarTicket;
 	protected TextField txtTicket;
 	protected Button responderTicket;
 

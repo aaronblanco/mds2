@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import java.util.List;
+
 import org.orm.PersistentException;
 
 import com.vaadin.navigator.View;
@@ -12,11 +14,38 @@ public class Sistema_de_tickets extends Sistema_de_ticket_ventana implements Vie
 	private Button _responderTicket;
 //	public Responder_ticket _responder_ticket;
 	public TicketClase _unnamed_Ticket_;
-
+	iUsuario iUsr = new DB_Main();
+	private Button _elimnarTicket;
+	private Button _crearTicket;
+	
 	public Sistema_de_tickets() throws PersistentException {
 		
-		//Lista_Ticket lis = new Lista_Ticket();
+		List<Ticket> lista = iUsr.cargarTicket(Sesion.getIDSESION());
+		if(!lista.isEmpty()) {
+			for(Ticket t : lista) {
+				TicketClase tc = new TicketClase(t);
+				listaTickets.addComponent(tc);
+			}
+		}
 		
+		
+		_crearTicket = crearTicket;
+		
+		_crearTicket.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				crearTicket();
+			}
+			
+		});	
+		
+		
+		//listaTickets.setVisible(true);
+	}
+	public void crearTicket() {
+		UI.getCurrent().getNavigator().navigateTo("crearTicket");
 	}
 	
 }
