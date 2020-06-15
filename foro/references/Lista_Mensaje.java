@@ -20,7 +20,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 	private Label _usuarioCreador;
 	private Label _fechaCreacion;
 	private Label _pagina;
-	private Button _crearMensaje;
+
 	protected Button _volverTema;
 	public TemaClase _Tema;
 	public Vector<MensajeClase> _list_Mensaje = new Vector<MensajeClase>();
@@ -32,7 +32,7 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 		this._subtituloDescripcion = subtitle;
 		this._fechaCreacion = fechaCreacion;
 		this._usuarioCreador = usuarioCreador;
-		this._crearMensaje = crearMensaje;
+	
 		this._volverTema = volverTema;
 		
 		Tema te = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
@@ -51,20 +51,6 @@ public class Lista_Mensaje extends Lista_Mensaje_ventana implements View {
 			
 		});	
 		
-		_crearMensaje.addClickListener(new Button.ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				try {
-					UI.getCurrent().getNavigator().addView("crearMensaje", new Usuario_registrado(new CreacionMensaje(idTema)));
-				} catch (PersistentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				UI.getCurrent().getNavigator().navigateTo("crearMensaje");
-			}
-		});	
 		
 		buscadorBoton.addClickListener(new Button.ClickListener() {
 			

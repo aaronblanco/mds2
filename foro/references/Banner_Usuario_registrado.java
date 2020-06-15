@@ -1,5 +1,7 @@
 package com.mds2.foro;
 
+import org.orm.PersistentException;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
@@ -11,7 +13,8 @@ public class Banner_Usuario_registrado extends Banner_general implements View {
 	private Button _soporte;
 	public Sistema_de_tickets_vista_usuario_registrado _sistema_de_tickets_vista_usuario_registrado;
 
-	public Banner_Usuario_registrado() {
+	public Banner_Usuario_registrado() throws PersistentException{
+		super();
 		_soporte = soporte;
 		
 		_soporte.setVisible(true);

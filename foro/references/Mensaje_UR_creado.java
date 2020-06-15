@@ -37,6 +37,7 @@ public class Mensaje_UR_creado extends Mensaje_UR {
 		// TODO Auto-generated constructor stub
 		super(m);
 		
+		
 		eliminarMensaje.setVisible(true);
 		
 		_eliminarMensaje = eliminarMensaje;
@@ -57,5 +58,12 @@ public class Mensaje_UR_creado extends Mensaje_UR {
 
 	public void eliminarMensaje(int idm) throws PersistentException {
 		iUsr.eliminarMensajePropio(idm);
+		Mensaje msj = com.mds2.foro.MensajeDAO.getMensajeByORMID(idm);
+		
+		Tema t =com.mds2.foro.TemaDAO.getTemaByORMID( msj.getIdTemaPropietario());
+	
+		Seccion sec = t.getSeccion_tema();
+		
+		UI.getCurrent().getNavigator().addView(sec.getTitulo()+"Usr/"+t.getTitulo(), new Usuario_registrado(new Lista_Mensaje_V_Usuario_Reg(t.getIdTema())));
 	}
 }

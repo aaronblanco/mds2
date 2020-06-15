@@ -34,11 +34,34 @@ public class Mensaje_Administrador extends Mensaje_moderador {
 			}
 			
 		});	
-		
-		
-		
+		_verPerfil.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					verPerfil();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});	
 		
 	}
+	
+	@Override
+	public void verPerfil() throws PersistentException {
+		int idSenor = idUser;
+		
+		UI.getCurrent().getNavigator().addView("irPerfilAdm", new AdministradorClase(new PerfilUsuarioRegAdmin(idSenor)));
+		UI.getCurrent().getNavigator().navigateTo("irPerfilAdm");
+	}
+	
+		
+		
+		
+	
 	
 	public void eliminar(int idMe) throws PersistentException {
 		iAd.eliminarMensajeAdmin(idMe);

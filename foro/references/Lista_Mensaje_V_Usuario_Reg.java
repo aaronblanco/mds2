@@ -19,24 +19,31 @@ public class Lista_Mensaje_V_Usuario_Reg extends Lista_Mensaje {
 	public Tema_UR _unnamed_Tema_UR_;
 	public Vector<Mensaje_UR> _list_Mensaje_UR = new Vector<Mensaje_UR>();
 	public CreacionMensaje _unnamed_CreacionMensaje_;
+	private Button _crearMensaje;
 	iUsuario iUsr = new DB_Main();
 	
 	public Lista_Mensaje_V_Usuario_Reg(int idTema) throws PersistentException {
 		
 		super(idTema);
+		this._crearMensaje = crearMensaje;
+	
 		
 		crearMensaje.setVisible(true);
 		
-		crearMensaje.addClickListener(new Button.ClickListener() {
+		_crearMensaje.addClickListener(new Button.ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
+				try {
+					UI.getCurrent().getNavigator().addView("crearMensaje", new Usuario_registrado(new CreacionMensaje(idTema)));
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				crearMensaje();
+				
 			}
-			
 		});	
-		
 		
 		_volverTema.addClickListener(new Button.ClickListener() {
 			Tema te = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);

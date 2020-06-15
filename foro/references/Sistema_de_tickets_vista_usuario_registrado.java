@@ -20,7 +20,5 @@ public class Sistema_de_tickets_vista_usuario_registrado extends Sistema_de_tick
 	}
 
 
-	public void crearTicket() {
-		UI.getCurrent().getNavigator().navigateTo("crearTicket");
-	}
+
 }

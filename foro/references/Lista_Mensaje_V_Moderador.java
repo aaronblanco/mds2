@@ -33,6 +33,24 @@ public class Lista_Mensaje_V_Moderador extends Lista_Mensaje_V_Usuario_Reg {
 		});	
 		
 		
+		crearMensaje.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					UI.getCurrent().getNavigator().addView("crearMensajeMod", new ModeradorClase(new CreacionMensaje(idTema)));
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				crearMensaje();
+			}
+			
+		});	
+		
+		
+		
 		listaMensajeAdmin.removeAllComponents();
 		List<Mensaje> t = iUsrNR.cargarMensajeUNR(idTema, true, false);
 		
@@ -47,5 +65,10 @@ public class Lista_Mensaje_V_Moderador extends Lista_Mensaje_V_Usuario_Reg {
 			listaMensajeAdmin.addComponent(muc);
 		}
 		
+	}
+	
+	
+	public void crearMensaje() {
+		UI.getCurrent().getNavigator().navigateTo("crearMensajeMod");
 	}
 }

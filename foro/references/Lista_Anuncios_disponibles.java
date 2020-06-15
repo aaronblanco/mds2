@@ -7,44 +7,68 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.event.MouseEvents;
+import com.vaadin.server.ClassResource;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.themes.ValoTheme;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 
 public class Lista_Anuncios_disponibles extends Lista_Anuncios_disponibles_ventana{
 	private Button _anadirAnuncio;
 	public Sistema_de_publicidad _unnamed_Sistema_de_publicidad_;
+	private int _id;
 	public Vector<AnuncioClase> _list_Anuncio = new Vector<AnuncioClase>();
 	iAdministrador iAd = new DB_Main();
-	
+	iAdministrador iUsr = new DB_Main();
 	public Lista_Anuncios_disponibles() throws PersistentException {
 		
-		this._anadirAnuncio = anadirAnuncio;
+	
+		this.listaAnunciosDisponibles.removeAllComponents();
+		List<Anuncio> anun = iUsr.cargarAnuncioDisponible(false);
 		
-		_anadirAnuncio.addClickListener(new Button.ClickListener() {
+		for(Anuncio it : anun) {
 			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO Auto-generated method stub
+			FileResource resource = new FileResource(new File(it.getImagen()));
+			Image img = new Image("",resource);
+			img.setWidth("100px");
+			img.setHeight("100px");
+			
+	
+	
+			img.setHeight("100px");
+			img.setWidth("100px");
+			img.addStyleName("link");
+			img.addClickListener(e -> {
 				try {
-					anadirAnuncio();
-				} catch (NumberFormatException e) {
+				
+					anadirAnuncio(it.getIdAnuncio());
+				
+					UI.getCurrent().getNavigator().addView("sistemaPublicidadMod", new AdministradorClase(new Sistema_de_publicidad()));
+					UI.getCurrent().getNavigator().navigateTo("sistemaPublicidadMod");
+				
+				} catch (NumberFormatException | PersistentException e1) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (PersistentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					e1.printStackTrace();
 				}
-			}
-		});
+			} );
+			
+		
+			
+			this.listaAnunciosDisponibles.addComponent(img);
+			AnuncioClase an = new AnuncioClase( img	);
+			_list_Anuncio.add(an);
+		}
+		
 		
 		
 	}
 	
-	public void anadirAnuncio() throws NumberFormatException, PersistentException {
-		iAd.anadirAnuncio(Integer.parseInt(this.getId()), true);
+	public void anadirAnuncio(int id) throws NumberFormatException, PersistentException {
+		iAd.anadirAnuncio(id, true);
 	}
 }

@@ -42,7 +42,21 @@ public class Lista_Mensaje_V_Administrador extends Lista_Mensaje_V_Moderador{
 			}
 		}
 		
-		
+	crearMensaje.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					UI.getCurrent().getNavigator().addView("crearMensajeAdm", new AdministradorClase(new CreacionMensaje(idTema)));
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				crearMensaje();
+			}
+			
+		});	
 		
 		_volverTema.addClickListener(new Button.ClickListener() {
 			Tema te = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
@@ -54,5 +68,8 @@ public class Lista_Mensaje_V_Administrador extends Lista_Mensaje_V_Moderador{
 			}
 			
 		});	
+	}
+	public void crearMensaje() {
+		UI.getCurrent().getNavigator().navigateTo("crearMensajeAdm");
 	}
 }

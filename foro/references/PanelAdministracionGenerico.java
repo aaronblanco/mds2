@@ -36,7 +36,8 @@ public class PanelAdministracionGenerico extends PanelAdministracionGenerico_ven
 	public void buscarUsuario(String aKeyword) throws PersistentException {
 		List<Usuarios> lista = iUsr.buscarUsuario(aKeyword);
 		for(Usuarios u : lista) {
-			PerfilUsuarioRegMod ur = new PerfilUsuarioRegMod(u.getIdUsuario());
+			PerfilUsuarioRegAdmin ur = new PerfilUsuarioRegAdmin(u.getIdUsuario());
+	
 			panelLayout.addComponent(ur);
 		}
 	}
