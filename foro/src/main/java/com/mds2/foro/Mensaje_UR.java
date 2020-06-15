@@ -148,9 +148,20 @@ public class Mensaje_UR extends MensajeClase {
 	public void verPerfil() throws PersistentException {
 		int idSenor = idUser;
 		if(Sesion.getIDSESION() != idSenor) {
-			UI.getCurrent().getNavigator().addView("irPerfil", new Usuario_no_registrado(new PerfilUsuarioRegGenerico(idSenor)));
-			UI.getCurrent().getNavigator().navigateTo("irPerfil");
-		}else {
+			if(Sesion.getADMINISTRADOR()) {
+				UI.getCurrent().getNavigator().addView("irPerfilAdm", new AdministradorClase(new PerfilUsuarioRegAdmin(idSenor)));
+				UI.getCurrent().getNavigator().navigateTo("irPerfilAdm");
+				}
+			else if(Sesion.getMODERADOR()) {
+				UI.getCurrent().getNavigator().addView("irPerfilMod", new ModeradorClase(new PerfilUsuarioRegMod(idSenor)));
+				UI.getCurrent().getNavigator().navigateTo("irPerfilMod");
+			}
+			else {
+				UI.getCurrent().getNavigator().addView("irPerfil", new Usuario_no_registrado(new PerfilUsuarioRegGenerico(idSenor)));
+				UI.getCurrent().getNavigator().navigateTo("irPerfil");
+			}
+		}	
+		else {
 			UI.getCurrent().getNavigator().navigateTo("Mi perfilUsr");
 		}
 		

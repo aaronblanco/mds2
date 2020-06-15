@@ -35,7 +35,7 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				System.out.println(_tituloTema.getValue());
+				
 				try {
 					enviar(aIdSeccionPropietaria, aIdTemaPropietario);
 					Seccion s = com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
@@ -55,7 +55,12 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				cancelar();
+				try {
+					cancelar(aIdSeccionPropietaria);
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		});	
@@ -67,7 +72,15 @@ public class CreacionTema extends Creacion_tema_ventana implements View {
 		iUsr.crearTema(_tituloTema.getValue(), _subtituloTema.getValue(), _descripcion.getValue(), aIdSeccionPropietaria, aIdTemaPropietario);
 	}
 
-	public void cancelar() {
-		UI.getCurrent().getNavigator().navigateTo("");
+	public void cancelar(int aIdSeccionPropietaria) throws PersistentException {
+		
+		Seccion s =  com.mds2.foro.SeccionDAO.getSeccionByORMID(aIdSeccionPropietaria);
+		if(Sesion.getADMINISTRADOR())
+			UI.getCurrent().getNavigator().navigateTo(s.getTitulo() + "Adm");
+		else if(Sesion.getMODERADOR())
+			UI.getCurrent().getNavigator().navigateTo(s.getTitulo() + "Mod");
+		else
+			UI.getCurrent().getNavigator().navigateTo(s.getTitulo() + "Usr");
+		
 	}
 }

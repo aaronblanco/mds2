@@ -12,23 +12,42 @@ public class bd_anuncios {
 	public Vector<Anuncio> _contiene_anuncios = new Vector<Anuncio>();
 
 	public List cargarAnuncioDisponible(boolean aEstado) throws PersistentException {
-		
 		List<Anuncio> lista = new ArrayList<Anuncio>();
-		com.mds2.foro.Anuncio[] commds2foroAnuncios = com.mds2.foro.AnuncioDAO.listAnuncioByQuery("Publicado = '"+0+"'", "IdAnuncio");
+		
+				
+			if(aEstado) {
+				com.mds2.foro.Anuncio[] commds2foroAnuncios = com.mds2.foro.AnuncioDAO.listAnuncioByQuery("Publicado = '"+1+"'", "IdAnuncio");
+	
+			for(Anuncio a : commds2foroAnuncios) {
+				lista.add(a);
+			}
+			}
+			
+			else {
 
-		for(Anuncio a : commds2foroAnuncios) {
-			lista.add(a);
-		}
+				com.mds2.foro.Anuncio[] commds2foroAnuncios = com.mds2.foro.AnuncioDAO.listAnuncioByQuery("Publicado = '"+0+"'", "IdAnuncio");
+				
+				for(Anuncio a : commds2foroAnuncios) {
+					lista.add(a);
+				}
+			
+			}
+				
+		
 		return lista;
 	}
 
 	public List cargarAnuncioPublicado(boolean aEstado) throws PersistentException {
 		List<Anuncio> lista = new ArrayList<Anuncio>();
-		com.mds2.foro.Anuncio[] commds2foroAnuncios = com.mds2.foro.AnuncioDAO.listAnuncioByQuery("Publicado = '"+1+"'", "IdAnuncio");
-
-		for(Anuncio a : commds2foroAnuncios) {
-			lista.add(a);
-		}
+	
+				
+		
+			com.mds2.foro.Anuncio[] commds2foroAnuncios = com.mds2.foro.AnuncioDAO.listAnuncioByQuery("Publicado = '"+1+"'", "IdAnuncio");
+			
+			for(Anuncio a : commds2foroAnuncios) {
+				lista.add(a);
+			}
+		
 		return lista;
 	}
 

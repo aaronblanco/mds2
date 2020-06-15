@@ -54,22 +54,20 @@ public class MyUI extends UI {
 
         
     	
-     	try {
-			navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
-		} catch (Exception e2) {
+     	
+     	try {		
+     		navigator.addView("Pagina principal",  new Usuario_no_registrado() );
+     		navigator.addView("faq", new Usuario_no_registrado(new FAQ()));
+			navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
+			navigator.addView("Iniciar sesion",  new Usuario_no_registrado(new Iniciar_sesion()));
+	     	navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
+	     	navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena()));
+		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();
+			e.printStackTrace();
 		}
-     	navigator.addView("avisoLegal",  new Usuario_no_registrado(new Aviso_legal()));
-     	navigator.addView("Iniciar sesion",  new Usuario_no_registrado(new Iniciar_sesion()));
-     	navigator.addView("Registrarse",  new Usuario_no_registrado(new Registrarse() ) );
-     	navigator.addView("recordarPassw",  new Usuario_no_registrado(new Recuperar_contrasena()));
-    	try {
-			navigator.addView("Pagina principal",  new Usuario_no_registrado() );
-		} catch (PersistentException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+     
+    
     	
     	
     	

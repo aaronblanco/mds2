@@ -88,8 +88,6 @@ public class Lista_Tema extends Lista_Tema_ventana implements View {
 		
 				
 	}
-	public void crearTema() {
-		UI.getCurrent().getNavigator().navigateTo("crearTema");
-		}
+
 	
 }

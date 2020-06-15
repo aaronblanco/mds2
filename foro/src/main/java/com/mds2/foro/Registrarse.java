@@ -35,7 +35,6 @@ public class Registrarse extends Registrarse_ventana implements View {
 	private Button _validarDatos;
 	public Correo_electronico _unnamed_Correo_electrónico_;
 	public Menu_UNR _unnamed_Menu_UNR_;
-
 	iUsuario_no_registrado iNusr = new DB_Main();
 	Binder<Registrarse> binder = new Binder<>();
 
@@ -62,7 +61,6 @@ public class Registrarse extends Registrarse_ventana implements View {
 		this._validarDatos = registro;
 		this._foto = uploadImage;
 	
-		System.out.println(this._foto.toString() + "IMAGEN????");
 		registro.setVisible(true);
 		
 		_validarDatos.addClickListener(new Button.ClickListener() {
@@ -74,6 +72,7 @@ public class Registrarse extends Registrarse_ventana implements View {
 					validar();
 				System.out.println("VALIDANDO");
 					registrarse();
+					UI.getCurrent().getNavigator().navigateTo("Iniciar sesion");
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -148,28 +147,21 @@ public class Registrarse extends Registrarse_ventana implements View {
       .asRequired("El campo del nombre completo no puede estar vacío")
       .withValidator(_nombreCompleto -> _nombreCompleto.length() > 0,"Code shold be atleast 1 character long").bind(Registrarse::get_nombreCompleto,Registrarse::set_nombreCompleto);
 	  binder.validate();
-	  
-		System.out.println("VALIDANDO COSAS SE SUPONE");
+	
 	}
 	private void valueChange(ValueChangeEvent<String> e) {
         
-         System.out.println("DETECTA ALGO");
+  
          binder.validate();
     }
 	
 	public void registrarse() throws PersistentException {
 		
 		
-		
-		boolean soyFeliz = false;
+
 		if(iNusr.registrarse(_nombreUser.getValue(), _nombreCompleto.getValue(), _contrasena.getValue(), _descripcion.getValue(), _correoElectronico.getValue(), ""))
-			soyFeliz = true;
-		System.out.println(soyFeliz);
-		System.out.println(_nombreUser.getValue());
-		System.out.println("Ya puedes iniciar sesion con tu cuenta.");
+		Notification.show("Usuario registrado correctamente.");
 	}
 
-	public void adjuntarFotoPerfil() {
-		throw new UnsupportedOperationException();
-	}
+
 }

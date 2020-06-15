@@ -27,7 +27,7 @@ public class Panel_de_administracion_vista_administrador extends PanelAdministra
 		
 
 		UI.getCurrent().getNavigator().addView("sistemaPublicidad", new AdministradorClase(new Sistema_de_publicidad()));
-		
+		UI.getCurrent().getNavigator().addView("sistemaPublicidadMod", new AdministradorClase(new Sistema_de_publicidad()));
 		modNumUM.addClickListener(new Button.ClickListener() {
 			
 			@Override

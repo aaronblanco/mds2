@@ -33,6 +33,10 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 				// TODO Auto-generated method stub
 				try {
 					enviar();
+					if(Sesion.getADMINISTRADOR())
+						UI.getCurrent().getNavigator().navigateTo("Pagina principalAdm");
+					else if(Sesion.getMODERADOR())
+						UI.getCurrent().getNavigator().navigateTo("Pagina principalMod");
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -55,28 +59,15 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 			}
 		});	
 		
-		//Esto es un upload, no un boton hay que ver como funciona
-//		cargarImagenSeccionB.addClickListener(new Button.ClickListener() {
-//			
-//			//cancelar();
-//			
-//			@Override
-//			public void buttonClick(ClickEvent event) {
-//				// TODO Auto-generated method stub
-//				UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
-//			}
-//			
-//		});	
+
 		
 	}
 	
 	public void enviar() throws PersistentException {
 		try {
-			boolean hola = iMod.crearSeccion(_tituloSeccion.getValue(), _descipcionSeccion.getValue(), _imagenSeccionURL.toString(), Sesion.getIDSESION());
+			 iMod.crearSeccion(_tituloSeccion.getValue(), _descipcionSeccion.getValue(), _imagenSeccionURL.toString(), Sesion.getIDSESION());
 		
-			//UI.getCurrent().getNavigator().navigateTo("Pagina principal");
-			if(hola)
-				System.out.println("bieeeeeeeeeeen");
+			
 		}catch(Exception e) {
 				
 			e.printStackTrace();
@@ -92,7 +83,4 @@ public class CreacionSeccion extends Creacion_Seccion_ventana implements View {
 		
 	}
 
-	public void adjuntarImagen() {
-		throw new UnsupportedOperationException();
-	}
 }

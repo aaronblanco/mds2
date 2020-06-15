@@ -52,7 +52,7 @@ public class Mensaje_moderador extends Mensaje_UR {
 	public void verPerfil() throws PersistentException {
 		int idSenor = idUser;
 		
-		UI.getCurrent().getNavigator().addView("irPerfilMod", new ModeradorClase(new PerfilUsuarioRegAdmin(idSenor)));
+		UI.getCurrent().getNavigator().addView("irPerfilMod", new ModeradorClase(new PerfilUsuarioRegMod(idSenor)));
 		UI.getCurrent().getNavigator().navigateTo("irPerfilMod");
 	}
 	

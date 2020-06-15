@@ -46,9 +46,9 @@ public class CreacionTicket extends CreacionTicket_ventana implements View{
 	
 
 	public void enviar() throws PersistentException {
-		System.out.println("estas creando un ticket");
+
 		iUsr.crearTicket(cuerpoText.getValue(), Sesion.getIDSESION());
-		System.out.println("has creado un ticket");
+	
 	}
 
 	public void cancelarTicket() {

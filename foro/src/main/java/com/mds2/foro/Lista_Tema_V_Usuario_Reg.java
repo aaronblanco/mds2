@@ -80,7 +80,18 @@ public class Lista_Tema_V_Usuario_Reg extends Lista_Tema {
 	}
 	
 	public static void crearTema(int idSeccion, int idCreadorTema) throws PersistentException {
-		UI.getCurrent().getNavigator().addView("crearTema", new Usuario_registrado(new CreacionTema( idSeccion, idCreadorTema)));
-		UI.getCurrent().getNavigator().navigateTo("crearTema");
+		if(Sesion.getADMINISTRADOR()) {
+			UI.getCurrent().getNavigator().addView("crearTemaAdm", new AdministradorClase(new CreacionTema( idSeccion, idCreadorTema)));
+			UI.getCurrent().getNavigator().navigateTo("crearTemaAdm");
+		}
+		else if(Sesion.getMODERADOR()) {
+			UI.getCurrent().getNavigator().addView("crearTemaMod", new ModeradorClase(new CreacionTema( idSeccion, idCreadorTema)));
+			UI.getCurrent().getNavigator().navigateTo("crearTemaMod");
+		}
+		else {
+			UI.getCurrent().getNavigator().addView("crearTema", new Usuario_registrado(new CreacionTema( idSeccion, idCreadorTema)));
+			UI.getCurrent().getNavigator().navigateTo("crearTema");
+		}
+		
 	}
 }

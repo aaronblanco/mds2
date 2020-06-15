@@ -80,7 +80,7 @@ public class Lista_Seccion_V_Moderador extends Lista_Seccion_V_Usuario_Reg {
 		_crearSeccion.setVisible(true);	
 	}
 	public void crearSeccion() {
-		UI.getCurrent().getNavigator().navigateTo("crearSeccion");
+		UI.getCurrent().getNavigator().navigateTo("crearSeccionMod");
 	}
 	
 }

@@ -17,12 +17,13 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 	private Button _adjuntarImagen;
 	private RichTextArea _cuerpo;
 	private Button _enviar;
+	private int _idTema;
 	public Lista_Mensaje_V_Usuario_Reg _Lista_Mensaje_V_Usuario_Reg_;
 	iUsuario iUsr = new DB_Main();
 	
 	public CreacionMensaje(int idTema) throws PersistentException{
 		Tema t = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
-		
+		this._idTema = idTema;
 		this.tituloTema.setValue(t.getTitulo());
 		this.subtitulo.setValue(t.getDescripcion());
 		this.fechaCreacion.setValue(String.valueOf(t.getFecha()));
@@ -30,19 +31,30 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 		this._cuerpo = textoTema;
 		_enviar.addClickListener(new Button.ClickListener() {
 			
-			Tema t = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
-			Seccion s = t.getSeccion_tema();
+			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				try {
+					Tema t = com.mds2.foro.TemaDAO.getTemaByORMID(idTema);
+					Seccion s = t.getSeccion_tema();
 					enviar(idTema);
 					
 					
+					if(Sesion.getADMINISTRADOR()) {
+						UI.getCurrent().getNavigator().addView(s.getTitulo()+"Adm/"+t.getTitulo(), new AdministradorClase(new Lista_Mensaje_V_Administrador(t.getIdTema())));
+						UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Adm/"+t.getTitulo());
+					}	
+					else if(Sesion.getMODERADOR()) {
+						UI.getCurrent().getNavigator().addView(s.getTitulo()+"Mod/"+t.getTitulo(), new ModeradorClase(new Lista_Mensaje_V_Moderador(t.getIdTema())));
+						UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Mod/"+t.getTitulo());
+					}
+					else {
+						UI.getCurrent().getNavigator().addView(s.getTitulo()+"Usr/"+t.getTitulo(), new Usuario_registrado(new Lista_Mensaje_V_Usuario_Reg(t.getIdTema())));
+						UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Usr/"+t.getTitulo());
 					
-					UI.getCurrent().getNavigator().addView(s.getTitulo()+"Usr/"+t.getTitulo(), new Usuario_registrado(new Lista_Mensaje(t.getIdTema())));
-					UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Usr/"+t.getTitulo());
-					
+					}
+				
 
 					
 				} catch (PersistentException e) {
@@ -57,7 +69,12 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				cancelar();
+				try {
+					cancelar();				
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+				
 			}
 			
 		});
@@ -72,13 +89,6 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 		});	
 	}
 	
-	public void color() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void fuente() {
-		throw new UnsupportedOperationException();
-	}
 
 	public void adjuntarImagen() {
 	}
@@ -87,7 +97,21 @@ public class CreacionMensaje extends Creacion_Mensaje_ventana implements View{
 		iUsr.crearMensaje(_cuerpo.getValue(), " que pasa tu", Sesion.getIDSESION(), idTema);
 	}
 	
-	public void cancelar() {
-		UI.getCurrent().getNavigator().navigateTo("cancelarCreacionTema");
+	public void cancelar() throws PersistentException {
+		Tema t = com.mds2.foro.TemaDAO.getTemaByORMID(_idTema);
+		Seccion s = t.getSeccion_tema();
+		if(Sesion.getADMINISTRADOR()) {
+			UI.getCurrent().getNavigator().addView(s.getTitulo()+"Adm/"+t.getTitulo(), new AdministradorClase(new Lista_Mensaje_V_Administrador(t.getIdTema())));
+			UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Adm/"+t.getTitulo());
+		}	
+		else if(Sesion.getMODERADOR()) {
+			UI.getCurrent().getNavigator().addView(s.getTitulo()+"Mod/"+t.getTitulo(), new ModeradorClase(new Lista_Mensaje_V_Moderador(t.getIdTema())));
+			UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Mod/"+t.getTitulo());
+		}
+		else {
+			UI.getCurrent().getNavigator().addView(s.getTitulo()+"Usr/"+t.getTitulo(), new Usuario_registrado(new Lista_Mensaje_V_Usuario_Reg(t.getIdTema())));
+			UI.getCurrent().getNavigator().navigateTo(s.getTitulo()+"Usr/"+t.getTitulo());
+		
+		}
 	}
 }
